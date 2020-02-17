@@ -20,7 +20,7 @@
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('alte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-          <span class="brand-text font-weight-light">Welcome Student</span>
+          <span class="brand-text font-weight-light">{{__('text.Welcome')}} {{__('text.Students')}}</span>
     </a>  
     @endif  
     <!-- Sidebar -->
@@ -56,7 +56,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-user-tie"></i>
               <p>
                 Espaces Profs
                 <i class="right fas fa-angle-left"></i>
@@ -93,7 +93,7 @@
                      with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview menu-open">
                   <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-user-graduate"></i>
                     <p>
                       Espaces Eleves
                       <i class="right fas fa-angle-left"></i>
@@ -126,7 +126,7 @@
                            with font-awesome or any other icon font library -->
                   <li class="nav-item has-treeview menu-open">
                     <a href="#" class="nav-link active">
-                      <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <i class="nav-icon fas fa-compress-arrows-alt"></i>
                       <p>
                         Affectations
                         <i class="right fas fa-angle-left"></i>
@@ -193,6 +193,8 @@
                  with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-folder"></i>
+
               
                 <p>
                   Cours
@@ -204,6 +206,8 @@
                  with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-list-alt"></i>
+
                 <p>
                   Absences
                 </p>
@@ -214,6 +218,8 @@
                        with font-awesome or any other icon font library -->
                   <li class="nav-item has-treeview menu-open">
                     <a href="#" class="nav-link active">
+                      <i class="nav-icon fas fa-calendar-alt"></i>
+
                       <p>
                         Emplois Du Temps
                       </p>
@@ -225,6 +231,8 @@
                              with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
                           <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-sticky-note"></i>
+
                             <p>
                               Bulletins Et Notes
                             </p>
@@ -235,6 +243,8 @@
                                    with font-awesome or any other icon font library -->
                               <li class="nav-item has-treeview menu-open">
                                 <a href="#" class="nav-link active">
+                                  <i class="nav-icon fas fa-money-bill-alt"></i>
+
                                   <p>
                                     Paiements
                                   </p>
@@ -245,6 +255,8 @@
                                          with font-awesome or any other icon font library -->
                                     <li class="nav-item has-treeview menu-open">
                                       <a href="#" class="nav-link active">
+                                        <i class="nav-icon fas fa-folder"></i>
+
                                         <p>
                                           Evenements Et Actualites
                                         </p>
