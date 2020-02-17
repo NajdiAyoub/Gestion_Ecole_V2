@@ -23,12 +23,12 @@
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   
-  @include('layouts.navbar')
+  @include('include.navbar')
 
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-  @include('layouts.sidebar')
+  @include('include.sidebar')
 
 </aside>
 
@@ -57,7 +57,7 @@
   </aside>
   <!-- /.control-sidebar -->
 
-  @include('layouts.footer')
+  @include('include.footer')
 </div>
 <!-- ./wrapper -->
 
@@ -72,4 +72,5 @@
 @yield('js')
 </body>
 </html>
+
 

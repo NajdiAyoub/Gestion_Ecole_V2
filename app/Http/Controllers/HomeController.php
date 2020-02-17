@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Create a new Controller instance.
      *
      * @return void
      */
@@ -23,6 +23,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (auth()->user()["role"] == 1) {
+            return view('personnels.personnelsHome');
+            
+        }
+       
+    if (auth()->user()["role"] == 2) {
+        return view('layouts.eleves.elevesHome');
     }
+    
+if (auth()->user()["role"] == 3) {
+    return view('profs.profsHome');
+}
+}
+
+
+
 }
