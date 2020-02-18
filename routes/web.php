@@ -14,6 +14,9 @@
 
 
     //
+
+use App\Http\Middleware\IsRole;
+
 Route::get('/', function () {
     if (auth()->user() == null) {
        return view('/auth/login');
@@ -22,6 +25,20 @@ Route::get('/', function () {
     }
 });
 
+
+
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('Cours/listesCours', 'CoursController@index')->name('listesCours');
+Route::get('Absences/listesAbsences', 'AbsencesController@index')->name('listesAbsences');
+Route::get('EmploisDuTemps/emplois', 'EmploisDuTempsController@index')->name('emplois');
+Route::get('Paiements/listesPaiements', 'PaiementsController@index')->name('listesPaiements');
+Route::get('Evenements/listesEvenements', 'EvenementsController@index')->name('listesEvenements');
+
+
+
 
 Auth::routes();
+//Route::get('locale/{locale}', function ($locale){
+  //  session::put('locale', $locale);
+    //return redirect()->back();
+    //});

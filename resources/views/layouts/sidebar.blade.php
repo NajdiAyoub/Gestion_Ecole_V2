@@ -1,42 +1,18 @@
 
-    @if (auth()->user()["role"] == 1)
+   
         
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('alte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-          <span class="brand-text font-weight-light">Welcome Admin</span>
+          <span class="brand-text font-weight-light">Gestion Ecole</span>
     </a>    
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      @endif
- 
+   
 
-     @if (auth()->user()["role"] == 2)
-    
-
-       <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="{{ asset('alte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-             style="opacity: .8">
-          <span class="brand-text font-weight-light">{{__('text.Welcome')}} {{__('text.Students')}}</span>
-    </a>  
-    @endif  
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-       <!-- Brand Logo -->
-       @if (auth()->user()["role"] == 3)
-    <a href="index3.html" class="brand-link">
-      <img src="{{ asset('alte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-             style="opacity: .8">
-          <span class="brand-text font-weight-light">Welcome Professor</span>
-    </a>    
-    @endif
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
+   
           
       
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -192,7 +168,7 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-open">
-              <a href="#" class="nav-link active">
+            <a href="{{ route('listesCours')}}"  class="nav-link active">
             <i class="nav-icon fas fa-folder"></i>
 
               
@@ -205,7 +181,7 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-open">
-              <a href="#" class="nav-link active">
+              <a href="{{ route('listesAbsences')}}" class="nav-link active">
                 <i class="nav-icon fas fa-list-alt"></i>
 
                 <p>
@@ -217,7 +193,7 @@
                   <!-- Add icons to the links using the .nav-icon class
                        with font-awesome or any other icon font library -->
                   <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="{{ route('emplois')}}" class="nav-link active">
                       <i class="nav-icon fas fa-calendar-alt"></i>
 
                       <p>
@@ -242,7 +218,7 @@
                               <!-- Add icons to the links using the .nav-icon class
                                    with font-awesome or any other icon font library -->
                               <li class="nav-item has-treeview menu-open">
-                                <a href="#" class="nav-link active">
+                                <a href="{{ route('listesPaiements')}}" class="nav-link active">
                                   <i class="nav-icon fas fa-money-bill-alt"></i>
 
                                   <p>
@@ -254,8 +230,8 @@
                                     <!-- Add icons to the links using the .nav-icon class
                                          with font-awesome or any other icon font library -->
                                     <li class="nav-item has-treeview menu-open">
-                                      <a href="#" class="nav-link active">
-                                        <i class="nav-icon fas fa-folder"></i>
+                                      <a href="{{ route('listesEvenements')}}" class="nav-link active">
+                                        <i class="nav-icon fas fa-calendar-check"></i>
 
                                         <p>
                                           Evenements Et Actualites
