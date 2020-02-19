@@ -61,6 +61,7 @@ hgroup,
 main,
 nav,
 section {
+
   display: block;
 }
 

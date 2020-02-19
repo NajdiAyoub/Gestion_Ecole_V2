@@ -12,12 +12,12 @@
 
     <!-- Main content -->
     
-    <section class="content">
+    <section class="content" style="margin:auto;">
       <center>
       <div class="row">
         <div class="col-12">
           <div class="card">
-            <div class="card-header"><h4>Listes Des Cours Ajoutee Par Les Profs</h4>
+            <div class="card-header" style="color: blue; " ><h4>Listes Des Cours</h4>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

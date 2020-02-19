@@ -25,6 +25,16 @@ Route::get('/', function () {
     }
 });
 
+Route::get('locale/{locale}',function ($locale){
+    
+//dd($locale);
+ Session::put('locale',$locale);
+   // session(['locale' => $locale]);
+    //Session::save();
+     //::setLocale($locale);
+    return redirect()->back();
+});
+
 
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
@@ -33,12 +43,9 @@ Route::get('Absences/listesAbsences', 'AbsencesController@index')->name('listesA
 Route::get('EmploisDuTemps/emplois', 'EmploisDuTempsController@index')->name('emplois');
 Route::get('Paiements/listesPaiements', 'PaiementsController@index')->name('listesPaiements');
 Route::get('Evenements/listesEvenements', 'EvenementsController@index')->name('listesEvenements');
+Route::get('BulletinsEtNotes/bulletins', 'BulletinsEtNotesController@index')->name('bulletins');
 
 
 
 
 Auth::routes();
-//Route::get('locale/{locale}', function ($locale){
-  //  session::put('locale', $locale);
-    //return redirect()->back();
-    //});

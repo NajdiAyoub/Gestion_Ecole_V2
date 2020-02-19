@@ -1,35 +1,46 @@
 <?php
 
 return [
-    'Dashboard' => 'Tableau de bord',    
-    'Welcome' => 'Bienvenue',
-    'Students' => 'Eleves',
-    'Professor' => 'Profeseur',
-    'Cours' => 'Courses',
-    'Exams' => 'Exams',
-    'Grades' => 'Notes',
-    'Spaces' => 'Espaces',
-    'Subjects' => 'Matieres',
-    'Events' => 'Evenements',
-    'Absences' => 'Absences',
-    'News' => 'Actualites',
-    'Schedules' => 'Emplois Du Temps',
-    'Payements' => 'Paiements',
-    'Schedules' => 'Emplois Du Temps',
-    'Assignments' => 'Affectations',
-    'Lists' => 'Listes',
-    'Add' => 'Ajouter',
-    'Faculaty' => 'Filiere',
-    'Levels' => 'Niveaux',
-    'Assignments' => 'Affectations',
+    'Dashboard.txt' => 'Tableau de Bord', 
+    'Acceuil.txt' => 'Acceuil',      
+    'Home.txt' => 'Acceuil',
+    'Cours.btn' => 'Cours',
+    'Absences.btn' => 'Absences',
+    'EmploisDuTemps.btn' => 'Emplois Du Temps',
+    'BulletinsEtNotes.btn' => 'Bulletins Et Notes',
+    'Paiements.btn' => 'Paiements',
+    'EvenementsEtActualites.btn' => 'Evenements Et Actualites',
+    'GestionEcole.lbl' => 'Gestion Ecole',
+    'EspacesProfs.btn' => 'Espaces Profs',
+    'Absences.btn' => 'Absences',
+    'Emplois.btn' => 'Emplois ',
+    'EspacesEleves.btn' => 'Espaces Eleves',
+    'Affectations.btn' => 'Affectations',
+    'ProfsMatieres.btn' => 'Profs Matieres',
+    'ClassesExams.btn' => 'Classes Exams',
+    'Affectations.btn' => 'Affectations',
+    'Evenements.btn' => 'Evenements',
+    'Reunions.btn' => 'Reunions',
+    'Classes.btn' => 'Classes',
+    'log_out.ic' => 'Se deconncter',
+    'English.lbl' => 'Anglais',
+    'French.lbl' => 'Francais',
+
+
+
+
+
+
+
+
+
+
+
+
+
      
 
 
    
-
-
-     
-
-
      
 ];
