@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-12">
           <div class="card">
-            <div class="card-header"><h4>Listes Des Evenements</h4>
+            <div class="card-header"style="color: blue; "><h4>Listes Des Evenements</h4>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav style="background-color: #343a40;" class="main-header navbar navbar-expand navbar-white navbar-light ">
   <!-- Left navbar links -->
   
  
@@ -17,11 +17,11 @@
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" >
         <div class="dropdown-divider"></div>
         <center><a href="{{ url('locale/fr') }}" class="dropdown-item">
-          <i class="fas fa-language"></i> {{__('text.French.lbl') }}
+          <i class="fas fa-flag"></i> {{__('text.French.lbl') }}
         </a></center>
         <div class="dropdown-divider"></div>
         <center><a href="{{ url('locale/en') }}" class="dropdown-item">
-          <i class="fas fa-language"></i> {{__('text.English.lbl') }}
+          <i class="fas fa-flag"></i> {{__('text.English.lbl') }}
         </a></center>
         
     </li>

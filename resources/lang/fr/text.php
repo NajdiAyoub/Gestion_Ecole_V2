@@ -6,6 +6,16 @@ return [
     'Home.txt' => 'Acceuil',
     'Cours.btn' => 'Cours',
     'Absences.btn' => 'Absences',
+    'Paramettres.btn' => 'Paramettres',
+    'Eleves.btn' => 'Eleves',
+    'Niveaux.btn' => 'Niveaux',
+    'Filieres.btn' => 'Filieres',
+    'Exams.btn' => 'Exams',
+    'AnneesScolaire.btn' => 'Annees Scolaire',
+    'ElevesClasses.btn' => 'Classes Eleves',
+
+
+
     'EmploisDuTemps.btn' => 'Emplois Du Temps',
     'BulletinsEtNotes.btn' => 'Bulletins Et Notes',
     'Paiements.btn' => 'Paiements',
