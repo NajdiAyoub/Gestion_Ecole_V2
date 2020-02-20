@@ -8,6 +8,8 @@ return [
     'Absences.btn' => 'Absences',
     'Paramettres.btn' => 'Paramettres',
     'Eleves.btn' => 'Eleves',
+    'Profs.btn' => 'Profs',
+
     'Niveaux.btn' => 'Niveaux',
     'Filieres.btn' => 'Filieres',
     'Exams.btn' => 'Exams',

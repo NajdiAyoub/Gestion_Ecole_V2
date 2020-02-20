@@ -1,6 +1,6 @@
 
 
-@extends('layouts.master')
+@extends('layouts.master', ['activePage'=> 'listesCours'])
 @section('title')
     
 @endsection

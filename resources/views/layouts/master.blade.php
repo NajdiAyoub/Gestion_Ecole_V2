@@ -34,13 +34,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    @include('layouts.header')
-
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
+    
           @yield('content')
         </div>
         <!-- /.row -->

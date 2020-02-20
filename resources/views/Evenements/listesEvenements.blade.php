@@ -38,119 +38,85 @@
                   <td>Opera for Wii</td>
                   <td>Wii</td>
                   <td>-</td>
-                  <td><i class="fas fa-eye style="margin-right:top;"></i></td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i> </td>
                 </tr>
                 <tr>
                   <td>Presto</td>
                   <td>Nokia N800</td>
                   <td>N800</td>
                   <td>-</td>
-                  <td>A</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 <tr>
                   <td>Presto</td>
                   <td>Nintendo DS browser</td>
                   <td>Nintendo DS</td>
                   <td>8.5</td>
-                  <td>C/A<sup>1</sup></td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 <tr>
                   <td>KHTML</td>
                   <td>Konqureror 3.1</td>
                   <td>KDE 3.1</td>
                   <td>3.1</td>
-                  <td>C</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 <tr>
                   <td>KHTML</td>
                   <td>Konqureror 3.3</td>
                   <td>KDE 3.3</td>
                   <td>3.3</td>
-                  <td>A</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 <tr>
                   <td>KHTML</td>
                   <td>Konqureror 3.5</td>
                   <td>KDE 3.5</td>
                   <td>3.5</td>
-                  <td>A</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 <tr>
                   <td>Tasman</td>
                   <td>Internet Explorer 4.5</td>
                   <td>Mac OS 8-9</td>
                   <td>-</td>
-                  <td>X</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 <tr>
                   <td>Tasman</td>
                   <td>Internet Explorer 5.1</td>
                   <td>Mac OS 7.6-9</td>
                   <td>1</td>
-                  <td>C</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 <tr>
                   <td>Tasman</td>
                   <td>Internet Explorer 5.2</td>
                   <td>Mac OS 8-X</td>
                   <td>1</td>
-                  <td>C</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 <tr>
                   <td>Misc</td>
                   <td>NetFront 3.1</td>
                   <td>Embedded devices</td>
                   <td>-</td>
-                  <td>C</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>NetFront 3.4</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>Dillo 0.8</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>Links</td>
-                  <td>Text only</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>Lynx</td>
-                  <td>Text only</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>IE Mobile</td>
-                  <td>Windows Mobile 6</td>
-                  <td>-</td>
-                  <td>C</td>
-                </tr>
+               
                 <tr>
                   <td>Misc</td>
                   <td>PSP browser</td>
                   <td>PSP</td>
                   <td>-</td>
-                  <td>C</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 <tr>
                   <td>Other browsers</td>
                   <td>All others</td>
                   <td>-</td>
                   <td>-</td>
-                  <td>U</td>
+                  <td><i class="fas fa-eye style="margin-left:0px;"></i>       <i class="fas fa-plus-circle style="position:top-right;"></i></td>
                 </tr>
                 </tbody>
                 <tfoot>
