@@ -9,7 +9,7 @@ class EvenementsController extends Controller
     //
     public function index()
     {
-            return view('Evenements.listesEvenements');
+            return view('personnels.listesevenements');
             
         }
     //

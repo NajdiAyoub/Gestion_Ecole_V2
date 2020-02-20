@@ -15,8 +15,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Profs</a></li>
-            <li class="breadcrumb-item active">ListesProfs</li>
+            <li class="breadcrumb-item"><a href="#">Evenements</a></li>
+            <li class="breadcrumb-item active">Listes Evenements</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -32,7 +32,7 @@
           <div class="row">
             <div class="col-12">
               <div class="card">
-                <div class="card-header" style="background-color: gray;color: blue;"><strong><em><h4>Listes Des Profs</h4></em></strong>
+                <div class="card-header" style="background-color: gray;color: blue;"><strong><em><h4>Listes Des Evenements</h4></em></strong>
 
                 </div>
                 <!-- /.card-header -->
@@ -40,12 +40,12 @@
                   <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                           <th>Nom</th>
-                            <th>Prenom</th>
-                             <th>Date Naissance</th>
-                             <th>Tel</th>
-                             <th>Emails</th>
-                             <th>Type Contrat</th>
+                           <th>Libelle</th>
+                            <th>Date_Evenements</th>
+                             <th>Eleves_Participants</th>
+                             <th>Classes</th>
+                             <th>Encadrants</th>
+                             <th>Details</th>
                               <th>Actions</th>
                     </tr>
                     </thead>
@@ -96,12 +96,12 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                      <th>Nom</th>
-                      <th>Prenom</th>
-                      <th>Date Naissance</th>
-                      <th>Tel</th>
-                      <th>Email</th>
-                      <th>Type Contrat</th>
+                      <th>Libelle</th>
+                      <th>Date_Evenements</th>
+                      <th>Eleves_Participants</th>
+                      <th>Classes</th>
+                      <th>Encadrants</th>
+                      <th>Details</th>
                       <th>Action</th>
                     </tr>
                     </tfoot>

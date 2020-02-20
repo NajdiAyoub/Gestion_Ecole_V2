@@ -177,6 +177,14 @@
                         <p>{{__('text.AnneesScolaire.btn') }}</p>
                       </a>
                     </li>
+
+                    <li class="nav-item">
+                      <a href="{{ route('listesevenements')}}" class="nav-link {{request()->is('personnels/listesevenements') ? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>{{__('text.Evenements.btn') }}</p>
+                      </a>
+                    </li>
+
                   </ul>
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                       <!-- Add icons to the links using the .nav-icon class

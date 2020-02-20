@@ -60,6 +60,7 @@ Route::get('personnels/anneesscolaire', 'AnneesScolaireController@index')->name(
 Route::get('personnels/profsmatiers', 'ProfsMatiersController@index')->name('profsmatiers');
 Route::get('personnels/classesexams', 'ClassesExamsController@index')->name('classesexams');
 Route::get('personnels/classeseleves', 'ClassesElevesController@index')->name('classeseleves');
+Route::get('personnels/listesevenements', 'EvenementsController@index')->name('listesevenements');
 
 
 
