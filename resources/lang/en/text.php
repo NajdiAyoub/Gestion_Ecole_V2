@@ -12,6 +12,12 @@ return [
     'Exams.btn' => 'Exams',
     'AnneesScolaire.btn' => 'School Year',
     'ElevesClasses.btn' => 'Students Classes',
+    'ClassesNiveauxFilieres.btn' => 'CLassesLevelesFaculties',
+    'ClassesControlesMatieres.btn' => 'CLassesTestsSubjects',
+    'Salles.btn' => 'Rooms',
+    'Controles.btn' => 'Tests',
+
+     
 
 
 

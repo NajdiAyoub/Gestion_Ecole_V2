@@ -59,8 +59,11 @@ Route::get('personnels/listesexams', 'ExamsController@index')->name('listesexams
 Route::get('personnels/anneesscolaire', 'AnneesScolaireController@index')->name('anneesscolaire');
 Route::get('personnels/profsmatiers', 'ProfsMatiersController@index')->name('profsmatiers');
 Route::get('personnels/classesexams', 'ClassesExamsController@index')->name('classesexams');
-Route::get('personnels/classeseleves', 'ClassesElevesController@index')->name('classeseleves');
 Route::get('personnels/listesevenements', 'EvenementsController@index')->name('listesevenements');
+Route::get('personnels/listessalles', 'SallesController@index')->name('listessalles');
+Route::get('personnels/listescontroles', 'ControlesController@index')->name('listescontroles');
+Route::get('personnels/listesclassesniveauxfilieres', 'ClassesNiveauxFilieresController@index')->name('listesclassesniveauxfilieres');
+Route::get('personnels/listesclassescontrolesmatieres', 'ClassesControlesMatieresController@index')->name('listesclassescontrolesmatieres');
 
 
 

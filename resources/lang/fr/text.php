@@ -15,6 +15,10 @@ return [
     'Exams.btn' => 'Exams',
     'AnneesScolaire.btn' => 'Annees Scolaire',
     'ElevesClasses.btn' => 'Classes Eleves',
+    'ClassesNiveauxFilieres.btn' => 'CLasses Niveaux Filieres',
+    'ClassesControlesMatieres.btn' => 'CLasses Controles Matieres',
+    'Salles.btn' => 'Salles',
+    'Controles.btn' => 'Controles',
 
 
 

@@ -108,6 +108,12 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
+                      <a href="{{ route('listeseleves')}}" class="nav-link {{request()->is('personnels/listeseleves') ? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>{{__('text.Eleves.btn') }}</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
                       <a href="{{ route('absenceseleves')}}" class="nav-link {{request()->is('personnels/absenceseleves') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>{{__('text.Absences.btn') }}</p>
@@ -141,18 +147,20 @@
                     </p>
                   </a>
                   <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="{{ route('listeseleves')}}" class="nav-link {{request()->is('personnels/listeseleves') ? 'active' : ''}}">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>{{__('text.Eleves.btn') }}</p>
-                      </a>
-                    </li>
+                    
                     <li class="nav-item">
                       <a href="{{ route('listeniveaux')}}" class="nav-link {{request()->is('personnels/listeniveaux') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>{{__('text.Niveaux.btn') }}</p>
                       </a>
                     </li>
+                    <li class="nav-item">
+                      <a href="{{ route('listessalles')}}" class="nav-link {{request()->is('personnels/listessalles') ? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>{{__('text.Salles.btn') }}</p>
+                      </a>
+                    </li>
+
                     <li class="nav-item">
                       <a href="{{ route('listesclasses')}}" class="nav-link {{request()->is('personnels/listesclasses') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
@@ -165,6 +173,13 @@
                         <p>{{__('text.Filieres.btn') }}</p>
                       </a>
                     </li>
+                    <li class="nav-item">
+                      <a href="{{ route('listescontroles')}}" class="nav-link {{request()->is('personnels/listescontroles') ? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>{{__('text.Controles.btn') }}</p>
+                      </a>
+                    </li>
+
                     <li class="nav-item">
                       <a href="{{ route('listesexams')}}" class="nav-link {{request()->is('personnels/listesexams') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
@@ -211,11 +226,18 @@
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="{{ route('classeseleves')}}" class="nav-link {{request()->is('personnels/classeseleves') ? 'active' : ''}}">
+                        <a href="{{ route('listesclassesniveauxfilieres')}}" class="nav-link  {{request()->is('personnels/listesclassesniveauxfilieres') ? 'active' : ''}}">
                           <i class="far fa-circle nav-icon"></i>
-                          <p>{{__('text.ElevesClasses.btn') }} </p>
+                          <p>{{__('text.ClassesNiveauxFilieres.btn')}}</p>
                         </a>
-                      </li>               
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="{{ route('listesclassescontrolesmatieres')}}" class="nav-link  {{request()->is('personnels/listescontrolesmatieres') ? 'active' : ''}}">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>{{__('text.ClassesControlesMatieres.btn')}}</p>
+                        </a>
+                      </li>     
                     </ul>
 
                       @endif
