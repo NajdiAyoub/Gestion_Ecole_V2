@@ -85,7 +85,7 @@ class AnneesScolaireController extends Controller
      */
     public function update(Request $request, $id)
     {
-             dd($id);
+        
             $anneesscolaire = anneesscolaire::find($id);
             $anneesscolaire->libelle = $request->input('libelle');
             $anneesscolaire->save();
