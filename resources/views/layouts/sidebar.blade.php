@@ -140,7 +140,7 @@
                          with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview menu-open">
                   <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-compress-arrows-alt"></i>
+                    <i class="nav-icon fas fa-cog"></i>
                     <p>
                       {{__('text.Paramettres.btn') }}
                       <i class="right fas fa-angle-left"></i>
@@ -149,7 +149,13 @@
                   <ul class="nav nav-treeview">
                     
                     <li class="nav-item">
-                      <a href="{{ route('listeniveaux')}}" class="nav-link {{request()->is('personnels/listeniveaux') ? 'active' : ''}}">
+                      <a href="{{ route('anneesscolaire.index')}}" class="nav-link {{request()->is('personnels/anneesscolaire') ? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>{{__('text.AnneesScolaire.btn') }}</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ route('listeniveaux.index')}}" class="nav-link {{request()->is('personnels/listeniveaux') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>{{__('text.Niveaux.btn') }}</p>
                       </a>
@@ -186,12 +192,7 @@
                         <p>{{__('text.Exams.btn') }}</p>
                       </a>
                     </li>
-                    <li class="nav-item">
-                      <a href="{{ route('anneesscolaire')}}" class="nav-link {{request()->is('personnels/anneesscolaire') ? 'active' : ''}}">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>{{__('text.AnneesScolaire.btn') }}</p>
-                      </a>
-                    </li>
+                   
 
                     <li class="nav-item">
                       <a href="{{ route('listesevenements')}}" class="nav-link {{request()->is('personnels/listesevenements') ? 'active' : ''}}">

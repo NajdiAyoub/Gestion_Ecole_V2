@@ -51,12 +51,12 @@ Route::get('personnels/emploisdutempsprofs', 'EmploisDuTempsProfsController@inde
 Route::get('personnels/absenceseleves', 'AbsencesElevesController@index')->name('absenceseleves');
 Route::get('personnels/paiementseleves', 'PaiementsElevesController@index')->name('paiementseleves');
 Route::get('personnels/emploisdutempseleves', 'EmploisDuTempsElevesController@index')->name('emploisdutempseleves');
-Route::get('personnels/listeseleves', 'ElevesController@index')->name('listeseleves');
-Route::get('personnels/listeniveaux', 'NiveauxController@index')->name('listeniveaux');
+Route::get('listeseleves', 'ElevesController@index')->name('listeseleves');
+Route::resource('listeniveaux', 'NiveauxController');
 Route::get('personnels/listesclasses', 'ClassesController@index')->name('listesclasses');
 Route::get('personnels/listesfilieres', 'FilieresController@index')->name('listesfilieres');
 Route::get('personnels/listesexams', 'ExamsController@index')->name('listesexams');
-Route::get('personnels/anneesscolaire', 'AnneesScolaireController@index')->name('anneesscolaire');
+Route::resource('anneesscolaire', 'AnneesScolaireController');
 Route::get('personnels/profsmatiers', 'ProfsMatiersController@index')->name('profsmatiers');
 Route::get('personnels/classesexams', 'ClassesExamsController@index')->name('classesexams');
 Route::get('personnels/listesevenements', 'EvenementsController@index')->name('listesevenements');

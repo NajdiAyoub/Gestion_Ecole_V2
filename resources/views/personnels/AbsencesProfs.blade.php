@@ -22,6 +22,38 @@
     </div><!-- /.container-fluid -->
   </div>
 
+  <div class="input-group-prepend">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin:auto; margin-left: 822px;
+    margin-bottom: 20px;
+    background-color: #343a40;
+    color: whitesmoke;">
+      Semestres
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+
+  <div class="input-group-prepend">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin:auto; margin-left: 822px;
+    margin-bottom: 20px;
+    background-color: #343a40;
+    color: whitesmoke;">
+      Annees Scolaire
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+
   <div class="content">
     <div class="container-fluid">
       <div class="row">
@@ -30,7 +62,7 @@
           <center>
           <div class="row">
             <div class="col-12">
-              <div class="card" style="background-color: darkslategray; margin-bottom: 0px;">
+              <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
                 <div class="card-header"><strong><em><h4 style=" position: absolute;
                   color: antiquewhite; margin-top: 8px;"> Listes Absences Profs</h4></em></strong>
                   <div class="mt-4" style="float: right ; margin-top: 0px !important;">

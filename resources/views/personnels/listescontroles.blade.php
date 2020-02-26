@@ -15,8 +15,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Eleves</a></li>
-            <li class="breadcrumb-item active">Listes Eleves</li>
+            <li class="breadcrumb-item"><a href="#">Controles</a></li>
+            <li class="breadcrumb-item active">Listes Controles</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->

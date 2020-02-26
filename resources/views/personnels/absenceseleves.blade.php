@@ -25,17 +25,28 @@
   <div class="content">
     <div class="container-fluid">
       <div class="row">
+
+      
+
     
         <section class="content" style="margin:auto;">
           <center>
           <div class="row">
             <div class="col-12">
-              <div class="card">
-                <div class="card-header" style="background-color: gray;color: blue;"><strong><em><h4>Listes Absences Eleves</h4></em></strong>
-
+              <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
+                <div class="card-header"><strong><em><h4 style=" position: absolute;
+                  color: antiquewhite; margin-top: 8px;"> Listes Absences Eleves</h4></em></strong>
+                  <div class="mt-4" style="float: right ; margin-top: 0px !important;">
+                    <div class="btn btn-primary btn-lg btn-flat" style="font-size:1rem;">
+                      <i class="fas fa-plus-circle fa-lg mr-2"></i> 
+                      Ajouter Absences
+                    </div>
+                  </div>
+                </div>
+                  
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body">
+                <div class="card-body" style="padding:0px;">
                   <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
