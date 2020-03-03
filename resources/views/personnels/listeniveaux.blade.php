@@ -40,43 +40,13 @@
               <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
                 <div class="card-header"><strong><em><h4 style="color: antiquewhite; margin-top: 8px;"> Listes Niveaux</h4></em></strong>
                   <div class="mt-4" style="float: right ; margin-top: 0px !important;">
+                    
                     <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-right: 15px;">
   Ajouter Niveaux
 </button>
 
-<!-- start add Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter Annees Scolaire</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-       
-
-      </div>
-    <form action="{{ action('AnneesScolaireController@store') }}" method="POST">
-
-      {{ csrf_field() }}
-      <div class="modal-body">
-        
-          <div class="form-group">
-            <label>Libelle</label>
-            <input type="text" class="form-control" >
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <input type="hidden" value="{{Session::token()}}" name="_token">
-        
-      </div>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
-
-<!-- End add Modal -->
+@include('personnels.ajouterniveaux')
                     </div>
                   </div>
                 </div>
@@ -91,34 +61,20 @@
                       <th>Description</th>
                       <th>Actions</th>
                </tr>
-               </thead>
-               <tbody>
-               
+
+              </thead>
+
+              <tbody>
+                @foreach ($niveaux as $item)  
                <tr>
-                 <td>3eme annees</td>
-                 <td>2eme annees</td>
+               
+
+                 <td>{{$item['libelle']}}</td>
+                 <td>{{$item['description']}}</td>
                  <td><i class="fas fa-trash-alt"style="margin-right: 90px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
-               </tr>
-               <tr>
-                 <td>2eme annees</td>
-                <td>2eme annees</td>
-                 <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
-
-               </tr>
-              
-               <tr>
-                 <td>2eme annees</td>
-                <td>2eme annees</td>
-                 <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
-
-               </tr>
-               <tr>
-                <td>2eme annees</td>
-                <td>2eme annees</td>
-               
-                 <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i class="fas fa-edit style="margin:auto;"></i></td>
-
-               </tr>
+                
+                </tr>
+                @endforeach
               
                     </tbody>
                     

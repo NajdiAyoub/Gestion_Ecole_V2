@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Salle;
 use Illuminate\Http\Request;
 
 class SallesController extends Controller
@@ -13,7 +14,9 @@ class SallesController extends Controller
      */
     public function index()
     {
-        return view('Personnels.listessalles');
+        $salles = Salle::all()->toArray();
+
+        return view('personnels.listessalles' ,compact('salles'));
 
         //
     }
@@ -36,6 +39,21 @@ class SallesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'libelle' => 'required',
+            'type_salle' => 'required',
+            'nombre_place' => 'required'
+            ]); 
+           // dd($request->all());
+            $salles = new Salle();
+      
+        $salles->libelle = $request->input('libelle');
+        $salles-> type_salle = $request->input('type_salle');
+        $salles->nombre_place = $request->input('nombre_place');
+      
+        $salles->save();
+        
+        return redirect('listessalles')->with('success', 'Data Saved');
         //
     }
 

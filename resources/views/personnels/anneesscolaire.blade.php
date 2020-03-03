@@ -79,7 +79,9 @@
                       @foreach ($anneesscolaire as $item)  
                     <tr>
                       <td>{{$item['libelle']}}</td>
-                      <td><i class="fas fa-trash-alt"style="margin-right: 90px;"></i><a href="" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit style="margin-right:top;"></i></a></td>
+                      <td><i class="fas fa-trash-alt"style="margin-right: 90px;"></i>
+                      <a href="{{ route('anneesscolaire.edit', ['anneesscolaire' => $item->id])}}" data-toggle="modal" data-target="#editModal" data-id ="p_id""><i class="fas fa-edit style="margin-right:top;"></i></a>
+                      </td>
                     </tr>
                     @endforeach
                     
@@ -97,19 +99,11 @@
     
               <script>
 
-       //$(document).ready(function(){
-        //$('.editbtn').on('click', function(){
-         //$('#editModal').modal('show');
-         //$tr = $(this).closest('tr');
-        //var data = $tr.children("td").map(function(){
-
-          //return $(this).text();
-        //}).get();
-        //console.log(data);
-        //$('#libelle').val(data[0]);
-
-       //});
-      //});
+ $(document).on("click", "#editModal", function () {
+ var prg = $(this).data('p_id');
+ $(".modal-body #p_id").val( prg );
+ $('#editModal').modal('show');
+ });
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\anneesscolaire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AnneesScolaireController extends Controller
 {
@@ -70,9 +71,13 @@ class AnneesScolaireController extends Controller
      */
     public function edit($id)
     {
+      $anneesscolaire = anneesscolaire::find($id);
+      dd($id);
+      dd($anneesscolaire);
+
         return view('personnels.anneesscolaire',[
 
-            'anneesscolaire' => anneesscolaire::find($id)
+            'anneesscolaire' => $anneesscolaire
         ]);
     }
 
@@ -83,10 +88,10 @@ class AnneesScolaireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( $request, $id)
     {
-        
-            $anneesscolaire = anneesscolaire::find($id);
+            $anneesscolaire =DB::table('anneescolaires')->where('id', $id)->get();
+            $anneesscolaire = anneesscolaire::findorfail($id);
             $anneesscolaire->libelle = $request->input('libelle');
             $anneesscolaire->save();
 

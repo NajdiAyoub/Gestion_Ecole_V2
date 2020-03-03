@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\niveaux;
 use Illuminate\Http\Request;
 
 class NiveauxController extends Controller
@@ -13,8 +14,8 @@ class NiveauxController extends Controller
      */
     public function index()
     {
-        return view('Personnels.listeniveaux');
-
+        $niveaux = niveaux::all()->toArray();
+        return view('personnels.listeniveaux',compact('niveaux'));
         //
     }
 
@@ -36,6 +37,19 @@ class NiveauxController extends Controller
      */
     public function store(Request $request)
     {
+      //  dd('ok');
+
+        $this->validate($request,[
+            'libelle' => 'required'
+        ]);
+        $niveaux = new niveaux();
+      
+        $niveaux->libelle = $request->input('libelle');
+        $niveaux->description = $request->input('description');
+      
+        $niveaux->save();
+        return redirect('listeniveaux')->with('success', 'Data Saved');
+        //
         //
     }
 

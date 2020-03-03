@@ -161,7 +161,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{ route('listessalles')}}" class="nav-link {{request()->is('personnels/listessalles') ? 'active' : ''}}">
+                      <a href="{{ route('listessalles.index')}}" class="nav-link {{request()->is('personnels/listessalles') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>{{__('text.Salles.btn') }}</p>
                       </a>
@@ -174,7 +174,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{ route('listesfilieres')}}" class="nav-link {{request()->is('personnels/listesfilieres') ? 'active' : ''}}">
+                      <a href="{{ route('listesfilieres.index')}}" class="nav-link {{request()->is('personnels/listesfilieres') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>{{__('text.Filieres.btn') }}</p>
                       </a>

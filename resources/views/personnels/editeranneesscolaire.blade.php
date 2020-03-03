@@ -10,18 +10,20 @@
          
          
         </div>
-      <form action="{{ action('AnneesScolaireController@update',$id ?? '') }}" method="POST">
+      <form action="{{ route('anneesscolaire.update', ['anneesscolaire' => $anneesscolaire->id]) }}" method="POST">
    
-        {{ csrf_field() }}
-        {{ method_field('PUT') }}
-        <div class="modal-body">
-          
+        @csrf
+        @method('PUT')
+        <div class="modal-body">              
+         
             <div class="form-group">
               <label>libelle</label>
-            <input type="text" name="libelle" id="libelle"  class="form-control" >
+            <input type="text" name="libelle" id="libelle" value="{{ $anneesscolaire->libelle}}"  class="form-control" >
             </div>
             <button type="submit" class="btn btn-primary">Edit</button>
-          <!-- <input type="hidden" value="{{Session::token()}}" name="_token">-->
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="p_id" id="p_id" value="">
+           <input type="hidden" value="{{Session::token()}}" name="_token">
           
         </div>
         </div>
