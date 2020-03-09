@@ -15,7 +15,7 @@ class NiveauxController extends Controller
     public function index()
     {
         $niveaux = niveaux::all()->toArray();
-        return view('personnels.listeniveaux',compact('niveaux'));
+        return view('personnels.Niveaux.listeniveaux',compact('niveaux'));
         //
     }
 

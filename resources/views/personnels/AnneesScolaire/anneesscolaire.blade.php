@@ -30,7 +30,8 @@
   <div class="content">
     <div class="container-fluid">
       <div class="row">
-
+@include('personnels.AnneesScolaire.ajouteranneesscolaire')
+@include('personnels.AnneesScolaire.editeranneesscolaire')
         
         
         <section class="content" style="margin:auto;">
@@ -46,16 +47,6 @@
   Ajouter
  
 </button>
-
-@include('personnels.ajouteranneesscolaire')
-
-
-@include('personnels.editeranneesscolaire')
-
-
-
-
-
 </div>
 
 <!-- End add Modal -->
@@ -80,7 +71,7 @@
                     <tr>
                       <td>{{$item['libelle']}}</td>
                       <td><i class="fas fa-trash-alt"style="margin-right: 90px;"></i>
-                      <a href="{{ route('anneesscolaire.edit', ['anneesscolaire' => $item->id])}}" data-toggle="modal" data-target="#editModal" data-id ="p_id""><i class="fas fa-edit style="margin-right:top;"></i></a>
+                      <a href="{{ route('anneesscolaire.edit',$item->id)}}" data-toggle="modal" data-target="#editModal" data-id ="p_id""><i class="fas fa-edit style="margin-right:top;"></i></a>
                       </td>
                     </tr>
                     @endforeach

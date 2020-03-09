@@ -24,7 +24,7 @@
 
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <input type="hidden" value="{{Session::token()}}" name="_token">
+          <!--  <input type="hidden" value="{{Session::token()}}" name="_token"> -->
           
         </div>
         </div>

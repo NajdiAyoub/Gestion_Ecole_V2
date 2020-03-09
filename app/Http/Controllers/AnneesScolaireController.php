@@ -17,7 +17,7 @@ class AnneesScolaireController extends Controller
     {
         $anneesscolaire = anneesscolaire::all()->toArray();
 
-        return view('personnels.anneesscolaire',compact('anneesscolaire'));
+        return view('personnels.AnneesScolaire.anneesscolaire',compact('anneesscolaire'));
         //
     }
 

@@ -155,20 +155,20 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{ route('listeniveaux.index')}}" class="nav-link {{request()->is('personnels/listeniveaux') ? 'active' : ''}}">
+                      <a href="{{ route('listeniveaux.index')}}" class="nav-link {{request()->is('listeniveaux') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>{{__('text.Niveaux.btn') }}</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{ route('listessalles.index')}}" class="nav-link {{request()->is('personnels/listessalles') ? 'active' : ''}}">
+                      <a href="{{ route('listessalles.index')}}" class="nav-link {{request()->is('listessalles') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>{{__('text.Salles.btn') }}</p>
                       </a>
                     </li>
 
                     <li class="nav-item">
-                      <a href="{{ route('listesclasses')}}" class="nav-link {{request()->is('personnels/listesclasses') ? 'active' : ''}}">
+                      <a href="{{ route('listesclasses')}}" class="nav-link {{request()->is('listesclasses') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>{{__('text.Classes.btn') }}</p>
                       </a>
@@ -195,7 +195,7 @@
                    
 
                     <li class="nav-item">
-                      <a href="{{ route('listesevenements')}}" class="nav-link {{request()->is('personnels/listesevenements') ? 'active' : ''}}">
+                      <a href="{{ route('listesevenements')}}" class="nav-link {{request()->is('listesevenements') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>{{__('text.Evenements.btn') }}</p>
                       </a>

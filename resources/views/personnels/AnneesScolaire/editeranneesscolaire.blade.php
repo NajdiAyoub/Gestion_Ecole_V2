@@ -10,7 +10,9 @@
          
          
         </div>
-      <form action="{{ route('anneesscolaire.update', ['anneesscolaire' => $anneesscolaire->id]) }}" method="POST">
+      
+    <form action="{{ route('anneesscolaire.update', ['anneesscolaire' => $anneesscolaire->p_id]) }}" method="POST">
+       
    
         @csrf
         @method('PUT')
@@ -22,7 +24,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Edit</button>
             <input type="hidden" name="_method" value="PUT">
-            <input type="hidden" name="p_id" id="p_id" value="">
+            <input type="hidden" name="p_id" libelle="p_id" value="">
            <input type="hidden" value="{{Session::token()}}" name="_token">
           
         </div>

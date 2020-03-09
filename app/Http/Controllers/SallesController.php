@@ -16,7 +16,7 @@ class SallesController extends Controller
     {
         $salles = Salle::all()->toArray();
 
-        return view('personnels.listessalles' ,compact('salles'));
+        return view('personnels.Salles.listessalles' ,compact('salles'));
 
         //
     }
