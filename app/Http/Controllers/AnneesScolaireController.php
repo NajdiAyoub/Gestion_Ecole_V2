@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\anneesscolaire;
+use App\AnneesScolaire;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class AnneesScolaireController extends Controller
 {
@@ -15,10 +14,8 @@ class AnneesScolaireController extends Controller
      */
     public function index()
     {
-        $anneesscolaire = anneesscolaire::all()->toArray();
-
-        return view('personnels.AnneesScolaire.anneesscolaire',compact('anneesscolaire'));
-        //
+        $datas = anneesscolaire::all();
+        return view('personnels.AnneesScolaire.index')->with('datas', $datas);
     }
 
     /**
@@ -28,7 +25,7 @@ class AnneesScolaireController extends Controller
      */
     public function create()
     {
-        //
+        return view('personnels.AnneesScolaire.create');
     }
 
     /**
@@ -39,18 +36,10 @@ class AnneesScolaireController extends Controller
      */
     public function store(Request $request)
     {
-    // dd($request->all());
-        $this->validate($request,[
-            'libelle' => 'required'
-        ]);
-        $anneesscolaire = new anneesscolaire();
-      
-        $anneesscolaire->libelle = $request->input('libelle');
-      
-        $anneesscolaire->save();
-        return redirect('anneesscolaire')->with('success', 'Data Saved');
+        $input = $request->all();
+        $data = AnneesScolaire::create($input);
+        return redirect(route('anneesscolaire.index'));
     }
-    
 
     /**
      * Display the specified resource.
@@ -60,7 +49,14 @@ class AnneesScolaireController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = AnneesScolaire::find($id);
+
+        if (empty($data)) {
+            return redirect(route('anneesscolaire.index'));
+        }
+
+        return view('personnels.AnneesScolaire.show')->with('data', $data);
+
     }
 
     /**
@@ -71,14 +67,13 @@ class AnneesScolaireController extends Controller
      */
     public function edit($id)
     {
-      $anneesscolaire = anneesscolaire::find($id);
-      dd($id);
-      dd($anneesscolaire);
+        $data = AnneesScolaire::find($id);
 
-        return view('personnels.anneesscolaire',[
+        if (empty($data)) {
+            return redirect(route('anneesscolaire.index'));
+        }
 
-            'anneesscolaire' => $anneesscolaire
-        ]);
+        return view('personnels.AnneesScolaire.edit')->with('data', $data);
     }
 
     /**
@@ -88,18 +83,21 @@ class AnneesScolaireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update( $request, $id)
+    public function update($request, $id)
     {
-            $anneesscolaire =DB::table('anneescolaires')->where('id', $id)->get();
-            $anneesscolaire = anneesscolaire::findorfail($id);
-            $anneesscolaire->libelle = $request->input('libelle');
-            $anneesscolaire->save();
+        $data = AnneesScolaire::find($id);
 
-        return  redirect('anneesscolaire')->with('success', 'Annees edite');
+        if (empty($data)) {
+            return redirect(route('anneesscolaire.index'));
+        }
+
+        $data = AnneesScolaire::update($request->all(), $id);
+
+        return redirect(route('anneesscolaire.index'));
+
     }
 
-        //
-    
+    //
 
     /**
      * Remove the specified resource from storage.
@@ -109,9 +107,15 @@ class AnneesScolaireController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = AnneesScolaire::find($id);
+
+        if (empty($data)) {
+            return redirect(route('anneesscolaire.index'));
+        }
+
+        AnneesScolaire::delete($id);
+
+        return redirect(route('anneesscolaire.index'));
+
     }
 }
-
-
-
