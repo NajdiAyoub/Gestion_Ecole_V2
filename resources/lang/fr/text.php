@@ -19,6 +19,7 @@ return [
     'ClassesControlesMatieres.btn' => 'CLasses Controles Matieres',
     'Salles.btn' => 'Salles',
     'Controles.btn' => 'Controles',
+    'Ajouter.btn' => 'Ajouter',
 
 
 
@@ -41,6 +42,10 @@ return [
     'log_out.ic' => 'Se deconncter',
     'English.lbl' => 'Anglais',
     'French.lbl' => 'Francais',
+    'annees_scolaire.list.lbl' => 'Listes des annees scolaires',
+    'libelle.lbl' => 'libelle',
+    'Delete.btn' => 'Supprimer',
+     'Edit.btn' => 'Modifier'
 
 
 

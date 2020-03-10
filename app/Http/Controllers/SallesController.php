@@ -14,9 +14,8 @@ class SallesController extends Controller
      */
     public function index()
     {
-        $salles = Salle::all()->toArray();
-
-        return view('personnels.Salles.listessalles' ,compact('salles'));
+        $datas = Salle::all();
+        return view('personnels.Salles.index')->with('datas', $datas);
 
         //
     }
@@ -28,6 +27,8 @@ class SallesController extends Controller
      */
     public function create()
     {
+        return view('personnels.Salles.create');
+
         //
     }
 
@@ -39,21 +40,10 @@ class SallesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'libelle' => 'required',
-            'type_salle' => 'required',
-            'nombre_place' => 'required'
-            ]); 
-           // dd($request->all());
-            $salles = new Salle();
-      
-        $salles->libelle = $request->input('libelle');
-        $salles-> type_salle = $request->input('type_salle');
-        $salles->nombre_place = $request->input('nombre_place');
-      
-        $salles->save();
-        
-        return redirect('listessalles')->with('success', 'Data Saved');
+       
+      $input = $request->all();
+      $data = Salle::create($input);
+      return redirect(route('listessalles.index'));
         //
     }
 
@@ -76,6 +66,14 @@ class SallesController extends Controller
      */
     public function edit($id)
     {
+
+        $data = Salle::find($id);
+
+        if (empty($data)) {
+            return redirect(route('listessalles.index'));
+        }
+
+        return view('personnels.Salles.edit')->with('datas', $data);
         //
     }
 
@@ -88,6 +86,16 @@ class SallesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $data = Salle::find($id);
+
+        if (empty($data)) {
+            return redirect(route('listessalles.index'));
+        }
+
+        $data = Salle::where('id', $id)->update(request()->except(['_token', '_method']));
+
+        return redirect(route('listessalles.index'));
         //
     }
 
@@ -99,6 +107,16 @@ class SallesController extends Controller
      */
     public function destroy($id)
     {
+        dd($id);
+        $data = Salle::find($id);
+
+        if (empty($data)) {
+            return redirect(route('listessalles.index'));
+        }
+
+        Salle::delete($id);
+
+        return redirect(route('listessalle.index'));
         //
     }
 }

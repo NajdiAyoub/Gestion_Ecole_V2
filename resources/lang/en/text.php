@@ -46,8 +46,12 @@ return [
     'log_out.ic' => 'Log Out',
     'English.lbl' => 'English',
     'French.lbl' => 'French',
-
-
+    'annees_scolaire.list.lbl' => 'school years list',
+     'Ajouter.btn' => 'Add',
+     'libelle.lbl' => 'wording',
+     'Delete.btn' => 'Delete',
+     'Edit.btn' => 'Edit',
+        
 
 
 

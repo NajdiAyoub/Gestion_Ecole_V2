@@ -14,8 +14,8 @@ class NiveauxController extends Controller
      */
     public function index()
     {
-        $niveaux = niveaux::all()->toArray();
-        return view('personnels.Niveaux.listeniveaux',compact('niveaux'));
+        $datas = niveaux::all();
+        return view('personnels.Niveaux.index')->with('datas', $datas);
         //
     }
 
@@ -26,6 +26,7 @@ class NiveauxController extends Controller
      */
     public function create()
     {
+        return view('personnels.Niveaux.create');
         //
     }
 
@@ -39,16 +40,9 @@ class NiveauxController extends Controller
     {
       //  dd('ok');
 
-        $this->validate($request,[
-            'libelle' => 'required'
-        ]);
-        $niveaux = new niveaux();
-      
-        $niveaux->libelle = $request->input('libelle');
-        $niveaux->description = $request->input('description');
-      
-        $niveaux->save();
-        return redirect('listeniveaux')->with('success', 'Data Saved');
+      $input = $request->all();
+      $data = niveaux::create($input);
+      return redirect(route('listeniveaux.index'));
         //
         //
     }
@@ -72,6 +66,13 @@ class NiveauxController extends Controller
      */
     public function edit($id)
     {
+        $data = niveaux::find($id);
+
+        if (empty($data)) {
+            return redirect(route('listeniveaux.index'));
+        }
+
+        return view('personnels.Niveaux.edit')->with('datas', $data);
         //
     }
 
@@ -84,6 +85,16 @@ class NiveauxController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = niveaux::find($id);
+
+        if (empty($data)) {
+            return redirect(route('listeniveaux.index'));
+        }
+
+        $data = niveaux::where('id', $id)->update(request()->except(['_token', '_method']));
+
+        return redirect(route('listeniveaux.index'));
+
         //
     }
 
@@ -95,6 +106,17 @@ class NiveauxController extends Controller
      */
     public function destroy($id)
     {
+        dd($id);
+        $data = niveaux::find($id);
+
+        if (empty($data)) {
+            return redirect(route('listeniveaux.index'));
+        }
+
+        niveaux::delete($id);
+
+        return redirect(route('listeniveaux.index'));
+
         //
     }
 }
