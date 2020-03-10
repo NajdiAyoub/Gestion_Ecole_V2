@@ -49,14 +49,7 @@ class AnneesScolaireController extends Controller
      */
     public function show($id)
     {
-        $data = AnneesScolaire::find($id);
-
-        if (empty($data)) {
-            return redirect(route('anneesscolaire.index'));
-        }
-
-        return view('personnels.AnneesScolaire.show')->with('data', $data);
-
+        return redirect(route('anneesscolaire.index'));
     }
 
     /**
@@ -83,7 +76,7 @@ class AnneesScolaireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($request, $id)
+    public function update(Request $request, $id)
     {
         $data = AnneesScolaire::find($id);
 
@@ -91,7 +84,7 @@ class AnneesScolaireController extends Controller
             return redirect(route('anneesscolaire.index'));
         }
 
-        $data = AnneesScolaire::update($request->all(), $id);
+        $data = AnneesScolaire::where('id', $id)->update(request()->except(['_token', '_method']));
 
         return redirect(route('anneesscolaire.index'));
 
@@ -107,6 +100,7 @@ class AnneesScolaireController extends Controller
      */
     public function destroy($id)
     {
+        dd($id);
         $data = AnneesScolaire::find($id);
 
         if (empty($data)) {

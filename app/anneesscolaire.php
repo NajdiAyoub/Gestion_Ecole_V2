@@ -8,5 +8,7 @@ class AnneesScolaire extends Model
 {
     protected $table = 'anneesscolaire';
     public $primarykey = 'id';
-    protected $fillable = ['libelle'];
+    protected $fillable = [
+        'libelle',
+    ];
 }

@@ -69,21 +69,15 @@
                                 <tr>
                                     <td>{{$item['libelle']}}</td>
                                     <td>
-                                        {!! Form::open(['route' => ['anneesscolaire.destroy', $test->id], 'method' =>
-                                        'delete'])
-                                        !!}
-                                        <div class='btn-group'>
-                                            <a href="{{ route('anneesscolaire.show', [$item->id]) }}"
-                                                class='btn btn-default btn-xs'><i
-                                                    class="glyphicon glyphicon-eye-open"></i></a>
-                                            <a href="{{ route('anneesscolaire.edit', [$item->id]) }}"
-                                                class='btn btn-default btn-xs'><i
-                                                    class="glyphicon glyphicon-edit"></i></a>
-                                            {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' =>
-                                            'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return
-                                            confirm('Are you sure?')"]) !!}
-                                        </div>
-                                        {!! Form::close() !!}
+                                        <form method="delete" action="{{route('anneesscolaire.destroy', $item->id)}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <div class='btn-group'>
+                                                <a href="{{ route('anneesscolaire.edit', [$item->id]) }}"
+                                                    class='btn btn-success'>Edit</a>
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </div>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -106,13 +100,7 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
 
-        <script>
-        $(document).on("click", "#editModal", function() {
-            var prg = $(this).data('p_id');
-            $(".modal-body #p_id").val(prg);
-            $('#editModal').modal('show');
-        });
-        </script>
+
         @endsection
         @section('js')
 
