@@ -49,6 +49,8 @@ class AnneesScolaireController extends Controller
      */
     public function show($id)
     {
+      //  dd($id);
+
         
         return redirect(route('anneesscolaire.index'));
     }
@@ -101,14 +103,13 @@ class AnneesScolaireController extends Controller
      */
     public function destroy($id)
     {
-        //dd($id);
         $data = AnneesScolaire::find($id);
 
        if (empty($data)) {
            return redirect(route('anneesscolaire.index'));
         }
 
-        $id->delete();
+        $data->delete();
 
         return redirect(route('anneesscolaire.index'));
 

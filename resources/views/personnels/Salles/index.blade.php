@@ -19,8 +19,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Annees Scolaire</a></li>
-                    <li class="breadcrumb-item active">Listes Annees Scolaire</li>
+                    <li class="breadcrumb-item"><a href="#">Parametres</a></li>
+                    <li class="breadcrumb-item active">Salles</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -37,7 +37,7 @@
                         <div class="col-12">
                             <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
                                 <div class="card-header"><strong><em>
-                                            <h4 style="color: antiquewhite; margin-top: 8px;"> Listes Niveaux
+                                            <h4 style="color: antiquewhite; margin-top: 8px;"> Listes Salles
                                             </h4>
                                         </em></strong>
                                     <div class="mt-4" style="float: right ; margin-top: 0px !important;">
@@ -78,7 +78,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <div class='btn-group'>
-                                                <a href="{{ route('listessalles.edit', [$item->id]) }}"
+                                                <a href="{{ route('listessalles.edit', $item->id) }}"
                                                     class='btn btn-success'>Edit</a>
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </div>

@@ -106,14 +106,14 @@ class NiveauxController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        //dd($id);
         $data = niveaux::find($id);
 
         if (empty($data)) {
             return redirect(route('listeniveaux.index'));
         }
 
-        niveaux::delete($id);
+        $data->delete();
 
         return redirect(route('listeniveaux.index'));
 

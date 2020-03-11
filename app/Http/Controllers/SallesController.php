@@ -107,16 +107,16 @@ class SallesController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        //dd($id);
         $data = Salle::find($id);
 
         if (empty($data)) {
             return redirect(route('listessalles.index'));
         }
 
-        Salle::delete($id);
+        $data->delete();
 
-        return redirect(route('listessalle.index'));
+        return redirect(route('listessalles.index'));
         //
     }
 }

@@ -30,13 +30,13 @@
             <section class="content" style="margin:auto;">
                     <div class="row">
                         <div class="col-12">
-                                <div class="card-header">
-        <h4 style="color: blue; margin-top: 8px; margin-bottom:-24px ; font-style:italic; margin-left: -10px;"> {{ __('text.annees_scolaire.list.lbl')}} </h4>
+                                <div class="card-header" style="background-color: dodgerblue;">
+        <h4 style="color: blue; margin-top: 8px; margin-bottom:-24px ; font-style:italic; margin-left: -10px; "> {{ __('text.annees_scolaire.list.lbl')}} </h4>
                                    
                                     <div class="mt-4" style="float: right ; margin-top: 0px !important;">
-                                        <!-- Button trigger modal -->
-                                        <i class="right fas fa-plus-circle"></i>
-                                        <a class="'btn btn-success"href="{{ route('anneesscolaire.create') }}">{{__('text.Ajouter.btn')}}</a>
+                                        <!-- Button trigger modal --> 
+                                       
+                                        <a class="'btn btn-success" style="padding: 6px;" href="{{ route('anneesscolaire.create') }}"> &nbsp; <i class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Ajouter.btn')}}</a>
                                 </div>
                                 </div>
                                 </div>
@@ -59,7 +59,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <div class='btn-group'>
-                                                <a href="{{ route('anneesscolaire.edit', [$item->id]) }}"
+                                                <a href="{{ route('anneesscolaire.edit', $item->id) }}"
                                                     class='btn btn-primary pull-right'>{{__('text.Edit.btn')}}</a>
                                                 <button type="submit" class="btn btn-danger">{{__('text.Delete.btn')}}</button>
                                             </div>
