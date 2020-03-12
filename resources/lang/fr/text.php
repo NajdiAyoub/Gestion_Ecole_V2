@@ -20,6 +20,10 @@ return [
     'Salles.btn' => 'Salles',
     'Controles.btn' => 'Controles',
     'Ajouter.btn' => 'Ajouter',
+    'parametres.lbl' => 'Parametres', 
+    'annees_scolaire.lbl' => 'Annees Scolaire',
+    'Niveaux.lbl' => 'Niveaux',
+
 
 
 

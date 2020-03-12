@@ -15,7 +15,7 @@ class NiveauxController extends Controller
     public function index()
     {
         $datas = niveaux::all();
-        return view('personnels.Niveaux.index')->with('datas', $datas);
+        return view('Administrations.Niveaux.index')->with('datas', $datas);
         //
     }
 
@@ -26,7 +26,7 @@ class NiveauxController extends Controller
      */
     public function create()
     {
-        return view('personnels.Niveaux.create');
+        return view('Administrations.Niveaux.create');
         //
     }
 
@@ -72,7 +72,7 @@ class NiveauxController extends Controller
             return redirect(route('listeniveaux.index'));
         }
 
-        return view('personnels.Niveaux.edit')->with('datas', $data);
+        return view('Administrations.Niveaux.edit')->with('datas', $data);
         //
     }
 

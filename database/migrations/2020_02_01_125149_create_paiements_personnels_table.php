@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaiementsPersonnelsTable extends Migration
+class CreatePaiementsAdministrationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreatePaiementsPersonnelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('paiements_personnels', function (Blueprint $table) {
+        Schema::create('paiements_Administrations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('personnels_id');
+            $table->unsignedBigInteger('Administrations_id');
             $table->date('date_paiements');
             $table->string('type_paiements');
             $table->integer('salaire');
-            $table->foreign('personnels_id')->references('id')->on('personnels');
+            $table->foreign('Administrations_id')->references('id')->on('Administrations');
 
 
 
@@ -36,6 +36,6 @@ class CreatePaiementsPersonnelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paiements_personnels');
+        Schema::dropIfExists('paiements_Administrations');
     }
 }

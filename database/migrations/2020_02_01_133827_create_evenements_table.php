@@ -17,12 +17,12 @@ class CreateEvenementsTable extends Migration
             $table->bigIncrements('id');
             $table->string('libelle_evenements');
             $table->string('type_evenememts');
-            $table->unsignedBigInteger('personnels_id');
+            $table->unsignedBigInteger('Administrations_id');
             $table->date('date_evenements');
             $table->unsignedBigInteger('attachements_id');
             $table->string('description_evenements');
             $table->foreign('attachements_id')->references('id')->on('attachements');
-            $table->foreign('personnels_id')->references('id')->on('personnels');
+            $table->foreign('Administrations_id')->references('id')->on('Administrations');
 
 
             $table->timestamps();

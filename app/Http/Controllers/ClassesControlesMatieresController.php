@@ -13,7 +13,7 @@ class ClassesControlesMatieresController extends Controller
      */
     public function index()
     {
-        return view('personnels.listesclassescontrolesmatieres');
+        return view('Administrations.listesclassescontrolesmatieres');
 
         //
     }

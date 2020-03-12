@@ -13,7 +13,7 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function index()
     {
-        return view('personnels.listesclassesniveauxfilieres');
+        return view('Administrations.listesclassesniveauxfilieres');
 
         //
     }

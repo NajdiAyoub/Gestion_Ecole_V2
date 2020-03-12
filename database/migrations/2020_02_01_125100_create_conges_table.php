@@ -15,12 +15,12 @@ class CreateCongesTable extends Migration
     {
         Schema::create('conges', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('personnels_id');
+            $table->unsignedBigInteger('Administrations_id');
             $table->string('justificatif');
             $table->string('remarque');
             $table->date('date_conges');
             $table->unsignedBigInteger('attachements_id');
-            $table->foreign('personnels_id')->references('id')->on('personnels');
+            $table->foreign('Administrations_id')->references('id')->on('Administrations');
             $table->foreign('attachements_id')->references('id')->on('attachements');
 
 

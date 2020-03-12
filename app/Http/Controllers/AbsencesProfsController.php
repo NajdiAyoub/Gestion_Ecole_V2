@@ -8,7 +8,7 @@ class AbsencesProfsController extends Controller
 {
     public function index()
     {
-            return view('personnels.AbsencesProfs');
+            return view('Administrations.AbsencesProfs');
             
         }
     //

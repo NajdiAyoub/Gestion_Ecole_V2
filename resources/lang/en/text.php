@@ -51,6 +51,11 @@ return [
      'libelle.lbl' => 'wording',
      'Delete.btn' => 'Delete',
      'Edit.btn' => 'Edit',
+     'parametres.lbl' => 'Settings',
+     'annees_scolaire.lbl' => 'School Years',
+     'Niveaux.lbl' => 'Levels',
+
+     
         
 
 

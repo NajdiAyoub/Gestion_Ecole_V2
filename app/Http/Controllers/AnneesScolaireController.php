@@ -15,7 +15,7 @@ class AnneesScolaireController extends Controller
     public function index()
     {
         $datas = anneesscolaire::all();
-        return view('personnels.AnneesScolaire.index')->with('datas', $datas);
+        return view('Administrations.AnneesScolaire.index')->with('datas', $datas);
     }
 
     /**
@@ -25,7 +25,7 @@ class AnneesScolaireController extends Controller
      */
     public function create()
     {
-        return view('personnels.AnneesScolaire.create');
+        return view('Administrations.AnneesScolaire.create');
     }
 
     /**
@@ -69,7 +69,7 @@ class AnneesScolaireController extends Controller
             return redirect(route('anneesscolaire.index'));
         }
 
-        return view('personnels.AnneesScolaire.edit')->with('data', $data);
+        return view('Administrations.AnneesScolaire.edit')->with('data', $data);
     }
 
     /**

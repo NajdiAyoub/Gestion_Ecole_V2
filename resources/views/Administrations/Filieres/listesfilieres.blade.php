@@ -31,7 +31,7 @@
     <div class="container-fluid">
       <div class="row">
 
-        @include('personnels/ajouterfilieres')
+        @include('Administrations/ajouterfilieres')
         
         <section class="content" style="margin:auto;">
           <center>

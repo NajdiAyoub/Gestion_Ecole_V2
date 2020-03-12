@@ -20,7 +20,7 @@
 
 
             </div>
-            <form action="{{ route('anneesscolaire.update', $data->id) }}" method="POST">
+            <form action="{{ route('anneesscolaire.update', [$data->id]) }}" method="POST">
 
                 @csrf
                 @method('PUT')

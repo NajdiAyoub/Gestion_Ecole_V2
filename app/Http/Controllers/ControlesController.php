@@ -13,7 +13,7 @@ class ControlesController extends Controller
      */
     public function index()
     {
-        return view('personnels.listescontroles');
+        return view('Administrations.listescontroles');
 
         //
     }

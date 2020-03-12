@@ -8,7 +8,7 @@ class ElevesController extends Controller
 {
     public function index()
     {
-            return view('personnels.listeseleves');
+            return view('Administrations.listeseleves');
             
         }
     //

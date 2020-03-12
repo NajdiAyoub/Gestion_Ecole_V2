@@ -17,8 +17,8 @@ class CreateBusTable extends Migration
             $table->bigIncrements('id');
             $table->string('matricule');
             $table->string('numero');
-            $table->unsignedBigInteger('personnels_id');
-            $table->foreign('personnels_id')->references('id')->on('personnels');
+            $table->unsignedBigInteger('Administrations_id');
+            $table->foreign('Administrations_id')->references('id')->on('Administrations');
 
 
 

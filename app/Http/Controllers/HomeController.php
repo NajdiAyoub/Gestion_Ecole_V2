@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         if (auth()->user()["role"] == 1) {
-            return view('personnels.personnelsHome');
+            return view('Administrations.AdministrationHome');
             
         }
        

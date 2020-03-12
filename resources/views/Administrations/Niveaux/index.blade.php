@@ -9,18 +9,15 @@
 @endsection
 
 @section('content')
-<div class="content-header">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+<div class="content-header" >
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Parametres</a></li>
-                    <li class="breadcrumb-item active">Niveaux</li>
+                    <li class="breadcrumb-item"><a href="#">{{ __('text.parametres.lbl')}}</a></li>
+                    <li class="breadcrumb-item active">{{ __('text.Niveaux.lbl')}}</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -36,15 +33,15 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
-                                <div class="card-header ">
-                                            <h4 style="color: antiquewhite; margin-top: 8px;"> Listes Niveaux
+                                <div class="card-header " style="background-color: dodgerblue;">
+                                            <h4 style="color: white; margin-top: -1px; margin-bottom:-32px ; font-style:italic; margin-left: -530px; "> Listes Niveaux
                                             </h4>
                                         
                                     <div class="mt-4" style="float: right ; margin-top: 0px !important;">
                                         <!-- Button trigger modal -->
-                                        <a class="btn btn-primary pull-right"
-                                            style="margin-top: -10px;margin-bottom: 5px"
-                                            href="{{ route('listeniveaux.create') }}">Add</a>
+                                        <a class="btn btn-success" style=" padding: 6px;"
+                                         style="margin-top:3px;margin-bottom: -3px"
+                                            href="{{ route('listeniveaux.create') }}">  &nbsp; <i class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Ajouter.btn')}}</a>
                                     </div>
 
                                     <!-- End add Modal -->
@@ -56,12 +53,14 @@
 
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body" style="padding:0px; ">
-                        <table id="example2"style="width: 703px; class="table table-bordered table-hover">
+                    <div class="card-body" style="padding:0px;">
+                        <table id="example2" style="width: 703px;"class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>libelle</th>
+
+                                    <th>{{__('text.libelle.lbl')}}</th>
                                     <th>description</th>
+
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -77,8 +76,8 @@
                                             @method('DELETE')
                                             <div class='btn-group'>
                                                 <a href="{{ route('listeniveaux.edit', $item->id) }}"
-                                                    class='btn btn-success'>Edit</a>
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                    class='btn btn-primary pull-right'>{{__('text.Edit.btn')}}</a>
+                                                <button type="submit" class="btn btn-danger">{{__('text.Delete.btn')}}</button>
                                             </div>
                                         </form>
                                     </td>
@@ -90,12 +89,9 @@
 
                         </table>
                     </div>
-                </center>
                 <!-- /.card-body -->
         </div>
-        
-
-        @endsection
+       @endsection
         @section('js')
 
         @endsection

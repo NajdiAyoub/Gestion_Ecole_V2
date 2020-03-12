@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classe;
+use App\Salle;
 use Illuminate\Http\Request;
 
 class ClassesController extends Controller
@@ -14,10 +15,9 @@ class ClassesController extends Controller
      */
     public function index()
     {
-        $classes = Classe::all()->toArray();
-
-        return view('personnels.listesclasses' ,compact('classes'));
-        //
+      
+        $datas = Classe::all();
+        return view('Administrations.Classes.index')->with('datas', $datas);
     }
 
     /**
@@ -27,6 +27,7 @@ class ClassesController extends Controller
      */
     public function create()
     {
+        return view('Administrations.Classes.create');
         //
     }
 
@@ -38,6 +39,9 @@ class ClassesController extends Controller
      */
     public function store(Request $request)
     {
+        $input = $request->all();
+        $data = Classe::create($input);
+        return redirect(route('Classes.index'));
         //
     }
 
@@ -49,6 +53,7 @@ class ClassesController extends Controller
      */
     public function show($id)
     {
+        return redirect(route('listesclasses.index'));
         //
     }
 
@@ -60,6 +65,13 @@ class ClassesController extends Controller
      */
     public function edit($id)
     {
+        $data = Classe::find($id);
+
+        if (empty($data)) {
+            return redirect(route('listesclasses.index'));
+        }
+
+        return view('Administrations.Classes.edit')->with('data', $data);
         //
     }
 
@@ -72,6 +84,16 @@ class ClassesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = Classe::find($id);
+
+        if (empty($data)) {
+            return redirect(route('listeclasses.index'));
+        }
+
+        $data = Classe::where('id', $id)->update(request()->except(['_token', '_method']));
+
+        return redirect(route('listesclasses.index'));
+
         //
     }
 
@@ -83,6 +105,15 @@ class ClassesController extends Controller
      */
     public function destroy($id)
     {
+        $data = Classe::find($id);
+
+       if (empty($data)) {
+           return redirect(route('listesclasses.index'));
+        }
+
+        $data->delete();
+
+        return redirect(route('listesclasses.index'));
         //
     }
 }

@@ -8,7 +8,7 @@ class ProfsMatiersController extends Controller
 {
     public function index()
     {
-            return view('personnels.profsmatiers');
+            return view('Administrations.profsmatiers');
             
         }
     //

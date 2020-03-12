@@ -9,7 +9,7 @@ class AbsencesElevesController extends Controller
     //
     public function index()
     {
-            return view('personnels.absenceseleves');
+            return view('Administrations.absenceseleves');
             
         }
 }

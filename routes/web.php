@@ -44,32 +44,34 @@ Route::get('EmploisDuTemps/emplois', 'EmploisDuTempsController@index')->name('em
 Route::get('Paiements/listesPaiements', 'PaiementsController@index')->name('listesPaiements');
 Route::get('Evenements/listesEvenements', 'EvenementsController@index')->name('listesEvenements');
 Route::get('BulletinsEtNotes/bulletins', 'BulletinsEtNotesController@index')->name('bulletins');
-Route::get('personnels/listesProfs', 'ProfsController@index')->name('listesProfs');
-Route::get('personnels/AbsencesProfs', 'AbsencesProfsController@index')->name('AbsencesProfs');
-Route::get('personnels/PaiementsProfs', 'PaiementsProfsController@index')->name('PaiementsProfs');
-Route::get('personnels/emploisdutempsprofs', 'EmploisDuTempsProfsController@index')->name('emploisdutempsprofs');
-Route::get('personnels/absenceseleves', 'AbsencesElevesController@index')->name('absenceseleves');
-Route::get('personnels/paiementseleves', 'PaiementsElevesController@index')->name('paiementseleves');
-Route::get('personnels/emploisdutempseleves', 'EmploisDuTempsElevesController@index')->name('emploisdutempseleves');
-Route::get('listeseleves', 'ElevesController@index')->name('listeseleves');
+Route::get('Administrations/listesProfs', 'ProfsController@index')->name('listesProfs');
+Route::get('Administrations/AbsencesProfs', 'AbsencesProfsController@index')->name('AbsencesProfs');
+Route::get('Administrations/PaiementsProfs', 'PaiementsProfsController@index')->name('PaiementsProfs');
+Route::get('Administrations/emploisdutempsprofs', 'EmploisDuTempsProfsController@index')->name('emploisdutempsprofs');
+Route::get('Administrations/absenceseleves', 'AbsencesElevesController@index')->name('absenceseleves');
+Route::get('Administrations/paiementseleves', 'PaiementsElevesController@index')->name('paiementseleves');
+Route::get('Administrations/emploisdutempseleves', 'EmploisDuTempsElevesController@index')->name('emploisdutempseleves');
+Route::get('Administrations', 'ElevesController@index')->name('listeseleves');
 Route::get('listeniveaux/{id}/delete', 'NiveauxController@destroy')->name('listeniveaux.destroy');
 Route::resource('listeniveaux', 'NiveauxController', ['except' => 'destroy']);
-Route::get('personnels/listesclasses', 'ClassesController@index')->name('listesclasses');
+Route::get('Administrations/listesclasses', 'ClassesController@index')->name('listesclasses');
 Route::resource('listesfilieres', 'FilieresController');
-Route::get('personnels/listesexams', 'ExamsController@index')->name('listesexams');
+Route::resource('listesclasses', 'ClassesController');
+
+Route::get('Administrations/listesexams', 'ExamsController@index')->name('listesexams');
 
 Route::get('anneesscolaire/{id}/delete', 'AnneesScolaireController@destroy')->name('anneesscolaire.destroy');
 Route::resource('anneesscolaire', 'AnneesScolaireController', ['except' => 'destroy']);
 Route::get('listessalles/{id}/delete', 'SallesController@destroy')->name('listessalles.destroy');
 Route::resource('listessalles', 'SallesController', ['except' => 'destroy']);
 
-Route::get('personnels/profsmatiers', 'ProfsMatiersController@index')->name('profsmatiers');
-Route::get('personnels/classesexams', 'ClassesExamsController@index')->name('classesexams');
-Route::get('personnels/listesevenements', 'EvenementsController@index')->name('listesevenements');
+Route::get('Administrations/profsmatiers', 'ProfsMatiersController@index')->name('profsmatiers');
+Route::get('Administrations/classesexams', 'ClassesExamsController@index')->name('classesexams');
+Route::get('Administrations/listesevenements', 'EvenementsController@index')->name('listesevenements');
 
-Route::get('personnels/listescontroles', 'ControlesController@index')->name('listescontroles');
-Route::get('personnels/listesclassesniveauxfilieres', 'ClassesNiveauxFilieresController@index')->name('listesclassesniveauxfilieres');
-Route::get('personnels/listesclassescontrolesmatieres', 'ClassesControlesMatieresController@index')->name('listesclassescontrolesmatieres');
+Route::get('Administrations/listescontroles', 'ControlesController@index')->name('listescontroles');
+Route::get('Administrations/listesclassesniveauxfilieres', 'ClassesNiveauxFilieresController@index')->name('listesclassesniveauxfilieres');
+Route::get('Administrations/listesclassescontrolesmatieres', 'ClassesControlesMatieresController@index')->name('listesclassescontrolesmatieres');
 
 
 

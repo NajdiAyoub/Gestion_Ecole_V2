@@ -8,7 +8,7 @@ class EmploisDuTempsProfsController extends Controller
 {
     public function index()
     {
-            return view('Personnels.emploisdutempsprofs');
+            return view('Administrations.emploisdutempsprofs');
             
         }
     //

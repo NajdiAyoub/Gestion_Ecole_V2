@@ -16,7 +16,7 @@ class FilieresController extends Controller
     {
        
         $filieres = Filiere::all()->toArray();
-        return view('personnels.listesfilieres',compact('filieres'));
+        return view('Administrations.listesfilieres',compact('filieres'));
         //
     }
         
@@ -53,7 +53,7 @@ class FilieresController extends Controller
         $filieres->niveaux = $request->input('niveaux');
       
         $filieres->save();
-        return redirect('personnels.listesfilieres')->with('success', 'Data Saved');
+        return redirect('Administrations.listesfilieres')->with('success', 'Data Saved');
         //
     }
 

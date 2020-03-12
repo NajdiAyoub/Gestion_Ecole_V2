@@ -16,8 +16,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Annees Scolaire</a></li>
-                    <li class="breadcrumb-item active">Listes Annees Scolaire</li>
+                    <li class="breadcrumb-item"><a href="#">{{ __('text.parametres.lbl')}}</a></li>
+                    <li class="breadcrumb-item active">{{ __('text.annees_scolaire.lbl')}}</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-12">
                                 <div class="card-header" style="background-color: dodgerblue;">
-        <h4 style="color: blue; margin-top: 8px; margin-bottom:-24px ; font-style:italic; margin-left: -10px; "> {{ __('text.annees_scolaire.list.lbl')}} </h4>
+        <h4 style="color: white; margin-top: 2px; margin-bottom:-24px ; font-style:italic; margin-left: -10px; "> {{ __('text.annees_scolaire.list.lbl')}} </h4>
                                    
                                     <div class="mt-4" style="float: right ; margin-top: 0px !important;">
                                         <!-- Button trigger modal --> 

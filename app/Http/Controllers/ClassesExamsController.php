@@ -9,7 +9,7 @@ class ClassesExamsController extends Controller
      
     public function index()
     {
-            return view('personnels.classesexams');
+            return view('Administrations.classesexams');
             
         }
     //

@@ -8,7 +8,7 @@ class ProfsController extends Controller
 {
     public function index()
     {
-            return view('personnels.listesProfs');
+            return view('Administrations.listesProfs');
             
         }
     //

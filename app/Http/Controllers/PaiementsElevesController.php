@@ -8,7 +8,7 @@ class PaiementsElevesController extends Controller
 {
     public function index()
     {
-            return view('personnels.paiementseleves');
+            return view('Administrations.paiementseleves');
             
         }
     //

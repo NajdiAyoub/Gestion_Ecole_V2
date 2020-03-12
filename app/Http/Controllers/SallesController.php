@@ -15,7 +15,7 @@ class SallesController extends Controller
     public function index()
     {
         $datas = Salle::all();
-        return view('personnels.Salles.index')->with('datas', $datas);
+        return view('Administrations.Salles.index')->with('datas', $datas);
 
         //
     }
@@ -27,7 +27,7 @@ class SallesController extends Controller
      */
     public function create()
     {
-        return view('personnels.Salles.create');
+        return view('Administrations.Salles.create');
 
         //
     }
@@ -73,7 +73,7 @@ class SallesController extends Controller
             return redirect(route('listessalles.index'));
         }
 
-        return view('personnels.Salles.edit')->with('datas', $data);
+        return view('Administrations.Salles.edit')->with('datas', $data);
         //
     }
 
