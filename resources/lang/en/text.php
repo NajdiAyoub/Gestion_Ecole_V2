@@ -54,7 +54,11 @@ return [
      'parametres.lbl' => 'Settings',
      'annees_scolaire.lbl' => 'School Years',
      'Niveaux.lbl' => 'Levels',
+     'Parametres.lbl' => 'Settings',
+     'Salles.lbl' => 'Rooms',
+     'Classes.lbl' => 'Classes',
 
+ 
      
         
 

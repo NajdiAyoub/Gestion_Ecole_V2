@@ -23,6 +23,13 @@ return [
     'parametres.lbl' => 'Parametres', 
     'annees_scolaire.lbl' => 'Annees Scolaire',
     'Niveaux.lbl' => 'Niveaux',
+    'Parametres.lbl' => 'Parametres',
+     'Salles.lbl' => 'Salles',
+     'Classes.lbl' => 'Classes',
+     'Evenements.lbl' => 'Evenements',
+
+
+ 
 
 
 

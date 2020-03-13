@@ -15,8 +15,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Profs</a></li>
-            <li class="breadcrumb-item active">ListesProfs</li>
+            <li class="breadcrumb-item"><a href="#">{{ __('text.Parametres.lbl') }}</a></li>
+            <li class="breadcrumb-item active">{{ __('text.Evenements.lbl') }}</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->

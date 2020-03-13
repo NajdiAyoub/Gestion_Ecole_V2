@@ -16,14 +16,13 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Parametres</a></li>
-                    <li class="breadcrumb-item active">Classes</li>
+                    <li class="breadcrumb-item"><a href="#">{{ __('text.Parametres.lbl') }}</a></li>
+                    <li class="breadcrumb-item active">{{ __('text.Classes.lbl') }}</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
 </div>
-
 
 <div class="content">
     <div class="container-fluid">
