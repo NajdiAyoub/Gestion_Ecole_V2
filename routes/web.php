@@ -9,33 +9,24 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-
-
-    //
+//
 
 use App\Http\Middleware\IsRole;
 
 Route::get('/', function () {
     if (auth()->user() == null) {
-       return view('/auth/login');
+        return view('/auth/login');
     } else {
         return view('dashboard.index');
     }
 });
 
-Route::get('locale/{locale}',function ($locale){
-    
-//dd($locale);
- Session::put('locale',$locale);
-   // session(['locale' => $locale]);
-    //Session::save();
-     //::setLocale($locale);
+Route::get('locale/{locale}', function ($locale) {
+    Session::put('locale', $locale);
     return redirect()->back();
 });
-
-
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('Cours/listesCours', 'CoursController@index')->name('listesCours');
@@ -61,7 +52,14 @@ Route::resource('listesclasses', 'ClassesController');
 Route::get('Administrations/listesexams', 'ExamsController@index')->name('listesexams');
 
 Route::get('anneesscolaire/{id}/delete', 'AnneesScolaireController@destroy')->name('anneesscolaire.destroy');
-Route::resource('anneesscolaire', 'AnneesScolaireController', ['except' => 'destroy']);
+Route::resource('anneesscolaire', 'AnneesScolaireController', ['except' => 'destroy', 'names' => [
+    'index' => 'anneesscolaire.index',
+    'create' => 'anneesscolaire.create',
+    'update' => 'anneesscolaire.update',
+    'edit' => 'anneesscolaire.edit',
+    'store' => 'anneesscolaire.store',
+    'show' => 'anneesscolaire.show',
+]]);
 Route::get('listessalles/{id}/delete', 'SallesController@destroy')->name('listessalles.destroy');
 Route::resource('listessalles', 'SallesController', ['except' => 'destroy']);
 
@@ -72,8 +70,5 @@ Route::get('Administrations/listesevenements', 'EvenementsController@index')->na
 Route::get('Administrations/listescontroles', 'ControlesController@index')->name('listescontroles');
 Route::get('Administrations/listesclassesniveauxfilieres', 'ClassesNiveauxFilieresController@index')->name('listesclassesniveauxfilieres');
 Route::get('Administrations/listesclassescontrolesmatieres', 'ClassesControlesMatieresController@index')->name('listesclassescontrolesmatieres');
-
-
-
 
 Auth::routes();

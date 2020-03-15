@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "becc524b2bfad847e26db8c721572ba4",
+    "content-hash": "8fe620695ef8a5c2b414844e9580b7ce",
     "packages": [
+        {
+            "name": "davejamesmiller/laravel-breadcrumbs",
+            "version": "5.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/davejamesmiller/laravel-breadcrumbs.git",
+                "reference": "99f92a706faefb5e1816caa96e877a0184509e5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/davejamesmiller/laravel-breadcrumbs/zipball/99f92a706faefb5e1816caa96e877a0184509e5b",
+                "reference": "99f92a706faefb5e1816caa96e877a0184509e5b",
+                "shasum": ""
+            },
+            "require": {
+                "facade/ignition-contracts": "^1.0",
+                "illuminate/support": ">=5.6",
+                "illuminate/view": ">=5.6",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": ">=3.6",
+                "php-coveralls/php-coveralls": "^2.0",
+                "phpunit/phpunit": "^7.0|^8.0",
+                "spatie/phpunit-snapshot-assertions": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DaveJamesMiller\\Breadcrumbs\\BreadcrumbsServiceProvider"
+                    ],
+                    "aliases": {
+                        "Breadcrumbs": "DaveJamesMiller\\Breadcrumbs\\Facades\\Breadcrumbs"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DaveJamesMiller\\Breadcrumbs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave James Miller",
+                    "email": "dave@davejamesmiller.com"
+                }
+            ],
+            "description": "A simple Laravel-style way to create breadcrumbs.",
+            "homepage": "https://github.com/davejamesmiller/laravel-breadcrumbs",
+            "keywords": [
+                "laravel"
+            ],
+            "time": "2019-12-30T22:50:51+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",
@@ -281,6 +340,50 @@
             "time": "2020-02-13T22:36:52+00:00"
         },
         {
+            "name": "facade/ignition-contracts",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facade/ignition-contracts.git",
+                "reference": "f445db0fb86f48e205787b2592840dd9c80ded28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facade/ignition-contracts/zipball/f445db0fb86f48e205787b2592840dd9c80ded28",
+                "reference": "f445db0fb86f48e205787b2592840dd9c80ded28",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Facade\\IgnitionContracts\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://flareapp.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Solution contracts for Ignition",
+            "homepage": "https://github.com/facade/ignition-contracts",
+            "keywords": [
+                "contracts",
+                "flare",
+                "ignition"
+            ],
+            "time": "2019-08-30T14:06:08+00:00"
+        },
+        {
             "name": "fideloper/proxy",
             "version": "4.3.0",
             "source": {
@@ -424,16 +527,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.18.0",
+            "version": "v6.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "077b895d935b7fbcfb1d1eb34217fa4f80a130d8"
+                "reference": "367c2c8dfdfe83cb2ddbc029c0222174098d093a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/077b895d935b7fbcfb1d1eb34217fa4f80a130d8",
-                "reference": "077b895d935b7fbcfb1d1eb34217fa4f80a130d8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/367c2c8dfdfe83cb2ddbc029c0222174098d093a",
+                "reference": "367c2c8dfdfe83cb2ddbc029c0222174098d093a",
                 "shasum": ""
             },
             "require": {
@@ -566,7 +669,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-03-03T13:14:27+00:00"
+            "time": "2020-03-10T14:11:04+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2940,16 +3043,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v3.6.0",
+            "version": "v3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "1bdf24f065975594f6a117f0f1f6cabf1333b156"
+                "reference": "8f7961f7b9deb3b432452c18093cf16f88205902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/1bdf24f065975594f6a117f0f1f6cabf1333b156",
-                "reference": "1bdf24f065975594f6a117f0f1f6cabf1333b156",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/8f7961f7b9deb3b432452c18093cf16f88205902",
+                "reference": "8f7961f7b9deb3b432452c18093cf16f88205902",
                 "shasum": ""
             },
             "require": {
@@ -2958,7 +3061,11 @@
                 "symfony/polyfill-ctype": "^1.9"
             },
             "require-dev": {
+                "ext-filter": "*",
                 "phpunit/phpunit": "^4.8.35 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "suggest": {
+                "ext-filter": "Required to use the boolean validator."
             },
             "type": "library",
             "extra": {
@@ -2993,7 +3100,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2019-09-10T21:37:39+00:00"
+            "time": "2020-03-12T13:44:00+00:00"
         }
     ],
     "packages-dev": [
@@ -3177,50 +3284,6 @@
                 "page"
             ],
             "time": "2020-03-05T12:39:07+00:00"
-        },
-        {
-            "name": "facade/ignition-contracts",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facade/ignition-contracts.git",
-                "reference": "f445db0fb86f48e205787b2592840dd9c80ded28"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition-contracts/zipball/f445db0fb86f48e205787b2592840dd9c80ded28",
-                "reference": "f445db0fb86f48e205787b2592840dd9c80ded28",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Facade\\IgnitionContracts\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://flareapp.io",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Solution contracts for Ignition",
-            "homepage": "https://github.com/facade/ignition-contracts",
-            "keywords": [
-                "contracts",
-                "flare",
-                "ignition"
-            ],
-            "time": "2019-08-30T14:06:08+00:00"
         },
         {
             "name": "filp/whoops",

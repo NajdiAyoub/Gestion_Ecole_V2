@@ -31,29 +31,31 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
+
                     <li class="nav-item">
-                        <a href="{{ route('listesProfs')}}" class="nav-link  {{isOpen('admin.prof.prof',request())}}">
+                        <a href="{{ route('listesProfs')}}"
+                            class="nav-link  {{request()->is('Administrations/listesProfs') ? 'active' : ''}}">
                             <i class="far fa-circle nav-icon"></i>
                             <p> {{__('text.Profs.btn') }}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('AbsencesProfs')}}"
-                            class="nav-link  {{isOpen('admin.prof.absence',request())}}">
+                            class="nav-link  {{request()->is('Administrations/AbsencesProfs') ? 'active' : ''}}">
                             <i class="far fa-circle nav-icon"></i>
                             <p> {{__('text.Absences.btn') }}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('PaiementsProfs')}}"
-                            class="nav-link {{isOpen('admin.prof.paiement',request())}}">
+                            class="nav-link {{request()->is('Administrations/PaiementsProfs') ? 'active' : ''}}">
                             <i class="far fa-circle nav-icon"></i>
                             <p> {{__('text.Paiements.btn') }}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('emploisdutempsprofs')}}"
-                            class="nav-link  {{isOpen('admin.prof.emploi',request())}}">
+                            class="nav-link  {{request()->is('Administrations/emploisdutempsprofs') ? 'active' : ''}}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>{{__('text.Emplois.btn') }}</p>
                         </a>

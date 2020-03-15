@@ -1,8 +1,14 @@
 <?php
 
 return [
-    'Dashboard.txt' => 'Dashboard',   
-    'Acceuil.txt' => 'Home',   
+    'AnneesScolaire.list' => 'School years list',
+    'AnneesScolaire.lbl' => 'School years',
+    'AnneesScolaire.btn' => 'School year',
+    'AnneesScolaire.add' => 'New school Year',
+    'AnneesScolaire.edit' => 'Update school Year',
+
+    'Dashboard.txt' => 'Dashboard',
+    'Acceuil.txt' => 'Home',
     'Home.txt' => 'Home',
     'Cours.btn' => 'Courses',
     'Absences.btn' => 'Absences',
@@ -10,18 +16,11 @@ return [
     'ElevesClasses.btn' => 'Students Classes',
     'Filieres.btn' => 'Faculty',
     'Exams.btn' => 'Exams',
-    'AnneesScolaire.btn' => 'School Year',
     'ElevesClasses.btn' => 'Students Classes',
     'ClassesNiveauxFilieres.btn' => 'CLassesLevelesFaculties',
     'ClassesControlesMatieres.btn' => 'CLassesTestsSubjects',
     'Salles.btn' => 'Rooms',
     'Controles.btn' => 'Tests',
-
-     
-
-
-
-    
 
     'Paramettres.btn' => 'Settings',
     'Eleves.btn' => 'Students',
@@ -46,35 +45,14 @@ return [
     'log_out.ic' => 'Log Out',
     'English.lbl' => 'English',
     'French.lbl' => 'French',
-    'annees_scolaire.list.lbl' => 'school years list',
-     'Ajouter.btn' => 'Add',
-     'libelle.lbl' => 'wording',
-     'Delete.btn' => 'Delete',
-     'Edit.btn' => 'Edit',
-     'parametres.lbl' => 'Settings',
-     'annees_scolaire.lbl' => 'School Years',
-     'Niveaux.lbl' => 'Levels',
-     'Parametres.lbl' => 'Settings',
-     'Salles.lbl' => 'Rooms',
-     'Classes.lbl' => 'Classes',
+    'Ajouter.btn' => 'Add',
+    'libelle.lbl' => 'wording',
+    'Delete.btn' => 'Delete',
+    'Edit.btn' => 'Edit',
+    'parametres.lbl' => 'Settings',
+    'Niveaux.lbl' => 'Levels',
+    'Parametres.lbl' => 'Settings',
+    'Salles.lbl' => 'Rooms',
+    'Classes.lbl' => 'Classes',
 
- 
-     
-        
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-   
-     
 ];
