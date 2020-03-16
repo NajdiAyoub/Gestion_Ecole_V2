@@ -1,13 +1,12 @@
 <?php
 function isChecked($param, $request)
 {
-    return isActive($param, $request) == 'active' ? '-check' : '';
+    return isActive($param, $request) === 'active' ? '-check' : '';
 }
-
 function isActive($param, $request)
 {
     switch ($param) {
-//ADMIN -> PROF
+            //ADMIN->PROF
         case 'admin.prof.prof':
             if ($request->routeIs('listesProfs')) {
                 return 'active';
@@ -28,87 +27,88 @@ function isActive($param, $request)
                 return 'active';
             }
             break;
-//ADMIN -> eleves
+            //Admin-> EspacesEleves
         case 'admin.eleves.eleves':
-            if ($request->routeIs('listesProfs')) {
+            if ($request->routeIs('listeseleves')) {
                 return 'active';
             }
             break;
-        case 'admin.eleves.abcenses':
-            if ($request->routeIs('AbsencesProfs')) {
+        case 'admin.eleves.absences':
+            if ($request->routeIs('absenceseleves')) {
                 return 'active';
             }
             break;
         case 'admin.eleves.paiements':
-            if ($request->routeIs('PaiementsProfs')) {
+            if ($request->routeIs('paiementseleves')) {
                 return 'active';
             }
             break;
-        case 'admin.eleves.emplois':
-            if ($request->routeIs('emploisdutempsprofs')) {
+        case 'admin.eleves.emploisdutempseleves':
+            if ($request->routeIs('emploisdutempseleves')) {
+                return 'active';
+            }
+            break;
+            //Administartion->Parametres
+        case 'admin.parametres.anneesscolaire':
+            if ($request->routeIs('anneesscolaire.*')) {
                 return 'active';
             }
             break;
 
-//ADMIN -> SETTING
-        case 'admin.setting.anneesscolaires':
-            if ($request->routeIs('listesProfs')) {
+        case 'admin.parametres.niveaux':
+            if ($request->routeIs('listeniveaux*')) {
                 return 'active';
             }
             break;
-        case 'admin.setting.niveaux':
-            if ($request->routeIs('AbsencesProfs')) {
+        case 'admin.parametres.salles':
+            if ($request->routeIs('listessalles*')) {
                 return 'active';
             }
             break;
-        case 'admin.setting.salles':
-            if ($request->routeIs('PaiementsProfs')) {
+        case 'admin.parametres.classes':
+            if ($request->routeIs('listesclasses*')) {
                 return 'active';
             }
             break;
-        case 'admin.setting.classes':
-            if ($request->routeIs('emploisdutempsprofs')) {
+        case 'admin.parametres.filieres':
+            if ($request->routeIs('listesfilieres')) {
                 return 'active';
             }
             break;
-        case 'admin.setting.filiers':
-            if ($request->routeIs('listesProfs')) {
+        case 'admin.parametres.controles':
+            if ($request->routeIs('listescontroles')) {
                 return 'active';
             }
             break;
-        case 'admin.setting.controles':
-            if ($request->routeIs('AbsencesProfs')) {
+        case 'admin.parametres.exams':
+            if ($request->routeIs('listesexams')) {
                 return 'active';
             }
             break;
-        case 'admin.setting.exams':
-            if ($request->routeIs('PaiementsProfs')) {
+        case 'admin.parametres.evenements':
+            if ($request->routeIs('listesevenements')) {
                 return 'active';
             }
             break;
-        case 'admin.setting.evenements':
-            if ($request->routeIs('emploisdutempsprofs')) {
-                return 'active';
-            }
-            break;
-//ADMIN -> AFFECTATION
-        case 'admin.affectations.profsmatiers':
-            if ($request->routeIs('listesProfs')) {
+
+            //Administration->Affectations
+        case 'admin.affectations.profsmatieres':
+            if ($request->routeIs('profsmatiers')) {
                 return 'active';
             }
             break;
         case 'admin.affectations.classesexams':
-            if ($request->routeIs('AbsencesProfs')) {
+            if ($request->routeIs('classesexams')) {
                 return 'active';
             }
             break;
         case 'admin.affectations.classesniveauxfilieres':
-            if ($request->routeIs('PaiementsProfs')) {
+            if ($request->routeIs('listesclassesniveauxfilieres')) {
                 return 'active';
             }
             break;
         case 'admin.affectations.classescontrolesmatieres':
-            if ($request->routeIs('emploisdutempsprofs')) {
+            if ($request->routeIs('listesclassescontrolesmatieres')) {
                 return 'active';
             }
             break;
@@ -137,6 +137,10 @@ function isOpen($param, $request)
             if ($request->routeIs('profsmatiers') || $request->routeIs('classesexams') || $request->routeIs('listesclassesniveauxfilieres') || $request->routeIs('listesclassescontrolesmatieres')) {
                 return 'open';
             }
+            break;
+
+        default:
+            # code...
             break;
     }
     return '';

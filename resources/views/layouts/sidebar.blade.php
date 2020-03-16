@@ -32,15 +32,15 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('listesProfs')}}" class="nav-link  {{isActive('admin.prof.prof',request())}}">
-                            <i class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                        <a href="{{ route('listesProfs')}}" class="nav-link {{isActive('admin.prof.prof',request())}}">
+                            <i class="far fa{{isChecked('admin.prof.prof',request())}}-circle nav-icon"></i>
                             <p> {{__('text.Profs.btn') }}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('AbsencesProfs')}}"
-                            class="nav-link  {{isActive('admin.prof.absences',request())}}">
-                            <i class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                            class="nav-link {{isActive('admin.prof.absences',request())}}">
+                            <i class="far fa{{isChecked('admin.prof.absences',request())}}-circle nav-icon"></i>
                             <p> {{__('text.Absences.btn') }}</p>
                         </a>
                     </li>
@@ -53,8 +53,8 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('emploisdutempsprofs')}}"
-                            class="nav-link  {{isActive('admin.prof.emploi',request())}}">
-                            <i class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                            class="nav-link  {{isOpen('admin.prof.emploi',request())}}">
+                            <i class="far fa{{isChecked('admin.prof.emploi',request())}}-circle nav-icon"></i>
                             <p>{{__('text.Emplois.btn') }}</p>
                         </a>
                     </li>
@@ -64,7 +64,7 @@
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                    <li class="nav-item has-treeview menu-{{isOpen('admin.eleve',request())}}">
+                    <li class="nav-item has-treeview menu-{{isOpen('admin.eleves',request())}}">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-user-graduate"></i>
                             <p>
@@ -75,29 +75,29 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('listeseleves')}}"
-                                    class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                    <i class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                    class="nav-link  {{isOpen('admin.eleves.eleves',request())}}">
+                                    <i class="far fa{{isChecked('admin.eleves.eleves',request())}}-circle nav-icon"></i>
                                     <p>{{__('text.Eleves.btn') }}</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('absenceseleves')}}"
-                                    class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                    <i class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                    class="nav-link  {{isOpen('admin.eleves.absences',request())}}">
+                                    <i class="far fa{{isChecked('admin.eleves.absences',request())}}-circle nav-icon"></i>
                                     <p>{{__('text.Absences.btn') }}</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('paiementseleves')}}"
-                                    class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                    <i class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                    class="nav-link {{isOpen('admin.eleves.paiements',request())}} ? 'active' : ''}}">
+                                    <i class="far fa{{isChecked('admin.eleves.paiements',request())}}-circle nav-icon"></i>
                                     <p>{{__('text.Paiements.btn') }}</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('emploisdutempseleves')}}"
-                                    class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                    <i class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                    class="nav-link {{isOpen('admin.eleves.emploisdutempseleves',request())}}">
+                                    <i class="far fa{{isChecked('admin.eleves.emploisdutempseleves',request())}}-circle nav-icon"></i>
                                     <p>{{__('text.EmploisDuTemps.btn') }} </p>
                                 </a>
                             </li>
@@ -121,59 +121,52 @@
 
                                     <li class="nav-item">
                                         <a href="{{ route('anneesscolaire.index')}}"
-                                            class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                            <i
-                                                class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                            class="nav-link {{isOpen('admin.parametres.anneesscolaire',request())}}">
+                                            <i class="far fa{{isChecked('admin.parametres.anneesscolaire',request())}}-circle nav-icon"></i>
                                             <p>{{__('text.AnneesScolaire.btn') }}</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ route('listeniveaux.index')}}"
-                                            class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                            <i
-                                                class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                            class="nav-link {{isOpen('admin.parametres.niveaux',request())}}">
+                                            <i class="far fa{{isChecked('admin.parametres.niveaux',request())}}-circle nav-icon"></i>
                                             <p>{{__('text.Niveaux.btn') }}</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ route('listessalles.index')}}"
-                                            class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                            <i
-                                                class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                            class="nav-link {{isOpen('admin.parametres.salles',request())}}">
+                                            <i class="far fa{{isChecked('admin.parametres.salles',request())}}-circle nav-icon"></i>
                                             <p>{{__('text.Salles.btn') }}</p>
                                         </a>
                                     </li>
 
                                     <li class="nav-item">
                                         <a href="{{ route('listesclasses.index')}}"
-                                            class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                            <i
-                                                class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                            class="nav-link  {{isOpen('admin.parametres.classes',request())}}">
+                                            <i class="far fa{{isChecked('admin.parametres.classes',request())}}-circle nav-icon"></i>
                                             <p>{{__('text.Classes.btn') }}</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ route('listesfilieres.index')}}"
-                                            class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                            <i
-                                                class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                            class="nav-link {{isOpen('admin.parametres.filieres',request())}}">
+                                            <i class="far fa{{isChecked('admin.parametres.filieres',request())}}-circle nav-icon"></i>
                                             <p>{{__('text.Filieres.btn') }}</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ route('listescontroles')}}"
-                                            class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                            <i
-                                                class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                            class="nav-link {{isOpen('admin.parametres.controles',request())}}">
+                                            <i class="far fa{{isChecked('admin.parametres.controles',request())}}-circle nav-icon"></i>
                                             <p>{{__('text.Controles.btn') }}</p>
                                         </a>
                                     </li>
 
                                     <li class="nav-item">
                                         <a href="{{ route('listesexams')}}"
-                                            class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                            <i
-                                                class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                            class="nav-link {{isOpen('admin.parametres.exams',request())}}">
+                                            <i class="far fa{{isChecked('admin.parametres.exams',request())}}-circle nav-icon"></i>
                                             <p>{{__('text.Exams.btn') }}</p>
                                         </a>
                                     </li>
@@ -181,9 +174,8 @@
 
                                     <li class="nav-item">
                                         <a href="{{ route('listesevenements')}}"
-                                            class="nav-link {{isActive('admin.prof.paiement',request())}}">
-                                            <i
-                                                class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                            class="nav-link{{isOpen('admin.parametres.evenements',request())}}">
+                                            <i class="far fa{{isChecked('admin.parametres.evenements',request())}}-circle nav-icon"></i>
                                             <p>{{__('text.Evenements.btn') }}</p>
                                         </a>
                                     </li>
@@ -204,34 +196,30 @@
                                         <ul class="nav nav-treeview">
                                             <li class="nav-item">
                                                 <a href="{{ route('profsmatiers')}}"
-                                                    class="nav-link  {{request()->is('classesexams') ? 'active' : ''}}">
-                                                    <i
-                                                        class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                                    class="nav-link {{isOpen('admin.affectations.profsmatieres',request())}}">
+                                                    <i class="far fa{{isChecked('admin.affectations.profsmatieres',request())}}-circle nav-icon"></i>
                                                     <p>{{__('text.ProfsMatieres.btn') }}</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="{{ route('classesexams')}}"
-                                                    class="nav-link  {{request()->is('Administrations/classesexams') ? 'active' : ''}}">
-                                                    <i
-                                                        class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                                    class="nav-link  {{isOpen('admin.affectations.classesexams',request())}}">
+                                                    <i class="far fa{{isChecked('admin.affectations.classesexams',request())}}-circle nav-icon"></i>
                                                     <p>{{__('text.ClassesExams.btn') }}</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="{{ route('listesclassesniveauxfilieres')}}"
-                                                    class="nav-link  {{request()->is('Administrations/listesclassesniveauxfilieres') ? 'active' : ''}}">
-                                                    <i
-                                                        class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                                    class="nav-link{{isOpen('admin.affectations.classesniveauxfilieres',request())}}">
+                                                    <i class="far fa{{isChecked('admin.affectations.classesniveauxfilieres',request())}}-circle nav-icon"></i>
                                                     <p>{{__('text.ClassesNiveauxFilieres.btn')}}</p>
                                                 </a>
                                             </li>
 
                                             <li class="nav-item">
                                                 <a href="{{ route('listesclassescontrolesmatieres')}}"
-                                                    class="nav-link  {{request()->is('Administrations/listescontrolesmatieres') ? 'active' : ''}}">
-                                                    <i
-                                                        class="far fa{{isChecked('admin.prof.paiement',request())}}-circle nav-icon"></i>
+                                                    class="nav-link  {{isOpen('admin.affectations.classescontrolesmatieres',request())}}">
+                                                    <i class="far fa{{isChecked('admin.affectations.classescontrolesmatieres',request())}}-circle nav-icon"></i>
                                                     <p>{{__('text.ClassesControlesMatieres.btn')}}</p>
                                                 </a>
                                             </li>
@@ -264,7 +252,7 @@
                  with font-awesome or any other icon font library -->
                                                             <li class="nav-item has-treeview menu-open">
                                                                 <a href="{{ route('listesCours')}}"
-                                                                    class="nav-link {{isActive('admin.prof.paiement',request())}}">
+                                                                    class="nav-link {{request()->is('Cours/listesCours') ? 'active' : ''}}">
                                                                     <i class="nav-icon fas fa-folder"></i>
 
 
@@ -296,7 +284,7 @@
                                                                                     <li
                                                                                         class="nav-item has-treeview menu-open">
                                                                                         <a href="{{ route('emplois')}}"
-                                                                                            class="nav-link {{isActive('admin.prof.paiement',request())}}">
+                                                                                            class="nav-link {{request()->is('EmploisDuTemps/emplois') ? 'active' : ''}} ">
                                                                                             <i
                                                                                                 class="nav-icon fas fa-calendar-alt"></i>
 
@@ -315,7 +303,7 @@
                                                                                                 <li
                                                                                                     class="nav-item has-treeview menu-open">
                                                                                                     <a href="{{ route('bulletins')}}"
-                                                                                                        class="nav-link {{isActive('admin.prof.paiement',request())}}">
+                                                                                                        class="nav-link {{request()->is('BulletinsEtNotes/bulletins') ? 'active' : ''}}">
                                                                                                         <i
                                                                                                             class="nav-icon fas fa-sticky-note"></i>
 
@@ -333,7 +321,7 @@
                                                                                                             <li
                                                                                                                 class="nav-item has-treeview menu-open">
                                                                                                                 <a href="{{ route('listesPaiements')}}"
-                                                                                                                    class="nav-link {{isActive('admin.prof.paiement',request())}}">
+                                                                                                                    class="nav-link {{request()->is('Paiements/listesPaiements') ? 'active' : ''}}">
                                                                                                                     <i
                                                                                                                         class="nav-icon fas fa-money-bill-alt"></i>
 
@@ -353,7 +341,7 @@
                                                                                                                         <li
                                                                                                                             class="nav-item has-treeview menu-open">
                                                                                                                             <a href="{{ route('listesEvenements')}}"
-                                                                                                                                class="nav-link {{isActive('admin.prof.paiement',request())}}">
+                                                                                                                                class="nav-link {{request()->is('Evenements/listesEvenements') ? 'active' : ''}}">
                                                                                                                                 <i
                                                                                                                                     class="nav-icon fas fa-calendar-check"></i>
 
