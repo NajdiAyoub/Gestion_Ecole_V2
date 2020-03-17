@@ -14,13 +14,11 @@ class FilieresController extends Controller
      */
     public function index()
     {
-       
+
         $filieres = Filiere::all()->toArray();
-        return view('Administrations.listesfilieres',compact('filieres'));
+        return view('Administrations.Filieres.index', compact('filieres'));
         //
     }
-        
-    
 
     /**
      * Show the form for creating a new resource.
@@ -41,19 +39,19 @@ class FilieresController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request,[
-        'libelle' => 'required',
-          
-          'niveaux' => 'required'
+        $this->validate($request, [
+            'libelle' => 'required',
+
+            'niveaux' => 'required',
 
         ]);
         $filieres = new Filiere();
-      
+
         $filieres->libelle = $request->input('libelle');
         $filieres->niveaux = $request->input('niveaux');
-      
+
         $filieres->save();
-        return redirect('Administrations.listesfilieres')->with('success', 'Data Saved');
+        return redirect('filieres.index')->with('success', 'Data Saved');
         //
     }
 

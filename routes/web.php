@@ -46,7 +46,16 @@ Route::get('Administrations', 'ElevesController@index')->name('listeseleves');
 Route::get('listeniveaux/{id}/delete', 'NiveauxController@destroy')->name('listeniveaux.destroy');
 Route::resource('listeniveaux', 'NiveauxController', ['except' => 'destroy']);
 Route::get('Administrations/listesclasses', 'ClassesController@index')->name('listesclasses');
-Route::resource('listesfilieres', 'FilieresController');
+
+Route::get('filieres/{id}/delete', 'FilieresController@destroy')->name('filieres.destroy');
+Route::resource('filieres', 'FilieresController', ['except' => 'destroy', 'names' => [
+    'index' => 'filieres.index',
+    'create' => 'filieres.create',
+    'update' => 'filieres.update',
+    'edit' => 'filieres.edit',
+    'store' => 'filieres.store',
+    'show' => 'filieres.show',
+]]);
 Route::resource('listesclasses', 'ClassesController');
 
 Route::get('Administrations/listesexams', 'ExamsController@index')->name('listesexams');

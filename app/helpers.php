@@ -6,7 +6,7 @@ function isChecked($param, $request)
 function isActive($param, $request)
 {
     switch ($param) {
-            //ADMIN->PROF
+        //ADMIN->PROF
         case 'admin.prof.prof':
             if ($request->routeIs('listesProfs')) {
                 return 'active';
@@ -27,7 +27,7 @@ function isActive($param, $request)
                 return 'active';
             }
             break;
-            //Admin-> EspacesEleves
+        //Admin-> EspacesEleves
         case 'admin.eleves.eleves':
             if ($request->routeIs('listeseleves')) {
                 return 'active';
@@ -48,7 +48,7 @@ function isActive($param, $request)
                 return 'active';
             }
             break;
-            //Administartion->Parametres
+        //Administartion->Parametres
         case 'admin.parametres.anneesscolaire':
             if ($request->routeIs('anneesscolaire.*')) {
                 return 'active';
@@ -66,12 +66,12 @@ function isActive($param, $request)
             }
             break;
         case 'admin.parametres.classes':
-            if ($request->routeIs('listesclasses*')) {
+            if ($request->routeIs('listesclasses.*')) {
                 return 'active';
             }
             break;
         case 'admin.parametres.filieres':
-            if ($request->routeIs('listesfilieres')) {
+            if ($request->routeIs('filieres.*')) {
                 return 'active';
             }
             break;
@@ -91,7 +91,7 @@ function isActive($param, $request)
             }
             break;
 
-            //Administration->Affectations
+        //Administration->Affectations
         case 'admin.affectations.profsmatieres':
             if ($request->routeIs('profsmatiers')) {
                 return 'active';
@@ -119,22 +119,22 @@ function isOpen($param, $request)
 {
     switch ($param) {
         case 'admin.prof':
-            if ($request->routeIs('AbsencesProfs') || $request->routeIs('listesProfs') || $request->routeIs('emploisdutempsprofs') || $request->routeIs('PaiementsProfs')) {
+            if ($request->routeIs('AbsencesProfs.*') || $request->routeIs('listesProfs.*') || $request->routeIs('emploisdutempsprofs.*') || $request->routeIs('PaiementsProfs')) {
                 return 'open';
             }
             break;
         case 'admin.eleve':
-            if ($request->routeIs('absenceseleves') || $request->routeIs('paiementseleves') || $request->routeIs('emploisdutempseleves') || $request->routeIs('listeseleves')) {
+            if ($request->routeIs('absenceseleves.*') || $request->routeIs('paiementseleves.*') || $request->routeIs('emploisdutempseleves.*') || $request->routeIs('listeseleves')) {
                 return 'open';
             }
             break;
         case 'admin.parametre':
-            if ($request->routeIs('anneesscolaire') || $request->routeIs('listeniveaux') || $request->routeIs('listesclasses') || $request->routeIs('listesfilieres') || $request->routeIs('listescontroles') || $request->routeIs('listesexams') || $request->routeIs('listesevenements')) {
+            if ($request->routeIs('anneesscolaire.*') || $request->routeIs('listeniveaux.*') || $request->routeIs('listesclasses.*') || $request->routeIs('filieres.*') || $request->routeIs('listescontroles.*') || $request->routeIs('listesexams.*') || $request->routeIs('listesevenements.*')) {
                 return 'open';
             }
             break;
         case 'admin.affectation':
-            if ($request->routeIs('profsmatiers') || $request->routeIs('classesexams') || $request->routeIs('listesclassesniveauxfilieres') || $request->routeIs('listesclassescontrolesmatieres')) {
+            if ($request->routeIs('profsmatiers.*') || $request->routeIs('classesexams.*') || $request->routeIs('listesclassesniveauxfilieres.*') || $request->routeIs('listesclassescontrolesmatieres.*')) {
                 return 'open';
             }
             break;
