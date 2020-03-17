@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-{{ Breadcrumbs::render('anneesscolaire') }}
+{{ Breadcrumbs::render('admin.parametre.anneesscolaire') }}
 <div class="content">
     <div class="container-fluid">
         <div class="row">

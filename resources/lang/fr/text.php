@@ -3,7 +3,7 @@
 return [
     'AnneesScolaire.list' => 'Liste des annees scolaires',
     'AnneesScolaire.lbl' => 'Annees scolaire',
-    'AnneesScolaire.btn' => 'Annees sclaires',
+    'AnneesScolaire.btn' => 'Annees scolaires',
     'AnneesScolaire.add' => 'Nouvelle annees scolaire',
     'AnneesScolaire.edit' => 'Modifier annees scolaire',
 

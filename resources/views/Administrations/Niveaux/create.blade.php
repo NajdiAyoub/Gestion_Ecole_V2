@@ -10,6 +10,8 @@
 @section('content')
 
 <!-- start add Modal -->
+{{ Breadcrumbs::render('admin.parametre.niveaux_add') }}
+
 
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ajouter </h5>

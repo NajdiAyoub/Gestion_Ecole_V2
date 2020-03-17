@@ -10,6 +10,8 @@
 @section('content')
 
 <!-- start edit Modal -->
+{{ Breadcrumbs::render('classes_edit',$data->id) }}
+
 
        
             <div class="modal-header">

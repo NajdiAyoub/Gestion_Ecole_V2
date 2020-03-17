@@ -9,7 +9,7 @@
 @section('content')
 
 <!-- start add Modal -->
-{{ Breadcrumbs::render('anneesscolaire_add') }}
+{{ Breadcrumbs::render('admin.parametre.anneesscolaire_add') }}
 
 <div class="modal-header">
     <h5 class="modal-title" id="exampleModalLabel">Ajouter Annees Scolaire</h5>

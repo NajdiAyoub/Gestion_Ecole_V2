@@ -32,7 +32,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('listesProfs')}}" class="nav-link {{isActive('admin.prof.prof',request())}}">
+                        <a href="{{ route('profs.index')}}" class="nav-link {{isActive('admin.prof.prof',request())}}">
                             <i class="far fa{{isChecked('admin.prof.prof',request())}}-circle nav-icon"></i>
                             <p> {{__('text.Profs.btn') }}</p>
                         </a>
@@ -74,7 +74,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('listeseleves')}}"
+                                <a href="{{ route('eleves.index')}}"
                                     class="nav-link  {{isActive('admin.eleves.eleves',request())}}">
                                     <i class="far fa{{isChecked('admin.eleves.eleves',request())}}-circle nav-icon"></i>
                                     <p>{{__('text.Eleves.btn') }}</p>
@@ -116,10 +116,11 @@
                                 <a href="#" class="nav-link active">
                                     <i class="nav-icon fas fa-cog"></i>
                                     <p>
-                                        {{__('text.Paramettres.btn') }}{{isOpen('admin.parametre',request())}}
+                                        {{__('text.Paramettres.btn') }}
                                         <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
+                                
                                 <ul class="nav nav-treeview">
 
                                     <li class="nav-item">
@@ -131,7 +132,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('listeniveaux.index')}}"
+                                        <a href="{{ route('niveaux.index')}}"
                                             class="nav-link {{isActive('admin.parametres.niveaux',request())}}">
                                             <i
                                                 class="far fa{{isChecked('admin.parametres.niveaux',request())}}-circle nav-icon"></i>
@@ -139,7 +140,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('listessalles.index')}}"
+                                        <a href="{{ route('salles.index')}}"
                                             class="nav-link {{isActive('admin.parametres.salles',request())}}">
                                             <i
                                                 class="far fa{{isChecked('admin.parametres.salles',request())}}-circle nav-icon"></i>
@@ -148,7 +149,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="{{ route('listesclasses.index')}}"
+                                        <a href="{{ route('classes.index')}}"
                                             class="nav-link {{isActive('admin.parametres.classes',request())}}">
                                             <i
                                                 class="far fa{{isChecked('admin.parametres.classes',request())}}-circle nav-icon"></i>
@@ -164,7 +165,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('listescontroles')}}"
+                                        <a href="{{ route('controles.index')}}"
                                             class="nav-link {{isActive('admin.parametres.controles',request())}}">
                                             <i
                                                 class="far fa{{isChecked('admin.parametres.controles',request())}}-circle nav-icon"></i>
@@ -173,7 +174,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="{{ route('listesexams')}}"
+                                        <a href="{{ route('exams.index')}}"
                                             class="nav-link {{isActive('admin.parametres.exams',request())}}">
                                             <i
                                                 class="far fa{{isChecked('admin.parametres.exams',request())}}-circle nav-icon"></i>
@@ -183,7 +184,7 @@
 
 
                                     <li class="nav-item">
-                                        <a href="{{ route('listesevenements')}}"
+                                        <a href="{{ route('evenements.index')}}"
                                             class="nav-link {{isActive('admin.parametres.evenements',request())}}">
                                             <i
                                                 class="far fa{{isChecked('admin.parametres.evenements',request())}}-circle nav-icon"></i>
@@ -206,7 +207,7 @@
                                         </a>
                                         <ul class="nav nav-treeview">
                                             <li class="nav-item">
-                                                <a href="{{ route('profsmatiers')}}"
+                                                <a href="{{ route('profsmatieres.index')}}"
                                                     class="nav-link {{isActive('admin.affectations.profsmatieres',request())}}">
                                                     <i
                                                         class="far fa{{isChecked('admin.affectations.profsmatieres',request())}}-circle nav-icon"></i>
@@ -222,7 +223,7 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="{{ route('listesclassesniveauxfilieres')}}"
+                                                <a href="{{ route('classesniveauxfilieres.index')}}"
                                                     class="nav-link {{isActive('admin.affectations.classesniveauxfilieres',request())}}">
                                                     <i
                                                         class="far fa{{isChecked('admin.affectations.classesniveauxfilieres',request())}}-circle nav-icon"></i>
@@ -231,7 +232,7 @@
                                             </li>
 
                                             <li class="nav-item">
-                                                <a href="{{ route('listesclassescontrolesmatieres')}}"
+                                                <a href="{{ route('classescontrolesmatieres.index')}}"
                                                     class="nav-link {{isActive('admin.affectations.classescontrolesmatieres',request())}}">
                                                     <i
                                                         class="far fa{{isChecked('admin.affectations.classescontrolesmatieres',request())}}-circle nav-icon"></i>
@@ -266,8 +267,8 @@
                                                             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                                                             <li class="nav-item has-treeview menu-open">
-                                                                <a href="{{ route('listesCours')}}"
-                                                                    class="nav-link {{request()->is('Cours/listesCours') ? 'active' : ''}}">
+                                                                <a href="{{ route('Cours.index')}}"
+                                                                    class="nav-link {{request()->is('Cours/Cours') ? 'active' : ''}}">
                                                                     <i class="nav-icon fas fa-folder"></i>
 
 
@@ -282,8 +283,8 @@
                                                                         <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                                                                         <li class="nav-item has-treeview menu-open">
-                                                                            <a href="{{ route('listesAbsences')}}"
-                                                                                class="nav-link  {{request()->is('Absences/listesAbsences') ? 'active' : ''}}">
+                                                                            <a href="{{ route('Absences.index')}}"
+                                                                                class="nav-link  {{request()->is('Absences/Absences') ? 'active' : ''}}">
                                                                                 <i class="nav-icon fas fa-list-alt"></i>
 
                                                                                 <p>
@@ -317,7 +318,7 @@
                              with font-awesome or any other icon font library -->
                                                                                                 <li
                                                                                                     class="nav-item has-treeview menu-open">
-                                                                                                    <a href="{{ route('bulletins')}}"
+                                                                                                    <a href="{{ route('bulletins.index')}}"
                                                                                                         class="nav-link {{request()->is('BulletinsEtNotes/bulletins') ? 'active' : ''}}">
                                                                                                         <i
                                                                                                             class="nav-icon fas fa-sticky-note"></i>
@@ -335,8 +336,8 @@
                                    with font-awesome or any other icon font library -->
                                                                                                             <li
                                                                                                                 class="nav-item has-treeview menu-open">
-                                                                                                                <a href="{{ route('listesPaiements')}}"
-                                                                                                                    class="nav-link {{request()->is('Paiements/listesPaiements') ? 'active' : ''}}">
+                                                                                                                <a href="{{ route('Paiements.index')}}"
+                                                                                                                    class="nav-link {{request()->is('Paiements/Paiements') ? 'active' : ''}}">
                                                                                                                     <i
                                                                                                                         class="nav-icon fas fa-money-bill-alt"></i>
 
@@ -355,8 +356,8 @@
                                          with font-awesome or any other icon font library -->
                                                                                                                         <li
                                                                                                                             class="nav-item has-treeview menu-open">
-                                                                                                                            <a href="{{ route('listesEvenements')}}"
-                                                                                                                                class="nav-link {{request()->is('Evenements/listesEvenements') ? 'active' : ''}}">
+                                                                                                                            <a href="{{ route('Evenements.index')}}"
+                                                                                                                                class="nav-link {{request()->is('Evenements/Evenements') ? 'active' : ''}}">
                                                                                                                                 <i
                                                                                                                                     class="nav-icon fas fa-calendar-check"></i>
 

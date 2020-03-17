@@ -10,6 +10,8 @@
 @section('content')
 
 <!-- start add Modal -->
+{{ Breadcrumbs::render('classes_add') }}
+
 
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ajouter Classes</h5>

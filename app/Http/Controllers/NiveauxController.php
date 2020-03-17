@@ -42,7 +42,7 @@ class NiveauxController extends Controller
 
       $input = $request->all();
       $data = niveaux::create($input);
-      return redirect(route('listeniveaux.index'));
+      return redirect(route('niveaux.index'));
         //
         //
     }
@@ -69,7 +69,7 @@ class NiveauxController extends Controller
         $data = niveaux::find($id);
 
         if (empty($data)) {
-            return redirect(route('listeniveaux.index'));
+            return redirect(route('niveaux.index'));
         }
 
         return view('Administrations.Niveaux.edit')->with('datas', $data);
@@ -88,12 +88,12 @@ class NiveauxController extends Controller
         $data = niveaux::find($id);
 
         if (empty($data)) {
-            return redirect(route('listeniveaux.index'));
+            return redirect(route('niveaux.index'));
         }
 
         $data = niveaux::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        return redirect(route('listeniveaux.index'));
+        return redirect(route('niveaux.index'));
 
         //
     }
@@ -110,12 +110,12 @@ class NiveauxController extends Controller
         $data = niveaux::find($id);
 
         if (empty($data)) {
-            return redirect(route('listeniveaux.index'));
+            return redirect(route('niveaux.index'));
         }
 
         $data->delete();
 
-        return redirect(route('listeniveaux.index'));
+        return redirect(route('niveaux.index'));
 
         //
     }

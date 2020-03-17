@@ -8,6 +8,8 @@
     
 @endsection
 @section('content')
+{{ Breadcrumbs::render('admin.parametre.salles_edit',$data->id) }}
+
 
 <!-- start edit Modal -->
 

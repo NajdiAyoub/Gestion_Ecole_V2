@@ -9,6 +9,8 @@
 @endsection
 
 @section('content')
+{{ Breadcrumbs::render('admin.parametre.salles') }}
+
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
