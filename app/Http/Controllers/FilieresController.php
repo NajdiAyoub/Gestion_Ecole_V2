@@ -27,6 +27,7 @@ class FilieresController extends Controller
      */
     public function create()
     {
+        return view('Administrations.filieres.create');
         //
     }
 
@@ -39,19 +40,9 @@ class FilieresController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request, [
-            'libelle' => 'required',
-
-            'niveaux' => 'required',
-
-        ]);
-        $filieres = new Filiere();
-
-        $filieres->libelle = $request->input('libelle');
-        $filieres->niveaux = $request->input('niveaux');
-
-        $filieres->save();
-        return redirect('filieres.index')->with('success', 'Data Saved');
+        $input = $request->all();
+        $data = Filiere::create($input);
+        return redirect(route('filieres.index'))
         //
     }
 
@@ -63,6 +54,7 @@ class FilieresController extends Controller
      */
     public function show($id)
     {
+        return redirect(route('filieres.index'));
         //
     }
 
@@ -74,6 +66,13 @@ class FilieresController extends Controller
      */
     public function edit($id)
     {
+        $data = Filiere::find($id);
+
+        if (empty($data)) {
+            return redirect(route('filieres.index'));
+        }
+
+        return view('Administrations.filieres.edit')->with('data', $data);
         //
     }
 
@@ -86,6 +85,15 @@ class FilieresController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = Filiere::find($id);
+
+        if (empty($data)) {
+            return redirect(route('filieres.index'));
+        }
+
+        $data = Filiere::where('id', $id)->update(request()->except(['_token', '_method']));
+
+        return redirect(route('filieres.index'));
         //
     }
 
@@ -97,6 +105,16 @@ class FilieresController extends Controller
      */
     public function destroy($id)
     {
+
+        $data = Filiere::find($id);
+
+        if (empty($data)) {
+            return redirect(route('filieres.index'));
+        }
+
+        $data->delete();
+
+        return redirect(route('filieres.index'));
         //
     }
 }

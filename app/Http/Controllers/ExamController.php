@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Classe;
-use App\Salle;
+use App\Exam;
 use Illuminate\Http\Request;
 
-class ClassesController extends Controller
+class ExamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,10 @@ class ClassesController extends Controller
      */
     public function index()
     {
-      
-        $datas = Classe::all();
-        return view('Administrations.Classes.index')->with('datas', $datas);
+        
+        $exams = Exam::all()->toArray();
+        return view('Administrations.exams.index', compact('exams'));
+        //
     }
 
     /**
@@ -27,7 +27,8 @@ class ClassesController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Classes.create');
+        return view('Administrations.exams.create');
+
         //
     }
 
@@ -40,8 +41,8 @@ class ClassesController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $data = Classe::create($input);
-        return redirect(route('Classes.index'));
+        $data = Exam::create($input);
+        return redirect(route('exams.index'))
         //
     }
 
@@ -53,7 +54,8 @@ class ClassesController extends Controller
      */
     public function show($id)
     {
-        return redirect(route('classes.index'));
+        return redirect(route('exams.index'));
+
         //
     }
 
@@ -65,14 +67,14 @@ class ClassesController extends Controller
      */
     public function edit($id)
     {
-        $data = Classe::find($id);
+        //
+        $data = Exam::find($id);
 
         if (empty($data)) {
-            return redirect(route('classes.index'));
+            return redirect(route('exams.index'));
         }
 
-        return view('Administrations.Classes.edit')->with('data', $data);
-        //
+        return view('Administrations.exams.edit')->with('data', $data);
     }
 
     /**
@@ -84,16 +86,16 @@ class ClassesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Classe::find($id);
+        $data = Exam::find($id);
 
         if (empty($data)) {
-            return redirect(route('classes.index'));
+            return redirect(route('exams.index'));
         }
 
-        $data = Classe::where('id', $id)->update(request()->except(['_token', '_method']));
+        $data = Exam::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        return redirect(route('classes.index'));
-
+        return redirect(route('exams.index'));
+        //
         //
     }
 
@@ -105,15 +107,6 @@ class ClassesController extends Controller
      */
     public function destroy($id)
     {
-        $data = Classe::find($id);
-
-       if (empty($data)) {
-           return redirect(route('classes.index'));
-        }
-
-        $data->delete();
-
-        return redirect(route('classes.index'));
         //
     }
 }
