@@ -9,7 +9,6 @@
 @endsection
 
 @section('content')
-{{ Breadcrumbs::render('classes.edit',$data->id) }}
 
 <div class="content-header">
     <div class="container-fluid">

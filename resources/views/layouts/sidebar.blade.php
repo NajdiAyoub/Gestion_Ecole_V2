@@ -53,8 +53,8 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('emploisdutempsprofs.index')}}"
-                            class="nav-link  {{isActive('admin.prof.emploisdutempsprofs',request())}}">
-                            <i class="far fa{{isChecked('admin.prof.emploisdutempsprofs',request())}}-circle nav-icon"></i>
+                            class="nav-link {{isActive('admin.prof.emploisdutemps',request())}}">
+                            <i class="far fa{{isChecked('admin.prof.emploisdutemps',request())}}-circle nav-icon"></i>
                             <p>{{__('text.Emplois.btn') }}</p>
                         </a>
                     </li>

@@ -42,7 +42,7 @@ class ExamController extends Controller
     {
         $input = $request->all();
         $data = Exam::create($input);
-        return redirect(route('exams.index'))
+        return redirect(route('exams.index'));
         //
     }
 
@@ -107,6 +107,15 @@ class ExamController extends Controller
      */
     public function destroy($id)
     {
+        $data = Exam::find($id);
+
+        if (empty($data)) {
+            return redirect(route('exams.index'));
+        }
+
+        $data->delete();
+
+        return redirect(route('exams.index'));
         //
     }
 }

@@ -14,8 +14,8 @@ class AbsencesProfsController extends Controller
      */
     public function index()
     {
-        $datas = AbsenceProf::all();
-        return view('Administrations.Profs.Absences.index')->with('datas', $datas);
+       // $data = AbsenceProf::all();
+        return view('Administrations.Profs.Absences.index ');
         //
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Control;
 use Illuminate\Http\Request;
 
 class ControlesController extends Controller
@@ -13,8 +14,8 @@ class ControlesController extends Controller
      */
     public function index()
     {
-        return view('Administrations.listescontroles');
-
+        $controles = Control::all()->toArray();
+        return view('Administrations.controles.index', compact('controles'));
         //
     }
 
@@ -25,6 +26,8 @@ class ControlesController extends Controller
      */
     public function create()
     {
+        return view('Administrations.controles.create');
+
         //
     }
 
@@ -36,6 +39,11 @@ class ControlesController extends Controller
      */
     public function store(Request $request)
     {
+        
+        $input = $request->all();
+        $data = Control::create($input);
+        return redirect(route('controles.index'));
+        
         //
     }
 
@@ -47,6 +55,8 @@ class ControlesController extends Controller
      */
     public function show($id)
     {
+        return redirect(route('controles.index'));
+
         //
     }
 
@@ -58,6 +68,14 @@ class ControlesController extends Controller
      */
     public function edit($id)
     {
+        
+        $data = Control::find($id);
+
+        if (empty($data)) {
+            return redirect(route('controles.index'));
+        }
+
+        return view('Administrations.controles.edit')->with('data', $data);
         //
     }
 
@@ -70,6 +88,15 @@ class ControlesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = Control::find($id);
+
+        if (empty($data)) {
+            return redirect(route('controles.index'));
+        }
+
+        $data = Control::where('id', $id)->update(request()->except(['_token', '_method']));
+
+        return redirect(route('controles.index'));
         //
     }
 
@@ -81,6 +108,15 @@ class ControlesController extends Controller
      */
     public function destroy($id)
     {
+        $data = Control::find($id);
+
+        if (empty($data)) {
+            return redirect(route('controles.index'));
+        }
+
+        $data->delete();
+
+        return redirect(route('controles.index'));
         //
     }
 }

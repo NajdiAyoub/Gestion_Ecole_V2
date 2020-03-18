@@ -10,7 +10,7 @@
 @section('content')
 
 <!-- start add Modal -->
-{{ Breadcrumbs::render('admin.parametre.salles') }}
+{{ Breadcrumbs::render('admin.parametre.salles.add') }}
 
 
         <div class="modal-header">

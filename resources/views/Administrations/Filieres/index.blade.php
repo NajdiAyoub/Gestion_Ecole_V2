@@ -9,7 +9,6 @@
 @endsection
 
 @section('content')
-{{ Breadcrumbs::render('admin.parametre.filieres.edit',$data->id) }}
 
 <div class="content-header" style="margin: auto;">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"

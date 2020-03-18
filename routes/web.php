@@ -188,8 +188,8 @@ Route::resource('controles', 'ControlesController', ['except' => 'destroy', 'nam
 
 //ADMIN->Parametres->Exams
 
-Route::get('exams/{id}/delete', 'ExamsController@destroy')->name('exams.destroy');
-Route::resource('exams', 'ExamsController', ['except' => 'destroy', 'names' => [
+Route::get('exams/{id}/delete', 'ExamController@destroy')->name('exams.destroy');
+Route::resource('exams', 'ExamController', ['except' => 'destroy', 'names' => [
     'index' => 'exams.index',
     'create' => 'exams.create',
     'update' => 'exams.update',
@@ -212,8 +212,8 @@ Route::resource('evenements', 'EvenementsController', ['except' => 'destroy', 'n
 
 //ADMIN->Affectations->ProfsMatieres
 
-Route::get('profsmatieres/{id}/delete', 'ProfsMatieresController@destroy')->name('profsmatieres.destroy');
-Route::resource('profsmatieres', 'ProfsMatieresController', ['except' => 'destroy', 'names' => [
+Route::get('profsmatieres/{id}/delete', 'ProfsMatiersController@destroy')->name('profsmatieres.destroy');
+Route::resource('profsmatieres', 'ProfsMatiersController', ['except' => 'destroy', 'names' => [
     'index' => 'profsmatieres.index',
     'create' => 'profsmatieres.create',
     'update' => 'profsmatieres.update',

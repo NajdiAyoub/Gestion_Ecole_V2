@@ -9,7 +9,6 @@
 @endsection
 
 @section('content')
-{{ Breadcrumbs::render('admin.parametre.salles') }}
 
 <div class="content-header">
     <div class="container-fluid">
@@ -41,7 +40,7 @@
                                     <div class="mt-4" style="float: right ; margin-top: 0px !important;">
                                         <!-- Button trigger modal -->
                                         <a class="btn btn-success"
-                                        style="padding: 6px;" href="{{ route('listessalles.create') }}">  &nbsp; <i class="right fas fa-plus-circle"> &nbsp;</i>Add</a>
+                                        style="padding: 6px;" href="{{ route('salles.create') }}">  &nbsp; <i class="right fas fa-plus-circle"> &nbsp;</i>Add</a>
                                     </div>
 
                                     <!-- End add Modal -->
@@ -75,7 +74,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <div class='btn-group'>
-                                                <a href="{{ route('listessalles.edit', $item->id) }}"
+                                                <a href="{{ route('salles.edit', $item->id) }}"
                                                     class='btn btn-primary pull-right'>Edit</a>
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </div>
