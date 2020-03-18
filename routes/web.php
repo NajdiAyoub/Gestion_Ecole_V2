@@ -42,7 +42,7 @@ Route::resource('profs', 'ProfsController', ['except' => 'destroy', 'names' => [
 ]]);
 
 //ADMIN->PROF->ABSENCES
-Route::get('absencesprofs/{id}/delete', 'absencesprofsController@destroy')->name('absencesprofs.destroy');
+Route::get('/{id}/delete', 'absencesprofsController@destroy')->name('absencesprofs.destroy');
 Route::resource('absencesprofs', 'AbsencesProfsController', ['except' => 'destroy', 'names' => [
     'index' => 'absencesprofs.index',
     'create' => 'absencesprofs.create',
@@ -265,7 +265,6 @@ Route::get('Paiements/listesPaiements', 'PaiementsController@index')->name('list
 Route::get('Evenements/listesEvenements', 'EvenementsController@index')->name('listesEvenements');
 Route::get('BulletinsEtNotes/bulletins', 'BulletinsEtNotesController@index')->name('bulletins');
 
-Route::get('Administrations/AbsencesProfs', 'AbsencesProfsController@index')->name('AbsencesProfs');
 Route::get('Administrations/PaiementsProfs', 'PaiementsProfsController@index')->name('PaiementsProfs');
 Route::get('Administrations/emploisdutempsprofs', 'EmploisDuTempsProfsController@index')->name('emploisdutempsprofs');
 Route::get('Administrations/absenceseleves', 'AbsencesElevesController@index')->name('absenceseleves');
