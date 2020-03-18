@@ -9,7 +9,7 @@
 @section('content')
 
 <!-- start edit Modal -->
-{{ Breadcrumbs::render('admin.parametre.anneesscolaire_edit',$data->id) }}
+{{ Breadcrumbs::render('admin.parametre.anneesscolaire.edit',$data->id) }}
 
 
 <div class="modal-header">

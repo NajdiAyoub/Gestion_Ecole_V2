@@ -40,6 +40,7 @@ Route::resource('profs', 'ProfsController', ['except' => 'destroy', 'names' => [
     'store' => 'profs.store',
     'show' => 'profs.show',
 ]]);
+
 //ADMIN->PROF->ABSENCES
 Route::get('absencesprofs/{id}/delete', 'absencesprofsController@destroy')->name('absencesprofs.destroy');
 Route::resource('absencesprofs', 'AbsencesProfsController', ['except' => 'destroy', 'names' => [
@@ -50,8 +51,8 @@ Route::resource('absencesprofs', 'AbsencesProfsController', ['except' => 'destro
     'store' => 'absencesprofs.store',
     'show' => 'absencesprofs.show',
 ]]);
-//ADMIN->PROF->PAIEMENT
 
+//ADMIN->PROF->PAIEMENT
 Route::get('paiementsprofs/{id}/delete', 'PaiementsProfsController@destroy')->name('paiementsprofs.destroy');
 Route::resource('paiementsprofs', 'PaiementsProfsController', ['except' => 'destroy', 'names' => [
     'index' => 'paiementsprofs.index',
@@ -63,7 +64,6 @@ Route::resource('paiementsprofs', 'PaiementsProfsController', ['except' => 'dest
 ]]);
 
 //ADMIN->PROF->Emplois
-
 Route::get('emploisdutempsprofs/{id}/delete', 'EmploisDuTempsProfsController@destroy')->name('emploisdutempsprofs.destroy');
 Route::resource('emploisdutempsprofs', 'EmploisDuTempsProfsController', ['except' => 'destroy', 'names' => [
     'index' => 'emploisdutempsprofs.index',
@@ -84,6 +84,7 @@ Route::resource('eleves', 'ElevesController', ['except' => 'destroy', 'names' =>
     'store' => 'eleves.store',
     'show' => 'eleves.show',
 ]]);
+
 //ADMIN->Eleves->ABSENCES
 Route::get('absenceseleves/{id}/delete', 'AbsencesElevesController@destroy')->name('absenceseleves.destroy');
 Route::resource('absenceseleves', 'AbsencesElevesController', ['except' => 'destroy', 'names' => [
@@ -94,8 +95,8 @@ Route::resource('absenceseleves', 'AbsencesElevesController', ['except' => 'dest
     'store' => 'absenceseleves.store',
     'show' => 'absenceseleves.show',
 ]]);
-//ADMIN->Eleves->PAIEMENT
 
+//ADMIN->Eleves->PAIEMENT
 Route::get('paiementseleves/{id}/delete', 'PaiementsElevesController@destroy')->name('paiementseleves.destroy');
 Route::resource('paiementseleves', 'PaiementsElevesController', ['except' => 'destroy', 'names' => [
     'index' => 'paiementseleves.index',
@@ -107,7 +108,6 @@ Route::resource('paiementseleves', 'PaiementsElevesController', ['except' => 'de
 ]]);
 
 //ADMIN->Eleves->Emplois
-
 Route::get('emploisdutempseleves/{id}/delete', 'EmploisDuTempsElevesController@destroy')->name('emploisdutempseleves.destroy');
 Route::resource('emploisdutempseleves', 'EmploisDuTempsElevesontroller', ['except' => 'destroy', 'names' => [
     'index' => 'emploisdutempseleves.index',
@@ -119,7 +119,6 @@ Route::resource('emploisdutempseleves', 'EmploisDuTempsElevesontroller', ['excep
 ]]);
 
 //ADMIN->Parametres->AnneeScolaire
-
 Route::get('anneesscolaire/{id}/delete', 'AnneesScolaireController@destroy')->name('anneesscolaire.destroy');
 Route::resource('anneesscolaire', 'AnneesScolaireController', ['except' => 'destroy', 'names' => [
     'index' => 'anneesscolaire.index',
@@ -129,9 +128,8 @@ Route::resource('anneesscolaire', 'AnneesScolaireController', ['except' => 'dest
     'store' => 'anneesscolaire.store',
     'show' => 'anneesscolaire.show',
 ]]);
+
 //ADMIN->Parametres->Niveaux
-
-
 Route::get('niveaux/{id}/delete', 'NiveauxController@destroy')->name('niveaux.destroy');
 Route::resource('niveaux', 'NiveauxController', ['except' => 'destroy', 'names' => [
     'index' => 'niveaux.index',
@@ -141,8 +139,8 @@ Route::resource('niveaux', 'NiveauxController', ['except' => 'destroy', 'names' 
     'store' => 'niveaux.store',
     'show' => 'niveaux.show',
 ]]);
-//ADMIN->Parametres->Salles
 
+//ADMIN->Parametres->Salles
 Route::get('salles/{id}/delete', 'SallesController@destroy')->name('salles.destroy');
 Route::resource('salles', 'SallesController', ['except' => 'destroy', 'names' => [
     'index' => 'salles.index',
@@ -154,7 +152,6 @@ Route::resource('salles', 'SallesController', ['except' => 'destroy', 'names' =>
 ]]);
 
 //ADMIN->Parametres->Classes
-
 Route::get('classes/{id}/delete', 'ClassesController@destroy')->name('classes.destroy');
 Route::resource('classes', 'ClassesController', ['except' => 'destroy', 'names' => [
     'index' => 'classes.index',
@@ -166,7 +163,6 @@ Route::resource('classes', 'ClassesController', ['except' => 'destroy', 'names' 
 ]]);
 
 //ADMIN->Parametres->Filieres
-
 
 Route::get('filieres/{id}/delete', 'FilieresController@destroy')->name('filieres.destroy');
 Route::resource('filieres', 'FilieresController', ['except' => 'destroy', 'names' => [
@@ -228,7 +224,6 @@ Route::resource('profsmatieres', 'ProfsMatieresController', ['except' => 'destro
 
 //ADMIN->Affectations->ClassesExams
 
-
 Route::get('classesexams/{id}/delete', 'ClassesExamsController@destroy')->name('classesexams.destroy');
 Route::resource('classesexams', 'ClassesExamsController', ['except' => 'destroy', 'names' => [
     'index' => 'classesexams.index',
@@ -240,7 +235,6 @@ Route::resource('classesexams', 'ClassesExamsController', ['except' => 'destroy'
 ]]);
 
 //ADMIN->Affectations->ClassesNiveauxFilieres
-
 
 Route::get('classesniveauxfilieres/{id}/delete', 'ClassesNiveauxFilieresController@destroy')->name('classesniveauxfilieres.destroy');
 Route::resource('classesniveauxfilieres', 'ClassesNiveauxFilieresController', ['except' => 'destroy', 'names' => [
@@ -264,9 +258,6 @@ Route::resource('classescontrolesmatieres', 'ClassesControlesMatieresController'
     'show' => 'classescontrolesmatieres.show',
 ]]);
 
-
-
-
 Route::get('Cours/listesCours', 'CoursController@index')->name('listesCours');
 Route::get('Absences/listesAbsences', 'AbsencesController@index')->name('listesAbsences');
 Route::get('EmploisDuTemps/emplois', 'EmploisDuTempsController@index')->name('emplois');
@@ -286,8 +277,6 @@ Route::resource('listeniveaux', 'NiveauxController', ['except' => 'destroy']);
 Route::get('Administrations/listesclasses', 'ClassesController@index')->name('listesclasses');
 
 Route::resource('listesclasses', 'ClassesController');
-
-
 
 Route::get('listessalles/{id}/delete', 'SallesController@destroy')->name('listessalles.destroy');
 Route::resource('listessalles', 'SallesController', ['except' => 'destroy']);

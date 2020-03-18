@@ -1,19 +1,19 @@
 
 @extends('layouts.master')
 @section('title')
-    
+
 @endsection
 
 @section('css')
-    
+
 @endsection
 @section('content')
 
 <!-- start edit Modal -->
-{{ Breadcrumbs::render('classes_edit',$data->id) }}
+{{ Breadcrumbs::render('classes.edit',$data->id) }}
 
 
-       
+
             <div class="modal-header">
                 <h5 class="modal-title" id="editModalLabel" style="font-style:italic; ">Editer Annees Scolaire</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -36,10 +36,10 @@
 
                 </div>
         </form>
-   
+
 
 <!-- End add Modal -->
 @endsection
 @section('js')
-    
+
 @endsection

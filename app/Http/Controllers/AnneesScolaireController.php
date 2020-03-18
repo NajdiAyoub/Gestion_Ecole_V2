@@ -14,7 +14,7 @@ class AnneesScolaireController extends Controller
      */
     public function index()
     {
-        $datas = anneesscolaire::all();
+        $datas = AnneesScolaire::all();
         return view('Administrations.AnneesScolaire.index')->with('datas', $datas);
     }
 
@@ -49,9 +49,8 @@ class AnneesScolaireController extends Controller
      */
     public function show($id)
     {
-      //  dd($id);
+        //  dd($id);
 
-        
         return redirect(route('anneesscolaire.index'));
     }
 
@@ -105,8 +104,8 @@ class AnneesScolaireController extends Controller
     {
         $data = AnneesScolaire::find($id);
 
-       if (empty($data)) {
-           return redirect(route('anneesscolaire.index'));
+        if (empty($data)) {
+            return redirect(route('anneesscolaire.index'));
         }
 
         $data->delete();
