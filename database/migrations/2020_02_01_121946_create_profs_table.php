@@ -15,7 +15,6 @@ class CreateProfsTable extends Migration
     {
         Schema::create('profs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('matricule_profs');
             $table->string('nom');
             $table->string('prenom');
             $table->string('cin');

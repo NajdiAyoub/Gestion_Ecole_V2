@@ -40,15 +40,13 @@
                   <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                           <th>Nom</th>
-                            <th>Prenom</th>
-                             <th>Date_Naissance</th>
-                             <th>Addresses</th>
-                             <th>Emails</th>
-                             <th>Niveaux</th>
-                             <th>Filieres</th>
-                             <th>Classes</th>
-                             <th>Image</th>
+                           <th>Classe</th>
+                            <th>Prof</th>
+                             <th>Niveau</th>
+                             <th>Matiere</th>
+                             <th>Filiere</th>
+                             <th>Semestre</th>
+                             <th>Annee_Scolaire</th>
                               <th>Actions</th>
                     </tr>
                     </thead>
@@ -62,49 +60,20 @@
                       <td>Presto</td>
                 
                       <td>Presto</td>
+                      <td>Presto</td>
+            
                       <td><i class="fas fa-eye style="margin-right:top;"></i></td>
                     </tr>
-                    <tr>
-                      <td>Presto</td>
-                      <td>Nokia N800</td>
-                      <td>N800</td>
-                      <td>Nokia N800</td>
-                      <td>Nokia N800</td>
-                      <td>-</td>
-                      <td>A</td>
-                    </tr>
-                   
-                    <tr>
-                      <td>KHTML</td>
-                      <td>Konqureror 3.5</td>
-                      <td>KDE 3.5</td>
-                      <td>Nokia N800</td>
-                      <td>Nokia N800</td>
-
-                      <td>3.5</td>
-                      <td>A</td>
-                    </tr>
-                    <tr>
-                      <td>Tasman</td>
-                      <td>Internet Explorer 4.5</td>
-                      <td>Mac OS 8-9</td>
-                      <td>Nokia N800</td>
-                      <td>Nokia N800</td>
-
-                      <td>-</td>
-                      <td>X</td>
-                    </tr>
-                   
-                    </tr>
-                    </tbody>
+                    
                     <tfoot>
                     <tr>
-                      <th>Libelle</th>
-                      <th>Date_Evenements</th>
-                      <th>Eleves_Participants</th>
-                      <th>Classes</th>
-                      <th>Encadrants</th>
-                      <th>Details</th>
+                      <th>Classe</th>
+                      <th>Prof</th>
+                      <th>Niveau</th>
+                      <th>Matiere</th>
+                      <th>Filiere</th>
+                      <th>Semestre</th>
+                      <th>Annee_Scolaire</th>
                       <th>Action</th>
                     </tr>
                     </tfoot>

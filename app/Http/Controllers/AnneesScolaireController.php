@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AnneeScolaire;
 use App\AnneesScolaire;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class AnneesScolaireController extends Controller
      */
     public function index()
     {
-        $datas = AnneesScolaire::all();
+        $datas = AnneeScolaire::all();
         return view('Administrations.AnneesScolaire.index')->with('datas', $datas);
     }
 
@@ -37,7 +38,7 @@ class AnneesScolaireController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $data = AnneesScolaire::create($input);
+        $data = AnneeScolaire::create($input);
         return redirect(route('anneesscolaire.index'));
     }
 
@@ -62,7 +63,7 @@ class AnneesScolaireController extends Controller
      */
     public function edit($id)
     {
-        $data = AnneesScolaire::find($id);
+        $data = AnneeScolaire::find($id);
 
         if (empty($data)) {
             return redirect(route('anneesscolaire.index'));
@@ -80,13 +81,13 @@ class AnneesScolaireController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = AnneesScolaire::find($id);
+        $data = AnneeScolaire::find($id);
 
         if (empty($data)) {
             return redirect(route('anneesscolaire.index'));
         }
 
-        $data = AnneesScolaire::where('id', $id)->update(request()->except(['_token', '_method']));
+        $data = AnneeScolaire::where('id', $id)->update(request()->except(['_token', '_method']));
 
         return redirect(route('anneesscolaire.index'));
 
@@ -102,7 +103,7 @@ class AnneesScolaireController extends Controller
      */
     public function destroy($id)
     {
-        $data = AnneesScolaire::find($id);
+        $data = AnneeScolaire::find($id);
 
         if (empty($data)) {
             return redirect(route('anneesscolaire.index'));

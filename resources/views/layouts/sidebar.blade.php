@@ -98,9 +98,9 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('emploisdutempseleves.index')}}"
-                                    class="nav-link {{isActive('admin.eleves.emploisdutempseleves',request())}}">
+                                    class="nav-link {{isActive('admin.eleves.emploisdutemps',request())}}">
                                     <i
-                                        class="far fa{{isChecked('admin.eleves.emploisdutempseleves',request())}}-circle nav-icon"></i>
+                                        class="far fa{{isChecked('admin.eleves.emploisdutemps',request())}}-circle nav-icon"></i>
                                     <p>{{__('text.EmploisDuTemps.btn') }} </p>
                                 </a>
                             </li>

@@ -109,7 +109,7 @@ Route::resource('paiementseleves', 'PaiementsElevesController', ['except' => 'de
 
 //ADMIN->Eleves->Emplois
 Route::get('emploisdutempseleves/{id}/delete', 'EmploisDuTempsElevesController@destroy')->name('emploisdutempseleves.destroy');
-Route::resource('emploisdutempseleves', 'EmploisDuTempsElevesontroller', ['except' => 'destroy', 'names' => [
+Route::resource('emploisdutempseleves', 'EmploisDuTempsElevesController', ['except' => 'destroy', 'names' => [
     'index' => 'emploisdutempseleves.index',
     'create' => 'emploisdutempseleves.create',
     'update' => 'emploisdutempseleves.update',
