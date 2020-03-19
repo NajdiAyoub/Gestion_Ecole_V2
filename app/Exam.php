@@ -12,11 +12,11 @@ class Exam extends Model
         'libelle',
         'date_exam',
         'heures_exam',
-        'annee_scolaire',
-        'prof_id',
-        'matiere_id',
-        'classe_id',
-        'salle_id',
+        'anneesscolaire_id',
+        'profs_id',
+        'matieres_id',
+        'classes_id',
+        'salles_id',
   
     ];
     //

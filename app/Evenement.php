@@ -11,9 +11,9 @@ class Evenement extends Model
     protected $fillable = [
         'libelle',
         'type_evenement',
-        'personnel_id',
+        'administrations_id',
         'date_evenement',
-        'attachement_id',
+        'attachements_id',
         'description_evenement',
         
   

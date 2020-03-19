@@ -9,10 +9,10 @@ class AbsenceEleve extends Model
     protected $table = 'absenceseleves';
     public $primarykey = 'id';
     protected $fillable = [
-        'eleve_id',
+        'eleves_id',
         'date_absence',
         'seance',
-        'attachement_id',
+        'attachements_id',
         'justife',
         'remarque',
     ];

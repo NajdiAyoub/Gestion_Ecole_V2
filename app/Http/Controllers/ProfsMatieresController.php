@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Eleve;
+use App\ProfMatiere;
 use Illuminate\Http\Request;
 
-class ElevesController extends Controller
+class ProfsMatieresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,9 @@ class ElevesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {  
-        //$datas = Eleve::all();
-        return view('Administrations.Eleves.Eleves.index');
-        //->with('data', $data);
+    { 
+       $datas = ProfMatiere::all();
+        return view('Administrations.Affectations.ProfsMatieres.index');//->with('datas', $datas);
 
         //
     }
@@ -28,9 +27,9 @@ class ElevesController extends Controller
      */
     public function create()
     {
-        //
-        return view('Administrations.Eleves.Eleves.create');
+        return view('Administrations.Affectations.ProfsMatieres.create');
 
+        //
     }
 
     /**
@@ -42,8 +41,8 @@ class ElevesController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $data = Eleve::create($input);
-        return redirect(route('eleves.index'));
+        $data = ProfMatiere::create($input);
+        return redirect(route('profsmatieres.index'));
         //
     }
 
@@ -55,7 +54,7 @@ class ElevesController extends Controller
      */
     public function show($id)
     {
-        return redirect(route('eleves.index'));
+        return redirect(route('profsmatieres.index'));
 
         //
     }
@@ -68,13 +67,13 @@ class ElevesController extends Controller
      */
     public function edit($id)
     {
-        $data = Eleve::find($id);
+        $data = ProfMatiere::find($id);
 
         if (empty($data)) {
-            return redirect(route('eleves.index'));
+            return redirect(route('profsmatieres.index'));
         }
 
-        return view('Administrations.Eleves.Eleves.edit')->with('data', $data);
+        return view('Administrations.Affectations.ProfsMatieres.edit')->with('data', $data);
         //
     }
 
@@ -87,15 +86,15 @@ class ElevesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Eleve::find($id);
+        $data = ProfMatiere::find($id);
 
         if (empty($data)) {
-            return redirect(route('eleves.index'));
+            return redirect(route('profsmatieres.index'));
         }
 
-        $data = Eleve::where('id', $id)->update(request()->except(['_token', '_method']));
+        $data = ProfMatiere::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        return redirect(route('eleves.index'));
+        return redirect(route('profsmatieres.index'));
 
         //
     }
@@ -108,16 +107,15 @@ class ElevesController extends Controller
      */
     public function destroy($id)
     {
-        $data = Eleve::find($id);
+        $data = ProfMatiere::find($id);
 
         if (empty($data)) {
-            return redirect(route('eleves.index'));
+            return redirect(route('profsmatieres.index'));
         }
 
         $data->delete();
 
-        return redirect(route('eleves.index'));
-
+        return redirect(route('profsmatieres.index'));
         //
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ClasseNiveauFiliere;
 use Illuminate\Http\Request;
 
 class ClassesNiveauxFilieresController extends Controller
@@ -13,7 +14,9 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function index()
     {
-        return view('Administrations.listesclassesniveauxfilieres');
+        //$datas = ClasseNiveauFiliere::all();
+
+        return view('Administrations.Affectations.ClassesNiveauxFilieres.index');//->with('datas', $datas);
 
         //
     }
@@ -25,6 +28,8 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function create()
     {
+        return view('Administrations.Affectations.ClassesNiveauxFilieres.create');
+
         //
     }
 
@@ -36,6 +41,9 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function store(Request $request)
     {
+        $input = $request->all();
+        $data = ClasseNiveauFiliere::create($input);
+        return redirect(route('classesniveauxfilieres.index'));
         //
     }
 
@@ -47,6 +55,8 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function show($id)
     {
+        return redirect(route('classesniveauxfilieres.index'));
+
         //
     }
 
@@ -58,6 +68,14 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function edit($id)
     {
+        $data = ClasseNiveauFiliere::find($id);
+
+        if (empty($data)) {
+            return redirect(route('classesniveauxfilieres.index'));
+        }
+
+        return view('Administrations.Affectations.ClassesNiveauxFilieres.edit')->with('data', $data);
+        //
         //
     }
 
@@ -70,6 +88,16 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = ClasseNiveauFiliere::find($id);
+
+        if (empty($data)) {
+            return redirect(route('classesniveauxfilieres.index'));
+        }
+
+        $data = ClasseNiveauFiliere::where('id', $id)->update(request()->except(['_token', '_method']));
+
+        return redirect(route('classesniveauxfilieres.index'));
+
         //
     }
 
@@ -81,6 +109,15 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function destroy($id)
     {
+        $data = ClasseNiveauFiliere::find($id);
+
+        if (empty($data)) {
+            return redirect(route('classesniveauxfilieres.index'));
+        }
+
+        $data->delete();
+
+        return redirect(route('classesniveauxfilieres.index'));
         //
     }
 }

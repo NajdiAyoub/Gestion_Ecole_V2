@@ -9,10 +9,10 @@ class ProfMatiere extends Model
     protected $table = 'profsmatieres';
     public $primarykey = 'id';
     protected $fillable = [
-        'classe_id',
-        'prof_id',
-        'niveau_id',
-        'semestre_id',        
+        'classes_id',
+        'profs_id',
+        'niveaux_id',
+        'semestres_id',        
         'annee_scolaire',
         
   

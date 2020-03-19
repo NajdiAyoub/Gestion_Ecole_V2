@@ -12,7 +12,7 @@ class AbsenceProf extends Model
     protected $fillable = [
         'date_absence',
         'seance',
-        'prof',
+        'profs_id',
         'justife',
         'remarque',
     ];

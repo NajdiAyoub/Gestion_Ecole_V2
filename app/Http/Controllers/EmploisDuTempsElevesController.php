@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\EmploiDuTempEleve;
 use Illuminate\Http\Request;
 
 class EmploisDuTempsElevesController extends Controller
@@ -14,7 +15,9 @@ class EmploisDuTempsElevesController extends Controller
     public function index()
     {
         //
-        return view('Administrations.Eleves.emploisdutemps.index');
+        //$datas = EmploiDuTempEleve::all();
+
+        return view('Administrations.Eleves.emploisdutemps.index');//->with('datas', $datas);
 
     }
 
@@ -25,6 +28,8 @@ class EmploisDuTempsElevesController extends Controller
      */
     public function create()
     {
+        return view('Administrations.Eleves.EmploisDuTemps.create');
+
         //
     }
 
@@ -36,6 +41,10 @@ class EmploisDuTempsElevesController extends Controller
      */
     public function store(Request $request)
     {
+        $input = $request->all();
+        $data = EmploiDuTempEleve::create($input);
+        return redirect(route('emploisdutempseleves.index'));
+        //
         //
     }
 
@@ -47,6 +56,8 @@ class EmploisDuTempsElevesController extends Controller
      */
     public function show($id)
     {
+        return redirect(route('emploisdutemps.index'));
+
         //
     }
 
@@ -58,6 +69,14 @@ class EmploisDuTempsElevesController extends Controller
      */
     public function edit($id)
     {
+        $data = EmploiDuTempEleve::find($id);
+
+        if (empty($data)) {
+            return redirect(route('emploisdutemps.index'));
+        }
+
+        return view('Administrations.Eleves.EmploisDuTemps.edit')->with('data', $data);
+        //
         //
     }
 
@@ -70,6 +89,16 @@ class EmploisDuTempsElevesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = EmploiDuTempEleve::find($id);
+
+        if (empty($data)) {
+            return redirect(route('emploisdutempd.index'));
+        }
+
+        $data = EmploiDuTempEleve::where('id', $id)->update(request()->except(['_token', '_method']));
+
+        return redirect(route('emploisdutemps.index'));
+
         //
     }
 
@@ -81,6 +110,16 @@ class EmploisDuTempsElevesController extends Controller
      */
     public function destroy($id)
     {
+        
+        $data = EmploiDuTempEleve::find($id);
+
+        if (empty($data)) {
+            return redirect(route('emploisutemps.index'));
+        }
+
+        $data->delete();
+
+        return redirect(route('emploisdutemps.index'));
         //
     }
 }

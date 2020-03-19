@@ -10,9 +10,9 @@ class EmploiDuTempProf extends Model
     protected $table = 'emploisdutempsprofs';
     public $primarykey = 'id';
     protected $fillable = [
-        'classe_id',
-        'prof_id',
-        'annee_scolaire',
+        'classes_id',
+        'profs_id',
+        'anneesscolaire_id',
         
   
     ];

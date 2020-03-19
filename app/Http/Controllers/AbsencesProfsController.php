@@ -53,6 +53,8 @@ class AbsencesProfsController extends Controller
      */
     public function show($id)
     {
+        return redirect(route('absencesprofs.index'));
+
         //
     }
 

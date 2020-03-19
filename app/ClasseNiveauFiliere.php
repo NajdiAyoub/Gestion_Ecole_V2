@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClasseNiveauFiliere extends Model
 {
-    protected $table = 'classesniveaufiliere';
+    protected $table = 'classesniveauxfilieres';
     public $primarykey = 'id';
     protected $fillable = [
-        'classe_id',
-        'prof_id',
-        'niveau_id',
-        'matiere_id',
-        'filiere_id',
-        'semestre_id',
-        'annee_scolaire',
+        'classes_id',
+        'profs_id',
+        'niveaus_id',
+        'matieres_id',
+        'filieres_id',
+        'semestres_id',
+        'anneesscolaire_id',
                         
   
     ];

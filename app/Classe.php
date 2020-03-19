@@ -10,7 +10,7 @@ class Classe extends Model
     public $primarykey = 'id';
     protected $fillable = [
         'libelle',
-        'niveau',
+        'niveaux_id',
   
     ];
     //

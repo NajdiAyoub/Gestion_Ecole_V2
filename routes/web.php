@@ -212,8 +212,8 @@ Route::resource('evenements', 'EvenementsController', ['except' => 'destroy', 'n
 
 //ADMIN->Affectations->ProfsMatieres
 
-Route::get('profsmatieres/{id}/delete', 'ProfsMatiersController@destroy')->name('profsmatieres.destroy');
-Route::resource('profsmatieres', 'ProfsMatiersController', ['except' => 'destroy', 'names' => [
+Route::get('profsmatieres/{id}/delete', 'ProfsMatieresController@destroy')->name('profsmatieres.destroy');
+Route::resource('profsmatieres', 'ProfsMatieresController', ['except' => 'destroy', 'names' => [
     'index' => 'profsmatieres.index',
     'create' => 'profsmatieres.create',
     'update' => 'profsmatieres.update',
