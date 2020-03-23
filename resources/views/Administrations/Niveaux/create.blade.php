@@ -14,9 +14,8 @@
 
 
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ajouter </h5>
+          <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel">{{__('text.Ajouter_Niveaux.lbl')}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
           </button>
 
 
@@ -27,9 +26,9 @@
         <div class="modal-body">
 
             <div class="form-group">
-              <label>libelle</label>
+              <label>{{__('text.Libelle.lbl')}}</label>
               <input type="text" name="libelle" class="form-control" >
-              <label>description</label>
+              <label>{{__('text.Description.lbl')}}</label>
               <input type="text" name="description" class="form-control" >
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

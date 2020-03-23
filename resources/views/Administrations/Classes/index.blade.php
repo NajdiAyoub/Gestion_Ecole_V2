@@ -9,70 +9,60 @@
 @endsection
 
 @section('content')
+{{ Breadcrumbs::render('admin.parametre.classes') }}
 
-<div class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">{{ __('text.Parametres.lbl') }}</a></li>
-                    <li class="breadcrumb-item active">{{ __('text.Classes.lbl') }}</li>
-                </ol>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-</div>
+
 
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <section class="content" style="margin:auto;">
-                <center>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
-                                <div class="card-header"  style="background-color: dodgerblue;">
-                                            <h4 style="color: white; margin-top: 2px; margin-bottom:-24px ; font-style:italic; margin-left: -10px; "> Listes Classes
-                                            </h4>
-                                    <div class="mt-4" style="float: right ; margin-top: 0px !important;">
-                                        <!-- Button trigger modal -->
-                                        <a class="btn btn-success" style="padding: 6px;" href="{{ route('listesclasses.create') }}">  &nbsp; <i class="right fas fa-plus-circle"> &nbsp;</i>Add</a>
-                                    </div>
+              
 
+  
+                <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.Classes.list')}}</h4>
+                   
+                <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
+                          href="{{ route('classes.create') }}"> &nbsp; <i
+                              class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Classes.add')}}</a></div>
+              
+                     
+  </section>    
+              </div>
+          </div>
+      
+      <!-- /.card-header -->
+      
+      <div class="card-body" >
+          <table id="example2" class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                      <th>{{__('text.Libelle.lbl')}}</th>
+                      <th>{{__('text.Niveaux.lbl')}}</th>
+
+                      <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
+                  </tr>
+              </thead>
+              <tbody>
+
+
+
+                    
                                     <!-- End add Modal -->
 
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body" style="padding:0px;">
-                        <table id="example2" style="width:703px" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>libelle</th>
-                                    <th>niveau</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
                                 @foreach ($datas as $item)
                                 <tr>
                                     <td>{{$item['libelle']}}</td>
                                     <td>{{$item['niveau']}}</td>
 
                                     <td>
-                                        <form method="delete" action="{{route('listesclasses.destroy', $item->id)}}">
+                                        <form method="delete" action="{{route('classes.destroy', $item->id)}}">
                                             @csrf
                                             @method('DELETE')
                                             <div class='btn-group'>
-                                                <a href="{{ route('listesclasses.edit', $item->id) }}"
-                                                    class='btn btn-primary pull-right'>Edit</a>
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <a href="{{ route('classes.edit', $item->id) }}"
+                                                    class='btn btn-primary pull-right'><i class="fas fa-edit"></i></a>
+                                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                             </div>
                                         </form>
                                     </td>

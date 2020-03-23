@@ -28,6 +28,8 @@ Breadcrumbs::for('admin.parametre.niveaux.edit', function ($trail, $id) {
 });
 
 //  Admin->Parametre->Salles
+
+
 Breadcrumbs::for('admin.parametre.salles.', function ($trail) {
     $trail->push(__('text.Salles.lbl'), route('salles.index'));
 });
@@ -37,7 +39,7 @@ Breadcrumbs::for('admin.parametre.salles.add', function ($trail) {
 });
 Breadcrumbs::for('admin.parametre.salles.edit', function ($trail, $id) {
     $trail->parent('admin.parametre.salles');
-    $trail->push(__('text.Salles.edit'), route('admin.parametre.salles.edit', $id));
+    $trail->push(__('text.Salles.edit'), route('salles.edit', $id));
 });
 //  Admin->Parametre->Classes
 

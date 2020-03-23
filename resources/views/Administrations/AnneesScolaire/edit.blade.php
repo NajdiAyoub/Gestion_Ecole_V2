@@ -13,9 +13,8 @@
 
 
 <div class="modal-header">
-    <h5 class="modal-title" id="editModalLabel" style="font-style:italic; ">Editer Annees Scolaire</h5>
+    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="editModalLabel" style="font-style:italic; ">{{__('text.Edit_AnneesScolaire.lbl')}}</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
     </button>
 
 
@@ -27,7 +26,7 @@
     <div class="modal-body">
 
         <div class="form-group">
-            <label>libelle</label>
+            <label>{{ __('text.Libelle.lbl') }}</label>
             <input type="text" name="libelle" id="libelle" value="{{ $data->libelle}}" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Edit</button>

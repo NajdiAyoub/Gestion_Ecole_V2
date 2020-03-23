@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AnneeScolaire;
 use App\AnneesScolaire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AnneesScolaireController extends Controller
 {
@@ -17,7 +18,16 @@ class AnneesScolaireController extends Controller
     {
         $datas = AnneeScolaire::all();
         return view('Administrations.AnneesScolaire.index')->with('datas', $datas);
+
     }
+
+    public function list()
+    {
+        $datas = DB::table('anneesscolaire')->simplePaginate(15);        
+        return view('Administrations.AnneesScolaire.index')->with('datas', $datas);
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

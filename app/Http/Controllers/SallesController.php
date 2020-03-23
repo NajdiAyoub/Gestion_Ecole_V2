@@ -43,7 +43,7 @@ class SallesController extends Controller
        
       $input = $request->all();
       $data = Salle::create($input);
-      return redirect(route('listessalles.index'));
+      return redirect(route('salles.index'));
         //
     }
 
@@ -70,7 +70,7 @@ class SallesController extends Controller
         $data = Salle::find($id);
 
         if (empty($data)) {
-            return redirect(route('listessalles.index'));
+            return redirect(route('salles.index'));
         }
 
         return view('Administrations.Salles.edit')->with('datas', $data);
@@ -90,12 +90,12 @@ class SallesController extends Controller
         $data = Salle::find($id);
 
         if (empty($data)) {
-            return redirect(route('listessalles.index'));
+            return redirect(route('salles.index'));
         }
 
         $data = Salle::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        return redirect(route('listessalles.index'));
+        return redirect(route('salles.index'));
         //
     }
 
@@ -111,12 +111,12 @@ class SallesController extends Controller
         $data = Salle::find($id);
 
         if (empty($data)) {
-            return redirect(route('listessalles.index'));
+            return redirect(route('salles.index'));
         }
 
         $data->delete();
 
-        return redirect(route('listessalles.index'));
+        return redirect(route('salles.index'));
         //
     }
 }

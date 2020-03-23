@@ -10,50 +10,51 @@
 
 @section('content')
 {{ Breadcrumbs::render('admin.parametre.anneesscolaire') }}
+
+
+
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <section class="content" style="margin:auto;">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card-header" style="background-color: dodgerblue;">
-                            <h4
-                                style="color: white; margin-top: 2px; margin-bottom:-24px ; font-style:italic; margin-left: -10px; ">
-                                {{ __('text.AnneesScolaire.list')}} </h4>
-
-                            <div class="mt-4" style="float: right ; margin-top: 0px !important;">
-                                <!-- Button trigger modal -->
-
-                                <a class="'btn btn-success" style="padding: 6px;"
+                                               
+                            <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.AnneesScolaire.list')}}</h4>
+                   
+                          <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
                                     href="{{ route('anneesscolaire.create') }}"> &nbsp; <i
-                                        class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Ajouter.btn')}}</a>
-                            </div>
+                                        class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.AnneesScolaire.add')}}</a></div>
+                        
+                               
+            </section>    
                         </div>
                     </div>
-                </div>
+                
                 <!-- /.card-header -->
-                <div class="card-body" style="padding:0px;">
-                    <table id="example2" style="width: 703px;" class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
+                
+                <div class="card-body" >
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
                                 <th>{{__('text.libelle.lbl')}}</th>
-                                <th>Actions</th>
+                                <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($datas as $item)
                             <tr>
                                 <td>{{$item['libelle']}}</td>
-                                <td>
+                                <td style="text-align:right;">
                                     <form method="delete" action="{{route('anneesscolaire.destroy', $item->id)}}">
                                         @csrf
                                         @method('DELETE')
                                         <div class='btn-group'>
                                             <a href="{{ route('anneesscolaire.edit', $item->id) }}"
-                                                class='btn btn-primary pull-right'>{{__('text.Edit.btn')}}</a>
+                                                class='btn btn-primary pull-right'><i class="fas fa-edit"> </i> </a>
                                             <button type="submit"
-                                                class="btn btn-danger">{{__('text.Delete.btn')}}</button>
-                                        </div>
+                                                class="btn btn-danger"><i class="fas fa-trash"></i></button>
+
+                                             
+                                        
                                     </form>
                                 </td>
                             </tr>

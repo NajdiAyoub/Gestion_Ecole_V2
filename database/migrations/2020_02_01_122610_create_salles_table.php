@@ -16,8 +16,8 @@ class CreateSallesTable extends Migration
         Schema::create('salles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('libelle');
-            $table->string('type_salles');
-            $table->integer('nombres_places');
+            $table->string('type_salle');
+            $table->integer('nombres_place');
 
 
 

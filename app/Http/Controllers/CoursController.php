@@ -8,7 +8,7 @@ class CoursController extends Controller
 {
     public function index()
     {
-            return view('Cours.listesCours');
+            return view('ElevesSpace.Cours.index');
             
         }
     }

@@ -10,14 +10,13 @@
 @section('content')
 
 <!-- start edit Modal -->
-{{ Breadcrumbs::render('classes.edit',$data->id) }}
+{{ Breadcrumbs::render('admin.parametre.classes.edit',$data->id) }}
 
 
 
             <div class="modal-header">
                 <h5 class="modal-title" id="editModalLabel" style="font-style:italic; ">Editer Annees Scolaire</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
                 </button>
 
 

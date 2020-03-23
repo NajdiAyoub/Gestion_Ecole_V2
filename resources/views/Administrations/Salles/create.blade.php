@@ -10,11 +10,10 @@
 @section('content')
 
 <!-- start add Modal -->
-{{ Breadcrumbs::render('admin.parametre.salles.add') }}
 
 
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ajouter </h5>
+          <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel">Ajouter </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -27,11 +26,11 @@
         <div class="modal-body">
           
             <div class="form-group">
-              <label>libelle</label>
+              <label>{{__('text.Libelle.lbl')}}</label>
               <input type="text" name="libelle" class="form-control" >
-              <label>type_salle</label>
+              <label>{{__('text.Type_Salle.lbl')}}</label>
               <input type="text" name="type_salle" class="form-control" >
-              <label>nombre_place</label>
+              <label>{{__('text.Nombre_Place.lbl')}}</label>
               <input type="text" name="nombre_place" class="form-control" >
               
             </div>

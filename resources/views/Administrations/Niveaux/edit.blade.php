@@ -10,13 +10,12 @@
 @section('content')
 
 <!-- start edit Modal -->
-{{ Breadcrumbs::render('admin.parametre.niveaux.edit',$data->id) }}
+{{ Breadcrumbs::render('admin.parametre.niveaux.edit',$datas->id) }}
 
 
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Editer Niveaux</h5>
+                <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="editModalLabel">Editer Niveaux</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
                 </button>
 
 
