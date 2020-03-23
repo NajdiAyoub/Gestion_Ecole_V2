@@ -17,7 +17,7 @@ class AnneesScolaireController extends Controller
     public function index()
     {
         $datas = AnneeScolaire::all();
-        return view('Administrations.AnneesScolaire.index')->with('datas', $datas);
+        return view('Administrations.AnneesScolaire.index')->with('datas', $datas)->simplePaginate(15);
 
     }
 
