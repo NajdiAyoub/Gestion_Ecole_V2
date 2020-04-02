@@ -28,9 +28,16 @@
             <label> {{ __('text.Libelle.lbl') }}</label>
             <input type="text" name="libelle" class="form-control">
             <label>{{ __('text.Niveaux.lbl') }}</label>
-            <input type="text" name="niveau" class="form-control">
+            <select name="niveaux_id">
+                <option >--------------------------------------</option>
+                @foreach ($niveaux as $item)
+            <option value="{{$item->id}}">{{$item->libelle}}</option>
+                @endforeach
+            </select>
+           
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
         <input type="hidden" value="{{Session::token()}}" name="_token">
         <input type="hidden" name="p_id" id="p_id" value="">
     </div>

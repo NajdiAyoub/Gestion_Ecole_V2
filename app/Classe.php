@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Classe extends Model
 {
-    protected $table = 'classes';
+    protected $table = 'v_classes';
     public $primarykey = 'id';
     protected $fillable = [
         'libelle',

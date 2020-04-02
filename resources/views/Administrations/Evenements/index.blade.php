@@ -8,44 +8,39 @@
 @endsection
 
 @section('content')
-<div class="content-header">
+{{ Breadcrumbs::render('admin.parametre.evenements') }}
+
+
+
+<div class="content">
     <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">{{ __('text.Parametres.lbl') }}</a></li>
-            <li class="breadcrumb-item active">{{ __('text.Evenements.lbl') }}</li>
-          </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
+        <div class="row">
+
+<div class="content-header" style="margin: auto;">
+    <!-- Button trigger modal -->
+
+    
   
+    <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.Evenements.list')}}</h4>
+                   
+    <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
+              href="{{ route('evenements.create') }}"> &nbsp; <i
+                  class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Evenements.add')}}</a>
+                  <label  
+                  " for="search">Search:</label>
+                  <input style="margin-right: -273px; margin-top:5px"  type="search" id="search" name="search">
+                </div>
+  
+         
+</section>    
+  </div>
+</div>
 
-
-  <div class="content">
-    <div class="container-fluid">
-      <div class="row">
-
+            
         
         
         <section class="content" style="margin:auto;">
-          <center>
-          <div class="row">
-            <div class="col-12">
-              <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
-                <div class="card-header"><strong><em><h4 style=" position: absolute;
-                  color: antiquewhite; margin-top: 8px;"> Listes Des Evenements</h4></em></strong>
-                  <div class="mt-4" style="float: right ; margin-top: 0px !important;">
-                    <div class="btn btn-primary btn-lg btn-flat" style="font-size:1rem;">
-                      <i class="fas fa-plus-circle fa-lg mr-2"></i> 
-                      Ajouter Evenement
-                    </div>
-                  </div>
-                </div>
-                  
-                </div>
+      
                 <!-- /.card-header -->
                 <div class="card-body" style="padding:0px;">
                   <table id="example2" class="table table-bordered table-hover">

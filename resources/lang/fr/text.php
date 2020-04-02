@@ -27,7 +27,7 @@ return [
     'Classes.add' => 'Nouvelle Classes',
     'Salles.edit' => 'Modifier Classes',
 
-    'Filieres.list' => 'Liste des annees scolaires',
+    'Filieres.list' => 'Liste des Filieres',
     'Filieres.lbl' => 'Filieres',
     'Filieres.btn' => 'Filieres',
     'Filieres.add' => 'Nouvelle Filieres',
@@ -206,6 +206,8 @@ return [
     'Ajouter_Niveaux.lbl'=>'Ajouter Niveaux',
     'Ajouter_AnneesScolaire.lbl'=>'Ajouter AnneesScolaire',
     'Edit_AnneesScolaire.lbl'=> 'Editer AnneesScolaire',
+    'Ajouter_Controles.lbl'=>'Nouveau Controle',
+
 
 
 

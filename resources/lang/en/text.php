@@ -186,7 +186,7 @@ return [
     'Ajouter_Niveaux.lbl'=>'Add Levels',
     'Ajouter_AnneesScolaire.lbl'=>'Add SchoolYear',
     'Edit_AnneesScolaire.lbl'=> 'Edit SchoolYear',
-
+    'Ajouter_Controles.lbl'=>'New Test',
 
 
 ];

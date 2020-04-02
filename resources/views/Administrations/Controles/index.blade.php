@@ -9,44 +9,45 @@
 @endsection
 
 @section('content')
+{{ Breadcrumbs::render('admin.parametre.controles') }}
+
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
 
 <div class="content-header" style="margin: auto;">
+    <!-- Button trigger modal -->
 
+    
+  
+    <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.Controles.list')}}</h4>
+                   
+    <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
+              href="{{ route('controles.create') }}"> &nbsp; <i
+                  class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Controles.add')}}</a>
+                  <label  
+                  " for="search">Search:</label>
+                  <input style="margin-right: -273px; margin-top:5px"  type="search" id="search" name="search">
+                </div>
+  
+         
+</section>    
+  </div>
+</div>
 
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-
-                <section class="content" style="margin:auto;">
-                    <center>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
-                                    <div class="card-header"><strong><em>
-                                                <h4 style="color: antiquewhite; margin-top: 8px;"> Listes Controles</h4>
-                                            </em></strong>
-                                        <div class="mt-4" style="float: right ; margin-top: 0px !important;">
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#exampleModal" style="margin-right: 15px;">
-                                                Ajouter Controles
-                                            </button>
-                                        </div>
-
-
-                                        <!-- End add Modal -->
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+    
                         <!-- /.card-header -->
                         <div class="card-body" style="padding:0px;">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>Libelle</th>
-                                        <th>Niveaux</th>
+                                        <th>Classe</th>
+                                        <th>Matiere</th>
+                                        <th>Semestre</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -55,11 +56,15 @@
                                     <tr>
                                         <td>SM</td>
                                         <td>2eme annees</td>
+                                        <td>2eme annees</td>
+                                        <td>2eme annees</td>
                                         <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
                                                 class="fas fa-edit style=" margin-right:top;"></i></td>
                                     </tr>
                                     <tr>
                                         <td>PC</td>
+                                        <td>2eme annees</td>
+                                        <td>2eme annees</td>
                                         <td>2eme annees</td>
                                         <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
                                                 class="fas fa-edit style=" margin-right:top;"></i></td>
@@ -69,6 +74,8 @@
                                     <tr>
                                         <td>SECO</td>
                                         <td>2eme annees</td>
+                                        <td>2eme annees</td>
+                                        <td>2eme annees</td>
                                         <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
                                                 class="fas fa-edit style=" margin-right:top;"></i></td>
 
@@ -76,7 +83,8 @@
                                     <tr>
                                         <td>SVT</td>
                                         <td>2eme annees</td>
-
+                                        <td>2eme annees</td>
+                                        <td>2eme annees</td>
                                         <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
                                                 class="fas fa-edit style=" margin:auto;"></i></td>
 

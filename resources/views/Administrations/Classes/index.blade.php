@@ -24,7 +24,13 @@
                    
                 <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
                           href="{{ route('classes.create') }}"> &nbsp; <i
-                              class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Classes.add')}}</a></div>
+                              class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Classes.add')}}</a>
+                              <form method="get" action="{{route('classes.index')}}">
+                                <label for="search">Search:</label>
+                                <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                                </form>
+
+                            </div>
               
                      
   </section>    
@@ -53,7 +59,7 @@
                                 @foreach ($datas as $item)
                                 <tr>
                                     <td>{{$item['libelle']}}</td>
-                                    <td>{{$item['niveau']}}</td>
+                                    <td>{{$item['niveaux']}}</td>
 
                                     <td>
                                         <form method="delete" action="{{route('classes.destroy', $item->id)}}">
@@ -77,6 +83,12 @@
                 </center>
                 <!-- /.card-body -->
         </div>
+        <script>
+            function myFunction() {
+                if(!confirm("Are You Sure to delete this"))
+                event.preventDefault();
+            }
+           </script>
 
 
 

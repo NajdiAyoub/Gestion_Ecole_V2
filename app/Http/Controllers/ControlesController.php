@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Classe;
 use App\Control;
+use App\Matiere;
+use App\Semestre;
 use Illuminate\Http\Request;
 
 class ControlesController extends Controller
@@ -26,6 +29,12 @@ class ControlesController extends Controller
      */
     public function create()
     {
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $semestres = Semestre::all();
+        
+
+
         return view('Administrations.controles.create');
 
         //

@@ -14,6 +14,7 @@
 
 
 
+
 <div class="content">
     <div class="container-fluid">
         <div class="row">
@@ -24,7 +25,11 @@
                    
                 <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
                           href="{{ route('salles.create') }}"> &nbsp; <i
-                              class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Salles.add')}}</a></div>
+                              class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Salles.add')}}</a>
+                              <form method="get" action="{{route('salles.index')}}">
+                              <label for="search">Search:</label>
+                              <input style="margin-right: -273px; margin-top:5px"  type="search" id="search" name="search">
+                            </div>
               
                      
   </section>    
@@ -54,7 +59,7 @@
                                     <td>{{$item['nombre_place']}}</td>
 
                                     <td>
-                                        <form method="delete" action="{{route('listessalles.destroy', $item->id)}}">
+                                        <form method="delete" onclick="return myFunction();" action="{{route('salles.destroy', $item->id)}}">
                                             @csrf
                                             @method('DELETE')
                                             <div class='btn-group'>
@@ -71,11 +76,17 @@
                             </tbody>
 
                         </table>
+                        {{ $datas->links() }}
+
                     </div>
-                </center>
                 <!-- /.card-body -->
         </div>
-       
+        <script>
+        function myFunction() {
+            if(!confirm("Are You Sure to delete this"))
+            event.preventDefault();
+        }
+       </script>
   
 
         @endsection

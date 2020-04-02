@@ -15,13 +15,13 @@
 
 
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel" style="font-style:italic; ">Editer Annees Scolaire</h5>
+                <h5 class="modal-title" id="editModalLabel" style="font-style:italic; ">Editer classes</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 </button>
 
 
             </div>
-            <form action="{{ route('anneesscolaire.update', [$data->id]) }}" method="POST">
+            <form action="{{ route('classes.update', [$data->id]) }}" method="POST">
 
                 @csrf
                 @method('PUT')

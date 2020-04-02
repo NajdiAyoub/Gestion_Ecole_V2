@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\niveaux;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NiveauxController extends Controller
 {
@@ -12,10 +13,21 @@ class NiveauxController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datas = niveaux::all();
-        return view('Administrations.Niveaux.index')->with('datas', $datas);
+       
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas =niveaux::where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = niveaux::paginate(10);
+
+        }   
+        return view('Administrations.niveaux.index')->with('datas', $datas )->with('search', $search );
         //
     }
 
@@ -42,7 +54,7 @@ class NiveauxController extends Controller
 
       $input = $request->all();
       $data = niveaux::create($input);
-      return redirect(route('niveaux.index'));
+      return redirect(route('niveaux.index'))->with('success', 'Item added succesfully' );
         //
         //
     }
@@ -93,7 +105,7 @@ class NiveauxController extends Controller
 
         $data = niveaux::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        return redirect(route('niveaux.index'));
+        return redirect(route('niveaux.index'))->with('success', 'Item Updated succesfully' );
 
         //
     }

@@ -9,6 +9,9 @@
 @endsection
 @section('content')
 
+{{ Breadcrumbs::render('admin.parametre.salles.edit',$datas->id) }}
+
+
 
 <!-- start edit Modal -->
 
@@ -21,7 +24,7 @@
 
 
             </div>
-            <form action="{{ route('listessalles.update', $datas->id) }}" method="POST">
+            <form action="{{ route('salles.update', $datas->id) }}" method="POST">
 
                 @csrf
                 @method('PUT')

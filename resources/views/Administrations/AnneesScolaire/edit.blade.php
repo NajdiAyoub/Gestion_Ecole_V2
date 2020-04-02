@@ -13,12 +13,13 @@
 
 
 <div class="modal-header">
-    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="editModalLabel" style="font-style:italic; ">{{__('text.Edit_AnneesScolaire.lbl')}}</h5>
+    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="editModalLabel" style="font-style:italic; ">{{__('text.AnneesScolaire.edit')}}</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     </button>
 
 
 </div>
+
 <form action="{{ route('anneesscolaire.update', [$data->id]) }}" method="POST">
 
     @csrf
@@ -30,6 +31,8 @@
             <input type="text" name="libelle" id="libelle" value="{{ $data->libelle}}" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Edit</button>
+        <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+
 
     </div>
 </form>

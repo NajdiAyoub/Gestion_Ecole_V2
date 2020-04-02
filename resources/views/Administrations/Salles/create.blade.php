@@ -8,6 +8,8 @@
     
 @endsection
 @section('content')
+{{ Breadcrumbs::render('admin.parametre.salles.add') }}
+
 
 <!-- start add Modal -->
 

@@ -9,6 +9,8 @@
 @endsection
 
 @section('content')
+
+
 {{ Breadcrumbs::render('admin.parametre.anneesscolaire') }}
 
 
@@ -22,9 +24,16 @@
                    
                           <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
                                     href="{{ route('anneesscolaire.create') }}"> &nbsp; <i
-                                        class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.AnneesScolaire.add')}}</a></div>
+                                        class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.AnneesScolaire.add')}}</a>
+                                    
+                                        <form method="get" action="{{route('anneesscolaire.index')}}">
+                                        <label for="search">Search:</label>
+                                        <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                                        </form>
+                                    </div>
                         
-                               
+                                      
+
             </section>    
                         </div>
                     </div>
@@ -44,29 +53,43 @@
                             <tr>
                                 <td>{{$item['libelle']}}</td>
                                 <td style="text-align:right;">
-                                    <form method="delete" action="{{route('anneesscolaire.destroy', $item->id)}}">
+                                    <form method="delete" onclick="return myFunction();" action="{{route('anneesscolaire.destroy', $item->id)}}">
+                                       
+            
+
                                         @csrf
                                         @method('DELETE')
-                                        <div class='btn-group'>
-                                            <a href="{{ route('anneesscolaire.edit', $item->id) }}"
+                                        <div class='btn-group'><a href="{{ route('anneesscolaire.edit', $item->id) }}"
+                                                
                                                 class='btn btn-primary pull-right'><i class="fas fa-edit"> </i> </a>
                                             <button type="submit"
                                                 class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                        </div>
 
-                                             
                                         
                                     </form>
+
                                 </td>
                             </tr>
-                            @endforeach
+                            
 
+                            @endforeach
 
                         </tbody>
 
                     </table>
+                    {{ $datas->links() }}
+
                 </div>
                 <!-- /.card-body -->
         </div>
+        <script>
+            function myFunction() {
+                if(!confirm("Are You Sure to delete this"))
+                event.preventDefault();
+            }
+           </script>
+
         @endsection
         @section('js')
 

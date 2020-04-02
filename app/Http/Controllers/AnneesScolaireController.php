@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AnneeScolaire;
 use App\AnneesScolaire;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\DB;
 
 class AnneesScolaireController extends Controller
@@ -14,19 +15,24 @@ class AnneesScolaireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datas = AnneeScolaire::all();
-        return view('Administrations.AnneesScolaire.index')->with('datas', $datas);
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas =AnneeScolaire::where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = AnneeScolaire::paginate(10);
 
+        }   
+        return view('Administrations.AnneesScolaire.index')->with('datas', $datas )->with('search', $search );
+        
     }
-
-    public function list()
-    {
-        $datas = DB::table('anneesscolaire')->simplePaginate(15);        
-        return view('Administrations.AnneesScolaire.index')->with('datas', $datas);
-    }
-
+  
+    
 
 
     /**
@@ -37,7 +43,13 @@ class AnneesScolaireController extends Controller
     public function create()
     {
         return view('Administrations.AnneesScolaire.create');
+
+        
     }
+
+
+
+    
 
     /**
      * Store a newly created resource in storage.
@@ -49,7 +61,7 @@ class AnneesScolaireController extends Controller
     {
         $input = $request->all();
         $data = AnneeScolaire::create($input);
-        return redirect(route('anneesscolaire.index'));
+        return redirect(route('anneesscolaire.index'))->with('success', 'Item added succesfully' );
     }
 
     /**
@@ -99,7 +111,7 @@ class AnneesScolaireController extends Controller
 
         $data = AnneeScolaire::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        return redirect(route('anneesscolaire.index'));
+        return redirect(route('anneesscolaire.index'))->with('success', 'Item Updated succesfully' );
 
     }
 

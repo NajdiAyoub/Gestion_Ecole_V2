@@ -12,10 +12,23 @@ class SallesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datas = Salle::all();
-        return view('Administrations.Salles.index')->with('datas', $datas);
+     
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas =Salle::where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = Salle::paginate(10);
+
+        }   
+        return view('Administrations.salles.index')->with('datas', $datas )->with('search', $search );
+        //
+
 
         //
     }
@@ -43,7 +56,7 @@ class SallesController extends Controller
        
       $input = $request->all();
       $data = Salle::create($input);
-      return redirect(route('salles.index'));
+      return redirect(route('salles.index'))->with('success', 'Item added succesfully' );
         //
     }
 
@@ -95,7 +108,7 @@ class SallesController extends Controller
 
         $data = Salle::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        return redirect(route('salles.index'));
+        return redirect(route('salles.index'))->with('success', 'Item Updated succesfully' );
         //
     }
 

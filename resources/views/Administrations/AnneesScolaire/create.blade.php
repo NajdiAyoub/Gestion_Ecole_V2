@@ -12,12 +12,13 @@
 {{ Breadcrumbs::render('admin.parametre.anneesscolaire.add') }}
 
 <div class="modal-header">
-    <h5 style= "font-style:italic ;color: #007bff;"class="modal-title" id="exampleModalLabel">{{__('text.Ajouter_AnneesScolaire.lbl')}} </h5>
+    <h5 style= "font-style:italic ;color: #007bff;"class="modal-title" id="exampleModalLabel">{{__('text.AnneesScolaire.add')}} </h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     </button>
 
 
 </div>
+
 <form action="{{ action('AnneesScolaireController@store') }}" method="POST">
 
     {{ csrf_field() }}
@@ -28,6 +29,8 @@
             <input type="text" name="libelle" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+
         <input type="hidden" value="{{Session::token()}}" name="_token">
         <input type="hidden" name="p_id" id="p_id" value="">
     </div>

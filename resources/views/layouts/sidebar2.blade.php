@@ -144,8 +144,8 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="{{ route('listesclasses.index')}}"
-                                            class="nav-link {{request()->is('listesclasses') ? 'active' : ''}}">
+                                        <a href="{{ route('classes.index')}}"
+                                            class="nav-link {{request()->is('classes') ? 'active' : ''}}">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>{{__('text.Classes.btn') }}</p>
                                         </a>

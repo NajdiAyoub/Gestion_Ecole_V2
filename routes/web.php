@@ -275,7 +275,6 @@ Route::get('listeniveaux/{id}/delete', 'NiveauxController@destroy')->name('liste
 Route::resource('listeniveaux', 'NiveauxController', ['except' => 'destroy']);
 Route::get('Administrations/listesclasses', 'ClassesController@index')->name('listesclasses');
 
-Route::resource('listesclasses', 'ClassesController');
 
 Route::get('listessalles/{id}/delete', 'SallesController@destroy')->name('listessalles.destroy');
 Route::resource('listessalles', 'SallesController', ['except' => 'destroy']);

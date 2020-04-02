@@ -1,37 +1,45 @@
+@extends('layouts.master')
+@section('title')
+
+@endsection
+
+@section('css')
+
+@endsection
+@section('content')
+
 <!-- start add Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      {{ Breadcrumbs::render('filieres.add') }}
-
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter Filieres</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+{{ Breadcrumbs::render('admin.parametre.filieres.add') }}
 
 
-      </div>
-    <form action="{{ action('FilieresController@store') }}" method="POST">
+<div class="modal-header">
+    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel" >{{__('text.Ajouter_Filieres.lbl')}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    </button>
 
-      {{ csrf_field() }}
-      <div class="modal-body">
 
-          <div class="form-group">
-            <label>libelle</label>
-            <input type="text" name="libelle" class="form-control" >
-            <label>niveau</label>
-            <input type="text" name="nombre_place" class="form-control" >
-
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <input type="hidden" value="{{Session::token()}}" name="_token">
-
-      </div>
-      </div>
-    </form>
-    </div>
-  </div>
 </div>
+<form action="{{ action('FilieresController@store') }}" method="POST">
+
+    {{ csrf_field() }}
+    <div class="modal-body">
+
+        <div class="form-group">
+            <label> {{ __('text.Libelle.lbl') }}</label>
+            <input type="text" name="libelle" class="form-control">
+            <label>{{ __('text.Niveaux.lbl') }}</label>
+            <input type="text" name="niveau" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+        <input type="hidden" value="{{Session::token()}}" name="_token">
+        <input type="hidden" name="p_id" id="p_id" value="">
+    </div>
+</form>
 
 <!-- End add Modal -->
+
+@endsection
+@section('js')
+
+@endsection

@@ -21,7 +21,12 @@
                    
                 <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
                           href="{{ route('niveaux.create') }}"> &nbsp; <i
-                              class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Niveaux.add')}}</a></div>
+                              class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Niveaux.add')}}</a>
+                              
+                              <form method="get" action="{{route('niveaux.index')}}">
+                              <label for="search">Search:</label>
+                              <input style="margin-right: -273px; margin-top:5px"  type="search" id="search" name="search">
+                            </div>
               
                      
   </section>    
@@ -42,17 +47,19 @@
               </thead>
               <tbody>
                    
-                                @foreach ($datas as $item)
-                                <tr>
+
+                <tr>
+                    @foreach ($datas as $item)
+
                                     <td>{{$item['libelle']}}</td>
                                     <td>{{$item['description']}}</td>
 
                                     <td>
-                                        <form method="delete" action="{{route('listeniveaux.destroy', $item->id)}}">
+                                        <form method="delete" onclick="return myFunction();"action="{{route('niveaux.destroy', $item->id)}}">
                                             @csrf
                                             @method('DELETE')
                                             <div class='btn-group'>
-                                                <a href="{{ route('listeniveaux.edit', $item->id) }}"
+                                                <a href="{{ route('niveaux.edit', $item->id) }}"
                                                     class='btn btn-primary pull-right'><i class="fas fa-edit"></i></a>
                                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                             </div>
@@ -65,9 +72,19 @@
                             </tbody>
 
                         </table>
+                        {{ $datas->links() }}
+
                     </div>
                 <!-- /.card-body -->
         </div>
+        
+        <script>
+            function myFunction() {
+                if(!confirm("Are You Sure to delete this"))
+                event.preventDefault();
+            }
+           </script>
+
        @endsection
         @section('js')
 

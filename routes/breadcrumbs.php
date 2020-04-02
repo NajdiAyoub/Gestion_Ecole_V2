@@ -30,7 +30,7 @@ Breadcrumbs::for('admin.parametre.niveaux.edit', function ($trail, $id) {
 //  Admin->Parametre->Salles
 
 
-Breadcrumbs::for('admin.parametre.salles.', function ($trail) {
+Breadcrumbs::for('admin.parametre.salles', function ($trail) {
     $trail->push(__('text.Salles.lbl'), route('salles.index'));
 });
 Breadcrumbs::for('admin.parametre.salles.add', function ($trail) {
@@ -76,7 +76,7 @@ Breadcrumbs::for('admin.parametre.controles', function ($trail) {
 });
 Breadcrumbs::for('admin.parametre.controles.add', function ($trail) {
     $trail->parent('admin.parametre.controles');
-    $trail->push(__('text.Controles.add'), route('controle.create'));
+    $trail->push(__('text.Controles.add'), route('controles.create'));
 });
 Breadcrumbs::for('admin.parametre.controles.edit', function ($trail, $id) {
     $trail->parent('admin.parametre.controles');

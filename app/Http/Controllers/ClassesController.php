@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Classe;
 use App\Salle;
+use App\niveaux;
 use Illuminate\Http\Request;
 
 class ClassesController extends Controller
@@ -13,11 +14,22 @@ class ClassesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
       
-        $datas = Classe::all();
-        return view('Administrations.Classes.index')->with('datas', $datas);
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas =Classe::where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = Classe::paginate(10);
+
+        }   
+        return view('Administrations.Classes.index')->with('datas', $datas )->with('search', $search );
+        
     }
 
     /**
@@ -27,7 +39,8 @@ class ClassesController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Classes.create');
+        $niveaux = niveaux::all();
+        return view('Administrations.Classes.create')->with('niveaux',$niveaux);
         //
     }
 
@@ -41,7 +54,7 @@ class ClassesController extends Controller
     {
         $input = $request->all();
         $data = Classe::create($input);
-        return redirect(route('Classes.index'));
+        return redirect(route('classes.index'));
         //
     }
 

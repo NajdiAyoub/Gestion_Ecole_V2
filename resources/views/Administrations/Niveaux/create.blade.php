@@ -32,6 +32,7 @@
               <input type="text" name="description" class="form-control" >
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
           <input type="hidden" value="{{Session::token()}}" name="_token">
           <input type="hidden" name="p_id" id="p_id" value="">
       </div>

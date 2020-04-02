@@ -40,9 +40,9 @@ class FilieresController extends Controller
     public function store(Request $request)
     {
 
-       // $input = $request->all();
-        //$data = Filiere::create($input);
-        //return redirect(route('filieres.index'));
+        $input = $request->all();
+        $data = Filiere::create($input);
+        return redirect(route('filieres.index'));
         //
     }
 
