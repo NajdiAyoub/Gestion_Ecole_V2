@@ -59,13 +59,13 @@
                                     <td>{{$item['nombre_place']}}</td>
 
                                     <td>
-                                        <form method="delete" onclick="return myFunction();" action="{{route('salles.destroy', $item->id)}}">
+                                        <form method="delete"  action="{{route('salles.destroy', $item->id)}}">
                                             @csrf
                                             @method('DELETE')
                                             <div class='btn-group'>
                                                 <a href="{{ route('salles.edit', $item->id) }}"
                                                     class='btn btn-primary pull-right'><i class="fas fa-edit"></i></a>
-                                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                <button type="submit" onclick="return myFunction();"  class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                             </div>
                                         </form>
                                     </td>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AbsenceEleve extends Model
 {
-    protected $table = 'absenceseleves';
+    protected $table = 'absences_eleves';
     public $primarykey = 'id';
     protected $fillable = [
         'eleves_id',

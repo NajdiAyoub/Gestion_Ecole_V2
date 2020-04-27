@@ -27,23 +27,24 @@
         <div class="form-group">
             <label> {{ __('text.Libelle.lbl') }}</label>
             <input type="text" name="libelle" class="form-control">
-
-            <select name="classes_id">
+            <label> {{ __('text.Classes.lbl') }}</label>
+            <select style="margin-top: 30px;width: 200px;HEIGHT: 30px;" name="classes_id">
                 <option >--------------------------------------</option>
-                @foreach ($classes as $item)
+                @foreach ($Classe as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option>
                 @endforeach
-            </select>
-            <select name="matieres_id">
+            </select></br>
+            <label> {{ __('text.Matieres.lbl') }}</label>
+            <select style="margin-top: 30px;width: 200px;HEIGHT: 30px;" name="matieres_id">
                 <option >--------------------------------------</option>
-                @foreach ($matieres as $item)
+                @foreach ($Matiere as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option>
                 @endforeach
-            </select>
-           
-            <select name="semestres_id">
+            </select></br>
+            <label> {{ __('text.Semestres.lbl') }}</label>
+            <select style="margin-top: 30px;width: 200px;HEIGHT: 30px;" name="semestres_id">
                 <option >--------------------------------------</option>
-                @foreach ($semestres as $item)
+                @foreach ($Semestre as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option>
                 @endforeach
             </select>

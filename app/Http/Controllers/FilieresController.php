@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Filiere;
+use App\niveaux;
 use Illuminate\Http\Request;
+use DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class FilieresController extends Controller
 {
@@ -12,12 +15,22 @@ class FilieresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        //$data = Filiere::all()->toArray();
-        return view('Administrations.Filieres.index');
-        //
+      $search='';
+      if(isset($request) && null !==$request->get('search')) {
+          $search = $request->get('search');
+          //dd($search);
+          $datas = DB::table('v_filieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+          //dd($datas->toSql(),$datas->getBindings());
+      } 
+      else {
+          $datas = DB::table('v_filieres')->paginate(10);
+
+      }   
+      return view('Administrations.Filieres.index')->with('datas', $datas )->with('search', $search );
+
     }
 
     /**
@@ -27,7 +40,11 @@ class FilieresController extends Controller
      */
     public function create()
     {
-        return view('Administrations.filieres.create');
+
+      $niveaux = niveaux::all();
+        return view('Administrations.filieres.create')->with('niveaux',$niveaux);
+        //dd($niveaux);
+
         //
     }
 
@@ -40,9 +57,12 @@ class FilieresController extends Controller
     public function store(Request $request)
     {
 
-        $input = $request->all();
-        $data = Filiere::create($input);
-        return redirect(route('filieres.index'));
+      $input = $request->all();
+      //dd($input);
+
+      $data = Filiere::create($input);
+      $data->save();
+      return redirect(route('filieres.index'))->with('success', 'Item added succesfully' );
         //
     }
 
@@ -54,8 +74,9 @@ class FilieresController extends Controller
      */
     public function show($id)
     {
-        //return redirect(route('filieres.index'));
-        //
+      return redirect(route('classes.index'));
+
+       
     }
 
     /**
@@ -66,14 +87,13 @@ class FilieresController extends Controller
      */
     public function edit($id)
     {
-        //$data = Filiere::find($id);
+      $data = Filiere::find($id);
 
-        //if (empty($data)) {
-          //  return redirect(route('filieres.index'));
-        }
+      if (empty($data)) {
+          return redirect(route('filieres.index'));
+      }
 
-        //return view('Administrations.filieres.edit')->with('data', $data);
-        //
+      return view('Administrations.Filieres.edit')->with('data', $data);
     }
 
     /**
@@ -83,19 +103,18 @@ class FilieresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    //public function update(Request $request, $id)
-    //{
-        //$data = Filiere::find($id);
+    public function update(Request $request, $id)
+    {
+      $data = Filiere::find($id);
 
-        //if (empty($data)) {
-          //  return redirect(route('filieres.index'));
-      //  }
+      if (empty($data)) {
+          return redirect(route('filieres.index'));
+      }
 
-        //$data = Filiere::where('id', $id)->update(request()->except(['_token', '_method']));
+      $data = Filiere::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        //return redirect(route('filieres.index'));
-        //
-    //}
+      return redirect(route('filieres.index'));
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -103,18 +122,17 @@ class FilieresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   // public function destroy($id)
-    //{
+   public function destroy($id)
+    {
+      $data = Filiere::find($id);
 
-      //  $data = Filiere::find($id);
+      if (empty($data)) {
+          return redirect(route('filieres.index'));
+       }
 
-        //if (empty($data)) {
-          //  return redirect(route('filieres.index'));
-      //  }
+       $data->delete();
 
-        //$data->delete();
-
-        //return redirect(route('filieres.index'));
-        //
-    //}
-//}
+       return redirect(route('filieres.index'));
+       //
+   }
+}

@@ -55,6 +55,18 @@ function isActive($param, $request)
             }
             break;
 
+            case 'admin.parametre.semestres':
+                if ($request->routeIs('semestres.*')) {
+                    return 'active';
+                }
+                break;
+
+                case 'admin.parametre.matieres':
+                    if ($request->routeIs('matieres.*')) {
+                        return 'active';
+                    }
+                    break;
+
         case 'admin.parametre.niveaux':
             if ($request->routeIs('niveaux.*')) {
                 return 'active';
@@ -129,7 +141,7 @@ function isOpen($param, $request)
             }
             break;
         case 'admin.parametre':
-            if ($request->routeIs('anneesscolaire.*') || $request->routeIs('niveaux.*') || $request->routeIs('classes.*') || $request->routeIs('salles.*')|| $request->routeIs('filieres.*') || $request->routeIs('controles.*') || $request->routeIs('exams.*') || $request->routeIs('evenements.*')) {
+            if ($request->routeIs('anneesscolaire.*') || $request->routeIs('semestres.*') ||$request->routeIs('matieres.*') || $request->routeIs('niveaux.*') || $request->routeIs('classes.*') || $request->routeIs('salles.*')|| $request->routeIs('filieres.*') || $request->routeIs('controles.*') || $request->routeIs('exams.*') || $request->routeIs('evenements.*')) {
                 return 'open';
             }
             break;

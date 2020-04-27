@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AbsenceProf;
+use App\Prof;
 use Illuminate\Http\Request;
 
 class AbsencesProfsController extends Controller
@@ -12,10 +13,20 @@ class AbsencesProfsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-       // $data = AbsenceProf::all();
-        return view('Administrations.Profs.Absences.index ');
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas =AbsenceProf::where('nom', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = AbsenceProf::paginate(10);
+
+        }   
+        return view('Administrations.Profs.AbsencesProfs.index')->with('datas', $datas )->with('search', $search );
         //
     }
 
@@ -26,7 +37,8 @@ class AbsencesProfsController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Profs.create');
+        $profs = Prof::all();
+        return view('Administrations.Profs.AbsencesProfs.create')->with('profs',$profs);
 
         //
     }
@@ -41,7 +53,7 @@ class AbsencesProfsController extends Controller
     {
         $input = $request->all();
         $data = AbsenceProf::create($input);
-        return redirect(route('absencesprofs.index'));
+        return redirect(route('absencesprofs.index'))->with('success', 'Item added succesfully' );
         //
     }
 
@@ -71,8 +83,9 @@ class AbsencesProfsController extends Controller
         if (empty($data)) {
             return redirect(route('absencesprofs.index'));
         }
-
-        return view('Administrations.Profs.Absences.index')->with('datas', $data);
+  
+        return view('Administrations.Profs.AbsencesProfs.edit')->with('data', $data);
+        //
         //
     }
 
@@ -90,10 +103,11 @@ class AbsencesProfsController extends Controller
         if (empty($data)) {
             return redirect(route('absencesprofs.index'));
         }
-
+  
         $data = AbsenceProf::where('id', $id)->update(request()->except(['_token', '_method']));
-
+  
         return redirect(route('absencesprofs.index'));
+        //
         //
     }
 

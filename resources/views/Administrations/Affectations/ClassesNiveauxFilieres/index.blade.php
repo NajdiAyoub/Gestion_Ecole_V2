@@ -1,90 +1,108 @@
 @extends('layouts.master')
 @section('title')
-    
+
+
 @endsection
 
 @section('css')
-    
+
 @endsection
 
 @section('content')
-<div class="content-header">
+
+
+{{ Breadcrumbs::render('admin.affectations.classesniveauxfilieres') }}
+
+
+
+<div class="content">
     <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Affectations</a></li>
-            <li class="breadcrumb-item active">Classes Niveaux Filieres</li>
-          </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
+        <div class="row">
+            <section class="content" style="margin:auto;">
+                                               
+                            <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.ClassesNiveauxFilieres.list')}}</h4>
+                   
+                          <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
+                                    href="{{ route('classesniveauxfilieres.create') }}"> &nbsp; <i
+                                        class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.ClassesNiveauxFilieres.add')}}</a>
+                                    
+                                        <form method="get" action="{{route('classesniveauxfilieres.index')}}">
+                                        <label for="search">Search:</label>
+                                        <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                                        </form>
+                                    </div>
+                        
+                                      
 
-  <div class="content">
-    <div class="container-fluid">
-      <div class="row">
-
-        <section class="content" style="margin:auto;">
-          <center>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header" style="background-color: gray;color: blue;"><strong><em><h4>Listes Eleves</h4></em></strong>
-
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                           <th>Classe</th>
-                            <th>Prof</th>
-                             <th>Matiere</th>
-                             <th>Filiere</th>
-                             <th>Semestre</th>
-                             <th>Annee_Scolaire</th>
-                              <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    
-                    <tr>
-                      <td>Presto</td>
-                      <td>Opera for Wii</td>
-                      <td>Wii</td>
-                      <td>-</td>
-                      <td>Presto</td>
+            </section>    
+                        </div>
+                    </div>
                 
-                      <td>Presto</td>
-                      <td>Presto</td>
+                <!-- /.card-header -->
+                
+                <div class="card-body" >
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                                <th>{{__('text.Classe.lbl')}}</th>
+                                <th>{{__('text.Prof.lbl')}}</th>
+                                <th>{{__('text.Matiere.lbl')}}</th>
+                                <th>{{__('text.Filiere.lbl')}}</th>
+                                <th>{{__('text.Semestre.lbl')}}</th>
+                                <th>{{__('text.Annee_Scolaire.lbl')}}</th>
+                               
+                                <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($datas as $item)
+                            <tr>
+                               <td>{{$item['Classe']}}</td>
+                                <td>{{$item['Prof']}}</td>
+                                <td>{{$item['Matiere']}}</td>
+                                <td>{{$item['Filiere']}}</td>
+                                <td>{{$item['Semestre']}}</td>
+                                <td>{{$item['Annee_Scolaire']}}</td>
+                              
+
+
+                                <td style="text-align:right;">
+                                    <form method="delete"  action="{{route('classesniveauxfilieres.destroy', $item->id)}}">
+                                       
             
-                      <td><i class="fas fa-eye style="margin-right:top;"></i></td>
-                    </tr>
-                    
-                    <tfoot>
-                    <tr>
-                      <th>Classe</th>
-                      <th>Prof</th>
-                      <th>Matiere</th>
-                      <th>Filiere</th>
-                      <th>Semestre</th>
-                      <th>Annee_Scolaire</th>
-                      <th>Action</th>
-                    </tr>
-                    </tfoot>
-                  </table>
+
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class='btn-group'><a href="{{ route('classesniveauxfilieres.edit', $item->id) }}"
+                                                
+                                                class='btn btn-primary pull-right'><i class="fas fa-edit"> </i> </a>
+                                            <button type="submit" onclick="return myFunction();"
+                                                class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                        </div>
+
+                                        
+                                    </form>
+
+                                </td>
+                            </tr>
+                            
+
+                            @endforeach
+
+                        </tbody>
+
+                    </table>
                 </div>
-              </center>
                 <!-- /.card-body -->
-              </div>
+        </div>
+        <script>
+            function myFunction() {
+                if(!confirm("Are You Sure to delete this"))
+                event.preventDefault();
+            }
+           </script>
 
+        @endsection
+        @section('js')
 
-
-    
-@endsection
-@section('js')
-    
-@endsection
+        @endsection

@@ -13,11 +13,22 @@ class AbsencesElevesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
        // $datas = AbsenceEleve::all();
+       $search='';
+       if(isset($request) && null !==$request->get('search')) {
+           $search = $request->get('search');
+           //dd($search);
+           $datas =AbsenceEleve::where('nom', 'like', '%'. $search . '%')->paginate(10);
+           //dd($datas->toSql(),$datas->getBindings());
+       } 
+       else {
+           $datas = AbsenceEleve::paginate(10);
 
-        return view('Administrations.Eleves.Absences.index');//->with('datas', $datas);
+       }   
+       return view('Administrations.Eleves.Absences.index')->with('datas', $datas )->with('search', $search );
+
 
         //
     }

@@ -14,9 +14,8 @@ class PaiementsElevesController extends Controller
      */
     public function index()
     {
-         //$datas = PaiementEleve::all();
-
-        return view('Administrations.Eleves.Paiements.index');//->with('datas', $datas);
+        $datas = PaiementEleve::all();
+        return view('Administrations.Eleves.PaiementsEleves.index')->with('datas', $datas);
 
         //
     }
@@ -28,7 +27,7 @@ class PaiementsElevesController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Eleves.Paiements.create');
+        return view('Administrations.Eleves.PaiementsEleves.create');
 
         //
     }
@@ -74,7 +73,7 @@ class PaiementsElevesController extends Controller
             return redirect(route('paiementseleves.index'));
         }
 
-        return view('Administrations.Eleves.Paiements.edit')->with('data', $data);
+        return view('Administrations.Eleves.PaiementsEleves.edit')->with('data', $data);
         //
     }
 

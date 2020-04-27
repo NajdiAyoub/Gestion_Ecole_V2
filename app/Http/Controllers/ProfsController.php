@@ -12,11 +12,20 @@ class ProfsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datas = Prof::all();
-        return view('Administrations.Profs.Profs.index')->with('datas', $datas);
-        //
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas =Prof::where('nom', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = Prof::paginate(10);
+
+        }   
+        return view('Administrations.Profs.Profs.index')->with('datas', $datas )->with('search', $search );
     }
 
     /**
@@ -26,7 +35,7 @@ class ProfsController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Profs.create');
+        return view('Administrations.Profs.Profs.create');
         //
     }
 
@@ -39,9 +48,10 @@ class ProfsController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $data = Prof::create($input);
-        return redirect(route('Profs.index'));
-        //
+      $data = Prof::create($input);
+      return redirect(route('profs.index'))->with('success', 'Item added succesfully' );
+      dd('$data');
+
     }
 
     /**
@@ -70,8 +80,8 @@ class ProfsController extends Controller
         if (empty($data)) {
             return redirect(route('profs.index'));
         }
-
-        return view('Administrations.Profs.Profs.edit')->with('datas', $data);
+  
+        return view('Administrations.Profs.Profs.edit')->with('data', $data);
         //
         //
     }
@@ -90,9 +100,9 @@ class ProfsController extends Controller
         if (empty($data)) {
             return redirect(route('profs.index'));
         }
-
+  
         $data = Prof::where('id', $id)->update(request()->except(['_token', '_method']));
-
+  
         return redirect(route('profs.index'));
         //
     }

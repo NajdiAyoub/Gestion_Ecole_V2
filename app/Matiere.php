@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Matiere extends Model
 {
+    protected $table = 'matieres';
+    public $primarykey = 'id';
+    protected $fillable = [
+        'libelle',
+        'niveaux_id',
+  
+    ];
     //
 }

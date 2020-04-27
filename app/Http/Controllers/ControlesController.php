@@ -7,6 +7,7 @@ use App\Control;
 use App\Matiere;
 use App\Semestre;
 use Illuminate\Http\Request;
+use DB;
 
 class ControlesController extends Controller
 {
@@ -15,11 +16,20 @@ class ControlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $controles = Control::all()->toArray();
-        return view('Administrations.controles.index', compact('controles'));
-        //
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas = DB::table('v_controles')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = DB::table('v_controles')->paginate(10);
+
+        }   
+        return view('Administrations.controles.index')->with('datas', $datas )->with('search', $search );
     }
 
     /**
@@ -33,9 +43,7 @@ class ControlesController extends Controller
         $matieres = Matiere::all();
         $semestres = Semestre::all();
         
-
-
-        return view('Administrations.controles.create');
+        return view('Administrations.controles.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('Semestre',$semestres);
 
         //
     }
@@ -50,8 +58,12 @@ class ControlesController extends Controller
     {
         
         $input = $request->all();
+        //dd($input);
+
         $data = Control::create($input);
-        return redirect(route('controles.index'));
+        $data->save();
+        return redirect(route('controles.index'))->with('success', 'Item added succesfully' );
+        //
         
         //
     }

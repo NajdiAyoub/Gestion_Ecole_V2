@@ -14,8 +14,8 @@ class EmploisDuTempsProfsController extends Controller
      */
     public function index()
     {
-       // $data = EmploiDuTempProf::all()->toArray();
-        return view('Administrations.Profs.emploisdutempsprofs.index');//->with('data', $data);
+        $data = EmploiDuTempProf::all()->toArray();
+        return view('Administrations.Profs.emploisdutempsprofs.index')->with('data', $data);
         //
     }
 

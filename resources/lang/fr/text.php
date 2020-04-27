@@ -9,6 +9,21 @@ return [
     'AnneesScolaire.add' => 'Nouvelle annees scolaire',
     'AnneesScolaire.edit' => 'Modifier annees scolaire',
 
+
+     // Admin----->Parametres
+     'Semestres.list' => 'Liste des semestres',
+     'Semestres.lbl' => 'Semestres',
+     'Semestres.btn' => 'Semestres',
+     'Semestres.add' => 'Nouvelle Semestres',
+     'Semestres.edit' => 'Modifier Semestres',
+
+    'Matieres.list' => 'Liste des Matieres',
+    'Matieres.lbl' => 'Matieres',
+    'Matieres.btn' => 'Matieres',
+    'Matieres.add' => 'Nouvelle Matieres',
+    'Matieres.edit' => 'Modifier Matieres',
+
+
     'Niveaux.list' => 'Liste des niveaux',
     'Niveaux.lbl' => 'Niveaux',
     'Niveaux.btn' => 'Niveaux',
@@ -101,7 +116,7 @@ return [
     'AbsencesProfs.edit' => 'Modifier AbsencesProfs',
 
     'PaiementsProfs.list' => 'Liste des PaiementsProfs',
-    'PaiementsProfs.lbl' => 'PaiementsProfss',
+    'PaiementsProfs.lbl' => 'PaiementsProfs',
     'PaiementsProfs.btn' => 'PaiementsProfs',
     'PaiementsProfs.add' => 'Nouvelle PaiementsProfs',
     'PaiementsProfs.edit' => 'Modifier PaiementsProfs',
@@ -135,12 +150,11 @@ return [
     'ClassesNiveauxFilieres.add' => 'Nouvelle ClassesNiveauxFilieres',
     'ClassesNiveauxFilieres.edit' => 'Modifier ClassesNiveauxFilieres',
 
-    'ClassesControlesMatieres.list' => 'Liste des ClassesNiveauxFilieres',
-    'ClassesNiveauxFilieres.lbl' => 'ClassesNiveauxFilieres',
-    'ClassesNiveauxFilieres.btn' => 'ClassesNiveauxFilieres',
-    'ClassesNiveauxFilieres.add' => 'Nouvelle ClassesNiveauxFilieres',
-    'ClassesNiveauxFilieres.edit' => 'Modifier ClassesNiveauxFilieres',
-
+    'ClassesControlesMatieres.list' => 'Liste ClasseControleMatiere',
+    'ClassesControlesMatieres.lbl' => 'ClasseControleMatiere',
+    'ClassesControlesMatieres.btn' => 'ClasseControleMatiere',
+    'ClassesControlesMatieres.add' => 'Ajouter ClasseControleMatiere',
+    'ClassesControlesMatieres.edit' => 'Edit ClasseControleMatiere',
      //Admin -----> Affectations End
 
     
@@ -203,10 +217,76 @@ return [
     'Type_Salle.lbl' => 'Type Salle',
     'Nombre_Place.lbl' => 'Nombre Place',
     'Ajouter_Classes.lbl' => 'Ajouter Classes',
+    'Matieres.lbl'=> 'Matieres',
+    'Semestres.lbl'=> 'Semestres',
     'Ajouter_Niveaux.lbl'=>'Ajouter Niveaux',
     'Ajouter_AnneesScolaire.lbl'=>'Ajouter AnneesScolaire',
     'Edit_AnneesScolaire.lbl'=> 'Editer AnneesScolaire',
     'Ajouter_Controles.lbl'=>'Nouveau Controle',
+    'Nom.lbl'=>'Nom',
+    'Prenom.lbl'=>'Prenom',
+    'Cin.lbl'=>'CIN',
+    'Rib.lbl'=>'Rib',
+    'Adresse.lbl'=>'Adresse',
+    'Salaire.lbl'=>'Salaire',
+    'Montant_Par_Heure.lbl'=>'MontantparHeure',
+    'Login.lbl'=>'Login',
+    'Password.lbl'=>'MotDePasse',
+
+
+
+    'Tel.lbl'=>'Telephone',
+    'Email.lbl'=>'Email',
+    'Date_Naissance.lbl'=>'DateNaissance',
+    'Type_Contrat.lbl'=>'TypeContrat',
+    'Date_Absence.lbl'=>'Date Absence',
+    'Seance.lbl'=>'Seance',
+    'Justifie.lbl'=>'Justifie',
+    'Remarque.lbl'=>'Remarque',
+    'Prof.lbl'=>'Prof',
+    'Date_Absences.lbl'=>'Date Absences',
+    'Attachements.lbl'=>'Attachements',
+    'Nombre_Heure.lbl'=>'Nombre Heures',
+    'Date_Paiements.lbl'=>'Date Paiements',
+    'Type_Paiements.lbl'=>'Type Paiements',
+    'Filiere.lbl'=>'Filiere',
+    'Classe.lbl'=>'Classe',
+    'Image.lbl'=>'Image',
+    'Justifie.lbl'=>'Justifie',
+    'Semestres.lbl'=>'Semestres',
+    'Attachement.lbl'=>'Attachement',
+    'Matiere.lbl'=>'Matiere',
+    'Niveau.lbl'=>'Niveau',
+    'Semestre.lbl'=>'Semestre',
+    'Salle.lbl'=>'Salle',
+    'Annee_Scolaire.lbl'=>'Annee Scolaire',
+    'Days.lbl'=>'Jours',
+    '08H00-10H00.lbl'=>'08H00-10H00',
+    '10H00-12H00.lbl'=>'10H00-12H00',
+    '14H00-16H00.lbl'=>'14H00-16H00',
+    '16H00-18H00.lbl'=>'16H00-18H00',
+    'Days.lbl'=>'Days',
+    '08H00-10H00.lbl'=>'08H00-10H00',
+    '10H00-12H00.lbl'=>'10H00-12H00',
+    '14H00-16H00.lbl'=>'14H00-16H00',
+    'EmploisDuTemps.lbl'=>'Emplois Du Temps',
+    'NombreHeures.lbl'=>'Nombre Heures',
+    'Paiemenets.lbl'=>'Paiements',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

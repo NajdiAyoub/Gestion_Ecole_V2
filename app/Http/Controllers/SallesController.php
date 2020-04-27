@@ -40,7 +40,9 @@ class SallesController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Salles.create');
+        $salles = Salle::all();
+
+        return view('Administrations.Salles.create')->with('salle',$salles);
 
         //
     }
@@ -68,7 +70,8 @@ class SallesController extends Controller
      */
     public function show($id)
     {
-        //
+            return redirect(route('salles.index'));
+
     }
 
     /**

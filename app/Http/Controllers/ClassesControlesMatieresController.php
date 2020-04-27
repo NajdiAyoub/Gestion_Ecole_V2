@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ClasseControleMatiere;
 use Illuminate\Http\Request;
 
 class ClassesControlesMatieresController extends Controller
@@ -13,7 +14,9 @@ class ClassesControlesMatieresController extends Controller
      */
     public function index()
     {
-        return view('Administrations.Affectations.classescontrolesmatieres.index');
+        $datas = ClasseControleMatiere::all();
+
+        return view('Administrations.Affectations.classescontrolesmatieres.index')->with('datas', $datas);
 
         //
     }

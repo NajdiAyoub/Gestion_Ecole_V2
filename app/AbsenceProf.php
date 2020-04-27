@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class AbsenceProf extends Model
 {
     
-    protected $table = 'absencesprofs';
+    protected $table = 'absences_profs';
     public $primarykey = 'id';
     protected $fillable = [
         'date_absence',

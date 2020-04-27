@@ -1,174 +1,101 @@
-
-
-@extends('layouts.master', ['activePage'=> 'listesCours'])
+@extends('layouts.master')
 @section('title')
-    
+
+
 @endsection
 
 @section('css')
-    
+
 @endsection
+
 @section('content')
 
-    <!-- Main content -->
-    
-    <section class="content" style="margin:auto;">
-      <center>
-      <div class="row" >
-        <div class="col-12" >
-          <div class="card" >
-            <div class="card-header" style="color: blue; " ><h4>Listes Des Cours</h4>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body" >
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                       <th>Libelle Cours</th>
-                        <th>Matieres</th>
-                         <th>Date D'ajout</th>
-                         <th>Profs</th>
-                          <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
+
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <section class="content" style="margin:auto;">
+                                               
+                            <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.Cours.list')}}</h4>
+                   
+                          <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
+                                    href="{{ route('cours.create') }}"> &nbsp; <i
+                                        class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Cours.add')}}</a>
+                                    
+                                        <form method="get" action="{{route('cours.index')}}">
+                                        <label for="search">Search:</label>
+                                        <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                                        </form>
+                                    </div>
+                        
+                                      
+
+            </section>    
+                        </div>
+                    </div>
                 
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera for Wii</td>
-                  <td>Wii</td>
-                  <td>-</td>
-                  <td><i class="fas fa-eye style="margin-right:top;"></i></td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Nokia N800</td>
-                  <td>N800</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Nintendo DS browser</td>
-                  <td>Nintendo DS</td>
-                  <td>8.5</td>
-                  <td>C/A<sup>1</sup></td>
-                </tr>
-                <tr>
-                  <td>KHTML</td>
-                  <td>Konqureror 3.1</td>
-                  <td>KDE 3.1</td>
-                  <td>3.1</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>KHTML</td>
-                  <td>Konqureror 3.3</td>
-                  <td>KDE 3.3</td>
-                  <td>3.3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>KHTML</td>
-                  <td>Konqureror 3.5</td>
-                  <td>KDE 3.5</td>
-                  <td>3.5</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Tasman</td>
-                  <td>Internet Explorer 4.5</td>
-                  <td>Mac OS 8-9</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Tasman</td>
-                  <td>Internet Explorer 5.1</td>
-                  <td>Mac OS 7.6-9</td>
-                  <td>1</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Tasman</td>
-                  <td>Internet Explorer 5.2</td>
-                  <td>Mac OS 8-X</td>
-                  <td>1</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>NetFront 3.1</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>NetFront 3.4</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>Dillo 0.8</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>Links</td>
-                  <td>Text only</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>Lynx</td>
-                  <td>Text only</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>IE Mobile</td>
-                  <td>Windows Mobile 6</td>
-                  <td>-</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>PSP browser</td>
-                  <td>PSP</td>
-                  <td>-</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th>Libelle Cours</th>
-                  <th>Matieres</th>
-                  <th>Date D'ajout</th>
-                  <th>Profs</th>
-                  <th>Action</th>
-                </tr>
-                </tfoot>
-              </table>
-            </div>
-          </center>
-            <!-- /.card-body -->
-          </div>
-      
-@endsection
-@section('js')
-    
-@endsection
+                <!-- /.card-header -->
+                
+                <div class="card-body" >
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                                <th>{{__('text.Libelle.lbl')}}</th>
+                                <th>{{__('text.Matiere.lbl')}}</th>
+                                <th>{{__('text.Date_Ajout.lbl')}}</th>
+                                <th>{{__('text.Profs.lbl')}}</th>
+                                
+                                <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($datas as $item)
+                            <tr>
+                                <td>Libelle</td>
+                                <td>Matiere</td>
+                                <td>Date_Ajout</td>
+                                <td>Profs</td>
+                                
+
+                                <td style="text-align:right;">
+                                    <form method="delete"  action="{{route('cours.destroy', $item->id)}}">
+                                       
+            
+
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class='btn-group'><a href="{{ route('cours.edit', $item->id) }}"
+                                                
+                                                class='btn btn-primary pull-right'><i class="fas fa-edit"> </i> </a>
+                                            <button type="submit" onclick="return myFunction();"
+                                                class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                        </div>
+
+                                        
+                                    </form>
+
+                                </td>
+                            </tr>
+                            
+
+
+                        </tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+        </div>
+        <script>
+            function myFunction() {
+                if(!confirm("Are You Sure to delete this"))
+                event.preventDefault();
+            }
+           </script>
+
+        @endsection
+        @section('js')
+
+        @endsection

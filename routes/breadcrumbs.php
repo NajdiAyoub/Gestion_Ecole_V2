@@ -14,6 +14,34 @@ Breadcrumbs::for('admin.parametre.anneesscolaire.edit', function ($trail, $id) {
     $trail->push(__('text.AnneesScolaire.edit'), route('anneesscolaire.edit', $id));
 });
 
+//  Admin->Parametre->Semestres
+Breadcrumbs::for('admin.parametre.semestres', function ($trail) {
+    $trail->push(__('text.Semestres.lbl'), route('semestres.index'));
+});
+Breadcrumbs::for('admin.parametre.semestres.add', function ($trail) {
+    $trail->parent('admin.parametre.semestres');
+    $trail->push(__('text.Semestres.add'), route('semestres.create'));
+});
+Breadcrumbs::for('admin.parametre.semestres.edit', function ($trail, $id) {
+    $trail->parent('admin.parametre.semestres');
+    $trail->push(__('text.Semestres.edit'), route('semestres.edit', $id));
+});
+
+
+//  Admin->Parametre->Matieres
+
+Breadcrumbs::for('admin.parametre.matieres', function ($trail) {
+    $trail->push(__('text.Matieres.lbl'), route('matieres.index'));
+});
+Breadcrumbs::for('admin.parametre.matieres.add', function ($trail) {
+    $trail->parent('admin.parametre.matieres');
+    $trail->push(__('text.Matieres.add'), route('matieres.create'));
+});
+Breadcrumbs::for('admin.parametre.matieres.edit', function ($trail, $id) {
+    $trail->parent('admin.parametre.matieres');
+    $trail->push(__('text.Matieres.edit'), route('matieres.edit', $id));
+});
+
 //  Admin->Parametre->NIVEAU
 Breadcrumbs::for('admin.parametre.niveaux', function ($trail) {
     $trail->push(__('text.Niveaux.lbl'), route('niveaux.index'));
@@ -142,7 +170,7 @@ Breadcrumbs::for('admin.eleves.absences.edit', function ($trail, $id) {
 
 
 Breadcrumbs::for('admin.eleves.paiements', function ($trail) {
-    $trail->push(__('text.Paiemenets.lbl'), route('paiemenets.index'));
+    $trail->push(__('text.Paiemenets.lbl'), route('paiements.index'));
 });
 Breadcrumbs::for('admin.eleves.paiements.add', function ($trail) {
     $trail->parent('admin.eleves.paiements');
@@ -178,60 +206,60 @@ Breadcrumbs::for('admin.prof.profs.add', function ($trail) {
     $trail->parent('admin.prof.profs');
     $trail->push(__('text.Profs.add'), route('profs.create'));
 });
-Breadcrumbs::for('admin.profs.profs.edit', function ($trail, $id) {
+Breadcrumbs::for('admin.prof.profs.edit', function ($trail, $id) {
     $trail->parent('admin.prof.profs');
-    $trail->push(__('text.Profs.edit'), route('profs.edit', $id));
+    $trail->push(__('text.Prof.edit'), route('profs.edit', $id));
 });
 
 // Admin->Profs->Absences
 
 
 Breadcrumbs::for('admin.prof.absences', function ($trail) {
-    $trail->push(__('text.Absences.lbl'), route('absences.index'));
+    $trail->push(__('text.AbsencesProfs.lbl'), route('absencesprofs.index'));
 });
 Breadcrumbs::for('admin.prof.absences.add', function ($trail) {
     $trail->parent('admin.prof.absences');
-    $trail->push(__('text.Absences.add'), route('absences.create'));
+    $trail->push(__('text.AbsencesProfs.add'), route('absencesprofs.create'));
 });
 Breadcrumbs::for('admin.prof.absences.edit', function ($trail, $id) {
     $trail->parent('admin.prof.absences');
-    $trail->push(__('text.Absences.edit'), route('absences.edit', $id));
+    $trail->push(__('text.Absences.edit'), route('absencesprofs.edit', $id));
 });
 
 // Admin->Profs->Paiemenets
 
 
 Breadcrumbs::for('admin.prof.paiements', function ($trail) {
-    $trail->push(__('text.Paiemenets.lbl'), route('paiemenets.index'));
+    $trail->push(__('text.Paiemenets.lbl'), route('paiementseleves.index'));
 });
-Breadcrumbs::for('admin.prof.paiements.add', function ($trail) {
+Breadcrumbs::for('admin.prof.paiementsprofs.add', function ($trail) {
     $trail->parent('admin.prof.paiements');
-    $trail->push(__('text.Paiements.add'), route('paiements.create'));
+    $trail->push(__('text.PaiementsProfs.add'), route('paiementseleves.create'));
 });
 Breadcrumbs::for('admin.prof.paiements.edit', function ($trail, $id) {
     $trail->parent('admin.prof.paiements');
-    $trail->push(__('text.Paiements.edit'), route('paiements.edit', $id));
+    $trail->push(__('text.Paiements.edit'), route('paiementseleves.edit', $id));
 });
 
 // Admin->Profs->EmploisDuTemps
 
 Breadcrumbs::for('admin.prof.emploisdutemps', function ($trail) {
-    $trail->push(__('text.EmploisDuTemps.lbl'), route('emploisdutemps.index'));
+    $trail->push(__('text.EmploisDuTemps.lbl'), route('emploisdutempseleves.index'));
 });
 Breadcrumbs::for('admin.prof.emploisdutemps.add', function ($trail) {
     $trail->parent('admin.prof.emploisdutemps');
-    $trail->push(__('text.EmploisDuTemps.add'), route('emploisdutemps.create'));
+    $trail->push(__('text.EmploisDuTemps.add'), route('emploisdutempseleves.create'));
 });
 Breadcrumbs::for('admin.prof.emploisdutemps.edit', function ($trail, $id) {
     $trail->parent('admin.prof.emploisdutemps');
-    $trail->push(__('text.EmploisduTemps.edit'), route('empoisdutemps.edit', $id));
+    $trail->push(__('text.EmploisduTemps.edit'), route('empoisdutempseleves.edit', $id));
 });
 
 // Admin->Affectations->ProfMatiere
 
 
 Breadcrumbs::for('admin.affectations.profsmatieres', function ($trail) {
-    $trail->push(__('text.ProfsMatieres.lbl'), route('profsMatieres.index'));
+    $trail->push(__('text.ProfsMatieres.lbl'), route('profsmatieres.index'));
 });
 Breadcrumbs::for('admin.affectations.profsmatieres.add', function ($trail) {
     $trail->parent('admin.affectations.profsmatieres');
@@ -270,4 +298,16 @@ Breadcrumbs::for('admin.affectations.classesniveauxfilieres.add', function ($tra
 Breadcrumbs::for('admin.affectations.classesniveauxfilieres.edit', function ($trail, $id) {
     $trail->parent('admin.affectations.classesniveauxfilieres');
     $trail->push(__('text.classesniveauxfilieres.edit'), route('classesniveauxfilieres.edit', $id));
+});
+
+Breadcrumbs::for('admin.affectations.classescontrolesmatieres', function ($trail) {
+    $trail->push(__('text.ClassesControlesMatieres.lbl'), route('classescontrolesmatieres.index'));
+});
+Breadcrumbs::for('admin.affectations.classescontrolesmatieres.add', function ($trail) {
+    $trail->parent('admin.affectations.classescontrolesmatieres');
+    $trail->push(__('text.ClassesControlesMatieres.add'), route('classescontrolesmatieres.create'));
+});
+Breadcrumbs::for('admin.affectations.classescontrolesmatieres.edit', function ($trail, $id) {
+    $trail->parent('admin.affectations.classescontrolesmatieres');
+    $trail->push(__('text.ClassesControlesMatieres.edit'), route('classescontrolesmatieres.edit', $id));
 });

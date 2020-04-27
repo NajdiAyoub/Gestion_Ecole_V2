@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PaiementProf;
 use App\Prof;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,8 @@ class PaiementsProfsController extends Controller
      */
     public function index()
     {
-        $datas = Prof::all();
-        return view('Administrations.Profs.Profs.index')->with('datas', $datas);
+        $datas = PaiementProf::all();
+        return view('Administrations.Profs.Paiements.index')->with('datas', $datas);
         //
     }
 
@@ -26,6 +27,8 @@ class PaiementsProfsController extends Controller
      */
     public function create()
     {
+        return view('Administrations.Profs.Paiements.create');
+
         //
     }
 

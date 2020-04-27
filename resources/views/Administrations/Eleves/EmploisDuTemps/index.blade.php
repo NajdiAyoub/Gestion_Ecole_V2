@@ -1,124 +1,104 @@
 @extends('layouts.master')
 @section('title')
-    
+
+
 @endsection
 
 @section('css')
-    
+
 @endsection
+
 @section('content')
-<div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Emplois Du Temps</a></li>
-            <li class="breadcrumb-item active">Emplois Du Temps Eleves</li>
-          </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
 
-  <div class="content">
+
+{{ Breadcrumbs::render('admin.prof.emploisdutemps') }}
+
+
+
+<div class="content">
     <div class="container-fluid">
-      <div class="row">
-    
-        <section class="content" style="margin:auto;">
-          <center>
-          <div class="row">
-            <div class="col-12">
-              <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
-                <div class="card-header"><strong><em><h4 style=" position: absolute;
-                  color: antiquewhite; margin-top: 8px;"> Emplois Du Temps Eleves</h4></em></strong>
-                  <div class="mt-4" style="float: right ; margin-top: 0px !important;">
-                    <div class="btn btn-primary btn-lg btn-flat" style="font-size:1rem;">
-                      <i class="fas fa-plus-circle fa-lg mr-2"></i> 
-                      Ajouter Emplois
+        <div class="row">
+            <section class="content" style="margin:auto;">
+                                               
+                            <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.EmploisDuTempsEleves.add')}}</h4>
+                   
+                          <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
+                                    href="{{ route('emploisdutempseleves.create') }}"> &nbsp; <i
+                                        class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.EmploisDuTempsEleves.add')}}</a>
+                                    
+                                        <form method="get" action="{{route('emploisdutempseleves.index')}}">
+                                        <label for="search">Search:</label>
+                                        <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                                        </form>
+                                    </div>
+                        
+                                      
+
+            </section>    
+                        </div>
                     </div>
-                  </div>
-                </div>
-                  
-                </div>
+                
                 <!-- /.card-header -->
-                <div class="card-body" style="padding:0px;">
-                  <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                           <th>Days</th>
-                            <th>08h00-10h00</th>
-                             <th>10h00-12h00</th>
-                             <th>14h00-16h00</th>
-                             <th>16h00-18h00</th>
-                              <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    
-                    <tr>
-                      <td>Lundi</td>
-                      <td>Opera for Wii</td>
-                      <td>Wii</td>
-                      <td>-</td>                
-                      <td>Presto</td>
-                      <td><i class="fas fa-trash-alt"style="margin-right: 22px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
+                
+                <div class="card-body" >
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                                <th>{{__('text.Days.lbl')}}</th>
+                                <th>{{__('text.08H00-10H00.lbl')}}</th>
+                                <th>{{__('text.10H00-12H00.lbl')}}</th>
+                                <th>{{__('text.14H00-16H00.lbl')}}</th>
+                                <th>{{__('text.16H00-18H00.lbl')}}</th>
+                                <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($datas as $item)
+                            <tr>
+                                <td>{{$item['Days']}}</td>
+                                <td>{{$item['08H00-10H00']}}</td>
+                                <td>{{$item['10H00-12H00']}}</td>
+                                <td>{{$item['14H00-16H00']}}</td>
+                                <th>{{__('text..16H00-18H00.lbl')}}</th>
 
-                    </tr>
-                    <tr>
-                      <td>Mardi</td>
-                      <td>Nokia N800</td>
-                      <td>N800</td>
-                      <td>Nokia N800</td>
-                      <td>-</td>
-                      <td><i class="fas fa-trash-alt" style="margin-right: 22px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
 
-                    </tr>
-                   
-                    <tr>
-                      <td>Mercerdi</td>
-                      <td>Konqureror 3.5</td>
-                      <td>KDE 3.5</td>
-                      <td>Nokia N800</td>
-                      <td>3.5</td>
-                      <td><i class="fas fa-trash-alt" style="margin-right: 22px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
+                                <td style="text-align:right;">
+                                    <form method="delete"  action="{{route('emploisdutempseleves.destroy', $item->id)}}">
+                                       
+            
 
-                    </tr>
-                    <tr>
-                      <td>Jeudi</td>
-                      <td>Internet Explorer 4.5</td>
-                      <td>Mac OS 8-9</td>
-                      <td>Nokia N800</td>
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class='btn-group'><a href="{{ route('emploisdutempseleves.edit', $item->id) }}"
+                                                
+                                                class='btn btn-primary pull-right'><i class="fas fa-edit"> </i> </a>
+                                            <button type="submit" onclick="return myFunction();"
+                                                class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                        </div>
 
-                      <td>-</td>
-                      <td><i class="fas fa-trash-alt" style="margin-right: 22px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
+                                        
+                                    </form>
 
-                    </tr>
-                   
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                      <th>Days</th>
-                      <th>08h00-10h00</th>
-                      <th>10h00-12h00</th>
-                      <th>14h00-16h00</th>
-                      <th>16h00-18h00</th>
-                      <th>Action</th>
-                    </tr>
-                    </tfoot>
-                  </table>
+                                </td>
+                            </tr>
+                            
+
+                            @endforeach
+
+                        </tbody>
+
+                    </table>
                 </div>
-              </center>
                 <!-- /.card-body -->
-              </div>
+        </div>
+        <script>
+            function myFunction() {
+                if(!confirm("Are You Sure to delete this"))
+                event.preventDefault();
+            }
+           </script>
 
+        @endsection
+        @section('js')
 
-
-
-
-@endsection
-@section('js')
-    
-@endsection
+        @endsection

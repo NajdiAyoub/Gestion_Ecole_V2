@@ -132,6 +132,25 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
+                                        <a href="{{ route('semestres.index')}}"
+                                            class="nav-link {{isActive('admin.parametre.semestres',request())}}">
+                                            <i
+                                                class="far fa{{isChecked('admin.parametre.semestres',request())}}-circle nav-icon"></i>
+                                            <p>{{__('text.Semestres.btn') }}</p>
+                                        </a>
+                                    </li>
+
+
+                                    <li class="nav-item">
+                                        <a href="{{ route('matieres.index')}}"
+                                            class="nav-link {{isActive('admin.parametre.matieres',request())}}">
+                                            <i
+                                                class="far fa{{isChecked('admin.parametre.matieres',request())}}-circle nav-icon"></i>
+                                            <p>{{__('text.Matieres.btn') }}</p>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
                                         <a href="{{ route('niveaux.index')}}"
                                             class="nav-link {{isActive('admin.parametre.niveaux',request())}}">
                                             <i
@@ -336,7 +355,7 @@
                                    with font-awesome or any other icon font library -->
                                                                                                             <li
                                                                                                                 class="nav-item has-treeview menu-open">
-                                                                                                                <a href="{{ route('Paiements.index')}}"
+                                                                                                                <a href="{{ route('paiements.index')}}"
                                                                                                                     class="nav-link {{request()->is('Paiements/Paiements') ? 'active' : ''}}">
                                                                                                                     <i
                                                                                                                         class="nav-icon fas fa-money-bill-alt"></i>

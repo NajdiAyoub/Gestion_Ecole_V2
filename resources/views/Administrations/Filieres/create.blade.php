@@ -13,7 +13,7 @@
 
 
 <div class="modal-header">
-    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel" >{{__('text.Ajouter_Filieres.lbl')}}</h5>
+    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel" >{{__('text.Filieres.add')}}</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     </button>
 
@@ -28,7 +28,14 @@
             <label> {{ __('text.Libelle.lbl') }}</label>
             <input type="text" name="libelle" class="form-control">
             <label>{{ __('text.Niveaux.lbl') }}</label>
-            <input type="text" name="niveau" class="form-control">
+            <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="niveaux_id">
+                <option >--------------------------------------</option>
+                @foreach ($niveaux as $item)
+            <option value="{{$item->id}}">{{$item->libelle}}</option>
+                @endforeach
+            </select>
+
+
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">

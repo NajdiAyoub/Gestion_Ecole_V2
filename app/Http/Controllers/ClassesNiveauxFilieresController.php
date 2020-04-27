@@ -14,9 +14,9 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function index()
     {
-        //$datas = ClasseNiveauFiliere::all();
+        $datas = ClasseNiveauFiliere::all();
 
-        return view('Administrations.Affectations.ClassesNiveauxFilieres.index');//->with('datas', $datas);
+        return view('Administrations.Affectations.ClassesNiveauxFilieres.index')->with('datas', $datas);
 
         //
     }

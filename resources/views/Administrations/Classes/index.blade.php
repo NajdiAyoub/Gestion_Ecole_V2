@@ -58,8 +58,8 @@
 
                                 @foreach ($datas as $item)
                                 <tr>
-                                    <td>{{$item['libelle']}}</td>
-                                    <td>{{$item['niveaux']}}</td>
+                                    <td>{{$item->libelle}}</td>
+                                    <td>{{$item->niveaux}}</td>
 
                                     <td>
                                         <form method="delete" action="{{route('classes.destroy', $item->id)}}">
@@ -68,7 +68,7 @@
                                             <div class='btn-group'>
                                                 <a href="{{ route('classes.edit', $item->id) }}"
                                                     class='btn btn-primary pull-right'><i class="fas fa-edit"></i></a>
-                                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                <button type="submit" onclick="return myFunction();" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                             </div>
                                         </form>
                                     </td>
@@ -79,6 +79,8 @@
                             </tbody>
 
                         </table>
+                        {{ $datas->links() }}
+
                     </div>
                 </center>
                 <!-- /.card-body -->

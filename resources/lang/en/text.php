@@ -6,6 +6,18 @@ return [
     'AnneesScolaire.btn' => 'School year',
     'AnneesScolaire.add' => 'New school Year',
     'AnneesScolaire.edit' => 'Update school Year',
+    // Admin----->Parametres
+    'Semestres.list' => 'Semestres Lists',
+    'Semestres.lbl' => 'Semestres',
+    'Semestres.btn' => 'Semestres',
+    'Semestres.add' => 'New Semestres',
+    'Semestres.edit' => 'Update Semestres',
+
+    'Matieres.list' => 'Subjects Lists',
+    'Matieres.lbl' => 'Subjects',
+    'Matieres.btn' => 'Subjects',
+    'Matieres.add' => 'New Subject',
+    'Matieres.edit' => 'Update Subjects',
 
     'Niveaux.list' => 'Levels Lists',
     'Niveaux.lbl' => 'Levels',
@@ -124,10 +136,10 @@ return [
     'ClassesNiveauxFilieres.edit' => 'Edit ClassesLevelsFaculties',
 
     'ClassesControlesMatieres.list' => 'ClassesTestsSubjects Lists',
-    'ClassesNiveauxFilieres.lbl' => 'ClassesTestsSubjects',
-    'ClassesNiveauxFilieres.btn' => 'ClassesTestsSubjects',
-    'ClassesNiveauxFilieres.add' => 'Add ClassesTestsSubjects',
-    'ClassesNiveauxFilieres.edit' => 'Edit ClassesTestsSubjects',
+    'ClassesControlesMatieres.lbl' => 'ClassesTestsSubjects',
+    'ClassesControlesMatieres.btn' => 'ClassesTestsSubjects',
+    'ClassesControlesMatieres.add' => 'Add ClassesTestsSubjects',
+    'ClassesControlesMatieres.edit' => 'Edit ClassesTestsSubjects',
 
 
 
@@ -179,6 +191,8 @@ return [
     'Salles.lbl' => 'Rooms',
     'Classes.lbl' => 'Classes',
     'Libelle.lbl' => 'Wording',
+    'Matieres.lbl'=> 'Subjects',
+    'Semestres.lbl'=> 'Semestres',
     'Description.lbl' => 'Description',
     'Type_Salle.lbl' => 'Room Type',
     'Nombre_Place.lbl' => 'Place Number',
@@ -187,6 +201,72 @@ return [
     'Ajouter_AnneesScolaire.lbl'=>'Add SchoolYear',
     'Edit_AnneesScolaire.lbl'=> 'Edit SchoolYear',
     'Ajouter_Controles.lbl'=>'New Test',
+    'Nom.lbl'=>'LastName',
+    'Prenom.lbl'=>'FirstName',
+    'Login.lbl'=>'Login',
+    'Password.lbl'=>'Password',
+    'Cin.lbl'=>'CIN',
+    'Rib.lbl'=>'Rib',
+    'Adresse.lbl'=>'Address',
+    'Salaire.lbl'=>'Salary',
+    'Montant_Par_Heure.lbl'=>'AmountPerHour
+    ',
+
+    'Tel.lbl'=>'Phone',
+    'Email.lbl'=>'Email',
+    'Date_Naissance.lbl'=>'BirthDate',
+    'Type_Contrat.lbl'=>'ContractType',
+    'Date_Absence.lbl'=>'Absence Date',
+    'Seance.lbl'=>'Session',
+    'Justifie.lbl'=>'Justify',
+    'Remarque.lbl'=>'Note',
+    'Prof.lbl'=>'Prof',
+    'Date_Absences.lbl'=>'Absences Date',
+    'Attachements.lbl'=>'Attachements',
+    'Nombre_Heure.lbl'=>'Number Of Hours',
+    'Date_Paiements.lbl'=>'Payements Dates',
+    'Type_Paiements.lbl'=>'Payements Type',
+    'Filiere.lbl'=>'Faculty',
+    'Classe.lbl'=>'Classe',
+    'Image.lbl'=>'Picture',
+    'Justifie.lbl'=>'Justify',
+    'Semestres.lbl'=>'Semestres',
+    'Attachement.lbl'=>'Attachement',
+    'Matiere.lbl'=>'Subject',
+    'Niveau.lbl'=>'Level',
+    'Semestres.lbl'=>'Semestre',
+    'Salle.lbl'=>'Room',
+    'Annee_Scolaire.lbl'=>'School Year',
+    'Days.lbl'=>'Days',
+    '08H00-10H00.lbl'=>'08H00-10H00',
+    '10H00-12H00.lbl'=>'10H00-12H00',
+    '14H00-16H00.lbl'=>'14H00-16H00',
+    '16H00-18H00.lbl'=>'16H00-18H00',
+    'EmploisDuTemps.lbl'=>'Schedule',
+    'NombreHeures.lbl'=>'Number of hours',
+    'Paiemenets.lbl'=>'Payements',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ];

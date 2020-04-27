@@ -1,150 +1,115 @@
 @extends('layouts.master')
 @section('title')
-    
+
+
 @endsection
 
 @section('css')
-    
+
 @endsection
 
 @section('content')
-<div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Eleves</a></li>
-            <li class="breadcrumb-item active">Listes Eleves</li>
-          </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
 
-  <div class="content">
-    <div class="container-fluid">
-      <div class="row">
 
-        <section class="content" style="margin:auto;">
-          <center>
-          <div class="row">
-            <div class="col-12">
-              <div class="card" style="background-color: #343a40; margin-bottom: 0px;">
-                <div class="card-header"><strong><em><h4 style=" position: absolute;
-                  color: antiquewhite; margin-top: 8px;"> Listes Eleves</h4></em></strong>
-                  <div class="mt-4" style="float: right ; margin-top: 0px !important;">
-                    <div class="btn btn-primary btn-lg btn-flat" style="font-size:1rem;">
-                      <i class="fas fa-plus-circle fa-lg mr-2"></i> 
-                      Ajouter Eleves
+{{ Breadcrumbs::render('admin.eleves.eleves') }}
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <section class="content" style="margin:auto;">
+                                               
+                            <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.Eleves.list')}}</h4>
+                   
+                          <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
+                                    href="{{ route('eleves.create') }}"> &nbsp; <i
+                                        class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Eleves.add')}}</a>
+                                    
+                                        <form method="get" action="{{route('profs.index')}}">
+                                        <label for="search">Search:</label>
+                                        <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                                        </form>
+                                    </div>
+                        
+                                      
+
+            </section>    
+                        </div>
                     </div>
-                  </div>
-                </div>
-                  
-                </div>
+                
                 <!-- /.card-header -->
-                <div class="card-body" style="padding:0px;">
-                  <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                           <th>Nom</th>
-                            <th>Prenom</th>
-                             <th>Date_Naissance</th>
-                             <th>Addresses</th>
-                             <th>Emails</th>
-                             <th>Niveaux</th>
-                             <th>Filieres</th>
-                             <th>Classes</th>
-                             <th>Image</th>
-                              <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    
-                    <tr>
-                      <td>Presto</td>
-                      <td>Opera for Wii</td>
-                      <td>Wii</td>
-                      <td>-</td>
-                      <td>Presto</td>
-                      <td>Wii</td>   
-                      <td>Wii</td>
-                      <td>Wii</td>
-                      <td>Presto</td>
-                      <td><i class="fas fa-trash-alt"style="margin-right: 22px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
+                
+                <div class="card-body" >
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                                <th>{{__('text.Nom.lbl')}}</th>
+                                <th>{{__('text.Prenom.lbl')}}</th>
+                                <th>{{__('text.Date_Naissance.lbl')}}</th>
+                                <th>{{__('text.Adresse.lbl')}}</th>
+                                <th>{{__('text.Email.lbl')}}</th>
+                                <th>{{__('text.Niveaux.lbl')}}</th>
+                                <th>{{__('text.Filiere.lbl')}}</th>
+                                <th>{{__('text.Classe.lbl')}}</th>
+                                <th>{{__('text.Image.lbl')}}</th>
+                                <th>{{__('text.Login.lbl')}}</th>
+                                <th>{{__('text.Password.lbl')}}</th>
+                                <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($datas as $item)
+                            <tr>
+                                <td>{{$item['Nom']}}</td>
+                                <td>{{$item['Prenom']}}</td>
+                                <td>{{$item['Date_Naissance']}}</td>
+                                <td>{{$item['Adresse']}}</td>
+                                <td>{{$item['Email']}}</td>
+                                <td>{{$item['Niveaux']}}</td>
+                                <td>{{$item['Filiere']}}</td>
+                                <td>{{$item['Classe']}}</td>
+                                <td>{{$item['Login']}}</td>
+                                <td>{{$item['Password']}}</td>
 
-                    </tr>
-                    <tr>
-                      <td>Presto</td>
-                      <td>Nokia N800</td>
-                      <td>N800</td>
-                      <td>Nokia N800</td>
-                      <td>Nokia N800</td>
-                      <td>Wii</td>
-                      <td>Wii</td>
-                      <td>Wii</td>
-                      <td>-</td>
-                      <td><i class="fas fa-trash-alt"style="margin-right: 22px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
 
-                    </tr>
-                   
-                    <tr>
-                      <td>KHTML</td>
-                      <td>Konqureror 3.5</td>
-                      <td>KDE 3.5</td>
-                      <td>Nokia N800</td>
-                      <td>Nokia N800</td>
-                      <td>Wii</td>
-                      <td>Wii</td>
-                      <td>Wii</td>
+                                <td style="text-align:right;">
+                                    <form method="delete"  action="{{route('eleves.destroy', $item->id)}}">
+                                       
+            
 
-                      <td>3.5</td>
-                      <td><i class="fas fa-trash-alt"style="margin-right: 22px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class='btn-group'><a href="{{ route('eleves.edit', $item->id) }}"
+                                                
+                                                class='btn btn-primary pull-right'><i class="fas fa-edit"> </i> </a>
+                                            <button type="submit" onclick="return myFunction();"
+                                                class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                        </div>
 
-                    </tr>
-                    <tr>
-                      <td>Tasman</td>
-                      <td>Internet Explorer 4.5</td>
-                      <td>Mac OS 8-9</td>
-                      <td>Nokia N800</td>
-                      <td>Nokia N800</td>
-                      <td>Wii</td>
-                      <td>Wii</td>
-                      <td>Wii</td>
+                                        
+                                    </form>
 
-                      <td>-</td>
-                      <td><i class="fas fa-trash-alt"style="margin-right: 22px;"></i><i class="fas fa-edit style="margin-right:top;"></i></td>
+                                </td>
+                            </tr>
+                            
 
-                    </tr>
-                   
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                      <th>Nom</th>
-                      <th>Prenom</th>
-                      <th>Date_Naissance
-                      </th>
-                      <th>Adresse</th>
-                      <th>Emails</th>
-                      <th>Niveaux</th>
-                      <th>Filiere</th>
-                      <th>Classes</th>
-                      <th>Image</th>
-                      <th>Actions</th>
-                    </tr>
-                    </tfoot>
-                  </table>
+                            @endforeach
+
+                        </tbody>
+
+                    </table>
                 </div>
-              </center>
                 <!-- /.card-body -->
-              </div>
+        </div>
+        <script>
+            function myFunction() {
+                if(!confirm("Are You Sure to delete this"))
+                event.preventDefault();
+            }
+           </script>
 
+        @endsection
+        @section('js')
 
-
-    
-@endsection
-@section('js')
-    
-@endsection
+        @endsection

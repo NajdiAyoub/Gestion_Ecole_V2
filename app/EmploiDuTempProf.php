@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class EmploiDuTempProf extends Model
 {
     
-    protected $table = 'emploisdutempsprofs';
+    protected $table = 'emplois_du_temps_profs';
     public $primarykey = 'id';
     protected $fillable = [
         'classes_id',

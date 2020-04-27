@@ -51,47 +51,6 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-
-                                    <tr>
-                                        <td>SM</td>
-                                        <td>2eme annees</td>
-                                        <td>2eme annees</td>
-                                        <td>2eme annees</td>
-                                        <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
-                                                class="fas fa-edit style=" margin-right:top;"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td>PC</td>
-                                        <td>2eme annees</td>
-                                        <td>2eme annees</td>
-                                        <td>2eme annees</td>
-                                        <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
-                                                class="fas fa-edit style=" margin-right:top;"></i></td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>SECO</td>
-                                        <td>2eme annees</td>
-                                        <td>2eme annees</td>
-                                        <td>2eme annees</td>
-                                        <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
-                                                class="fas fa-edit style=" margin-right:top;"></i></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>SVT</td>
-                                        <td>2eme annees</td>
-                                        <td>2eme annees</td>
-                                        <td>2eme annees</td>
-                                        <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
-                                                class="fas fa-edit style=" margin:auto;"></i></td>
-
-                                    </tr>
-
-                                </tbody>
-
                             </table>
                         </div>
                     </center>

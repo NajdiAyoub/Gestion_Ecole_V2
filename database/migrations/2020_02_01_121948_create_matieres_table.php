@@ -16,7 +16,6 @@ class CreateMatieresTable extends Migration
         Schema::create('matieres', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('libelle');
-            $table->string('seance');
             $table->unsignedBigInteger('niveaux_id');
             $table->foreign('niveaux_id')->references('id')->on('niveaux');
 

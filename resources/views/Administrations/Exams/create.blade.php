@@ -14,7 +14,7 @@
 
 
         <div class="modal-header">
-          <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel">{{__('text.Exams.lbl')}}</h5>
+          <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel">{{__('text.Exams.add')}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           </button>
 

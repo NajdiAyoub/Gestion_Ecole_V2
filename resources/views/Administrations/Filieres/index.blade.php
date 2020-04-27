@@ -18,16 +18,17 @@
 <div class="content-header" style="margin: auto;">
     <!-- Button trigger modal -->
 
-    
-  
     <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.Filieres.list')}}</h4>
                    
     <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
               href="{{ route('filieres.create') }}"> &nbsp; <i
                   class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Filieres.add')}}</a>
-                  <label  
-                  " for="search">Search:</label>
-                  <input style="margin-right: -273px; margin-top:5px"  type="search" id="search" name="search">
+                  <form method="get" action="{{route('filieres.index')}}">
+                    <label for="search">Search:</label>
+                    <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                    </form>
+  
+
                 </div>
   
          
@@ -42,50 +43,48 @@
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Libelle</th>
-                                        <th>Niveaux</th>
-                                        <th>Actions</th>
+                                        <th>{{__('text.Libelle.lbl')}}</th>
+                                        <th>{{__('text.Niveaux.lbl')}}</th>
+                                        <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
                                     </tr>
-                                </thead>
+                                </thead>  
                                 <tbody>
+                                
+                                
+                                @foreach ($datas as $item)
+                                <tr>
+                                    <td>{{$item->libelle}}</td>
+                                    <td>{{$item->niveaux}}</td>
 
-                                    <tr>
-                                        <td>SM</td>
-                                        <td>2eme annees</td>
-                                        <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
-                                                class="fas fa-edit style=" margin-right:top;"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td>PC</td>
-                                        <td>2eme annees</td>
-                                        <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
-                                                class="fas fa-edit style=" margin-right:top;"></i></td>
+                                    <td>
+                                        <form method="delete" action="{{route('filieres.destroy', $item->id)}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <div class='btn-group'>
+                                                <a href="{{ route('filieres.edit', $item->id) }}"
+                                                    class='btn btn-primary pull-right'><i class="fas fa-edit"></i></a>
+                                                <button type="submit" onclick="return myFunction();" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
 
-                                    </tr>
 
-                                    <tr>
-                                        <td>SECO</td>
-                                        <td>2eme annees</td>
-                                        <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
-                                                class="fas fa-edit style=" margin-right:top;"></i></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>SVT</td>
-                                        <td>2eme annees</td>
-
-                                        <td><i class="fas fa-trash-alt" style="margin-right: 90px;"></i><i
-                                                class="fas fa-edit style=" margin:auto;"></i></td>
-
-                                    </tr>
-
-                                </tbody>
-
+                            </tbody>
                             </table>
+                            {{ $datas->links() }}
+
                         </div>
                     </center>
                     <!-- /.card-body -->
             </div>
+            <script>
+                function myFunction() {
+                    if(!confirm("Are You Sure to delete this"))
+                    event.preventDefault();
+                }
+               </script>
            
             @endsection
             @section('js')

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Classe;
-use App\Salle;
 use App\niveaux;
 use Illuminate\Http\Request;
+use DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class ClassesController extends Controller
 {
@@ -21,11 +22,11 @@ class ClassesController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas =Classe::where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_classes')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
-            $datas = Classe::paginate(10);
+            $datas = DB::table('v_classes')->paginate(10);
 
         }   
         return view('Administrations.Classes.index')->with('datas', $datas )->with('search', $search );
@@ -53,8 +54,11 @@ class ClassesController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        //dd($input);
+
         $data = Classe::create($input);
-        return redirect(route('classes.index'));
+        $data->save();
+        return redirect(route('classes.index'))->with('success', 'Item added succesfully' );
         //
     }
 

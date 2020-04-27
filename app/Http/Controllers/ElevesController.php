@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Classe;
 use App\Eleve;
+use App\Filiere;
+use App\niveaux;
 use Illuminate\Http\Request;
 
 class ElevesController extends Controller
@@ -12,13 +15,20 @@ class ElevesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {  
-        //$datas = Eleve::all();
-        return view('Administrations.Eleves.Eleves.index');
-        //->with('data', $data);
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas =Eleve::where('nom', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = Eleve::paginate(10);
 
-        //
+        }   
+        return view('Administrations.Eleves.Eleves.index')->with('datas', $datas )->with('search', $search );
     }
 
     /**
@@ -29,7 +39,12 @@ class ElevesController extends Controller
     public function create()
     {
         //
-        return view('Administrations.Eleves.Eleves.create');
+        $niveaux = niveaux::all();
+        $filieres = Filiere::all();
+        $classes = Classe::all();
+
+
+        return view('Administrations.Eleves.Eleves.create')->with('niveaux',$niveaux)->with('Filiere',$filieres)->with('Classe',$classes);
 
     }
 
@@ -43,7 +58,8 @@ class ElevesController extends Controller
     {
         $input = $request->all();
         $data = Eleve::create($input);
-        return redirect(route('eleves.index'));
+        return redirect(route('eleves.index'))->with('success', 'Item added succesfully' );
+        dd('$data');
         //
     }
 
@@ -73,9 +89,8 @@ class ElevesController extends Controller
         if (empty($data)) {
             return redirect(route('eleves.index'));
         }
-
+  
         return view('Administrations.Eleves.Eleves.edit')->with('data', $data);
-        //
     }
 
     /**
@@ -92,9 +107,9 @@ class ElevesController extends Controller
         if (empty($data)) {
             return redirect(route('eleves.index'));
         }
-
+  
         $data = Eleve::where('id', $id)->update(request()->except(['_token', '_method']));
-
+  
         return redirect(route('eleves.index'));
 
         //

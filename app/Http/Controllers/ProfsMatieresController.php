@@ -15,7 +15,7 @@ class ProfsMatieresController extends Controller
     public function index()
     { 
        $datas = ProfMatiere::all();
-        return view('Administrations.Affectations.ProfsMatieres.index');//->with('datas', $datas);
+        return view('Administrations.Affectations.ProfsMatieres.index')->with('datas', $datas);
 
         //
     }

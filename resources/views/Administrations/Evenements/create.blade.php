@@ -13,7 +13,7 @@
 
 
 <div class="modal-header">
-    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel" >{{__('text.Evenements_add.lbl')}}</h5>
+    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel" >{{__('text.Evenements.add')}}</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     </button>
 
@@ -27,11 +27,11 @@
         <div class="form-group">
             <label> {{ __('text.Libelle.lbl') }}</label>
             <input type="text" name="libelle" class="form-control">
-            <label>{{ __('text.Classe_id.lbl') }}</label>
+            <label>{{ __('text.Classes.lbl') }}</label>
             <input type="text" name="classe" class="form-control">
-            <label>{{ __('text.Matiere_id.lbl') }}</label>
+            <label>{{ __('text.Matieres.lbl') }}</label>
             <input type="text" name="matiere" class="form-control">
-            <label>{{ __('text.Semestre.lbl') }}</label>
+            <label>{{ __('text.Semestres.lbl') }}</label>
             <input type="text" name="semestre" class="form-control">
 
         </div>

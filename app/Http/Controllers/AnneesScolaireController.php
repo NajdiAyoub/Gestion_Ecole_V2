@@ -30,6 +30,7 @@ class AnneesScolaireController extends Controller
         }   
         return view('Administrations.AnneesScolaire.index')->with('datas', $datas )->with('search', $search );
         
+
     }
   
     

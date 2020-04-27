@@ -15,9 +15,9 @@ class EmploisDuTempsElevesController extends Controller
     public function index()
     {
         //
-        //$datas = EmploiDuTempEleve::all();
+        $datas = EmploiDuTempEleve::all();
 
-        return view('Administrations.Eleves.emploisdutemps.index');//->with('datas', $datas);
+        return view('Administrations.Eleves.emploisdutemps.index')->with('datas', $datas);
 
     }
 

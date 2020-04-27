@@ -129,6 +129,30 @@ Route::resource('anneesscolaire', 'AnneesScolaireController', ['except' => 'dest
     'show' => 'anneesscolaire.show',
 ]]);
 
+
+//ADMIN->Parametres->Semestres
+Route::get('semestres/{id}/delete', 'SemestresController@destroy')->name('semestres.destroy');
+Route::resource('semestres', 'SemestresController', ['except' => 'destroy', 'names' => [
+    'index' => 'semestres.index',
+    'create' => 'semestres.create',
+    'update' => 'semestres.update',
+    'edit' => 'semestres.edit',
+    'store' => 'semestres.store',
+    'show' => 'semestres.show',
+]]);
+
+
+//ADMIN->Parametres->Matieres
+Route::get('matieres/{id}/delete', 'MatieresController@destroy')->name('matieres.destroy');
+Route::resource('matieres', 'MatieresController', ['except' => 'destroy', 'names' => [
+    'index' => 'matieres.index',
+    'create' => 'matieres.create',
+    'update' => 'matieres.update',
+    'edit' => 'matieres.edit',
+    'store' => 'matieres.store',
+    'show' => 'matieres.show',
+]]);
+
 //ADMIN->Parametres->Niveaux
 Route::get('niveaux/{id}/delete', 'NiveauxController@destroy')->name('niveaux.destroy');
 Route::resource('niveaux', 'NiveauxController', ['except' => 'destroy', 'names' => [
@@ -258,7 +282,20 @@ Route::resource('classescontrolesmatieres', 'ClassesControlesMatieresController'
     'show' => 'classescontrolesmatieres.show',
 ]]);
 
-Route::get('ElevesSpace/Cours', 'CoursController@index')->name('Cours.index');
+Route::get('ElevesSpace/Cours/{id}/delete', 'CoursController@destroy')->name('cours.destroy');
+Route::resource('Cours', 'CoursController', ['except' => 'destroy', 'names' => [
+    'index' => 'cours.index',
+    'create' => 'cours.create',
+    'update' => 'cours.update',
+    'edit' => 'cours.edit',
+    'store' => 'cours.store',
+    'show' => 'cours.show',
+]]);
+
+
+
+
+
 Route::get('Absences/listesAbsences', 'AbsencesController@index')->name('Absences.index');
 Route::get('EmploisDuTemps/emplois', 'EmploisDuTempsController@index')->name('emplois');
 Route::get('Paiements/listesPaiements', 'PaiementsController@index')->name('listesPaiements');
@@ -268,7 +305,7 @@ Route::get('BulletinsEtNotes/bulletins', 'BulletinsEtNotesController@index')->na
 Route::get('Administrations/PaiementsProfs', 'PaiementsProfsController@index')->name('PaiementsProfs');
 Route::get('Administrations/emploisdutempsprofs', 'EmploisDuTempsProfsController@index')->name('emploisdutempsprofs');
 Route::get('Administrations/absenceseleves', 'AbsencesElevesController@index')->name('absenceseleves');
-Route::get('Administrations/paiementseleves', 'PaiementsElevesController@index')->name('Paiements.index');
+Route::get('Administrations/paiementseleves', 'PaiementsElevesController@index')->name('Paiementseleves.index');
 Route::get('Administrations/emploisdutempseleves', 'EmploisDuTempsElevesController@index')->name('emploisdutempseleves');
 Route::get('Administrations', 'ElevesController@index')->name('listeseleves');
 Route::get('listeniveaux/{id}/delete', 'NiveauxController@destroy')->name('listeniveaux.destroy');
@@ -279,6 +316,7 @@ Route::get('Administrations/listesclasses', 'ClassesController@index')->name('li
 Route::get('listessalles/{id}/delete', 'SallesController@destroy')->name('listessalles.destroy');
 Route::resource('listessalles', 'SallesController', ['except' => 'destroy']);
 
+Route::get('Paiements/Paiements', 'PaiementsController@index')->name('paiements.index');
 Route::get('Administrations/profsmatiers', 'ProfsMatiersController@index')->name('profsmatiers');
 Route::get('Administrations/classesexams', 'ClassesExamsController@index')->name('classesexams');
 Route::get('Administrations/listesevenements', 'EvenementsController@index')->name('Evenements.index');

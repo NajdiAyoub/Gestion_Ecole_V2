@@ -53,7 +53,7 @@
                             <tr>
                                 <td>{{$item['libelle']}}</td>
                                 <td style="text-align:right;">
-                                    <form method="delete" onclick="return myFunction();" action="{{route('anneesscolaire.destroy', $item->id)}}">
+                                    <form method="delete"  action="{{route('anneesscolaire.destroy', $item->id)}}">
                                        
             
 
@@ -62,7 +62,7 @@
                                         <div class='btn-group'><a href="{{ route('anneesscolaire.edit', $item->id) }}"
                                                 
                                                 class='btn btn-primary pull-right'><i class="fas fa-edit"> </i> </a>
-                                            <button type="submit"
+                                            <button type="submit" onclick="return myFunction();"
                                                 class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                         </div>
 
@@ -79,7 +79,6 @@
 
                     </table>
                     {{ $datas->links() }}
-
                 </div>
                 <!-- /.card-body -->
         </div>

@@ -16,9 +16,9 @@ class ClassesExamsController extends Controller
     public function index()
     {
         //
-        //$datas = ClasseExam::all();
+        $datas = ClasseExam::all();
 
-        return view('Administrations.Affectations.ClassesExams.index');//->with('datas', $datas);
+        return view('Administrations.Affectations.ClassesExams.index')->with('datas', $datas);
 
     }
 
