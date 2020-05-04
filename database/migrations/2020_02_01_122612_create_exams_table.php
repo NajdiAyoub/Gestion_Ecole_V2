@@ -15,10 +15,9 @@ class CreateExamsTable extends Migration
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nom_exam');
+            $table->string('libelle');
             $table->date('date_exam');
             $table->string('heure_exam');
-            $table->string('annee_scolaire');
             $table->unsignedBigInteger('prof_id');
             $table->unsignedBigInteger('matiere_id');
             $table->unsignedBigInteger('classe_id');

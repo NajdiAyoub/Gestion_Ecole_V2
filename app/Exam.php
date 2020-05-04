@@ -11,12 +11,12 @@ class Exam extends Model
     protected $fillable = [
         'libelle',
         'date_exam',
-        'heures_exam',
-        'anneesscolaire_id',
-        'profs_id',
-        'matieres_id',
-        'classes_id',
-        'salles_id',
+        'heure_exam',
+        'annee_scolaire',
+        'prof_id',
+        'matiere_id',
+        'classe_id',
+        'salle_id',
   
     ];
     //

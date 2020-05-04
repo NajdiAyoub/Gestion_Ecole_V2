@@ -196,6 +196,15 @@ return [
     'Classes.btn' => 'Classes',
     'Delete.btn' => 'Supprimer',
     'Edit.btn' => 'Modifier',
+    'soumettre.btn' => 'Soumettre',
+    'revenir.btn' => 'Revenir',
+    'Editer.btn' => 'Editer',
+    'Date_Exam.lbl' => 'Date Exam',
+    'Heure_Exam.lbl' => 'Heure Exam',
+
+
+
+
             
             // Icons
     'log_out.ic' => 'Se deconncter',

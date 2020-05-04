@@ -185,6 +185,14 @@ return [
     'libelle.lbl' => 'wording',
     'Delete.btn' => 'Delete',
     'Edit.btn' => 'Edit',
+    'soumettre.btn' => 'Submit',
+    'revenir.btn' => 'GoBack',
+    'Editer.btn' => 'Edit',
+    'Date_Exam.lbl' => 'Exam Date',
+    'Heure_Exam.lbl' => 'Exam Hour',
+
+
+
     'parametres.lbl' => 'Settings',
     'Niveaux.lbl' => 'Levels',
     'Parametres.lbl' => 'Settings',

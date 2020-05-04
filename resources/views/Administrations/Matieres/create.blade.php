@@ -14,7 +14,7 @@
 
 
 <div class="modal-header">
-    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel" >{{__('text.Matieres_add')}}</h5>
+    <h5 style= "font-style:italic ;color: #007bff;" class="modal-title" id="exampleModalLabel" >{{__('text.Matieres.add')}}</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     </button>
 
@@ -28,8 +28,8 @@
         <div class="form-group">
             <label> {{ __('text.Libelle.lbl') }}</label>
             <input type="text" name="libelle" class="form-control">
-            <label>{{ __('text.Niveaux.lbl') }}</label>
-            <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="niveaux_id">
+            <label>{{ __('text.Niveaux.lbl') }}</label></br>
+            <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="niveaux_id">
                 <option >--------------------------------------</option>
                 @foreach ($niveaux as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option>
@@ -37,8 +37,9 @@
             </select>
            
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+        <button type="submit" class="btn btn-primary">{{__('text.soumettre.btn')}}</button>
+        <input type="button" class="btn btn-primary" value="{{__('text.revenir.btn')}}" onclick="history.back()">
+
         <input type="hidden" value="{{Session::token()}}" name="_token">
         <input type="hidden" name="p_id" id="p_id" value="">
     </div>

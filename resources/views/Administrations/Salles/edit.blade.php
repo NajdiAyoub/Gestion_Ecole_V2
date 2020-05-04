@@ -39,7 +39,9 @@
                         <label>{{__('text.Nombre_Place.lbl')}}</label>
                         <input type="text" name="nombre_place" id="nombre_place" value="{{ $datas->nombre_place}}" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-primary">{{__('text.Editer.btn')}}</button>
+                    <input type="button" class="btn btn-primary" value="{{__('text.revenir.btn')}}" onclick="history.back()">
+
 
                 </div>
         </form>

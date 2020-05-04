@@ -15,7 +15,6 @@ class CreateElevesTable extends Migration
     {
         Schema::create('eleves', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('matricule_eleves');
             $table->string('nom');
             $table->string('prenom');
             $table->date('date_naissance');

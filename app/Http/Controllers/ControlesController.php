@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classe;
 use App\Control;
 use App\Matiere;
+use App\Prof;
 use App\Semestre;
 use Illuminate\Http\Request;
 use DB;
@@ -42,8 +43,9 @@ class ControlesController extends Controller
         $classes = Classe::all();
         $matieres = Matiere::all();
         $semestres = Semestre::all();
+        $profs = Prof::all();
         
-        return view('Administrations.controles.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('Semestre',$semestres);
+        return view('Administrations.controles.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('Semestre',$semestres)->with('profs',$profs);
 
         //
     }

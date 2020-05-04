@@ -62,18 +62,18 @@
                         <tbody>
                             @foreach ($datas as $item)
                             <tr>
-                                <td>{{$item['Nom']}}</td>
-                                <td>{{$item['Prenom']}}</td>
-                                <td>{{$item['Cin']}}</td>
-                                <td>{{$item['Adresse']}}</td>
-                                <td>{{$item['Rib']}}</td>
-                                <td>{{$item['Tel']}}</td>
-                                <td>{{$item['Email']}}</td>
-                                <td>{{$item['Type_Contrat']}}</td>
-                                <td>{{$item['Salaire']}}</td>
-                                <td>{{$item['Montant_Par_Heure']}}</td>
-                                <td>{{$item['Login']}}</td>
-                                <td>{{$item['Password']}}</td>
+                                <td>{{$item->nom}}</td>
+                                <td>{{$item->prenom}}</td>
+                                <td>{{$item->cin}}</td>
+                                <td>{{$item->adresse}}</td>
+                                <td>{{$item->rib}}</td>
+                                <td>{{$item->tel}}</td>
+                                <td>{{$item->email}}</td>
+                                <td>{{$item->type_contrat}}</td>
+                                <td>{{$item->salaire}}</td>
+                                <td>{{$item->montant_par_heure}}</td>
+                                <td>{{$item->login}}</td>
+                                <td>{{$item->password}}</td>
 
 
                                 <td style="text-align:right;">

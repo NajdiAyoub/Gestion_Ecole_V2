@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\AnneeScolaire;
+use App\Classe;
 use App\Exam;
+use App\Matiere;
+use App\Prof;
+use App\Salle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ExamController extends Controller
 {
@@ -12,12 +18,22 @@ class ExamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas = DB::table('v_exam')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = DB::table('v_exam')->paginate(10);
+
+        }   
+        return view('Administrations.exams.index')->with('datas', $datas )->with('search', $search );
+
         
-        $exams = Exam::all()->toArray();
-        return view('Administrations.exams.index', compact('exams'));
-        //
     }
 
     /**
@@ -27,7 +43,17 @@ class ExamController extends Controller
      */
     public function create()
     {
-        return view('Administrations.exams.create');
+        $anneesscolaire = AnneeScolaire::all();
+        $profs = Prof::all();
+        $matieres = Matiere::all();
+        $classes = Classe::all();
+        $salles = Salle::all();
+
+
+
+         
+
+        return view('Administrations.Exams.create')->with('anneesscolaire',$anneesscolaire)->with('profs',$profs)->with('matieres',$matieres)->with('classes',$classes)->with('salles',$salles);
 
         //
     }

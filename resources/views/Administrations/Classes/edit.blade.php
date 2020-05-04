@@ -31,7 +31,9 @@
                         <label>libelle</label>
                         <input type="text" name="libelle" id="libelle" value="{{ $data->libelle}}" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-primary">{{__('text.Editer.btn')}}</button>
+                    <input type="button" class="btn btn-primary" value="{{__('text.revenir.btn')}}" onclick="history.back()">
+
 
                 </div>
         </form>

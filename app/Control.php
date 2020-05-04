@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Control extends Model
 {
-    protected $table = 'classesniveauxfilieres';
+    protected $table = 'controles';
     public $primarykey = 'id';
     protected $fillable = [
+        'libelle',        
         'classes_id',
         'matieres_id',
         'semestres_id',
