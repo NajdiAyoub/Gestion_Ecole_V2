@@ -190,6 +190,9 @@ return [
     'Editer.btn' => 'Edit',
     'Date_Exam.lbl' => 'Exam Date',
     'Heure_Exam.lbl' => 'Exam Hour',
+    'Montant_par_Heures.lbl' => 'AmountPerHour',
+    'Somme.lbl' => 'Sum',
+
 
 
 

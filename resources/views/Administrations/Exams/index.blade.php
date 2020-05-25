@@ -45,7 +45,7 @@
                                         <th>Libelle</th>
                                         <th>Date_Exam</th>
                                         <th>Heure_Exam</th>
-                                        <th>Annee_Scolaire</th>
+                                        <th>AnneeScolaire</th>
                                         <th>Prof</th>
                                         <th>Matiere</th>
                                         <th>Classe</th>

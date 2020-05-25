@@ -60,6 +60,10 @@ class SemestresController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+
+            'libelle'=> 'required'
+            ]);
         $input = $request->all();
         $data = Semestre::create($input);
         return redirect(route('semestres.index'))->with('success', 'Item added succesfully' );
@@ -104,6 +108,10 @@ class SemestresController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+
+            'libelle'=> 'required'
+            ]);
         $data = Semestre::find($id);
 
         if (empty($data)) {

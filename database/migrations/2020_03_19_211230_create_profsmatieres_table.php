@@ -19,6 +19,8 @@ class CreateProfsmatieresTable extends Migration
             $table->unsignedBigInteger('matieres_id');
             $table->unsignedBigInteger('classes_id');
             $table->unsignedBigInteger('niveaux_id');
+            $table->unsignedBigInteger('semestres_id');
+
 
 
             $table->timestamps();
@@ -27,6 +29,8 @@ class CreateProfsmatieresTable extends Migration
             $table->foreign('matieres_id')->references('id')->on('matieres');
             $table->foreign('classes_id')->references('id')->on('classes');
             $table->foreign('niveaux_id')->references('id')->on('niveaux');
+            $table->foreign('semestres_id')->references('id')->on('semestres');
+
 
         });
     }

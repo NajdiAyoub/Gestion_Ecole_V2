@@ -286,7 +286,7 @@
                                                             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                                                             <li class="nav-item has-treeview menu-open">
-                                                                <a href="{{ route('Cours.index')}}"
+                                                                <a href="{{ route('cours.index')}}"
                                                                     class="nav-link {{request()->is('Cours/Cours') ? 'active' : ''}}">
                                                                     <i class="nav-icon fas fa-folder"></i>
 
@@ -302,7 +302,7 @@
                                                                         <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                                                                         <li class="nav-item has-treeview menu-open">
-                                                                            <a href="{{ route('Absences.index')}}"
+                                                                            <a href="{{ route('AbsEleves.index')}}"
                                                                                 class="nav-link  {{request()->is('Absences/Absences') ? 'active' : ''}}">
                                                                                 <i class="nav-icon fas fa-list-alt"></i>
 
@@ -318,7 +318,7 @@
                        with font-awesome or any other icon font library -->
                                                                                     <li
                                                                                         class="nav-item has-treeview menu-open">
-                                                                                        <a href="{{ route('emplois')}}"
+                                                                                        <a href="{{ route('elvemploisdutemps')}}"
                                                                                             class="nav-link {{request()->is('EmploisDuTemps/emplois') ? 'active' : ''}} ">
                                                                                             <i
                                                                                                 class="nav-icon fas fa-calendar-alt"></i>

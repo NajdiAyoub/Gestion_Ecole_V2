@@ -27,14 +27,23 @@
 
             <div class="form-group">
               <label>{{__('text.Prof.lbl')}}</label>
-              <input type="text" name="prof" class="form-control" >
+              <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="nom">
+                <option >--------------------------------------</option>
+                @foreach (profs as $item)
+            <option value="{{$item->id}}">{{$item->nom}}</option>
+                @endforeach
               <label>{{__('text.NombreHeures.lbl')}}</label>
               <input type="text" name="nombre heures" class="form-control" >
+              <label>{{__('text.Montant_par_Heures.lbl')}}</label>
+              <input type="text" name="montant_par_heure" class="form-control" >
               <label>{{__('text.Date_Paiements.lbl')}}</label>
               <input type="date" name="date_paiements" class="form-control" >
+              <label>{{__('text.Type_Paiements.lbl')}}</label>
+              <input type="text" name="type_paiements" class="form-control" >
               <label>{{__('text.Salaire.lbl')}}</label>
               <input type="text" name="salaire" class="form-control" >
-              
+              <label>{{__('text.Somme.lbl')}}</label>
+              <input type="text" name="somme" class="form-control" >
               
               
               

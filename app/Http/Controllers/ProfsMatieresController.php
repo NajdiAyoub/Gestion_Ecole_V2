@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Classe;
+use App\Matiere;
+use App\niveaux;
+use App\Prof;
 use App\ProfMatiere;
+use App\Semestre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProfsMatieresController extends Controller
 {
@@ -12,13 +18,24 @@ class ProfsMatieresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     { 
-       $datas = ProfMatiere::all();
-        return view('Administrations.Affectations.ProfsMatieres.index')->with('datas', $datas);
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas = DB::table('profsmatieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = DB::table('profsmatieres')->paginate(10);
+
+        }   
+        return view('Administrations.Affectations.ProfsMatieres.index')->with('datas', $datas )->with('search', $search );
+    }
 
         //
-    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +44,14 @@ class ProfsMatieresController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Affectations.ProfsMatieres.create');
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $semestres = Semestre::all();
+        $niveaux = niveaux::all();
+        $profs = Prof::all();
+        
+        return view('Administrations.affectations.profsmatieres.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('Semestre',$semestres)->with('profs',$profs)->with('niveaux',$niveaux);
+
 
         //
     }
@@ -41,8 +65,10 @@ class ProfsMatieresController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+
         $data = ProfMatiere::create($input);
-        return redirect(route('profsmatieres.index'));
+        $data->save();
+        return redirect(route('profsmatieres.index'))->with('success', 'Item added succesfully' );
         //
     }
 

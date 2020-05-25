@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Classe;
 use App\ClasseControleMatiere;
+use App\Matiere;
+use App\niveaux;
+use App\Prof;
+use App\Salle;
+use App\Semestre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClassesControlesMatieresController extends Controller
 {
@@ -12,12 +19,20 @@ class ClassesControlesMatieresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datas = ClasseControleMatiere::all();
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas = DB::table('classesexams')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = DB::table('classesexams')->paginate(10);
 
-        return view('Administrations.Affectations.classescontrolesmatieres.index')->with('datas', $datas);
-
+        }   
+        return view('Administrations.Affectations.ClassesControlesMatieres.index')->with('datas', $datas )->with('search', $search );
         //
     }
 
@@ -28,6 +43,16 @@ class ClassesControlesMatieresController extends Controller
      */
     public function create()
     {
+
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $semestres = Semestre::all();
+        $niveaux = niveaux::all();
+        $profs = Prof::all();
+        $salles= Salle::all();
+        
+        return view('Administrations.affectations.classescontrolesmatieres.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('Semestre',$semestres)->with('profs',$profs)->with('salles',$salles)->with('niveaux',$niveaux);
+
         //
     }
 

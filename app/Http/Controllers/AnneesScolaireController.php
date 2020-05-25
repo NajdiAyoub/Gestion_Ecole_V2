@@ -58,8 +58,11 @@ class AnneesScolaireController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+        $request->validate([
+
+        'libelle'=> 'required'
+        ]);
         $input = $request->all();
         $data = AnneeScolaire::create($input);
         return redirect(route('anneesscolaire.index'))->with('success', 'Item added succesfully' );
@@ -86,6 +89,7 @@ class AnneesScolaireController extends Controller
      */
     public function edit($id)
     {
+        
         $data = AnneeScolaire::find($id);
 
         if (empty($data)) {
@@ -104,6 +108,10 @@ class AnneesScolaireController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+
+            'libelle'=> 'required'
+            ]);
         $data = AnneeScolaire::find($id);
 
         if (empty($data)) {

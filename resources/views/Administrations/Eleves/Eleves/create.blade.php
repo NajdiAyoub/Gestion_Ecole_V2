@@ -27,32 +27,32 @@
 
             <div class="form-group">
               <label>{{__('text.Nom.lbl')}}</label>
-              <input type="date" name="nom" class="form-control" >
+              <input type="text" name="nom" class="form-control" >
               <label>{{__('text.Prenom.lbl')}}</label>
               <input type="text" name="prenom" class="form-control" >
               <label>{{__('text.Date_Naissance.lbl')}}</label>
-              <input type="text" name="date_naissance" class="form-control" >
+              <input type="date" name="date_naissance" class="form-control" >
               <label>{{__('text.Adresse.lbl')}}</label>
               <input type="text" name="adresse" class="form-control" >
               <label>{{ __('text.Niveaux.lbl') }}</label>
             <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="niveaux_id">
                 <option >--------------------------------------</option>
                 @foreach ($niveaux as $item)
-            <option value="{{$item->id}}">{{$item->nom}}</option></br>
+            <option value="{{$item->id}}">{{$item->libelle}}</option></br>
                 @endforeach
             </select>
             <label>{{ __('text.Filieres.lbl') }}</label>
             <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="filieres_id">
                 <option >--------------------------------------</option>
                 @foreach ($Filiere as $item)
-            <option value="{{$item->id}}">{{$item->nom}}</option></br>
+            <option value="{{$item->id}}">{{$item->libelle}}</option></br>
                 @endforeach
             </select>
             <label>{{ __('text.Classes.lbl') }}</label>
             <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="classes_id">
                 <option >--------------------------------------</option>
                 @foreach ($Classe as $item)
-            <option value="{{$item->id}}">{{$item->nom}}</option></br>
+            <option value="{{$item->id}}">{{$item->libelle}}</option></br>
                 @endforeach
             </select>
               <label>{{__('text.Image.lbl')}}</label></br>

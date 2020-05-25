@@ -2,8 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\AnneeScolaire;
+use App\Classe;
 use App\ClasseNiveauFiliere;
+use App\Filiere;
+use App\Matiere;
+use App\niveaux;
+use App\Prof;
+use App\Semestre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClassesNiveauxFilieresController extends Controller
 {
@@ -12,12 +20,21 @@ class ClassesNiveauxFilieresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datas = ClasseNiveauFiliere::all();
+       
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas = DB::table('profsmatieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = DB::table('profsmatieres')->paginate(10);
 
-        return view('Administrations.Affectations.ClassesNiveauxFilieres.index')->with('datas', $datas);
-
+        }   
+        return view('Administrations.Affectations.ClassesNiveauxFilieres.index')->with('datas', $datas )->with('search', $search );
         //
     }
 
@@ -28,7 +45,16 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Affectations.ClassesNiveauxFilieres.create');
+     
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $semestres = Semestre::all();
+        $anneesscolaire = AnneeScolaire::all();
+        $filieres= Filiere::all();
+        $profs = Prof::all();
+        
+        return view('Administrations.affectations.classesniveauxfilieres.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('Semestre',$semestres)->with('profs',$profs)->with('filieres',$filieres)->with('anneesscolaire',$anneesscolaire);
+
 
         //
     }

@@ -24,11 +24,11 @@ class ExamController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('v_exam')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_exams')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
-            $datas = DB::table('v_exam')->paginate(10);
+            $datas = DB::table('v_exams')->paginate(10);
 
         }   
         return view('Administrations.exams.index')->with('datas', $datas )->with('search', $search );
@@ -43,7 +43,6 @@ class ExamController extends Controller
      */
     public function create()
     {
-        $anneesscolaire = AnneeScolaire::all();
         $profs = Prof::all();
         $matieres = Matiere::all();
         $classes = Classe::all();
@@ -53,7 +52,7 @@ class ExamController extends Controller
 
          
 
-        return view('Administrations.Exams.create')->with('anneesscolaire',$anneesscolaire)->with('profs',$profs)->with('matieres',$matieres)->with('classes',$classes)->with('salles',$salles);
+        return view('Administrations.Exams.create')->with('profs',$profs)->with('matieres',$matieres)->with('classes',$classes)->with('salles',$salles);
 
         //
     }
@@ -65,10 +64,13 @@ class ExamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {    //]);
         $input = $request->all();
+        //dd($input);
+  
         $data = Exam::create($input);
-        return redirect(route('exams.index'));
+        $data->save();
+        return redirect(route('exams.index'))->with('success', 'Item added succesfully' );
         //
     }
 

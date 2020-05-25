@@ -29,10 +29,6 @@ class CreateExamsTable extends Migration
             $table->foreign('classe_id')->references('id')->on('classes');
             $table->foreign('salle_id')->references('id')->on('salles');
 
-
-
-
-
             $table->timestamps();
         });
     }

@@ -32,19 +32,13 @@
               <input type="date" name="date_exam" class="form-control" >
               <label>{{__('text.Heure_Exam.lbl')}}</label>
               <input type="time" name="heure_exam" class="form-control" >
-              <label>{{ __('text.AnneesScolaire.lbl') }}</label></br>
-            <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="anneesscolaire_id">
-                <option >--------------------------------------</option>
-                @foreach ($anneesscolaire as $item)
-            <option value="{{$item->id}}">{{$item->libelle}}</option>
-                @endforeach
-            </select></br>
+              
             <label>{{ __('text.Profs.lbl') }}</label></br>
 
             <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="profs_id">
               <option >--------------------------------------</option>
               @foreach ($profs as $item)
-          <option value="{{$item->id}}">{{$item->nom}}</option>
+          <option value="{{$item->id}}">{{$item->prenom}}</option>
               @endforeach
           </select></br>
           <label>{{ __('text.Matieres.lbl') }}</label></br>

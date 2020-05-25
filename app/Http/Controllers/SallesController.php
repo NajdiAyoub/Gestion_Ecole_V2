@@ -56,6 +56,14 @@ class SallesController extends Controller
     public function store(Request $request)
     {
        
+        $request->validate([
+
+            'libelle'=> 'required',
+            'type_salle'=> 'required',
+            'nombre_place'=> 'required'
+
+    
+            ]);
       $input = $request->all();
       $data = Salle::create($input);
       return redirect(route('salles.index'))->with('success', 'Item added succesfully' );
@@ -103,6 +111,14 @@ class SallesController extends Controller
     public function update(Request $request, $id)
     {
 
+        $request->validate([
+
+            'libelle'=> 'required',
+            'type_salle'=> 'required',
+            'nombre_place'=> 'required'
+
+    
+            ]);
         $data = Salle::find($id);
 
         if (empty($data)) {

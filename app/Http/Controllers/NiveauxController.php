@@ -51,6 +51,12 @@ class NiveauxController extends Controller
     public function store(Request $request)
     {
       //  dd('ok');
+      $request->validate([
+
+        'libelle'=> 'required',
+        'description'=> 'required'
+
+        ]);
 
       $input = $request->all();
       $data = niveaux::create($input);
@@ -97,6 +103,13 @@ class NiveauxController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+
+            'libelle'=> 'required',
+            'description'=> 'required'
+    
+            ]);
         $data = niveaux::find($id);
 
         if (empty($data)) {

@@ -9,7 +9,7 @@ class PaiementsController extends Controller
     //
     public function index()
     {
-            return view('Paiements.listesPaiements');
+           // return view('ElvesSpace.Paiements.Paiements');
             
         }
 }

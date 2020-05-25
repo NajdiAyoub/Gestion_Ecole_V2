@@ -14,6 +14,7 @@ class AbsenceProf extends Model
         'seance',
         'profs_id',
         'justife',
+        'attachements_id',
         'remarque',
     ];
     //

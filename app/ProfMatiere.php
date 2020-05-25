@@ -13,7 +13,7 @@ class ProfMatiere extends Model
         'profs_id',
         'niveaux_id',
         'semestres_id',        
-        'annee_scolaire',
+        'matieres_id',
         
   
     ];

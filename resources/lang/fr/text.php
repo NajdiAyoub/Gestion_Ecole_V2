@@ -201,6 +201,8 @@ return [
     'Editer.btn' => 'Editer',
     'Date_Exam.lbl' => 'Date Exam',
     'Heure_Exam.lbl' => 'Heure Exam',
+    'Montant_par_Heures.lbl' => 'MontantParHeure',
+    'Somme.lbl' => 'Somme',
 
 
 

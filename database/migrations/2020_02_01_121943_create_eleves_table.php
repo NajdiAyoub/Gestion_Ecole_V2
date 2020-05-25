@@ -18,11 +18,22 @@ class CreateElevesTable extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->date('date_naissance');
-            $table->string('adresse_eleves');
+            $table->string('adresse')->default('moulay youssef marrakech ');
             $table->unsignedBigInteger('parents_id');
+            $table->string('email');
+            $table->unsignedBigInteger('niveaux_id');
+            $table->unsignedBigInteger('filieres_id');
+            $table->unsignedBigInteger('classes_id');
+            $table->string('image');
             $table->string('login');
             $table->string('password');
             $table->foreign('parents_id')->references('id')->on('parents');
+            $table->foreign('niveaux_id')->references('id')->on('niveaux');
+            $table->foreign('filieres_id')->references('id')->on('filieres');
+            $table->foreign('classes_id')->references('id')->on('classes');
+            $table->timestamps();
+
+
         });
     }
 

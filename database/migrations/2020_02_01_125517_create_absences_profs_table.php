@@ -16,7 +16,8 @@ class CreateAbsencesProfsTable extends Migration
         Schema::create('absences_profs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('profs_id');
-            $table->string('justificatif');
+            $table->string('justifie');
+            $table->string('seance');
             $table->string('remarque');
             $table->date('date_absences');
             $table->unsignedBigInteger('attachements_id');

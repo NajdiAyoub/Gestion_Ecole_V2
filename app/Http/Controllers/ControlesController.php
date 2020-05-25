@@ -58,7 +58,14 @@ class ControlesController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //$request->validate([
+
+          //  'libelle'=> 'required',
+            //'classes'=> 'required',
+            //'matieres'=> 'required',
+           // 'semestres'=> 'required'
+
+           // ]);
         $input = $request->all();
         //dd($input);
 

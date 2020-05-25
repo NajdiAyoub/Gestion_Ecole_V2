@@ -62,6 +62,14 @@ class MatieresController extends Controller
      */
     public function store(Request $request)
     {
+        
+        //$request->validate([
+
+          //  'libelle'=> 'required',
+            //'niveaux'=> 'required'
+
+
+            //]);
         $input = $request->all();
 
         //dd($input);
@@ -115,6 +123,14 @@ class MatieresController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+
+            'libelle'=> 'required',
+            'niveaux'=> 'required'
+
+
+
+            ]);
         $data = Matiere::find($id);
 
         if (empty($data)) {

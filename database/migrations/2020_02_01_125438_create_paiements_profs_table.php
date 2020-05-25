@@ -17,9 +17,11 @@ class CreatePaiementsProfsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('profs_id');
             $table->integer('nombre_heure');
+            $table->integer('montant_par_heure');
             $table->date('date_paiements');
             $table->string('type_paiements');
             $table->integer('salaire');
+            $table->integer('somme');
             $table->foreign('profs_id')->references('id')->on('profs');
 
 

@@ -282,6 +282,8 @@ Route::resource('classescontrolesmatieres', 'ClassesControlesMatieresController'
     'show' => 'classescontrolesmatieres.show',
 ]]);
 
+//// ElevesSpaces Routes 
+
 Route::get('ElevesSpace/Cours/{id}/delete', 'CoursController@destroy')->name('cours.destroy');
 Route::resource('Cours', 'CoursController', ['except' => 'destroy', 'names' => [
     'index' => 'cours.index',
@@ -291,6 +293,61 @@ Route::resource('Cours', 'CoursController', ['except' => 'destroy', 'names' => [
     'store' => 'cours.store',
     'show' => 'cours.show',
 ]]);
+
+Route::get('ElevesSpace/Absences/{id}/delete', 'AbsElevesController@destroy')->name('AbsEleves.destroy');
+Route::resource('Absences', 'AbsElevesController', ['except' => 'destroy', 'names' => [
+    'index' => 'absences.index',
+    'create' => 'absences.create',
+    'update' => 'absences.update',
+    'edit' => 'absences.edit',
+    'store' => 'absences.store',
+    'show' => 'absences.show',
+]]);
+
+Route::get('ElevesSpace/ElvEmploisDuTemps/{id}/delete', 'ElvEmploisDuTempsController@destroy')->name('ElvEmploisDuTemps.destroy');
+Route::resource('ElvEmploisDuTemps', 'ElvEmploisDuTempsController', ['except' => 'destroy', 'names' => [
+    'index' => 'elvemploisdutemps.index',
+    'create' => 'elvemploisdutemps.create',
+    'update' => 'elvemploisdutemps.update',
+    'edit' => 'elvemploisdutemps.edit',
+    'store' => 'elvemploisdutemps.store',
+    'show' => 'elvemploisdutemps.show',
+]]);
+
+Route::get('ElevesSpace/ElvBulletinsEtNotes/{id}/delete', 'ElvBulletinsEtNotesController@destroy')->name('ElvBulletinsEtNotes.destroy');
+Route::resource('ElvBulletinsEtNotes', 'ElvBulletinsEtNotesController', ['except' => 'destroy', 'names' => [
+    'index' => 'elvebulletinsetnotes.index',
+    'create' => 'elvebulletinsetnotes.create',
+    'update' => 'elvebulletinsetnotes.update',
+    'edit' => 'elvebulletinsetnotes.edit',
+    'store' => 'elvebulletinsetnotes.store',
+    'show' => 'elvebulletinsetnotes.show',
+]]);
+
+Route::get('ElevesSpace/ElvPaiements/{id}/delete', 'ElvPaiementsController@destroy')->name('ElvPaiements.destroy');
+Route::resource('ElvPaiements', 'ElvPaiementsController', ['except' => 'destroy', 'names' => [
+    'index' => 'elvpaiements.index',
+    'create' => 'elvpaiements.create',
+    'update' => 'elvpaiements.update',
+    'edit' => 'elvpaiements.edit',
+    'store' => 'elvpaiements.store',
+    'show' => 'elvpaiements.show',
+]]);
+
+Route::get('ElevesSpace/ElvEvenementsEtActualites/{id}/delete', 'ElvEvenementsEtActualitesController@destroy')->name('ElvEvenementsEtActualites.destroy');
+Route::resource('ElvEvenementsEtActualites', 'ElvEvenementsEtActualitesController', ['except' => 'destroy', 'names' => [
+    'index' => 'elvevenementsetactualites.index',
+    'create' => 'elvevenementsetactualites.create',
+    'update' => 'elvevenementsetactualites.update',
+    'edit' => 'elvevenementsetactualites.edit',
+    'store' => 'elvevenementsetactualites.store',
+    'show' => 'elvevenementsetactualites.show',
+]]);
+
+
+
+
+
 
 
 

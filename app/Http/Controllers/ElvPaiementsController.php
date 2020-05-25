@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\PaiementProf;
-use App\Prof;
 use Illuminate\Http\Request;
 
-class PaiementsProfsController extends Controller
+class ElvPaiementsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,8 @@ class PaiementsProfsController extends Controller
      */
     public function index()
     {
-        $profs = Prof::all();
-        $datas = PaiementProf::all();
-        return view('Administrations.Profs.Paiements.index')->with('datas',$datas)->with('profs',$profs);
+        return view('ElevesSpace.Paiements.Paiements');
+
         //
     }
 
@@ -28,8 +25,6 @@ class PaiementsProfsController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Profs.Paiements.create');
-
         //
     }
 
