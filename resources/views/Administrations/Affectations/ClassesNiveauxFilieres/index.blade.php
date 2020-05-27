@@ -57,12 +57,12 @@
                         <tbody>
                             @foreach ($datas as $item)
                             <tr>
-                               <td>{{$item['Classe']}}</td>
-                                <td>{{$item['Prof']}}</td>
-                                <td>{{$item['Matiere']}}</td>
-                                <td>{{$item['Filiere']}}</td>
-                                <td>{{$item['Semestre']}}</td>
-                                <td>{{$item['Annee_Scolaire']}}</td>
+                                <td>{{$item->classes}}</td>
+                                <td>{{$item->profs}}</td>
+                                <td>{{$item->matieres}}</td>
+                                <td>{{$item->filieres}}</td>
+                                <td>{{$item->semestres}}</td>
+                                <td>{{$item->anneesscolaire}}</td>
                               
 
 

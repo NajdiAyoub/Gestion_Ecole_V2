@@ -25,11 +25,11 @@ class ClassesControlesMatieresController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('classesexams')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_classescontrolesmatieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
-            $datas = DB::table('classesexams')->paginate(10);
+            $datas = DB::table('v_classescontrolesmatieres')->paginate(10);
 
         }   
         return view('Administrations.Affectations.ClassesControlesMatieres.index')->with('datas', $datas )->with('search', $search );
@@ -51,7 +51,7 @@ class ClassesControlesMatieresController extends Controller
         $profs = Prof::all();
         $salles= Salle::all();
         
-        return view('Administrations.affectations.classescontrolesmatieres.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('Semestre',$semestres)->with('profs',$profs)->with('salles',$salles)->with('niveaux',$niveaux);
+        return view('Administrations.affectations.classescontrolesmatieres.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('semestre',$semestres)->with('profs',$profs)->with('salles',$salles)->with('niveaux',$niveaux);
 
         //
     }
@@ -64,6 +64,9 @@ class ClassesControlesMatieresController extends Controller
      */
     public function store(Request $request)
     {
+        $input = $request->all();
+        $data = ClasseControleMatiere::create($input);
+        return redirect(route('classescontrolesmatieres.index'));
         //
     }
 
@@ -75,6 +78,8 @@ class ClassesControlesMatieresController extends Controller
      */
     public function show($id)
     {
+        return redirect(route('classescontrolesmatieres.index'));
+
         //
     }
 
@@ -86,6 +91,19 @@ class ClassesControlesMatieresController extends Controller
      */
     public function edit($id)
     {
+        $data = ClasseControleMatiere::find($id);
+
+        if (empty($data)) {
+            return redirect(route('classescontrolesmatieres.index'));
+        }
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $semestres = Semestre::all();
+        $niveaux = niveaux::all();
+        $profs = Prof::all();
+        $salles= Salle::all();
+        return view('Administrations.Affectations.ClassesControlesMatieres.edit')->with('data', $data)->with('classes', $classes)->with('matieres', $matieres)->with('semestres', $semestres)->with('niveaux', $niveaux)->with('profs', $profs)->with('salles', $salles);
+        //
         //
     }
 
@@ -98,6 +116,15 @@ class ClassesControlesMatieresController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = ClasseControleMatiere::find($id);
+
+        if (empty($data)) {
+            return redirect(route('classesscontrolesmatieres.index'));
+        }
+
+        $data = ClasseControleMatiere::where('id', $id)->update(request()->except(['_token', '_method']));
+
+        return redirect(route('classescontrolesmatieres.index'));
         //
     }
 
@@ -109,6 +136,15 @@ class ClassesControlesMatieresController extends Controller
      */
     public function destroy($id)
     {
+        $data = ClasseControleMatiere::find($id);
+
+        if (empty($data)) {
+            return redirect(route('classescontrolesmatieres.index'));
+        }
+
+        $data->delete();
+
+        return redirect(route('classescontrolesmatieres.index'));
         //
     }
 }

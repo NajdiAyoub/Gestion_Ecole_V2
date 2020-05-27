@@ -27,11 +27,11 @@ class ClassesExamsController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('classesexams')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_classesexams')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
-            $datas = DB::table('classesexams')->paginate(10);
+            $datas = DB::table('v_classesexams')->paginate(10);
 
         }   
         return view('Administrations.Affectations.ClassesExams.index')->with('datas', $datas )->with('search', $search );
@@ -100,7 +100,13 @@ class ClassesExamsController extends Controller
             return redirect(route('classesexams.index'));
         }
 
-        return view('Administrations.Affectations.ClassesExams.edit')->with('data', $data);
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $semestres = Semestre::all();
+        $niveaux = niveaux::all();
+        $profs = Prof::all();
+        $salles= Salle::all();
+        return view('Administrations.Affectations.ClassesExams.edit')->with('data', $data)->with('profs', $profs)->with('matieres', $matieres)->with('classes', $classes)->with('niveaux', $niveaux)->with('semestres', $semestres);
         //
         //
     }

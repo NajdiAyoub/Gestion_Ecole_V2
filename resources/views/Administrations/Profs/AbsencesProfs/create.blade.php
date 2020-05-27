@@ -30,13 +30,13 @@
               <input type="date" name="date_absences" class="form-control" >
               <label>{{__('text.Seance.lbl')}}</label>
               <input type="text" name="seance" class="form-control" >
-              <label>{{ __('text.Prof.lbl') }}</label>
+              <label>{{ __('text.Prof.lbl') }}</label></br>
             <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="profs_id">
                 <option >--------------------------------------</option>
                 @foreach ($profs as $item)
             <option value="{{$item->id}}">{{$item->nom}}</option></br>
                 @endforeach
-            </select>
+            </select></br>
               <label>{{__('text.Justifie.lbl')}}</label></br>
               <input type="text" name="justifie" class="form-control" >
               <label>{{__('text.Attachements.lbl')}}</label>

@@ -9,8 +9,8 @@ class ClasseExam extends Model
     protected $table = 'classesexams';
     public $primarykey = 'id';
     protected $fillable = [
-        'classes_id',
         'profs_id',
+        'classes_id',
         'niveaux_id',
         'matieres_id',
         'salles_id',

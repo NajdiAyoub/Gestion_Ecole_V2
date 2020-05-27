@@ -28,7 +28,7 @@
             <div class="form-group"> 
             <label>{{ __('text.Profs.lbl') }}</label></br>
 
-            <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="prof_id">
+            <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="profs_id">
               <option >--------------------------------------</option>
               @foreach ($profs as $item)
           <option value="{{$item->id}}">{{$item->prenom}}</option>

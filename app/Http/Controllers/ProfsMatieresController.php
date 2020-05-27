@@ -24,11 +24,11 @@ class ProfsMatieresController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('profsmatieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_profsmatieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
-            $datas = DB::table('profsmatieres')->paginate(10);
+            $datas = DB::table('v_profsmatieres')->paginate(10);
 
         }   
         return view('Administrations.Affectations.ProfsMatieres.index')->with('datas', $datas )->with('search', $search );
@@ -98,8 +98,13 @@ class ProfsMatieresController extends Controller
         if (empty($data)) {
             return redirect(route('profsmatieres.index'));
         }
+        $semestres = Semestre::all();
+        $profs = Prof::all();
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $niveaux = niveaux::all();
 
-        return view('Administrations.Affectations.ProfsMatieres.edit')->with('data', $data);
+        return view('Administrations.Affectations.ProfsMatieres.edit')->with('data', $data)->with('profs', $profs)->with('classes', $classes)->with('semestres', $semestres)->with('matieres', $matieres)->with('niveaux', $niveaux);
         //
     }
 

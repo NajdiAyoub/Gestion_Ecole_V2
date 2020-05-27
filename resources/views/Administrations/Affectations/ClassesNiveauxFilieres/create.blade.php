@@ -51,6 +51,16 @@
           @endforeach
       </select></br>
 
+
+      <label>{{ __('text.Niveaux.lbl') }}</label></br>
+
+        <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="niveaux_id">
+          <option >--------------------------------------</option>
+          @foreach ($niveaux as $item)
+      <option value="{{$item->id}}">{{$item->libelle}}</option>
+          @endforeach
+      </select></br>
+
       <label>{{ __('text.Filieres.lbl') }}</label></br>
 
         <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="filieres_id">

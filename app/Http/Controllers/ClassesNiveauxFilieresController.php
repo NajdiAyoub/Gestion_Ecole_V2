@@ -27,11 +27,11 @@ class ClassesNiveauxFilieresController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('profsmatieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_classesniveauxfilieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
-            $datas = DB::table('profsmatieres')->paginate(10);
+            $datas = DB::table('v_classesniveauxfilieres')->paginate(10);
 
         }   
         return view('Administrations.Affectations.ClassesNiveauxFilieres.index')->with('datas', $datas )->with('search', $search );
@@ -48,12 +48,13 @@ class ClassesNiveauxFilieresController extends Controller
      
         $classes = Classe::all();
         $matieres = Matiere::all();
+        $niveaux = niveaux::all();
         $semestres = Semestre::all();
         $anneesscolaire = AnneeScolaire::all();
         $filieres= Filiere::all();
         $profs = Prof::all();
         
-        return view('Administrations.affectations.classesniveauxfilieres.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('Semestre',$semestres)->with('profs',$profs)->with('filieres',$filieres)->with('anneesscolaire',$anneesscolaire);
+        return view('Administrations.affectations.classesniveauxfilieres.create')->with('Classe',$classes)->with('Matiere',$matieres)->with('Semestre',$semestres)->with('profs',$profs)->with('filieres',$filieres)->with('anneesscolaire',$anneesscolaire)->with('niveaux',$niveaux);
 
 
         //
@@ -100,7 +101,15 @@ class ClassesNiveauxFilieresController extends Controller
             return redirect(route('classesniveauxfilieres.index'));
         }
 
-        return view('Administrations.Affectations.ClassesNiveauxFilieres.edit')->with('data', $data);
+
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $niveaux = niveaux::all();
+        $semestres = Semestre::all();
+        $anneesscolaire = AnneeScolaire::all();
+        $filieres= Filiere::all();
+        $profs = Prof::all();
+        return view('Administrations.Affectations.ClassesNiveauxFilieres.edit')->with('data', $data)->with('profs', $profs)->with('classes', $classes)->with('matieres', $matieres)->with('filieres', $filieres)->with('semestres', $semestres)->with('anneesscolaire', $anneesscolaire);
         //
         //
     }

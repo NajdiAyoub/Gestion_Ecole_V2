@@ -9,12 +9,12 @@ class ClasseControleMatiere extends Model
     protected $table = 'classescontrolesmatieres';
     public $primarykey = 'id';
     protected $fillable = [
-        'classes_id',
+        'semestres_id',                
         'profs_id',
+        'classes_id',
         'niveaux_id',
         'matieres_id',
         'salles_id',
-        'semestres_id',                
   
     ];
     //
