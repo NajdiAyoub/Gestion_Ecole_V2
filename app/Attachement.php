@@ -4,16 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Control extends Model
+class Attachement extends Model
 {
-    protected $table = 'controles';
+    protected $table = 'attachements';
     public $primarykey = 'id';
     protected $fillable = [
         'libelle', 
-        'profs_id',
-        'classes_id',
-        'matieres_id',
-        'semestres_id',
+        'type',
+        'date_attach',
+        
  
     ];       //
+
+    //
 }

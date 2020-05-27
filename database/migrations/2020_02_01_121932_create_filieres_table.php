@@ -16,11 +16,11 @@ class CreateFilieresTable extends Migration
         Schema::create('filieres', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('libelle');
-            $table->unsignedBigInteger('niveaux');
+            $table->unsignedBigInteger('niveaux_id');
 
             $table->timestamps();
             
-            $table->foreign('niveaux')->references('id')->on('niveaux');
+            $table->foreign('niveaux_id')->references('id')->on('niveaux');
 
         });
     }

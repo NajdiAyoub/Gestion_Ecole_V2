@@ -56,12 +56,12 @@ class FilieresController extends Controller
      */
     public function store(Request $request)
     {
-     // $request->validate([
+      $request->validate([
 
-       // 'libelle'=> 'required',
-        //'niveaux'=> 'required'
+        'libelle'=> 'required',
+        'niveaux_id'=> 'required'
 
-        //]);
+        ]);
       $input = $request->all();
       //dd($input);
 
@@ -97,8 +97,8 @@ class FilieresController extends Controller
       if (empty($data)) {
           return redirect(route('filieres.index'));
       }
-
-      return view('Administrations.Filieres.edit')->with('data', $data);
+      $niveaux = niveaux::all();
+      return view('Administrations.Filieres.edit')->with('niveaux', $niveaux)->with('data', $data);
     }
 
     /**

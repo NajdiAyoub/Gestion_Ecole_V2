@@ -53,12 +53,12 @@ class ClassesController extends Controller
      */
     public function store(Request $request)
     {
-       // $request->validate([
+        $request->validate([
 
-         //   'libelle'=> 'required',
-           // 'niveaux'=> 'required'
+            'libelle'=> 'required',
+           'niveaux_id'=> 'required'
 
-            //]);
+            ]);
         $input = $request->all();
         //dd($input);
 
@@ -93,8 +93,8 @@ class ClassesController extends Controller
         if (empty($data)) {
             return redirect(route('classes.index'));
         }
-
-        return view('Administrations.Classes.edit')->with('data', $data);
+        $niveaux = niveaux::all();
+        return view('Administrations.Classes.edit')->with('niveaux', $niveaux)->with('data', $data);
         //
     }
 
@@ -111,7 +111,7 @@ class ClassesController extends Controller
         $request->validate([
 
             'libelle'=> 'required',
-            'niveaux'=> 'required'
+            'niveaux_id'=> 'required'
             ]);
         $data = Classe::find($id);
 

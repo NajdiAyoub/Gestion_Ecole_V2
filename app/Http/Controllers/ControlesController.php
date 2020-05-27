@@ -23,7 +23,7 @@ class ControlesController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('v_controles')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $data = DB::table('v_controles')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
@@ -58,14 +58,14 @@ class ControlesController extends Controller
      */
     public function store(Request $request)
     {
-        //$request->validate([
+        $request->validate([
 
-          //  'libelle'=> 'required',
-            //'classes'=> 'required',
-            //'matieres'=> 'required',
-           // 'semestres'=> 'required'
+            'libelle'=> 'required',
+            'classes_id'=> 'required',
+            'matieres_id'=> 'required',
+            'semestres_id'=> 'required'
 
-           // ]);
+            ]);
         $input = $request->all();
         //dd($input);
 
@@ -104,8 +104,12 @@ class ControlesController extends Controller
         if (empty($data)) {
             return redirect(route('controles.index'));
         }
+        $profs = Prof::all();
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $semestres = Semestre::all();
 
-        return view('Administrations.controles.edit')->with('data', $data);
+        return view('Administrations.controles.edit')->with('data', $data)->with('profs', $profs)->with('matieres', $matieres)->with('classes', $classes)->with('semestres', $semestres);
         //
     }
 
@@ -118,6 +122,14 @@ class ControlesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+
+            'libelle'=> 'required',
+            'classes_id'=> 'required',
+            'matieres_id'=> 'required',
+            'semestres_id'=> 'required'
+
+            ]);
         $data = Control::find($id);
 
         if (empty($data)) {

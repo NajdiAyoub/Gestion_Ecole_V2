@@ -8,6 +8,7 @@ use App\Exam;
 use App\Matiere;
 use App\Prof;
 use App\Salle;
+use App\Semestre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -46,13 +47,15 @@ class ExamController extends Controller
         $profs = Prof::all();
         $matieres = Matiere::all();
         $classes = Classe::all();
+        $semestres = Semestre::all();
+        $anneesscolaire = AnneeScolaire::all();
         $salles = Salle::all();
 
 
 
          
 
-        return view('Administrations.Exams.create')->with('profs',$profs)->with('matieres',$matieres)->with('classes',$classes)->with('salles',$salles);
+        return view('Administrations.Exams.create')->with('profs',$profs)->with('matieres',$matieres)->with('classes',$classes)->with('salles',$salles)->with('semestres',$semestres)->with('anneesscolaire',$anneesscolaire);
 
         //
     }
@@ -102,7 +105,13 @@ class ExamController extends Controller
             return redirect(route('exams.index'));
         }
 
-        return view('Administrations.exams.edit')->with('data', $data);
+        $anneesscolaire = AnneeScolaire::all();
+        $profs = Prof::all();
+        $classes = Classe::all();
+        $matieres = Matiere::all();
+        $salles = Salle::all();
+
+        return view('Administrations.exams.edit')->with('data', $data)->with('anneesscolaire', $anneesscolaire)->with('profs', $profs)->with('classes', $classes)->with('matieres', $matieres)->with('salles', $salles);
     }
 
     /**

@@ -26,8 +26,8 @@
         <div class="modal-body">
 
             <div class="form-group">
-              <label>{{__('text.Prof.lbl')}}</label>
-              <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="nom">
+              <label>{{__('text.Profs.lbl')}}</label>
+              <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="profs_id">
                 <option >--------------------------------------</option>
                 @foreach (profs as $item)
             <option value="{{$item->id}}">{{$item->nom}}</option>

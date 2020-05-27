@@ -42,25 +42,64 @@
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Libelle</th>
-                                        <th>Date_Exam</th>
-                                        <th>Heure_Exam</th>
-                                        <th>AnneeScolaire</th>
-                                        <th>Prof</th>
-                                        <th>Matiere</th>
-                                        <th>Classe</th>
-                                        <th>Salle</th>
+                                        <th>{{__('text.Libelle.lbl')}}</th>
+                                        <th>{{__('text.Date_Exam.lbl')}}</th>
+                                        <th>{{__('text.Heure_Exam.lbl')}}</th>
+                                        <th>{{__('text.AnneesScolaire.lbl')}}</th>
+                                        <th>{{__('text.Prof.lbl')}}</th>
+                                        <th>{{__('text.Matiere.lbl')}}</th>
+                                        <th>{{__('text.Classe.lbl')}}</th>
+                                        <th>{{__('text.Salle.lbl')}}</th>
 
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                    </center>
-                    <!-- /.card-body -->
-            </div>
-          
-            @endsection
-            @section('js')
+                                        <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
+                                   
+                                @foreach ($datas as $item)
+                                <tr>
+                                    <td>{{$item->libelle}}</td>
+                                    <td>{{$item->date_exam}}</td>
+                                    <td>{{$item->heure_exam}}</td>
+                                    <td>{{$item->anneesscolaire}}</td>
+                                    <td>{{$item->profs}}</td>
+                                    <td>{{$item->matieres}}</td>
+                                    <td>{{$item->classes}}</td>
+                                    <td>{{$item->salles}}</td>
 
-            @endsection
+
+
+                                    <td>
+                                        <form method="delete" action="{{route('exams.destroy', $item->id)}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <div class='btn-group'>
+                                                <a href="{{ route('exams.edit', $item->id) }}"
+                                                    class='btn btn-primary pull-right'><i class="fas fa-edit"></i></a>
+                                                <button type="submit" onclick="return myFunction();" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+
+
+                            </tbody>
+
+                        </table>
+                        {{ $datas->links() }}
+
+                    </div>
+                </center>
+                <!-- /.card-body -->
+        </div>
+        <script>
+            function myFunction() {
+                if(!confirm("Are You Sure to delete this"))
+                event.preventDefault();
+            }
+           </script>
+
+
+
+        @endsection
+        @section('js')
+
+        @endsection

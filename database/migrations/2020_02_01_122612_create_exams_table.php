@@ -18,16 +18,21 @@ class CreateExamsTable extends Migration
             $table->string('libelle');
             $table->date('date_exam');
             $table->string('heure_exam');
-            $table->unsignedBigInteger('prof_id');
-            $table->unsignedBigInteger('matiere_id');
-            $table->unsignedBigInteger('classe_id');
-            $table->unsignedBigInteger('salle_id');
+            $table->unsignedBigInteger('profs_id');
+            $table->unsignedBigInteger('matieres_id');
+            $table->unsignedBigInteger('classes_id');
+            $table->unsignedBigInteger('anneesscolaire_id');
+            $table->unsignedBigInteger('semestres_id');
+            $table->unsignedBigInteger('salles_id');
 
 
-            $table->foreign('prof_id')->references('id')->on('profs');
-            $table->foreign('matiere_id')->references('id')->on('matieres');
-            $table->foreign('classe_id')->references('id')->on('classes');
-            $table->foreign('salle_id')->references('id')->on('salles');
+            $table->foreign('profs_id')->references('id')->on('profs');
+            $table->foreign('matieres_id')->references('id')->on('matieres');
+            $table->foreign('classes_id')->references('id')->on('classes');
+            $table->foreign('salles_id')->references('id')->on('salles');
+            $table->foreign('anneesscolaire_id')->references('id')->on('anneesscolaire');
+            $table->foreign('semestres_id')->references('id')->on('semestres');
+
 
             $table->timestamps();
         });

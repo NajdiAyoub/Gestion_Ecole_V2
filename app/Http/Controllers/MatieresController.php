@@ -63,13 +63,13 @@ class MatieresController extends Controller
     public function store(Request $request)
     {
         
-        //$request->validate([
+        $request->validate([
 
-          //  'libelle'=> 'required',
-            //'niveaux'=> 'required'
+            'libelle'=> 'required',
+            'niveaux_id'=> 'required'
 
 
-            //]);
+            ]);
         $input = $request->all();
 
         //dd($input);
@@ -105,13 +105,15 @@ class MatieresController extends Controller
      */
     public function edit($id)
     {
+
+        
         $data = Matiere::find($id);
 
         if (empty($data)) {
             return redirect(route('matieres.index'));
         }
-
-        return view('Administrations.Matieres.edit')->with('data', $data);
+        $niveaux = niveaux::all();
+        return view('Administrations.Matieres.edit')->with('niveaux', $niveaux)->with('data', $data);
     }
 
     /**
@@ -126,7 +128,7 @@ class MatieresController extends Controller
         $request->validate([
 
             'libelle'=> 'required',
-            'niveaux'=> 'required'
+            'niveaux_id'=> 'required'
 
 
 

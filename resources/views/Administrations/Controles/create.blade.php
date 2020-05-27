@@ -27,6 +27,14 @@
         <div class="form-group">
             <label> {{ __('text.Libelle.lbl') }}</label>
             <input type="text" name="libelle" class="form-control">
+
+            <label> {{ __('text.Profs.lbl') }}</label></br>
+            <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="profs_id">
+                <option >--------------------------------------</option>
+                @foreach ($profs as $item)
+            <option value="{{$item->id}}">{{$item->nom}}</option>
+                @endforeach
+            </select></br>
             <label> {{ __('text.Classes.lbl') }}</label></br>
             <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="classes_id">
                 <option >--------------------------------------</option>

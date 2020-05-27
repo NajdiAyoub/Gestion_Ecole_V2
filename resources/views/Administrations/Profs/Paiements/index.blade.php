@@ -47,9 +47,12 @@
                                 
                                 <th>{{__('text.Prof.lbl')}}</th>
                                 <th>{{__('text.Nombre_Heure.lbl')}}</th>
+                                <th>{{__('text.Montant_Par_Heure.lbl')}}</th>
                                 <th>{{__('text.Date_Paiements.lbl')}}</th>
                                 <th>{{__('text.Type_Paiements.lbl')}}</th>
                                 <th>{{__('text.Salaire.lbl')}}</th>
+                                <th>{{__('text.Somme.lbl')}}</th>
+
                                 <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
                             </tr>
                         </thead>
@@ -57,11 +60,14 @@
                             @foreach ($datas as $item)
                             <tr>
                                 
-                                <td>{{$item['Prof']}}</td>
+                                <td>{{$item['Profs']}}</td>
                                 <td>{{$item['Nombre_Heure']}}</td>
+                                <td>{{$item['Montant_Par_Heure']}}</td>
                                 <td>{{$item['Date_Paiements']}}</td>
                                 <td>{{$item['Type_Paiements']}}</td>
                                 <td>{{$item['Salaire']}}</td>
+                                <td>{{$item['Somme']}}</td>
+
 
 
                                 <td style="text-align:right;">

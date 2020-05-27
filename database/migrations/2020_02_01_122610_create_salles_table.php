@@ -17,7 +17,7 @@ class CreateSallesTable extends Migration
             $table->bigIncrements('id');
             $table->string('libelle');
             $table->string('type_salle');
-            $table->integer('nombres_place');
+            $table->integer('nombre_place');
 
 
 

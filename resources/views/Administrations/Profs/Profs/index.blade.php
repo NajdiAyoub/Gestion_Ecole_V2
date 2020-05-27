@@ -71,7 +71,7 @@
                                 <td>{{$item->email}}</td>
                                 <td>{{$item->type_contrat}}</td>
                                 <td>{{$item->salaire}}</td>
-                                <td>{{$item->montant_par_heure}}</td>
+                                <td>{{$item->montant_par_Heure}}</td>
                                 <td>{{$item->login}}</td>
                                 <td>{{$item->password}}</td>
 

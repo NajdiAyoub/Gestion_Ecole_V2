@@ -40,7 +40,7 @@ return [
     'Classes.lbl' => 'Classes',
     'Classes.btn' => 'Classes',
     'Classes.add' => 'Nouvelle Classes',
-    'Salles.edit' => 'Modifier Classes',
+    'Classes.edit' => 'Modifier Classes',
 
     'Filieres.list' => 'Liste des Filieres',
     'Filieres.lbl' => 'Filieres',

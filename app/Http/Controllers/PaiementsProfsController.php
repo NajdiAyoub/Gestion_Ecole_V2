@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\PaiementProf;
 use App\Prof;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaiementsProfsController extends Controller
 {
@@ -13,12 +14,20 @@ class PaiementsProfsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $profs = Prof::all();
-        $datas = PaiementProf::all();
-        return view('Administrations.Profs.Paiements.index')->with('datas',$datas)->with('profs',$profs);
-        //
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $data = DB::table('v_paiementsprofs')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = DB::table('v_paiementsprofs')->paginate(10);
+
+        }   
+        return view('Administrations.Profs.paiements.index')->with('datas', $datas )->with('search', $search );        //
     }
 
     /**
@@ -28,7 +37,9 @@ class PaiementsProfsController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Profs.Paiements.create');
+        $profs = Prof::all();
+        
+        return view('Administrations.Profs.paiements.create')->with('profs',$profs);
 
         //
     }
@@ -41,6 +52,13 @@ class PaiementsProfsController extends Controller
      */
     public function store(Request $request)
     {
+        $input = $request->all();
+        //dd($input);
+
+        $data = PaiementProf::create($input);
+        $data->save();
+        return redirect(route('paiements.index'))->with('success', 'Item added succesfully' );
+        //
         //
     }
 
@@ -52,6 +70,8 @@ class PaiementsProfsController extends Controller
      */
     public function show($id)
     {
+        return redirect(route('paiements.index'));
+
         //
     }
 
@@ -63,6 +83,15 @@ class PaiementsProfsController extends Controller
      */
     public function edit($id)
     {
+        $data = PaiementProf::find($id);
+
+        if (empty($data)) {
+            return redirect(route('paiements.index'));
+        }
+        $profs = Prof::all();
+
+        return view('Administrations.Profs.paiements.edit')->with('data', $data)->with('profs', $profs);
+        //
         //
     }
 
@@ -75,6 +104,15 @@ class PaiementsProfsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = PaiementProf::find($id);
+
+        if (empty($data)) {
+            return redirect(route('paiements.index'));
+        }
+
+        $data = PaiementProf::where('id', $id)->update(request()->except(['_token', '_method']));
+
+        return redirect(route('paiements.index'));
         //
     }
 
@@ -86,6 +124,15 @@ class PaiementsProfsController extends Controller
      */
     public function destroy($id)
     {
+        $data = PaiementProf::find($id);
+
+        if (empty($data)) {
+            return redirect(route('paiements.index'));
+        }
+
+        $data->delete();
+
+        return redirect(route('paiements.index'));
         //
     }
 }

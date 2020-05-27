@@ -44,6 +44,7 @@
             <thead>
             <tr>
                       <th>{{__('text.Libelle.lbl')}}</th>
+                      <th>{{__('text.Prof.lbl')}}</th>
                       <th>{{__('text.Classe.lbl')}}</th>
                       <th>{{__('text.Matiere.lbl')}}</th>
                       <th>{{__('text.Semestre.lbl')}}</th>
@@ -62,6 +63,7 @@
                                 @foreach ($datas as $item)
                                 <tr>
                                     <td>{{$item->libelle}}</td>
+                                    <td>{{$item->profs}}</td>
                                     <td>{{$item->classes}}</td>
                                     <td>{{$item->matieres}}</td>
                                     <td>{{$item->semestres}}</td>

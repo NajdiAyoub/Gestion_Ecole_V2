@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\AbsenceProf;
+use App\Attachement;
 use App\Prof;
+use CreateAttachementsTable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AbsencesProfsController extends Controller
 {
@@ -19,14 +22,14 @@ class AbsencesProfsController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas =AbsenceProf::where('nom', 'like', '%'. $search . '%')->paginate(10);
+            $data = DB::table('v_absencesprofs')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
-            $datas = AbsenceProf::paginate(10);
+            $datas = DB::table('v_absencesprofs')->paginate(10);
 
         }   
-        return view('Administrations.Profs.AbsencesProfs.index')->with('datas', $datas )->with('search', $search );
+        return view('Administrations.Profs.absencesprofs.index')->with('datas', $datas )->with('search', $search );
         //
     }
 
@@ -38,7 +41,9 @@ class AbsencesProfsController extends Controller
     public function create()
     {
         $profs = Prof::all();
-        return view('Administrations.Profs.AbsencesProfs.create')->with('profs',$profs);
+        $attachements = Attachement::all();
+        
+        return view('Administrations.Profs.AbsencesProfs.create')->with('profs',$profs)->with('attachements',$attachements);
 
         //
     }
@@ -78,13 +83,18 @@ class AbsencesProfsController extends Controller
      */
     public function edit($id)
     {
+       
         $data = AbsenceProf::find($id);
 
         if (empty($data)) {
             return redirect(route('absencesprofs.index'));
         }
-  
-        return view('Administrations.Profs.AbsencesProfs.edit')->with('data', $data);
+        $profs = Prof::all();
+        $attachements = Attachement::all();
+       
+
+        return view('Profs.absencesprofs.edit')->with('data', $data)->with('profs', $profs)->with('attachements', $attachements);
+        //
         //
         //
     }

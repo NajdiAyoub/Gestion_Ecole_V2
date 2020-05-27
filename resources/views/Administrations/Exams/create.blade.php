@@ -64,7 +64,21 @@
         @foreach ($salles as $item)
     <option value="{{$item->id}}">{{$item->libelle}}</option>
         @endforeach
-    </select>
+    </select></br>
+    <label>{{ __('text.Semestres.lbl') }}</label></br>
+    <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="semestres_id">
+      <option >--------------------------------------</option>
+      @foreach ($semestres as $item)
+  <option value="{{$item->id}}">{{$item->libelle}}</option>
+      @endforeach
+  </select></br>
+  <label>{{ __('text.AnneesScolaire.lbl') }}</label></br>
+  <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="anneesscolaire_id">
+    <option >--------------------------------------</option>
+    @foreach ($anneesscolaire as $item)
+<option value="{{$item->id}}">{{$item->libelle}}</option>
+    @endforeach
+</select>
             </div>
             <button type="submit" class="btn btn-primary">{{__('text.soumettre.btn')}}</button>
             <input type="button" class="btn btn-primary" value="{{__('text.revenir.btn')}}" onclick="history.back()">

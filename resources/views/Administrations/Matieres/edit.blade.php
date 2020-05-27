@@ -16,7 +16,7 @@
 
 
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel" style="font-style:italic; ">Editer Matieres</h5>
+                <h5 class="modal-title" id="editModalLabel" style="font-style:italic; color: #007bff; ">{{__('text.Matieres.edit')}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 </button>
 
@@ -29,10 +29,18 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label>libelle</label>
+                        <label>{{__('text.libelle.lbl')}}</label>
                         <input type="text" name="libelle" id="libelle" value="{{ $data->libelle}}" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary">{{__('text.Editer.btn')}}</button>
+                    <label>{{__('text.Niveaux.lbl')}}</label></br>
+                    <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="niveaux_id">
+                        <option >--------------------------------------</option>
+                        @foreach ($niveaux as $item)
+                    <option value="{{$item->id}}">{{$item->libelle}}</option>
+                        @endforeach
+                    </select></br>
+                  </div>
+                    <button style="margin-left:16px;" type="submit"  class="btn btn-primary">{{__('text.Editer.btn')}}</button>
                     <input type="button" class="btn btn-primary" value="{{__('text.revenir.btn')}}" onclick="history.back()">
 
 

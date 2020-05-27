@@ -15,8 +15,12 @@ class Exam extends Model
         'profs_id',
         'matieres_id',
         'classes_id',
+        'anneesscolaire_id',
+        'semestres_id',
         'salles_id',
+
   
     ];
+
     //
 }

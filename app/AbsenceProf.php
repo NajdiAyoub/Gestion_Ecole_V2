@@ -10,10 +10,10 @@ class AbsenceProf extends Model
     protected $table = 'absences_profs';
     public $primarykey = 'id';
     protected $fillable = [
-        'date_absence',
+        'date_absences',
         'seance',
         'profs_id',
-        'justife',
+        'justifie',
         'attachements_id',
         'remarque',
     ];
