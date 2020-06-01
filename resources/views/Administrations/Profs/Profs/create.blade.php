@@ -34,6 +34,8 @@
               <input type="text" name="cin" class="form-control" >
               <label>{{__('text.Adresse.lbl')}}</label>
               <input type="text" name="adresse" class="form-control" >
+              <label>{{__('text.Date_Naissance.lbl')}}</label>
+              <input type="date" name="date_naissance" class="form-control" >
               <label>{{__('text.Rib.lbl')}}</label>
               <input type="text" name="rib" class="form-control" >
               <label>{{__('text.Tel.lbl')}}</label>

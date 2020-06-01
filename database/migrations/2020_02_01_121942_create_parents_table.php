@@ -17,9 +17,11 @@ class CreateParentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('nom');
             $table->string('prenom');
+            $table->string('cin');
+            $table->string('adresse');
             $table->string('sexe');
-            $table->string('adresse_parents');
-            $table->string('email_parents');
+            $table->string('email');
+            $table->string('tel');
 
 
             $table->timestamps();

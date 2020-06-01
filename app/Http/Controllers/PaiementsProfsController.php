@@ -20,7 +20,14 @@ class PaiementsProfsController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $data = DB::table('v_paiementsprofs')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_paiementsprofs')->where('profs', 'like', '%'. $search . '%')
+            ->orWhere('nombre_heure' , 'like', '%'. $search . '%')
+            ->orWhere('date_paiements' , 'like', '%'. $search . '%')
+            ->orWhere('type_paiements' , 'like', '%'. $search . '%')
+            ->orWhere('salaire' , 'like', '%'. $search . '%')
+            ->orWhere('somme' , 'like', '%'. $search . '%')
+
+            ->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
@@ -52,12 +59,25 @@ class PaiementsProfsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+
+            'profs_id'=> 'required',
+            'nombre_heure'=> 'required',
+            'montant_par_heure'=> 'required',
+            'date_paiements'=> 'required',
+            'type_paiements'=> 'required',
+            'salaire'=> 'required',
+            'somme'=> 'required',
+            ]);
+
+
+
         $input = $request->all();
         //dd($input);
 
         $data = PaiementProf::create($input);
         $data->save();
-        return redirect(route('paiements.index'))->with('success', 'Item added succesfully' );
+        return redirect(route('paiementsprofs.index'))->with('success', 'Item added succesfully' );
         //
         //
     }
@@ -70,7 +90,7 @@ class PaiementsProfsController extends Controller
      */
     public function show($id)
     {
-        return redirect(route('paiements.index'));
+        return redirect(route('paiementsprofs.index'));
 
         //
     }
@@ -86,7 +106,7 @@ class PaiementsProfsController extends Controller
         $data = PaiementProf::find($id);
 
         if (empty($data)) {
-            return redirect(route('paiements.index'));
+            return redirect(route('paiementsprofs.index'));
         }
         $profs = Prof::all();
 
@@ -104,15 +124,27 @@ class PaiementsProfsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
+        $request->validate([
+
+            'profs_id'=> 'required',
+            'nombre_heure'=> 'required',
+            'montant_par_heure'=> 'required',
+            'date_paiements'=> 'required',
+            'type_paiements'=> 'required',
+            'salaire'=> 'required',
+            'somme'=> 'required',
+            ]);
+            
         $data = PaiementProf::find($id);
 
         if (empty($data)) {
-            return redirect(route('paiements.index'));
+            return redirect(route('paiementsprofs.index'));
         }
 
         $data = PaiementProf::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        return redirect(route('paiements.index'));
+        return redirect(route('paiementsprofs.index'));
         //
     }
 
@@ -127,12 +159,12 @@ class PaiementsProfsController extends Controller
         $data = PaiementProf::find($id);
 
         if (empty($data)) {
-            return redirect(route('paiements.index'));
+            return redirect(route('paiementsprofs.index'));
         }
 
         $data->delete();
 
-        return redirect(route('paiements.index'));
+        return redirect(route('paiementsprofs.index'));
         //
     }
 }

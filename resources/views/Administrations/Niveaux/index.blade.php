@@ -9,23 +9,29 @@
 @endsection
 
 @section('content')
+
 {{ Breadcrumbs::render('admin.parametre.niveaux') }}
+
+
 
 
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <section class="content" style="margin:auto;">
-                
+              
+
+  
                 <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.Niveaux.list')}}</h4>
                    
                 <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
                           href="{{ route('niveaux.create') }}"> &nbsp; <i
                               class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Niveaux.add')}}</a>
-                              
                               <form method="get" action="{{route('niveaux.index')}}">
-                              <label for="search">Search:</label>
-                              <input style="margin-right: -273px; margin-top:5px"  type="search" id="search" name="search">
+                                <label for="search">Search:</label>
+                                <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                                </form>
+
                             </div>
               
                      
@@ -46,13 +52,16 @@
                   </tr>
               </thead>
               <tbody>
-                   
 
-                <tr>
-                    @foreach ($datas as $item)
 
-                                    <td>{{$item['libelle']}}</td>
-                                    <td>{{$item['description']}}</td>
+
+                    
+                                    <!-- End add Modal -->
+
+                                @foreach ($datas as $item)
+                                <tr>
+                                    <td>{{$item->libelle}}</td>
+                                    <td>{{$item->description}}</td>
 
                                     <td>
                                         <form method="delete" action="{{route('niveaux.destroy', $item->id)}}">
@@ -61,7 +70,7 @@
                                             <div class='btn-group'>
                                                 <a href="{{ route('niveaux.edit', $item->id) }}"
                                                     class='btn btn-primary pull-right'><i class="fas fa-edit"></i></a>
-                                                <button type="submit" onclick="return myFunction();"  class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                <button type="submit" onclick="return myFunction();" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                             </div>
                                         </form>
                                     </td>
@@ -75,9 +84,9 @@
                         {{ $datas->links() }}
 
                     </div>
+                </center>
                 <!-- /.card-body -->
         </div>
-        
         <script>
             function myFunction() {
                 if(!confirm("Are You Sure to delete this"))
@@ -85,7 +94,9 @@
             }
            </script>
 
-       @endsection
+
+
+        @endsection
         @section('js')
 
         @endsection

@@ -15,7 +15,7 @@ class Eleve extends Model
         'date_naissance',
         'addreses',
         'email',
-        'niveau',
+        'niveaux_id',
         'filieres_id',
         'parents_id',
         'classes_id',

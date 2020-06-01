@@ -192,6 +192,9 @@ return [
     'Heure_Exam.lbl' => 'Exam Hour',
     'Montant_par_Heures.lbl' => 'AmountPerHour',
     'Somme.lbl' => 'Sum',
+    'CIN.lbl' => 'CIN',
+    'Telephone.lbl' => 'Phone',
+
 
 
 

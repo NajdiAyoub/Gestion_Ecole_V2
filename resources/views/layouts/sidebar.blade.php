@@ -210,6 +210,23 @@
                                             <p>{{__('text.Evenements.btn') }}</p>
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('conges.index')}}"
+                                            class="nav-link {{isActive('admin.parametre.conges',request())}}">
+                                            <i
+                                                class="far fa{{isChecked('admin.parametre.conges',request())}}-circle nav-icon"></i>
+                                            <p>{{__('text.Conges.btn') }}</p>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{ route('parents.index')}}"
+                                            class="nav-link {{isActive('admin.parametre.parents',request())}}">
+                                            <i
+                                                class="far fa{{isChecked('admin.parametre.parents',request())}}-circle nav-icon"></i>
+                                            <p>{{__('text.Parents.btn') }}</p>
+                                        </a>
+                                    </li>
 
                                 </ul>
                                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"

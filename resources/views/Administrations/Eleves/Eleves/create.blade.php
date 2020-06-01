@@ -55,12 +55,22 @@
             <option value="{{$item->id}}">{{$item->libelle}}</option></br>
                 @endforeach
             </select>
+
+            <label>{{ __('text.Parents.lbl') }}</label>
+            <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="parents_id">
+                <option >--------------------------------------</option>
+                @foreach ($Parente as $item)
+            <option value="{{$item->id}}">{{$item->nom}}</option></br>
+                @endforeach
+            </select>
+            <label>{{__('text.Emails.lbl')}}</label></br>
+            <input type="text" name="email" class="form-control" >
               <label>{{__('text.Image.lbl')}}</label></br>
               <input type="file" name="image" class="form-control" >
               <label>{{__('text.Login.lbl')}}</label>
               <input type="text" name="login" class="form-control" >
               <label>{{__('text.Password.lbl')}}</label>
-              <input type="password" name="motdepasse" class="form-control" > 
+              <input type="password" name="password" class="form-control" > 
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">

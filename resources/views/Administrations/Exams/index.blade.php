@@ -27,9 +27,10 @@
     <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
               href="{{ route('exams.create') }}"> &nbsp; <i
                   class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Exams.add')}}</a>
-                  <label  
-                  " for="search">Search:</label>
-                  <input style="margin-right: -273px; margin-top:5px"  type="search" id="search" name="search">
+                  <form method="get" action="{{route('exams.index')}}">
+                    <label for="search">Search:</label>
+                    <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                    </form>
                 </div>
   
          

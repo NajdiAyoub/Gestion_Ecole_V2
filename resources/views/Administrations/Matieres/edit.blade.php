@@ -34,9 +34,12 @@
                     </div>
                     <label>{{__('text.Niveaux.lbl')}}</label></br>
                     <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="niveaux_id">
-                        <option >--------------------------------------</option>
+                        <option ></option>
                         @foreach ($niveaux as $item)
-                    <option value="{{$item->id}}">{{$item->libelle}}</option>
+                    <option value="{{$item->id}}"  @if ($data->niveaux_id==$item->id) selected 
+                        
+                        
+              @endif>{{$item->libelle}}</option>
                         @endforeach
                     </select></br>
                   </div>

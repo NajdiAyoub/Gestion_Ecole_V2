@@ -60,7 +60,7 @@
                     
                                     <!-- End add Modal -->
 
-                                @foreach ($datas as $item)
+                                @foreach ($data as $item)
                                 <tr>
                                     <td>{{$item->libelle}}</td>
                                     <td>{{$item->profs}}</td>
@@ -87,7 +87,7 @@
                             </tbody>
 
                         </table>
-                        {{ $datas->links() }}
+                        {{ $data->links() }}
 
                     </div>
                 </center>

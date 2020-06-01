@@ -24,7 +24,8 @@ class ProfsMatieresController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('v_profsmatieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_profsmatieres')->where('matieres' , 'like', '%'. $search . '%' )->orWhere('profs' , 'like', '%'. $search . '%')->orWhere('matieres' , 'like', '%'. $search . '%')->orWhere('classes' , 'like', '%'. $search . '%')->orWhere('niveaux' , 'like', '%'. $search . '%')->orWhere('semestres' , 'like', '%'. $search . '%')->paginate(10) ;
+            
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
@@ -64,6 +65,16 @@ class ProfsMatieresController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+
+            'semestres_id'=> 'required',
+            'niveaux_id'=> 'required',
+            'profs_id'=> 'required',
+            'matieres_id'=> 'required',
+            'classes_id'=> 'required',
+
+            ]);
+
         $input = $request->all();
 
         $data = ProfMatiere::create($input);
@@ -117,6 +128,16 @@ class ProfsMatieresController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+
+            'semestres_id'=> 'required',
+            'niveaux_id'=> 'required',
+            'profs_id'=> 'required',
+            'matieres_id'=> 'required',
+            'classes_id'=> 'required',
+
+            ]);
+
         $data = ProfMatiere::find($id);
 
         if (empty($data)) {

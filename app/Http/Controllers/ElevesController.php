@@ -6,6 +6,7 @@ use App\Classe;
 use App\Eleve;
 use App\Filiere;
 use App\niveaux;
+use App\Parente;
 use Illuminate\Http\Request;
 
 class ElevesController extends Controller
@@ -42,9 +43,10 @@ class ElevesController extends Controller
         $niveaux = niveaux::all();
         $filieres = Filiere::all();
         $classes = Classe::all();
+        $parents = Parente::all();
 
 
-        return view('Administrations.Eleves.Eleves.create')->with('niveaux',$niveaux)->with('Filiere',$filieres)->with('Classe',$classes);
+        return view('Administrations.Eleves.Eleves.create')->with('niveaux',$niveaux)->with('Filiere',$filieres)->with('Classe',$classes)->with('Parente',$parents);
 
     }
 

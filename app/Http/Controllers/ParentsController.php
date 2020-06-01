@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\niveaux;
+use App\Parente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class NiveauxController extends Controller
+class ParentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,22 +15,22 @@ class NiveauxController extends Controller
      */
     public function index(Request $request)
     {
-       
         $search='';
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas =niveaux::where('libelle', 'like', '%'. $search . '%')
-            ->orWhere('description' , 'like', '%'. $search . '%')
-            ->paginate(10);
+            $datas = DB::table('parents')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
-            $datas = niveaux::paginate(10);
+            $datas = DB::table('parents')->paginate(10);
 
         }   
-        return view('Administrations.Niveaux.index')->with('datas', $datas )->with('search', $search );
-        
+        return view('Administrations.parents.index')->with('datas', $datas )->with('search', $search );
+
+      // $datas = Parente::paginate(10);
+        //return view('Administrations.Parents.index')->with('datas',$datas);
+
         //
     }
 
@@ -41,7 +41,7 @@ class NiveauxController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Niveaux.create');
+        return view('Administrations.Parents.create');
         //
     }
 
@@ -53,18 +53,23 @@ class NiveauxController extends Controller
      */
     public function store(Request $request)
     {
-      //  dd('ok');
-      $request->validate([
+        $request->validate([
 
-        'libelle'=> 'required',
-        'description'=> 'required'
+            'nom'=> 'required',
+            'prenom'=> 'required',
+            'cin'=> 'required',
+            'adresse'=> 'required',
+            'sexe'=> 'required',
+            'tel'=> 'required',
+            'email'=> 'required',
+            
 
-        ]);
+            ]);
 
-      $input = $request->all();
-      $data = niveaux::create($input);
-      return redirect(route('niveaux.index'))->with('success', 'Item added succesfully' );
-        //
+        $input = $request->all();
+        $data = Parente::create($input);
+        $data->save();
+        return redirect(route('parents.index'))->with('success', 'Item added succesfully' );
         //
     }
 
@@ -76,6 +81,8 @@ class NiveauxController extends Controller
      */
     public function show($id)
     {
+        return redirect(route('parents.index'));
+
         //
     }
 
@@ -87,15 +94,16 @@ class NiveauxController extends Controller
      */
     public function edit($id)
     {
-        $data = niveaux::find($id);
+        $data = Parente::find($id);
 
         if (empty($data)) {
-            return redirect(route('niveaux.index'));
+            return redirect(route('parents.index'));
         }
 
-        return view('Administrations.Niveaux.edit')->with('datas', $data);
-        //
+        return view('Administrations.parents.edit')->with('data', $data);
     }
+        //
+    
 
     /**
      * Update the specified resource in storage.
@@ -106,23 +114,28 @@ class NiveauxController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $request->validate([
 
-            'libelle'=> 'required',
-            'description'=> 'required'
-    
+            'nom'=> 'required',
+            'prenom'=> 'required',
+            'cin'=> 'required',
+            'adresse'=> 'required',
+            'sexe'=> 'required',
+            'tel'=> 'required',
+            'email'=> 'required',
+            
+
             ]);
-        $data = niveaux::find($id);
+        $data = Parente::find($id);
 
         if (empty($data)) {
-            return redirect(route('niveaux.index'));
+            return redirect(route('parents.index'));
         }
 
-        $data = niveaux::where('id', $id)->update(request()->except(['_token', '_method']));
+        $data = Parente::where('id', $id)->update(request()->except(['_token', '_method']));
 
-        return redirect(route('niveaux.index'))->with('success', 'Item Updated succesfully' );
-
+        return redirect(route('parents.index'));
+        //
         //
     }
 
@@ -134,17 +147,16 @@ class NiveauxController extends Controller
      */
     public function destroy($id)
     {
-        //dd($id);
-        $data = niveaux::find($id);
+        $data = Parente::find($id);
 
         if (empty($data)) {
-            return redirect(route('niveaux.index'));
+            return redirect(route('parents.index'));
         }
 
         $data->delete();
 
-        return redirect(route('niveaux.index'));
-
+        return redirect(route('parents.index'));
+        //
         //
     }
 }

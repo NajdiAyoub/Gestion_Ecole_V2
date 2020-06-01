@@ -27,7 +27,7 @@ class ClassesNiveauxFilieresController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('v_classesniveauxfilieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_classesniveauxfilieres')->where('classes', 'like', '%'. $search . '%')->Orwhere('profs', 'like', '%'. $search . '%')->Orwhere('matieres', 'like', '%'. $search . '%')->Orwhere('filieres', 'like', '%'. $search . '%')->Orwhere('semestres', 'like', '%'. $search . '%')->Orwhere('anneesscolaire', 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
@@ -68,6 +68,17 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+
+            'semestres_id'=> 'required',
+            'niveaux_id'=> 'required',
+            'profs_id'=> 'required',
+            'matieres_id'=> 'required',
+            'classes_id'=> 'required',
+            'anneesscolaire_id'=> 'required',
+            'semestres_id'=> 'required',
+
+            ]);
         $input = $request->all();
         $data = ClasseNiveauFiliere::create($input);
         return redirect(route('classesniveauxfilieres.index'));
@@ -123,6 +134,18 @@ class ClassesNiveauxFilieresController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        
+        $request->validate([
+
+            'semestres_id'=> 'required',
+            'niveaux_id'=> 'required',
+            'profs_id'=> 'required',
+            'matieres_id'=> 'required',
+            'classes_id'=> 'required',
+            'anneesscolaire_id'=> 'required',
+
+            ]);
         $data = ClasseNiveauFiliere::find($id);
 
         if (empty($data)) {

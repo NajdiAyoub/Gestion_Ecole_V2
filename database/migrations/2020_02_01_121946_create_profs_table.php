@@ -19,6 +19,7 @@ class CreateProfsTable extends Migration
             $table->string('prenom');
             $table->string('cin');
             $table->string('adresse');
+            $table->string('date_naissance');
             $table->string('tel');
             $table->string('email');
             $table->string('rib');

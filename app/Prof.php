@@ -18,6 +18,7 @@ class Prof extends Model
         'rib',
         'type_contrat',
         'adresse',
+        'date_naissance',
         'salaire',
         'montant_par_heure',
         'login',

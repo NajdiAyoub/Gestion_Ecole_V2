@@ -23,14 +23,19 @@ class ControlesController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $data = DB::table('v_controles')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_controles')->where('libelle', 'like', '%'. $search . '%')
+            ->Orwhere('profs', 'like', '%'. $search . '%')
+            ->Orwhere('classes', 'like', '%'. $search . '%')
+            ->Orwhere('matieres', 'like', '%'. $search . '%')
+            ->Orwhere('semestres', 'like', '%'. $search . '%')
+            ->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
             $datas = DB::table('v_controles')->paginate(10);
 
         }   
-        return view('Administrations.controles.index')->with('datas', $datas )->with('search', $search );
+        return view('Administrations.controles.index')->with('data', $datas )->with('search', $search );
     }
 
     /**
@@ -63,7 +68,7 @@ class ControlesController extends Controller
             'libelle'=> 'required',
             'classes_id'=> 'required',
             'matieres_id'=> 'required',
-            'semestres_id'=> 'required'
+            'semestres_id'=> 'required',
 
             ]);
         $input = $request->all();

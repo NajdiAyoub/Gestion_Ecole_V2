@@ -40,6 +40,7 @@ class AbsencesProfsController extends Controller
      */
     public function create()
     {
+        //dd('test');
         $profs = Prof::all();
         $attachements = Attachement::all();
         

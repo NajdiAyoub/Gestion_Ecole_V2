@@ -18,7 +18,20 @@ class ProfsController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas =Prof::where('nom', 'like', '%'. $search . '%')->paginate(10);
+            $datas =Prof::where('nom', 'like', '%'. $search . '%')
+            ->orWhere('prenom' , 'like', '%'. $search . '%')
+            ->orWhere('cin' , 'like', '%'. $search . '%')
+            ->orWhere('adresse' , 'like', '%'. $search . '%')
+            ->orWhere('date_naissance' , 'like', '%'. $search . '%')
+            ->orWhere('rib' , 'like', '%'. $search . '%')
+            ->orWhere('tel' , 'like', '%'. $search . '%')
+            ->orWhere('email' , 'like', '%'. $search . '%')
+            ->orWhere('type_contrat' , 'like', '%'. $search . '%')
+            ->orWhere('salaire' , 'like', '%'. $search . '%')
+            ->orWhere('montant_par_Heure' , 'like', '%'. $search . '%')
+
+
+            ->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
@@ -47,6 +60,25 @@ class ProfsController extends Controller
      */
     public function store(Request $request)
     {
+       // $request->validate([
+
+         //   'nom'=> 'required',
+           //'prenom'=> 'required',
+           // 'cin'=> 'required',
+           // 'adresse'=> 'required',
+           // 'date_naissance'=> 'required',
+           // 'rib'=> 'required',
+           // 'tel'=> 'required',
+           // 'email'=> 'required',
+
+           // 'type_contrat'=> 'required',
+            //'salaire'=> 'required',
+            //'montant_par_Heure'=> 'required',
+            //'login'=> 'required',
+            //'password'=> 'required',
+
+
+            //]);
         $input = $request->all();
       $data = Prof::create($input);
       return redirect(route('profs.index'))->with('success', 'Item added succesfully' );
@@ -95,6 +127,25 @@ class ProfsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        //$request->validate([
+
+          //  'nom'=> 'required',
+           // 'prenom'=> 'required',
+           // 'cin'=> 'required',
+           // 'adresse'=> 'required',
+            //'date_naissance'=> 'required',
+            //'rib'=> 'required',
+            //'tel'=> 'required',
+            //'email'=> 'required',
+            //'type_contrat'=> 'required',
+            //'salaire'=> 'required',
+            //'montant_par_Heure'=> 'required',
+            //'login'=> 'required',
+            //'password'=> 'required',
+
+
+            //]);
         $data = Prof::find($id);
 
         if (empty($data)) {

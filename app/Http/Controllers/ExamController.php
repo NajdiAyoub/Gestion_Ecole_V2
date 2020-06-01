@@ -25,7 +25,15 @@ class ExamController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('v_exams')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_exams')->where('libelle', 'like', '%'. $search . '%')
+            ->Orwhere('date_exam', 'like', '%'. $search . '%')
+            ->Orwhere('heure_exam', 'like', '%'. $search . '%')
+            ->Orwhere('anneesscolaire', 'like', '%'. $search . '%')
+            ->Orwhere('profs', 'like', '%'. $search . '%')
+            ->Orwhere('matieres', 'like', '%'. $search . '%')
+            ->Orwhere('classes', 'like', '%'. $search . '%')
+            ->Orwhere('salles', 'like', '%'. $search . '%')
+            ->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
@@ -67,10 +75,21 @@ class ExamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {    //]);
+    {    
+        $request->validate([
+
+            'libelle'=> 'required',
+            'date_exam'=> 'required',
+            'heure_exam'=> 'required',
+            'anneesscolaire_id'=> 'required',
+            'profs_id'=> 'required',
+            'matieres_id'=> 'required',
+            'classes_id'=> 'required',
+            'salles_id'=> 'required',
+
+            ]);
+
         $input = $request->all();
-        //dd($input);
-  
         $data = Exam::create($input);
         $data->save();
         return redirect(route('exams.index'))->with('success', 'Item added succesfully' );
@@ -123,6 +142,19 @@ class ExamController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+
+            'libelle'=> 'required',
+            'date_exam'=> 'required',
+            'heure_exam'=> 'required',
+            'anneesscolaire_id'=> 'required',
+            'profs_id'=> 'required',
+            'matieres_id'=> 'required',
+            'classes_id'=> 'required',
+            'salles_id'=> 'required',
+
+            ]);
+
         $data = Exam::find($id);
 
         if (empty($data)) {

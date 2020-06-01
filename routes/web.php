@@ -234,6 +234,30 @@ Route::resource('evenements', 'EvenementsController', ['except' => 'destroy', 'n
     'show' => 'evenements.show',
 ]]);
 
+//ADMIN->Parametres->Conges
+
+Route::get('conges/{id}/delete', 'CongesController@destroy')->name('conges.destroy');
+Route::resource('conges', 'CongesController', ['except' => 'destroy', 'names' => [
+    'index' => 'conges.index',
+    'create' => 'conges.create',
+    'update' => 'conges.update',
+    'edit' => 'conges.edit',
+    'store' => 'conges.store',
+    'show' => 'conges.show',
+]]);
+
+//ADMIN->Parametres->Conges
+
+Route::get('parents/{id}/delete', 'ParentsController@destroy')->name('parents.destroy');
+Route::resource('parents', 'ParentsController', ['except' => 'destroy', 'names' => [
+    'index' => 'parents.index',
+    'create' => 'parents.create',
+    'update' => 'parents.update',
+    'edit' => 'parents.edit',
+    'store' => 'parents.store',
+    'show' => 'parents.show',
+]]);
+
 //ADMIN->Affectations->ProfsMatieres
 
 Route::get('profsmatieres/{id}/delete', 'ProfsMatieresController@destroy')->name('profsmatieres.destroy');

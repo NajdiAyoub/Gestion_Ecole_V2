@@ -13,8 +13,8 @@ class AbsenceProf extends Model
         'date_absences',
         'seance',
         'profs_id',
-        'justifie',
         'attachements_id',
+        'justifie',
         'remarque',
     ];
     //

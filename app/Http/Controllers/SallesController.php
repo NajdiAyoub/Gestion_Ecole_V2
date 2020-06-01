@@ -19,7 +19,11 @@ class SallesController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas =Salle::where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas =Salle::where('libelle', 'like', '%'. $search . '%')
+            ->orWhere('type_salle' , 'like', '%'. $search . '%')
+            ->orWhere('nombre_place' , 'like', '%'. $search . '%')
+
+            ->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {

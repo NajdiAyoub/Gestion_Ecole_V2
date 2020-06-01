@@ -47,6 +47,7 @@
                                 <th>{{__('text.Nom.lbl')}}</th>
                                 <th>{{__('text.Prenom.lbl')}}</th>
                                 <th>{{__('text.Date_Naissance.lbl')}}</th>
+                                <th>{{__('text.Parents.lbl')}}</th>
                                 <th>{{__('text.Adresse.lbl')}}</th>
                                 <th>{{__('text.Email.lbl')}}</th>
                                 <th>{{__('text.Niveaux.lbl')}}</th>
@@ -61,16 +62,18 @@
                         <tbody>
                             @foreach ($datas as $item)
                             <tr>
-                                <td>{{$item['Nom']}}</td>
-                                <td>{{$item['Prenom']}}</td>
-                                <td>{{$item['Date_Naissance']}}</td>
-                                <td>{{$item['Adresse']}}</td>
-                                <td>{{$item['Email']}}</td>
-                                <td>{{$item['Niveaux']}}</td>
-                                <td>{{$item['Filiere']}}</td>
-                                <td>{{$item['Classe']}}</td>
-                                <td>{{$item['Login']}}</td>
-                                <td>{{$item['Password']}}</td>
+                                <td>{{$item['nom']}}</td>
+                                <td>{{$item['prenom']}}</td>
+                                <td>{{$item['date_naissance']}}</td>
+                                <td>{{$item['parents_id']}}</td>
+                                <td>{{$item['adresse']}}</td>
+                                <td>{{$item['email']}}</td>
+                                <td>{{$item['niveaux_id']}}</td>
+                                <td>{{$item['filieres_id']}}</td>
+                                <td>{{$item['classes_id']}}</td>
+                                <td>{{$item['image']}}</td>
+                                <td>{{$item['login']}}</td>
+                                <td>{{$item['password']}}</td>
 
 
                                 <td style="text-align:right;">

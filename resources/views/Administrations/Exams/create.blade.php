@@ -36,7 +36,7 @@
             <label>{{ __('text.Profs.lbl') }}</label></br>
 
             <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="profs_id">
-              <option >--------------------------------------</option>
+              <option></option>
               @foreach ($profs as $item)
           <option value="{{$item->id}}">{{$item->prenom}}</option>
               @endforeach
@@ -44,7 +44,7 @@
           <label>{{ __('text.Matieres.lbl') }}</label></br>
 
           <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="matieres_id">
-            <option >--------------------------------------</option>
+            <option></option>
             @foreach ($matieres as $item)
         <option value="{{$item->id}}">{{$item->libelle}}</option>
             @endforeach
@@ -52,7 +52,7 @@
         <label>{{ __('text.Classes.lbl') }}</label></br>
 
         <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="classes_id">
-          <option >--------------------------------------</option>
+          <option></option>
           @foreach ($classes as $item)
       <option value="{{$item->id}}">{{$item->libelle}}</option>
           @endforeach
@@ -60,21 +60,21 @@
       <label>{{ __('text.Salles.lbl') }}</label></br>
 
       <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="salles_id">
-        <option >--------------------------------------</option>
+        <option></option>
         @foreach ($salles as $item)
     <option value="{{$item->id}}">{{$item->libelle}}</option>
         @endforeach
     </select></br>
     <label>{{ __('text.Semestres.lbl') }}</label></br>
     <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="semestres_id">
-      <option >--------------------------------------</option>
+      <option></option>
       @foreach ($semestres as $item)
   <option value="{{$item->id}}">{{$item->libelle}}</option>
       @endforeach
   </select></br>
   <label>{{ __('text.AnneesScolaire.lbl') }}</label></br>
   <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="anneesscolaire_id">
-    <option >--------------------------------------</option>
+    <option></option>
     @foreach ($anneesscolaire as $item)
 <option value="{{$item->id}}">{{$item->libelle}}</option>
     @endforeach

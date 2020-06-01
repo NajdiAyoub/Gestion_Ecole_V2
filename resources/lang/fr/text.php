@@ -72,6 +72,20 @@ return [
     'Evenements.add' => 'Nouvelle Evenements',
     'Evenements.edit' => 'Modifier Evenements',
 
+    'Conges.list' => 'Liste des Conges',
+    'Conges.lbl' => 'Conges',
+    'Conges.btn' => 'Conges',
+    'Conges.add' => 'Nouveau Conges',
+    'Conges.edit' => 'Modifier Conges',
+
+    'Parents.list' => 'Liste des Parents',
+    'Parents.lbl' => 'Parents',
+    'Parents.btn' => 'Parents',
+    'Parents.add' => 'Nouveau Parents',
+    'Parents.edit' => 'Modifier Parents',
+
+
+
     // Admin --- parametre end ---
 
 
@@ -203,6 +217,10 @@ return [
     'Heure_Exam.lbl' => 'Heure Exam',
     'Montant_par_Heures.lbl' => 'MontantParHeure',
     'Somme.lbl' => 'Somme',
+    'CIN.lbl' => 'CIN',
+    'Telephone.lbl' => 'Telephone',
+
+
 
 
 

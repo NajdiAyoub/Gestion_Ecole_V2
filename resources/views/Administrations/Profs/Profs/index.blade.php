@@ -48,6 +48,7 @@
                                 <th>{{__('text.Prenom.lbl')}}</th>
                                 <th>{{__('text.Cin.lbl')}}</th>
                                 <th>{{__('text.Adresse.lbl')}}</th>
+                                <th>{{__('text.Date_Naissance.lbl')}}</th>
                                 <th>{{__('text.Rib.lbl')}}</th>
                                 <th>{{__('text.Tel.lbl')}}</th>
                                 <th>{{__('text.Email.lbl')}}</th>
@@ -66,6 +67,7 @@
                                 <td>{{$item->prenom}}</td>
                                 <td>{{$item->cin}}</td>
                                 <td>{{$item->adresse}}</td>
+                                <td>{{$item->date_naissance}}</td>
                                 <td>{{$item->rib}}</td>
                                 <td>{{$item->tel}}</td>
                                 <td>{{$item->email}}</td>

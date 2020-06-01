@@ -20,20 +20,22 @@
 
 
         </div>
-      <form action="{{ action('ProfsController@store') }}" method="POST">
+      <form action="{{ action('PaiementsProfsController@store') }}" method="POST">
 
         {{ csrf_field() }}
         <div class="modal-body">
 
             <div class="form-group">
-              <label>{{__('text.Profs.lbl')}}</label>
-              <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="profs_id">
+              <label>{{ __('text.Profs.lbl') }}</label></br>
+
+              <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="profs_id">
                 <option >--------------------------------------</option>
-                @foreach (profs as $item)
-            <option value="{{$item->id}}">{{$item->nom}}</option>
+                @foreach ($profs as $item)
+            <option value="{{$item->id}}">{{$item->prenom}}</option>
                 @endforeach
+            </select></br>
               <label>{{__('text.NombreHeures.lbl')}}</label>
-              <input type="text" name="nombre heures" class="form-control" >
+              <input type="text" name="nombre_heure" class="form-control" >
               <label>{{__('text.Montant_par_Heures.lbl')}}</label>
               <input type="text" name="montant_par_heure" class="form-control" >
               <label>{{__('text.Date_Paiements.lbl')}}</label>

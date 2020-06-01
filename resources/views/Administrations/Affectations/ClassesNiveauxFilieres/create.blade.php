@@ -29,7 +29,7 @@
             <label>{{ __('text.Profs.lbl') }}</label></br>
 
             <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="profs_id">
-              <option >--------------------------------------</option>
+              <option></option>
               @foreach ($profs as $item)
           <option value="{{$item->id}}">{{$item->prenom}}</option>
               @endforeach
@@ -37,7 +37,7 @@
           <label>{{ __('text.Matieres.lbl') }}</label></br>
 
           <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="matieres_id">
-            <option >--------------------------------------</option>
+            <option></option>
             @foreach ($Matiere as $item)
         <option value="{{$item->id}}">{{$item->libelle}}</option>
             @endforeach
@@ -45,7 +45,7 @@
         <label>{{ __('text.Classes.lbl') }}</label></br>
 
         <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="classes_id">
-          <option >--------------------------------------</option>
+          <option></option>
           @foreach ($Classe as $item)
       <option value="{{$item->id}}">{{$item->libelle}}</option>
           @endforeach
@@ -55,7 +55,7 @@
       <label>{{ __('text.Niveaux.lbl') }}</label></br>
 
         <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="niveaux_id">
-          <option >--------------------------------------</option>
+          <option></option>
           @foreach ($niveaux as $item)
       <option value="{{$item->id}}">{{$item->libelle}}</option>
           @endforeach
@@ -64,7 +64,7 @@
       <label>{{ __('text.Filieres.lbl') }}</label></br>
 
         <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="filieres_id">
-          <option >--------------------------------------</option>
+          <option></option>
           @foreach ($filieres as $item)
       <option value="{{$item->id}}">{{$item->libelle}}</option>
           @endforeach
@@ -73,7 +73,7 @@
     <label>{{ __('text.Semestres.lbl') }}</label></br>
 
       <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="semestres_id">
-        <option >--------------------------------------</option>
+        <option></option>
         @foreach ($Semestre as $item)
     <option value="{{$item->id}}">{{$item->libelle}}</option>
         @endforeach
@@ -82,7 +82,7 @@
     <label>{{ __('text.AnneesScolaire.lbl') }}</label></br>
 
       <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="anneesscolaire_id">
-        <option >--------------------------------------</option>
+        <option></option>
         @foreach ($anneesscolaire as $item)
     <option value="{{$item->id}}">{{$item->libelle}}</option>
         @endforeach

@@ -22,7 +22,9 @@ class FilieresController extends Controller
       if(isset($request) && null !==$request->get('search')) {
           $search = $request->get('search');
           //dd($search);
-          $datas = DB::table('v_filieres')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+          $datas = DB::table('v_filieres')->where('libelle', 'like', '%'. $search . '%')
+          ->orWhere('niveaux' , 'like', '%'. $search . '%')
+          ->paginate(10);
           //dd($datas->toSql(),$datas->getBindings());
       } 
       else {

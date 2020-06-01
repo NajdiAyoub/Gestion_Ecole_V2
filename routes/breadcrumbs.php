@@ -138,6 +138,34 @@ Breadcrumbs::for('admin.parametre.evenements.edit', function ($trail, $id) {
     $trail->push(__('text.Evenements.edit'), route('evenements.edit', $id));
 });
 
+// Admin->Parametre->CONGES
+
+Breadcrumbs::for('admin.parametre.conges', function ($trail) {
+    $trail->push(__('text.Conges.lbl'), route('conges.index'));
+});
+Breadcrumbs::for('admin.parametre.conges.add', function ($trail) {
+    $trail->parent('admin.parametre.evenements');
+    $trail->push(__('text.Conges.add'), route('conges.create'));
+});
+Breadcrumbs::for('admin.parametre.conges.edit', function ($trail, $id) {
+    $trail->parent('admin.parametre.conges');
+    $trail->push(__('text.Conges.edit'), route('conges.edit', $id));
+});
+
+// Admin->Parametre->Parents
+
+Breadcrumbs::for('admin.parametre.parents', function ($trail) {
+    $trail->push(__('text.Parents.lbl'), route('parents.index'));
+});
+Breadcrumbs::for('admin.parametre.parents.add', function ($trail) {
+    $trail->parent('admin.parametre.parents');
+    $trail->push(__('text.Parents.add'), route('parents.create'));
+});
+Breadcrumbs::for('admin.parametre.parents.edit', function ($trail, $id) {
+    $trail->parent('admin.parametre.parents');
+    $trail->push(__('text.Parents.edit'), route('parents.edit', $id));
+});
+
 // Admin->Eleves->Eleves
 
 Breadcrumbs::for('admin.eleves.eleves', function ($trail) {

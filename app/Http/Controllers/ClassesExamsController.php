@@ -27,7 +27,16 @@ class ClassesExamsController extends Controller
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('v_classesexams')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_classesexams')->where('profs', 'like', '%'. $search . '%')
+            ->Orwhere('matieres', 'like', '%'. $search . '%')
+            ->Orwhere('classes', 'like', '%'. $search . '%')
+            ->Orwhere('niveaux', 'like', '%'. $search . '%')
+            ->Orwhere('salles', 'like', '%'. $search . '%')
+            ->Orwhere('semestres', 'like', '%'. $search . '%')
+
+
+
+            ->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
@@ -66,6 +75,17 @@ class ClassesExamsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+
+            'semestres_id'=> 'required',
+            'niveaux_id'=> 'required',
+            'profs_id'=> 'required',
+            'matieres_id'=> 'required',
+            'classes_id'=> 'required',
+            'salles_id'=> 'required',
+            'semestres_id'=> 'required',
+
+            ]);
         $input = $request->all();
         $data = ClasseExam::create($input);
         return redirect(route('classesexams.index'));
@@ -120,6 +140,17 @@ class ClassesExamsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+
+            'semestres_id'=> 'required',
+            'niveaux_id'=> 'required',
+            'profs_id'=> 'required',
+            'matieres_id'=> 'required',
+            'classes_id'=> 'required',
+            'salles_id'=> 'required',
+            'semestres_id'=> 'required',
+
+            ]);
         $data = ClasseExam::find($id);
 
         if (empty($data)) {
