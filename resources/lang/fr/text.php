@@ -219,6 +219,18 @@ return [
     'Somme.lbl' => 'Somme',
     'CIN.lbl' => 'CIN',
     'Telephone.lbl' => 'Telephone',
+    'Sexe.lbl' => 'Sexe',
+    'Emails.lbl' => 'Emails',
+    'Montant.lbl' => 'Montant',
+    'Eleve.lbl' => 'Eleve',
+    'Parent.lbl' => 'Parent',
+    'Somme_Paiements.lbl' => 'Somme Paiement',
+
+
+
+
+
+
 
 
 

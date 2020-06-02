@@ -194,6 +194,17 @@ return [
     'Somme.lbl' => 'Sum',
     'CIN.lbl' => 'CIN',
     'Telephone.lbl' => 'Phone',
+    'Sexe.lbl' => 'Sexe',
+    'Emails.lbl' => 'Emails',
+    'Montant.lbl' => 'Amount',
+    'Eleve.lbl' => 'Student',
+    'Parent.lbl' => 'Parent',
+    'Somme_Paiements.lbl' => ' Payment Sum',
+
+
+
+
+
 
 
 

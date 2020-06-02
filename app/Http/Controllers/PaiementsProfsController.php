@@ -35,6 +35,7 @@ class PaiementsProfsController extends Controller
 
         }   
         return view('Administrations.Profs.paiements.index')->with('datas', $datas )->with('search', $search );        //
+    
     }
 
     /**

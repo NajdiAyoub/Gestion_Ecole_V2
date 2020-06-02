@@ -26,10 +26,10 @@
                                     href="{{ route('eleves.create') }}"> &nbsp; <i
                                         class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Eleves.add')}}</a>
                                     
-                                        <form method="get" action="{{route('profs.index')}}">
-                                        <label for="search">Search:</label>
-                                        <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
-                                        </form>
+                                        <form method="get" action="{{route('eleves.index')}}">
+                                            <label for="search">Search:</label>
+                                            <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
+                                            </form>
                                     </div>
                         
                                       
@@ -62,18 +62,18 @@
                         <tbody>
                             @foreach ($datas as $item)
                             <tr>
-                                <td>{{$item['nom']}}</td>
-                                <td>{{$item['prenom']}}</td>
-                                <td>{{$item['date_naissance']}}</td>
-                                <td>{{$item['parents_id']}}</td>
-                                <td>{{$item['adresse']}}</td>
-                                <td>{{$item['email']}}</td>
-                                <td>{{$item['niveaux_id']}}</td>
-                                <td>{{$item['filieres_id']}}</td>
-                                <td>{{$item['classes_id']}}</td>
-                                <td>{{$item['image']}}</td>
-                                <td>{{$item['login']}}</td>
-                                <td>{{$item['password']}}</td>
+                                <td>{{$item->nom}}</td>
+                                <td>{{$item->prenom}}</td>
+                                <td>{{$item->date_naissance}}</td>
+                                <td>{{$item->parents}}</td>
+                                <td>{{$item->adresse}}</td>
+                                <td>{{$item->email}}</td>
+                                <td>{{$item->niveaux}}</td>
+                                <td>{{$item->filieres}}</td>
+                                <td>{{$item->classes}}</td>
+                                <td>{{$item->image}}</td>
+                                <td>{{$item->login}}</td>
+                                <td>{{$item->password}}</td>
 
 
                                 <td style="text-align:right;">

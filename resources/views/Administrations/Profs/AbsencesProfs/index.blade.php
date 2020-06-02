@@ -56,12 +56,12 @@
                         <tbody>
                             @foreach ($datas as $item)
                             <tr>
-                                <td>{{$item['Date_Absence']}}</td>
-                                <td>{{$item['Seance']}}</td>
-                                <td>{{$item['Prof']}}</td>
-                                <td>{{$item['Justifie']}}</td>
-                                <th>{{__('text.Attachements.lbl')}}</th>
-                                <td>{{$item['Remarque']}}</td>
+                                <td>{{$item->date_absences}}</td>
+                                <td>{{$item->seance}}</td>
+                                <td>{{$item->profs}}</td>
+                                <td>{{$item->jutifie}}</td>
+                                <td>{{$item->attachements}}</td>
+                                <td>{{$item->remarque}}</td>
 
 
                                 <td style="text-align:right;">

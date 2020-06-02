@@ -28,10 +28,7 @@ class ProfsController extends Controller
             ->orWhere('email' , 'like', '%'. $search . '%')
             ->orWhere('type_contrat' , 'like', '%'. $search . '%')
             ->orWhere('salaire' , 'like', '%'. $search . '%')
-            ->orWhere('montant_par_Heure' , 'like', '%'. $search . '%')
-
-
-            ->paginate(10);
+            ->orWhere('montant_par_Heure' , 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
@@ -60,17 +57,16 @@ class ProfsController extends Controller
      */
     public function store(Request $request)
     {
-       // $request->validate([
+        //$request->validate([
 
-         //   'nom'=> 'required',
-           //'prenom'=> 'required',
-           // 'cin'=> 'required',
-           // 'adresse'=> 'required',
+           // 'nom'=> 'required',
+          // 'prenom'=> 'required',
+            //'cin'=> 'required',
+            //'adresse'=> 'required',
            // 'date_naissance'=> 'required',
-           // 'rib'=> 'required',
-           // 'tel'=> 'required',
+            //'tel'=> 'required',
            // 'email'=> 'required',
-
+           // 'rib'=> 'required', 
            // 'type_contrat'=> 'required',
             //'salaire'=> 'required',
             //'montant_par_Heure'=> 'required',
@@ -78,7 +74,7 @@ class ProfsController extends Controller
             //'password'=> 'required',
 
 
-            //]);
+           // ]);
         $input = $request->all();
       $data = Prof::create($input);
       return redirect(route('profs.index'))->with('success', 'Item added succesfully' );

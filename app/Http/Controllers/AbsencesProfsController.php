@@ -59,7 +59,9 @@ class AbsencesProfsController extends Controller
     {
         $input = $request->all();
         $data = AbsenceProf::create($input);
-        return redirect(route('absencesprofs.index'))->with('success', 'Item added succesfully' );
+        $profs = Prof::all();
+        $attachements = Attachement::all();
+        return redirect(route('absencesprofs.index'))->with('success', 'Item added succesfully' )->with('profs', $profs )->with('attachements', $attachements );
         //
     }
 

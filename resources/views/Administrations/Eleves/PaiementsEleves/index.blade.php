@@ -45,12 +45,11 @@
                       <thead>
                       <tr>
                                 
-                                <th>{{__('text.Nom.lbl')}}</th>
-                                <th>{{__('text.Prenom.lbl')}}</th>
+                                <th>{{__('text.Eleve.lbl')}}</th>
+                                <th>{{__('text.Parent.lbl')}}</th>
                                 <th>{{__('text.Date_Paiements.lbl')}}</th>
                                 <th>{{__('text.Type_Paiements.lbl')}}</th>
-                                <th>{{__('text.Montant.lbl')}}</th>
-                                <th>{{__('text.Semestres.lbl')}}</th>
+                                <th>{{__('text.Somme_Paiements.lbl')}}</th>
                                 <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
                             </tr>
                         </thead>
@@ -58,12 +57,11 @@
                             @foreach ($datas as $item)
                             <tr>
                                 
-                                <td>{{$item['Nom']}}</td>
-                                <td>{{$item['Prenom']}}</td>
-                                <td>{{$item['Date_Paiements']}}</td>
-                                <td>{{$item['Type_Paiements']}}</td>
-                                <td>{{$item['Montant']}}</td>
-                                <td>{{$item['Semestres']}}</td>
+                                <td>{{$item->eleve}}</td>
+                                <td>{{$item->parents}}</td>
+                                <td>{{$item->date_paiements}}</td>
+                                <td>{{$item->type_paiements}}</td>
+                                <td>{{$item->somme_paiements}}</td>
 
 
 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Eleve;
 use App\PaiementEleve;
+use App\Parente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaiementsElevesController extends Controller
 {
@@ -14,8 +17,23 @@ class PaiementsElevesController extends Controller
      */
     public function index()
     {
-        $datas = PaiementEleve::all();
-        return view('Administrations.Eleves.PaiementsEleves.index')->with('datas', $datas);
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas = DB::table('v_paiementseleves')->where('eleve', 'like', '%'. $search . '%')
+            ->orWhere('parents' , 'like', '%'. $search . '%')
+            ->orWhere('date_paiements' , 'like', '%'. $search . '%')
+            ->orWhere('type_paiements' , 'like', '%'. $search . '%')
+            ->orWhere('somme_paiements' , 'like', '%'. $search . '%')->paginate(10);
+            //dd($datas->toSql(),$datas->getBindings());
+        } 
+        else {
+            $datas = DB::table('v_paiementseleves')->paginate(10);
+
+        }   
+        return view('Administrations.Eleves.PaiementsEleves.index')->with('datas', $datas )->with('search', $search );        //
+    
 
         //
     }
@@ -27,7 +45,11 @@ class PaiementsElevesController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Eleves.PaiementsEleves.create');
+      
+        $eleves = Eleve::all();
+        $parents = Parente::all();
+        
+        return view('Administrations.Eleves.PaiementsEleves.create')->with('eleves',$eleves)->with('parents',$parents);
 
         //
     }
@@ -40,10 +62,26 @@ class PaiementsElevesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+        $request->validate([
+
+            'eleves_id'=> 'required',
+            'parents_id'=> 'required',
+            'date_paiements'=> 'required',
+            'type_paiements'=> 'required',
+            'somme_paiements'=> 'required',
+            ]);
+
+
+
         $input = $request->all();
+        //dd($input);
+
         $data = PaiementEleve::create($input);
-        return redirect(route('paiementseleves.index'));
+        $data->save();
+        return redirect(route('paiementseleves.index'))->with('success', 'Item added succesfully' );
+        //
+
     }
 
     /**
@@ -72,8 +110,12 @@ class PaiementsElevesController extends Controller
         if (empty($data)) {
             return redirect(route('paiementseleves.index'));
         }
+        $eleves = Eleve::all();
+        $parents = Parente::all();
 
-        return view('Administrations.Eleves.PaiementsEleves.edit')->with('data', $data);
+
+
+        return view('Administrations.Eleves.PaiementsEleves.edit')->with('data', $data)->with('eleves', $eleves)->with('parents', $parents);
         //
     }
 
@@ -86,6 +128,15 @@ class PaiementsElevesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+
+            'eleves_id'=> 'required',
+            'parents_id'=> 'required',
+            'date_paiements'=> 'required',
+            'type_paiements'=> 'required',
+            'somme_paiements'=> 'required',
+            ]);
+            
         $data = PaiementEleve::find($id);
 
         if (empty($data)) {

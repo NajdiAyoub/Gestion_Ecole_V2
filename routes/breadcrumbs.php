@@ -198,15 +198,15 @@ Breadcrumbs::for('admin.eleves.absences.edit', function ($trail, $id) {
 
 
 Breadcrumbs::for('admin.eleves.paiements', function ($trail) {
-    $trail->push(__('text.Paiemenets.lbl'), route('paiements.index'));
+    $trail->push(__('text.Paiemenets.lbl'), route('paiementseleves.index'));
 });
 Breadcrumbs::for('admin.eleves.paiements.add', function ($trail) {
     $trail->parent('admin.eleves.paiements');
-    $trail->push(__('text.Paiements.add'), route('paiements.create'));
+    $trail->push(__('text.Paiements.add'), route('paiementseleves.create'));
 });
 Breadcrumbs::for('admin.eleves.paiements.edit', function ($trail, $id) {
     $trail->parent('admin.eleves.paiements');
-    $trail->push(__('text.Paiements.edit'), route('paiements.edit', $id));
+    $trail->push(__('text.Paiements.edit'), route('paiementseleves.edit', $id));
 });
 
 // Admin->Eleves->EmploisDuTemps

@@ -9,12 +9,11 @@ class PaiementEleve extends Model
     protected $table = 'paiements_eleves';
     public $primarykey = 'id';
     protected $fillable = [
+        'date_paiements',
+        'type_paiements',
+        'somme_paiements',
         'eleves_id',
         'parents_id',
-        'date_paiement',
-        'type_paiement',
-        'somme_paiement',
-        'semestres_id',
     ];
     //
 }

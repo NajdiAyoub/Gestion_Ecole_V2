@@ -36,21 +36,21 @@
               <input type="text" name="adresse" class="form-control" >
               <label>{{ __('text.Niveaux.lbl') }}</label>
             <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="niveaux_id">
-                <option >--------------------------------------</option>
+                <option></option>
                 @foreach ($niveaux as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option></br>
                 @endforeach
             </select>
             <label>{{ __('text.Filieres.lbl') }}</label>
             <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="filieres_id">
-                <option >--------------------------------------</option>
+                <option></option>
                 @foreach ($Filiere as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option></br>
                 @endforeach
             </select>
             <label>{{ __('text.Classes.lbl') }}</label>
             <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="classes_id">
-                <option >--------------------------------------</option>
+                <option></option>
                 @foreach ($Classe as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option></br>
                 @endforeach
@@ -58,7 +58,7 @@
 
             <label>{{ __('text.Parents.lbl') }}</label>
             <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="parents_id">
-                <option >--------------------------------------</option>
+                <option></option>
                 @foreach ($Parente as $item)
             <option value="{{$item->id}}">{{$item->nom}}</option></br>
                 @endforeach
