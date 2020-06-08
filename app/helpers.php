@@ -115,6 +115,13 @@ function isActive($param, $request)
                     }
                     break;
 
+                    case 'admin.parametre.attachements':
+                        if ($request->routeIs('attachements.*')) {
+                            return 'active';
+                        }
+                        break;
+    
+
         //Administration->Affectations
         case 'admin.affectations.profsmatieres':
             if ($request->routeIs('profsmatieres.*')) {
@@ -153,7 +160,7 @@ function isOpen($param, $request)
             }
             break;
         case 'admin.parametre':
-            if ($request->routeIs('anneesscolaire.*') || $request->routeIs('semestres.*') ||$request->routeIs('matieres.*') || $request->routeIs('niveaux.*') || $request->routeIs('classes.*') || $request->routeIs('salles.*')|| $request->routeIs('filieres.*') || $request->routeIs('controles.*') || $request->routeIs('exams.*') || $request->routeIs('evenements.*')|| $request->routeIs('conges.*')|| $request->routeIs('parents.*')) {
+            if ($request->routeIs('anneesscolaire.*') || $request->routeIs('semestres.*') ||$request->routeIs('matieres.*') || $request->routeIs('niveaux.*') || $request->routeIs('classes.*') || $request->routeIs('salles.*')|| $request->routeIs('filieres.*') || $request->routeIs('controles.*') || $request->routeIs('exams.*') || $request->routeIs('evenements.*')|| $request->routeIs('conges.*')|| $request->routeIs('parents.*') || $request->routeIs('attachements.*')) {
                 return 'open';
             }
             break;

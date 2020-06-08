@@ -13,6 +13,7 @@ class AbsElevesController extends Controller
      */
     public function index()
     {
+        return view('ElevesSpace.ElvAbsences.index');
         //
     }
 

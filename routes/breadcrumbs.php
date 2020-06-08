@@ -166,6 +166,20 @@ Breadcrumbs::for('admin.parametre.parents.edit', function ($trail, $id) {
     $trail->push(__('text.Parents.edit'), route('parents.edit', $id));
 });
 
+
+
+Breadcrumbs::for('admin.parametre.attachements', function ($trail) {
+    $trail->push(__('text.Attachements.lbl'), route('attachements.index'));
+});
+Breadcrumbs::for('admin.parametre.attachements.add', function ($trail) {
+    $trail->parent('admin.parametre.attachements');
+    $trail->push(__('text.Attachements.add'), route('attachements.create'));
+});
+Breadcrumbs::for('admin.parametre.attachements.edit', function ($trail, $id) {
+    $trail->parent('admin.parametre.attachements');
+    $trail->push(__('text.Attachements.edit'), route('attachements.edit', $id));
+});
+
 // Admin->Eleves->Eleves
 
 Breadcrumbs::for('admin.eleves.eleves', function ($trail) {

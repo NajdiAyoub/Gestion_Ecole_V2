@@ -200,6 +200,18 @@ return [
     'Eleve.lbl' => 'Student',
     'Parent.lbl' => 'Parent',
     'Somme_Paiements.lbl' => ' Payment Sum',
+    'Attachements.lbl' => 'Attachements',
+    'FileName.lbl' => 'File Name',
+    'Type.lbl' => 'Type',
+    'Date_Attach.lbl' => 'Attachement Date',
+    'Date_Evenements.lbl' => 'Event Date',
+    'Details.lbl' => 'Details',
+    'Paiements.add' => 'Add Payements',
+
+
+
+
+
 
 
 

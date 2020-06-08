@@ -9,7 +9,7 @@ class Attachement extends Model
     protected $table = 'attachements';
     public $primarykey = 'id';
     protected $fillable = [
-        'libelle', 
+        'filename', 
         'type',
         'date_attach',
         

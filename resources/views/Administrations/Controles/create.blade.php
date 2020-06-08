@@ -29,28 +29,28 @@
             <input type="text" name="libelle" class="form-control">
 
             <label> {{ __('text.Profs.lbl') }}</label></br>
-            <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="profs_id">
+            <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="profs_id">
                 <option></option>
                 @foreach ($profs as $item)
             <option value="{{$item->id}}">{{$item->nom}}</option>
                 @endforeach
             </select></br>
             <label> {{ __('text.Classes.lbl') }}</label></br>
-            <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="classes_id">
+            <select style="border: 2px solid lightgray; width: 1068px; HEIGHT: 40px;" name="classes_id">
                 <option ></option>
                 @foreach ($Classe as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option>
                 @endforeach
             </select></br>
             <label> {{ __('text.Matieres.lbl') }}</label></br>
-            <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="matieres_id">
+            <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="matieres_id">
                 <option></option>
                 @foreach ($Matiere as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option>
                 @endforeach
             </select></br>
             <label> {{ __('text.Semestres.lbl') }}</label></br>
-            <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 30px;" name="semestres_id">
+            <select style="border: 2px solid lightgray; width: 1068px; HEIGHT: 40px;" name="semestres_id">
                 <option></option>
                 @foreach ($Semestre as $item)
             <option value="{{$item->id}}">{{$item->libelle}}</option>

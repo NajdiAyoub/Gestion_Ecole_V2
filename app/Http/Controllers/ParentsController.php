@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Eleve;
 use App\Parente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,17 +14,28 @@ class ParentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index($id)
     {
+        
+ dd($id);
         $search='';
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');
             //dd($search);
-            $datas = DB::table('parents')->where('libelle', 'like', '%'. $search . '%')->paginate(10);
+            $datas = DB::table('v_parents')->where('nom', 'like', '%'. $search . '%')
+            ->orWhere('prenom' , 'like', '%'. $search . '%')
+            ->orWhere('cin' , 'like', '%'. $search . '%')
+            ->orWhere('adresse' , 'like', '%'. $search . '%')
+            ->orWhere('sexe' , 'like', '%'. $search . '%')
+            ->orWhere('eleves' , 'like', '%'. $search . '%')
+            ->orWhere('tel' , 'like', '%'. $search . '%')
+            ->orWhere('email' , 'like', '%'. $search . '%')->paginate(10);
             //dd($datas->toSql(),$datas->getBindings());
         } 
         else {
-            $datas = DB::table('parents')->paginate(10);
+            $datas = DB::table('v_parents')->paginate(10);
+            //$eleves=Eleve::all();
+            //$request = DB::table('eleves')->find($eleves);
 
         }   
         return view('Administrations.parents.index')->with('datas', $datas )->with('search', $search );
@@ -41,7 +53,8 @@ class ParentsController extends Controller
      */
     public function create()
     {
-        return view('Administrations.Parents.create');
+        $eleves= Eleve::all();
+        return view('Administrations.Parents.create')->with('eleves', $eleves);
         //
     }
 
@@ -61,6 +74,7 @@ class ParentsController extends Controller
             'adresse'=> 'required',
             'sexe'=> 'required',
             'tel'=> 'required',
+            'eleves_id'=> 'required',
             'email'=> 'required',
             
 
@@ -81,7 +95,11 @@ class ParentsController extends Controller
      */
     public function show($id)
     {
-        return redirect(route('parents.index'));
+        //$request=DB::table('v_parents')->where('id', $id)->first();
+     //   return view('Administrations.parents.index')->with('COLUMN_PARENT',$request);
+        
+       return redirect(route('parents.index'));
+
 
         //
     }
@@ -94,13 +112,16 @@ class ParentsController extends Controller
      */
     public function edit($id)
     {
+//dd('ok');
+
+        $eleves= Eleve::all();
         $data = Parente::find($id);
 
         if (empty($data)) {
             return redirect(route('parents.index'));
         }
 
-        return view('Administrations.parents.edit')->with('data', $data);
+        return view('Administrations.parents.edit')->with('data', $data)->with('eleves', $eleves);
     }
         //
     
@@ -114,6 +135,7 @@ class ParentsController extends Controller
      */
     public function update(Request $request, $id)
     {
+      
         $request->validate([
 
             'nom'=> 'required',
@@ -122,6 +144,7 @@ class ParentsController extends Controller
             'adresse'=> 'required',
             'sexe'=> 'required',
             'tel'=> 'required',
+            'eleves_id'=> 'required',
             'email'=> 'required',
             
 
@@ -147,6 +170,7 @@ class ParentsController extends Controller
      */
     public function destroy($id)
     {
+        dd($id);
         $data = Parente::find($id);
 
         if (empty($data)) {

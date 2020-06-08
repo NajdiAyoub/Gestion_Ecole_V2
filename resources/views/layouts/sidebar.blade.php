@@ -228,6 +228,16 @@
                                         </a>
                                     </li>
 
+                                    
+                                    <li class="nav-item">
+                                        <a href="{{ route('attachements.index')}}"
+                                            class="nav-link {{isActive('admin.parametre.attachements',request())}}">
+                                            <i
+                                                class="far fa{{isChecked('admin.parametre.attachements',request())}}-circle nav-icon"></i>
+                                            <p>{{__('text.Attachements.btn') }}</p>
+                                        </a>
+                                    </li>
+
                                 </ul>
                                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                                     data-accordion="false">
@@ -319,7 +329,7 @@
                                                                         <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                                                                         <li class="nav-item has-treeview menu-open">
-                                                                            <a href="{{ route('AbsEleves.index')}}"
+                                                                            <a href="{{ route('absences.index')}}"
                                                                                 class="nav-link  {{request()->is('Absences/Absences') ? 'active' : ''}}">
                                                                                 <i class="nav-icon fas fa-list-alt"></i>
 
@@ -335,7 +345,7 @@
                        with font-awesome or any other icon font library -->
                                                                                     <li
                                                                                         class="nav-item has-treeview menu-open">
-                                                                                        <a href="{{ route('elvemploisdutemps')}}"
+                                                                                        <a href="{{ route('elvemploisdutemps.index')}}"
                                                                                             class="nav-link {{request()->is('EmploisDuTemps/emplois') ? 'active' : ''}} ">
                                                                                             <i
                                                                                                 class="nav-icon fas fa-calendar-alt"></i>

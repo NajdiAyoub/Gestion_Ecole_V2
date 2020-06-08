@@ -22,6 +22,11 @@ class CreateParentsTable extends Migration
             $table->string('sexe');
             $table->string('email');
             $table->string('tel');
+            $table->unsignedBigInteger('eleves_id');
+
+            $table->foreign('eleves_id')->references('id')->on('eleves');
+
+ 
 
 
             $table->timestamps();

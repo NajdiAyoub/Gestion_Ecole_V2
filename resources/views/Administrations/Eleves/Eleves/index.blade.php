@@ -22,7 +22,7 @@
                                                
                             <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.Eleves.list')}}</h4>
                    
-                          <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
+                          <div><a class="btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
                                     href="{{ route('eleves.create') }}"> &nbsp; <i
                                         class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.Eleves.add')}}</a>
                                     
@@ -47,7 +47,6 @@
                                 <th>{{__('text.Nom.lbl')}}</th>
                                 <th>{{__('text.Prenom.lbl')}}</th>
                                 <th>{{__('text.Date_Naissance.lbl')}}</th>
-                                <th>{{__('text.Parents.lbl')}}</th>
                                 <th>{{__('text.Adresse.lbl')}}</th>
                                 <th>{{__('text.Email.lbl')}}</th>
                                 <th>{{__('text.Niveaux.lbl')}}</th>
@@ -65,7 +64,6 @@
                                 <td>{{$item->nom}}</td>
                                 <td>{{$item->prenom}}</td>
                                 <td>{{$item->date_naissance}}</td>
-                                <td>{{$item->parents}}</td>
                                 <td>{{$item->adresse}}</td>
                                 <td>{{$item->email}}</td>
                                 <td>{{$item->niveaux}}</td>
@@ -87,7 +85,10 @@
                                                 
                                                 class='btn btn-primary pull-right'><i class="fas fa-edit"> </i> </a>
                                             <button type="submit" onclick="return myFunction();"
-                                                class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                class="btn btn-danger">
+                                                <i class="fas fa-trash"></i></button>
+                                               <a class="btn btn-success" href="{{ route('parents.index', $item->id) }}"><i class="fas fa-user-alt"></i></a>
+                                                
                                         </div>
 
                                         

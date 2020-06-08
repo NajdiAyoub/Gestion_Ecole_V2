@@ -13,6 +13,7 @@ class CoursController extends Controller
      */
     public function index()
     {
+         
         return view('ElevesSpace.Cours.index');
 
         //

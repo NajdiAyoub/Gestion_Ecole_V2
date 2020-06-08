@@ -27,16 +27,32 @@
         <div class="form-group">
             <label> {{ __('text.Libelle.lbl') }}</label>
             <input type="text" name="libelle" class="form-control">
-            <label>{{ __('text.Classes.lbl') }}</label>
-            <input type="text" name="classe" class="form-control">
-            <label>{{ __('text.Matieres.lbl') }}</label>
-            <input type="text" name="matiere" class="form-control">
-            <label>{{ __('text.Semestres.lbl') }}</label>
-            <input type="text" name="semestre" class="form-control">
+
+            <label> {{ __('text.Date_Evenements.lbl') }}</label>
+            <input type="date" name="date_evenements" class="form-control">
+           
+            <label>{{ __('text.Classes.lbl') }}</label></br>
+            <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="classes_id">
+            <option></option>
+            @foreach ($classes as $item) 
+            <option value="{{$item->id}}">{{$item->libelle}}</option>
+            @endforeach
+            </select></br>
+
+            <label>{{ __('text.Profs.lbl') }}</label></br>
+            <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="profs_id">
+            <option></option>
+            @foreach ($profs as $item) 
+            <option value="{{$item->id}}">{{$item->nom}}</option>
+            @endforeach
+            </select></br>
+           
+            <label>{{ __('text.Details.lbl') }}</label>
+            <input type="textarea" name="details" class="form-control">
 
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+        <button type="submit" class="btn btn-primary">{{__('text.soumettre.btn')}}</button>
+        <input type="button" class="btn btn-primary" value="{{__('text.revenir.btn')}}" onclick="history.back()">
         <input type="hidden" value="{{Session::token()}}" name="_token">
         <input type="hidden" name="p_id" id="p_id" value="">
     </div>

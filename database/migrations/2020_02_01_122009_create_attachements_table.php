@@ -15,7 +15,7 @@ class CreateAttachementsTable extends Migration
     {
         Schema::create('attachements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('libelle');
+            $table->string('filename');
             $table->string('type');
             $table->date('date_attach');
 

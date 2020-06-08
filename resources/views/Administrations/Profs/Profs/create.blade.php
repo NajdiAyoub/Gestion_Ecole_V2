@@ -55,8 +55,8 @@
               
               
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+            <button type="submit" class="btn btn-primary">{{__('text.soumettre.btn')}}</button>
+            <input type="button" class="btn btn-primary" value="{{__('text.revenir.btn')}}" onclick="history.back()">
           <input type="hidden" value="{{Session::token()}}" name="_token">
           <input type="hidden" name="p_id" id="p_id" value="">
       </div>

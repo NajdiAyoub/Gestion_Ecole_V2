@@ -30,7 +30,7 @@
               <label>{{__('text.Libelle.lbl')}}</label>
               <input type="text" name="libelle" class="form-control" >
               <label>{{__('text.Type_Salle.lbl')}}</label></br>
-              <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="type_salle">
+              <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="type_salle">
                 <option></option>
                 @foreach ($salle as $item)
             <option value="{{$item->id}}">{{$item->type_salle}}</option>

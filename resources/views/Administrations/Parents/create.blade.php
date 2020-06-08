@@ -33,16 +33,26 @@
             <input type="text" name="cin" class="form-control">
             <label>{{ __('text.Adresse.lbl') }}</label>
             <input type="text" name="adresse" class="form-control">
-            <label>{{ __('text.Sexe.lbl') }}</label>
-            <input type="text" name="sexe" class="form-control">
+            <label>{{ __('text.Sexe.lbl') }}</label></br>
+            <input type="radio" id="male" name="sexe" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="sexe" value="female">
+            <label for="Female">Female</label></br>
+            <label>{{ __('text.Eleves.lbl') }}</label></br>
+            <select style="border: 2px solid lightgray; width: 1068px; HEIGHT: 40px;" name="eleves_id">
+              <option></option>
+              @foreach ($eleves as $item)
+          <option value="{{$item->id}}">{{$item->nom}}</option>
+              @endforeach
+          </select></br>
             <label>{{ __('text.Tel.lbl') }}</label>
             <input type="text" name="tel" class="form-control">
             <label>{{ __('text.Email.lbl') }}</label>
             <input type="text" name="email" class="form-control">
 
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+        <button type="submit" class="btn btn-primary">{{__('text.soumettre.btn')}}</button>
+        <input type="button" class="btn btn-primary" value="{{__('text.revenir.btn')}}" onclick="history.back()">
         <input type="hidden" value="{{Session::token()}}" name="_token">
         <input type="hidden" name="p_id" id="p_id" value="">
     </div>

@@ -84,6 +84,13 @@ return [
     'Parents.add' => 'Nouveau Parents',
     'Parents.edit' => 'Modifier Parents',
 
+    'Attachements.list' => 'Liste des Attachements',
+    'Attachements.lbl' => 'Attachements',
+    'Attachements.btn' => 'Attachements',
+    'Attachements.add' => 'Nouveau Attachement',
+    'Attachements.edit' => 'Modifier Attachement',
+    
+
 
 
     // Admin --- parametre end ---
@@ -225,6 +232,19 @@ return [
     'Eleve.lbl' => 'Eleve',
     'Parent.lbl' => 'Parent',
     'Somme_Paiements.lbl' => 'Somme Paiement',
+    'Attachements.lbl' => 'Attachements',
+    'FileName.lbl' => 'Nom Fichier',
+    'Type.lbl' => 'Type',
+    'Date_Attach.lbl' => 'Date Attachement',
+    'Date_Evenements.lbl' => 'Date Evenements',
+    'Details.lbl' => 'Details',
+    'Paiements.add' => 'Ajoutée Paiements',
+
+
+
+
+
+
 
 
 

@@ -29,7 +29,7 @@
                     <div class="form-group">
 
                         <label>{{__('text.Eleves.lbl')}}</label></br>
-                    <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="eleves_id">
+                    <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="eleves_id">
                         <option ></option>
                         @foreach ($eleves as $item)
                     <option value="{{$item->id}}" @if ($data->eleves_id==$item->id) selected 
@@ -41,7 +41,7 @@
 
                     
                     <label>{{__('text.Parents.lbl')}}</label></br>
-                    <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="parents_id">
+                    <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="parents_id">
                         <option ></option>
                         @foreach ($parents as $item)
                     <option value="{{$item->id}}" @if ($data->parents_id==$item->id) selected 

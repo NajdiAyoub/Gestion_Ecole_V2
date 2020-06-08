@@ -29,7 +29,7 @@
                     <div class="form-group">
 
                         <label>{{__('text.Profs.lbl')}}</label></br>
-                    <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="profs_id">
+                    <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="profs_id">
                         <option >--------------------------------------</option>
                         @foreach ($profs as $item)
                     <option value="{{$item->id}}">{{$item->nom}}</option>
@@ -55,8 +55,8 @@
                         <input type="text" name="somme" id="tel" value="{{ $data->somme}}" class="form-control">
 
                     </div>
-                    <button type="submit" class="btn btn-primary">Edit</button>
-                    <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+                    <button type="submit" class="btn btn-primary">{{__('text.Editer.btn')}}</button>
+                    <input type="button" class="btn btn-primary" value="{{__('text.revenir.btn')}}" onclick="history.back()">
 
 
                 </div>

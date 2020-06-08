@@ -246,16 +246,29 @@ Route::resource('conges', 'CongesController', ['except' => 'destroy', 'names' =>
     'show' => 'conges.show',
 ]]);
 
-//ADMIN->Parametres->Conges
+//ADMIN->Parametres->Parents
 
 Route::get('parents/{id}/delete', 'ParentsController@destroy')->name('parents.destroy');
-Route::resource('parents', 'ParentsController', ['except' => 'destroy', 'names' => [
-    'index' => 'parents.index',
+Route::get('parents/{id}', 'ParentsController@index')->name('parents.index');
+Route::resource('parents', 'ParentsController', ['except' => ['destroy', 'index'],'names' => [
     'create' => 'parents.create',
     'update' => 'parents.update',
     'edit' => 'parents.edit',
     'store' => 'parents.store',
     'show' => 'parents.show',
+]]);
+
+
+//ADMIN->Parametres->Attachements
+
+Route::get('attachments/{id}/delete', 'AttachementsController@destroy')->name('attachements.destroy');
+Route::resource('attachements', 'AttachementsController', ['except' => 'destroy', 'names' => [
+    'index' => 'attachements.index',
+    'create' => 'attachements.create',
+    'update' => 'attachements.update',
+    'edit' => 'attachements.edit',
+    'store' => 'attachements.store',
+    'show' => 'attachements.show',
 ]]);
 
 //ADMIN->Affectations->ProfsMatieres

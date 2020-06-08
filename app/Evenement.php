@@ -10,11 +10,10 @@ class Evenement extends Model
     public $primarykey = 'id';
     protected $fillable = [
         'libelle',
-        'type_evenement',
-        'administrations_id',
-        'date_evenement',
-        'attachements_id',
-        'description_evenement',
+        'date_evenements',
+        'profs_id',
+        'classes_id',
+        'details',
         
   
     ];

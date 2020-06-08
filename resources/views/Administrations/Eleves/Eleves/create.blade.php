@@ -34,35 +34,31 @@
               <input type="date" name="date_naissance" class="form-control" >
               <label>{{__('text.Adresse.lbl')}}</label>
               <input type="text" name="adresse" class="form-control" >
-              <label>{{ __('text.Niveaux.lbl') }}</label>
-            <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="niveaux_id">
+              <label>{{ __('text.Niveaux.lbl') }}</label></br>
+
+              <select style="border: 2px solid lightgray; width: 1068px; HEIGHT: 40px;" name="niveaux_id">
                 <option></option>
                 @foreach ($niveaux as $item)
-            <option value="{{$item->id}}">{{$item->libelle}}</option></br>
+            <option value="{{$item->id}}">{{$item->libelle}}</option>
                 @endforeach
-            </select>
-            <label>{{ __('text.Filieres.lbl') }}</label>
-            <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="filieres_id">
-                <option></option>
-                @foreach ($Filiere as $item)
-            <option value="{{$item->id}}">{{$item->libelle}}</option></br>
-                @endforeach
-            </select>
-            <label>{{ __('text.Classes.lbl') }}</label>
-            <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="classes_id">
-                <option></option>
-                @foreach ($Classe as $item)
-            <option value="{{$item->id}}">{{$item->libelle}}</option></br>
-                @endforeach
-            </select>
+            </select></br>
+            <label>{{ __('text.Classes.lbl') }}</label></br>
+    
+            <select style="border: 2px solid lightgray; width: 1068px ; HEIGHT: 40px;" name="classes_id">
+              <option></option>
+              @foreach ($Classe as $item)
+          <option value="{{$item->id}}">{{$item->libelle}}</option>
+              @endforeach
+          </select></br>
 
-            <label>{{ __('text.Parents.lbl') }}</label>
-            <select style="margin-top: 30px;width: 200px;HEIGHT: 35px;" name="parents_id">
-                <option></option>
-                @foreach ($Parente as $item)
-            <option value="{{$item->id}}">{{$item->nom}}</option></br>
-                @endforeach
-            </select>
+          <label>{{ __('text.Filieres.lbl') }}</label></br>
+    
+            <select style="border: 2px solid lightgray; width: 1068px ; HEIGHT: 40px;" name="filieres_id">
+              <option></option>
+              @foreach ($Filiere as $item)
+          <option value="{{$item->id}}">{{$item->libelle}}</option>
+              @endforeach
+          </select></br>
             <label>{{__('text.Emails.lbl')}}</label></br>
             <input type="text" name="email" class="form-control" >
               <label>{{__('text.Image.lbl')}}</label></br>
@@ -72,7 +68,7 @@
               <label>{{__('text.Password.lbl')}}</label>
               <input type="password" name="password" class="form-control" > 
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">{{__('text.soumettre.btn')}}</button>
             <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
           <input type="hidden" value="{{Session::token()}}" name="_token">
           <input type="hidden" name="p_id" id="p_id" value="">

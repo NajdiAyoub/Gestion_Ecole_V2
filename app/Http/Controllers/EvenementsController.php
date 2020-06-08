@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Classe;
 use App\Evenement;
+use App\Prof;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EvenementsController extends Controller
 {
@@ -12,11 +15,23 @@ class EvenementsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Evenement::all()->toArray();
-        return view('Administrations.evenements.index')->with('data', $data);
-        //
+       
+        $search='';
+        if(isset($request) && null !==$request->get('search')) {
+            $search = $request->get('search');
+            //dd($search);
+            $datas = DB::table('v_evenements')->where('libelle', 'like', '%'. $search . '%')->Orwhere('date_evenements', 'like', '%'. $search . '%')->Orwhere('classes', 'like', '%'. $search . '%')->Orwhere('profs', 'like', '%'. $search . '%')->Orwhere('details', 'like', '%'. $search . '%')
+            ->paginate(10);
+
+        } 
+        else {
+            $datas = DB::table('v_evenements')->paginate(10);
+
+        }   
+        return view('Administrations.evenements.index')->with('datas', $datas )->with('search', $search );
+
     }
 
     /**
@@ -26,7 +41,9 @@ class EvenementsController extends Controller
      */
     public function create()
     {
-        return view('Administrations.evenements.create');
+        $classes = Classe::all();
+        $profs = Prof::all();
+        return view('Administrations.evenements.create')->with('classes', $classes)->with('profs', $profs) ;
 
         //
     }
@@ -39,10 +56,23 @@ class EvenementsController extends Controller
      */
     public function store(Request $request)
     {
+       // $request->validate([
+
+         //   'libelle'=> 'required',
+           // 'date_exam'=> 'required',
+           // 'heure_exam'=> 'required',
+           // 'anneesscolaire_id'=> 'required',
+           // 'profs_id'=> 'required',
+           // 'matieres_id'=> 'required',
+           // 'classes_id'=> 'required',
+            //'salles_id'=> 'required',
+
+            //]);
+
         $input = $request->all();
         $data = Evenement::create($input);
-        return redirect(route('evenements.index'));
-        //
+        $data->save();
+        return redirect(route('evenements.index'))->with('success', 'Item added succesfully' );
     }
 
     /**
@@ -66,14 +96,18 @@ class EvenementsController extends Controller
      */
     public function edit($id)
     {
-        $data = Evenement::find($id);
+         //
+         $data = Evenement::find($id);
 
-        if (empty($data)) {
-            return redirect(route('evnements.index'));
-        }
-
-        return view('Administrations.evenements.edit')->with('data', $data);
-        //
+         if (empty($data)) {
+             return redirect(route('evenements.index'));
+         }
+ 
+         $profs = Prof::all();
+         $classes = Classe::all();
+      
+ 
+         return view('Administrations.evenements.edit')->with('data', $data)->with('profs', $profs)->with('classes', $classes);
     }
 
     /**
@@ -85,6 +119,19 @@ class EvenementsController extends Controller
      */
     public function update(Request $request, $id)
     {
+       // $request->validate([
+
+         //   'libelle'=> 'required',
+           // 'date_exam'=> 'required',
+           // 'heure_exam'=> 'required',
+           // 'anneesscolaire_id'=> 'required',
+           // 'profs_id'=> 'required',
+            //'matieres_id'=> 'required',
+            //'classes_id'=> 'required',
+            //'salles_id'=> 'required',
+
+            //]);
+
         $data = Evenement::find($id);
 
         if (empty($data)) {

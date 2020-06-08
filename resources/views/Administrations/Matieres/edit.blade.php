@@ -33,7 +33,7 @@
                         <input type="text" name="libelle" id="libelle" value="{{ $data->libelle}}" class="form-control">
                     </div>
                     <label>{{__('text.Niveaux.lbl')}}</label></br>
-                    <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="niveaux_id">
+                    <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="niveaux_id">
                         <option ></option>
                         @foreach ($niveaux as $item)
                     <option value="{{$item->id}}"  @if ($data->niveaux_id==$item->id) selected 

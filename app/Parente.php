@@ -12,9 +12,10 @@ class Parente extends Model
         'nom',
         'prenom',
         'cin',
-        'sexe',
-        'tel',
         'adresse',        
+        'sexe',
+        'eleves_id',
+        'tel',
         'email',
         
 

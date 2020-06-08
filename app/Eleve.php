@@ -17,7 +17,6 @@ class Eleve extends Model
         'email',
         'niveaux_id',
         'filieres_id',
-        'parents_id',
         'classes_id',
         'image',
         'login',

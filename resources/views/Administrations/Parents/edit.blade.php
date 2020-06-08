@@ -44,6 +44,17 @@
 
                         <label>{{__('text.Sexe.lbl')}}</label>
                         <input type="text" name="sexe" id="sexe" value="{{ $data->sexe}}" class="form-control">
+
+                        <label>{{__('text.Eleves.lbl')}}</label></br>
+                  <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="eleves_id">
+                      <option></option>
+                      @foreach ($eleves as $item)
+                  <option value="{{$item->id}}" @if ($data->eleves_id==$item->id) selected 
+                        
+                        
+                    @endif>{{$item->nom}}</option>
+                      @endforeach
+                  </select></br>
                         
 
                         <label>{{__('text.Telephone.lbl')}}</label>

@@ -29,7 +29,7 @@
 
                     <div class="form-group">
                     <label>{{__('text.Profs.lbl')}}</label></br>
-                    <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="profs_id">
+                    <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="profs_id">
                         <option></option>
                         @foreach ($profs as $item)
                     <option value="{{$item->id}}" @if ($data->profs_id==$item->id) selected 
@@ -40,7 +40,7 @@
                     </select></br>
 
                     <label>{{__('text.Matieres.lbl')}}</label></br>
-                    <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="matieres_id">
+                    <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="matieres_id">
                         <option></option>
                         @foreach ($matieres as $item)
                     <option value="{{$item->id}}" @if ($data->niveaux_id==$item->id) selected 
@@ -51,7 +51,7 @@
                     </select></br>
 
                     <label>{{__('text.Classes.lbl')}}</label></br>
-                    <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="classes_id">
+                    <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="classes_id">
                         <option></option>
                         @foreach ($classes as $item)
                     <option value="{{$item->id}}"
@@ -63,7 +63,7 @@
                     </select></br>
                   </div>
                   <label>{{__('text.Niveaux.lbl')}}</label></br>
-                  <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="niveaux_id">
+                  <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="niveaux_id">
                       <option></option>
                       @foreach ($niveaux as $item)
                   <option value="{{$item->id}}"
@@ -76,7 +76,7 @@
                 
 
                       <label>{{__('text.Semestres.lbl')}}</label></br>
-                      <select style="border: 2px solid lightgray; width: 200px;HEIGHT: 35px;" name="semestres_id">
+                      <select style="border: 2px solid lightgray; width: 1068px;HEIGHT: 40px;" name="semestres_id">
                           <option></option>
                           @foreach ($semestres as $item)
                       <option value="{{$item->id}}" @if ($data->semestres_id==$item->id) selected 
