@@ -250,7 +250,7 @@ Route::resource('conges', 'CongesController', ['except' => 'destroy', 'names' =>
 
 Route::get('parents/{id}/delete', 'ParentsController@destroy')->name('parents.destroy');
 Route::get('parents/{id}', 'ParentsController@index')->name('parents.index');
-Route::resource('parents', 'ParentsController', ['except' => ['destroy', 'index'],'names' => [
+Route::resource('parents', 'ParentsController', ['except' => 'destroy','names' => [
     'create' => 'parents.create',
     'update' => 'parents.update',
     'edit' => 'parents.edit',
@@ -321,24 +321,34 @@ Route::resource('classescontrolesmatieres', 'ClassesControlesMatieresController'
 
 //// ElevesSpaces Routes 
 
-Route::get('ElevesSpace/Cours/{id}/delete', 'CoursController@destroy')->name('cours.destroy');
-Route::resource('Cours', 'CoursController', ['except' => 'destroy', 'names' => [
-    'index' => 'cours.index',
-    'create' => 'cours.create',
-    'update' => 'cours.update',
-    'edit' => 'cours.edit',
-    'store' => 'cours.store',
-    'show' => 'cours.show',
+Route::get('ElevesSpace/Acceuil/{id}/delete', 'AcceuilController@destroy')->name('acceuil.destroy');
+Route::resource('Acceuil', 'AcceuilController', ['except' => 'destroy', 'names' => [
+    'index' => 'acceuil.index',
+    'create' => 'acceuil.create',
+    'update' => 'acceuil.update',
+    'edit' => 'acceuil.edit',
+    'store' => 'acceuil.store',
+    'show' => 'acceuil.show',
 ]]);
 
-Route::get('ElevesSpace/Absences/{id}/delete', 'AbsElevesController@destroy')->name('AbsEleves.destroy');
-Route::resource('Absences', 'AbsElevesController', ['except' => 'destroy', 'names' => [
-    'index' => 'absences.index',
-    'create' => 'absences.create',
-    'update' => 'absences.update',
-    'edit' => 'absences.edit',
-    'store' => 'absences.store',
-    'show' => 'absences.show',
+Route::get('ElevesSpace/Cours/{id}/delete', 'ElvCoursController@destroy')->name('elevescours.destroy');
+Route::resource('ElevesCours', 'ElvCoursController', ['except' => 'destroy', 'names' => [
+    'index' => 'elevescours.index',
+    'create' => 'elevescours.create',
+    'update' => 'elevescours.update',
+    'edit' => 'elevescours.edit',
+    'store' => 'elevescours.store',
+    'show' => 'elevescours.show',
+]]);
+
+Route::get('ElevesSpace/ElvAbsences/{id}/delete', 'AbsElevesController@destroy')->name('elvabsences.destroy');
+Route::resource('ElvAbsences', 'AbsElevesController', ['except' => 'destroy', 'names' => [
+    'index' => 'elvabsences.index',
+    'create' => 'elvabsences.create',
+    'update' => 'elvabsences.update',
+    'edit' => 'elvabsences.edit',
+    'store' => 'elvabsences.store',
+    'show' => 'elvabsences.show',
 ]]);
 
 Route::get('ElevesSpace/ElvEmploisDuTemps/{id}/delete', 'ElvEmploisDuTempsController@destroy')->name('ElvEmploisDuTemps.destroy');
@@ -353,12 +363,12 @@ Route::resource('ElvEmploisDuTemps', 'ElvEmploisDuTempsController', ['except' =>
 
 Route::get('ElevesSpace/ElvBulletinsEtNotes/{id}/delete', 'ElvBulletinsEtNotesController@destroy')->name('ElvBulletinsEtNotes.destroy');
 Route::resource('ElvBulletinsEtNotes', 'ElvBulletinsEtNotesController', ['except' => 'destroy', 'names' => [
-    'index' => 'elvebulletinsetnotes.index',
-    'create' => 'elvebulletinsetnotes.create',
-    'update' => 'elvebulletinsetnotes.update',
-    'edit' => 'elvebulletinsetnotes.edit',
-    'store' => 'elvebulletinsetnotes.store',
-    'show' => 'elvebulletinsetnotes.show',
+    'index' => 'elvbulletinsetnotes.index',
+    'create' => 'elvbulletinsetnotes.create',
+    'update' => 'elvbulletinsetnotes.update',
+    'edit' => 'elvbulletinsetnotes.edit',
+    'store' => 'elvbulletinsetnotes.store',
+    'show' => 'elvbulletinsetnotes.show',
 ]]);
 
 Route::get('ElevesSpace/ElvPaiements/{id}/delete', 'ElvPaiementsController@destroy')->name('ElvPaiements.destroy');
@@ -380,6 +390,75 @@ Route::resource('ElvEvenementsEtActualites', 'ElvEvenementsEtActualitesControlle
     'store' => 'elvevenementsetactualites.store',
     'show' => 'elvevenementsetactualites.show',
 ]]);
+
+///--- Profs Spaces Routes -----///
+
+Route::get('ProfsSpace/Acceuil/{id}/delete', 'PrfAcceuilController@destroy')->name('profsacceuil.destroy');
+Route::resource('PrfAcceuil', 'PrfAcceuilController', ['except' => 'destroy', 'names' => [
+    'index' => 'profsacceuil.index',
+    'create' => 'profsacceuil.create',
+    'update' => 'profsacceuil.update',
+    'edit' => 'profsacceuil.edit',
+    'store' => 'profsacceuil.store',
+    'show' => 'profsacceuil.show',
+]]);
+
+Route::get('ProfsSpace/Cours/{id}/delete', 'ProfsCoursController@destroy')->name('profscours.destroy');
+Route::resource('Cours', 'ProfsCoursController', ['except' => 'destroy', 'names' => [
+    'index' => 'profscours.index',
+    'create' => 'profscours.create',
+    'update' => 'profscours.update',
+    'edit' => 'profscours.edit',
+    'store' => 'profscours.store',
+    'show' => 'profscours.show',
+]]);
+
+Route::get('ProfsSpace/Classes/{id}/delete', 'ProfsClassesController@destroy')->name('profsclasses.destroy');
+Route::resource('ProfsClasses', 'ProfsClassesController', ['except' => 'destroy', 'names' => [
+    'index' => 'profsclasses.index',
+    'create' => 'profsclasses.create',
+    'update' => 'profsclasses.update',
+    'edit' => 'profsclasses.edit',
+    'store' => 'profsclasses.store',
+    'show' => 'profsclasses.show',
+]]);
+
+Route::get('ProfsSpace/Absences/{id}/delete', 'ProfsAbsencesController@destroy')->name('profsabsences.destroy');
+Route::resource('ProfsAbsences', 'ProfsAbsencesController', ['except' => 'destroy', 'names' => [
+    'index' => 'profsabsences.index',
+    'create' => 'profsabsences.create',
+    'update' => 'profsabsences.update',
+    'edit' => 'profsabsences.edit',
+    'store' => 'profsabsences.store',
+    'show' => 'profsabsences.show',
+]]);
+
+Route::get('ProfsSpace/EmploisDuTemps/{id}/delete', 'ProfsEmploisDuTempsController@destroy')->name('profsemploisdutemps.destroy');
+Route::resource('ProfsEmploisDuTemps', 'ProfsEmploisDuTempsController', ['except' => 'destroy', 'names' => [
+    'index' => 'profsemploisdutemps.index',
+    'create' => 'profsemploisdutemps.create',
+    'update' => 'profsemploisdutemps.update',
+    'edit' => 'profsemploisdutemps.edit',
+    'store' => 'profsemploisdutemps.store',
+    'show' => 'profsemploisdutemps.show',
+]]);
+
+Route::get('ProfsSpace/Paiements/{id}/delete', 'ProfsPaiementsController@destroy')->name('profspaiements.destroy');
+Route::resource('ProfsPaiements', 'ProfsPaiementsController', ['except' => 'destroy', 'names' => [
+    'index' => 'profspaiements.index',
+    'create' => 'profspaiements.create',
+    'update' => 'profspaiements.update',
+    'edit' => 'profspaiements.edit',
+    'store' => 'profspaiements.store',
+    'show' => 'profspaiements.show',
+]]);
+
+
+
+
+
+
+
 
 
 

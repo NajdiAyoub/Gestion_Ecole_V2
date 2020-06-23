@@ -10,7 +10,7 @@
 
 @section('content')
 
-{{ Breadcrumbs::render('elevesspace.elvabsences') }}
+{{ Breadcrumbs::render('elevesspace.elvcours') }}
 
 
 
@@ -24,17 +24,17 @@
               
 
   
-                <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.AbsencesEleves.list')}}</h4>
+                <h4 style="font-style:italic;margin-left: -512px; margin-bottom: -29px; color: #007bff;">{{__('text.CoursEleves.list')}}</h4>
                    
                 <div><a class="'btn btn-success" style="padding: 6px;float:right; margin-right: -518px;"
-                          href="{{ route('elvabsences.create') }}"> &nbsp; <i
-                              class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.AbsencesEleves.add')}}</a>
+                          href="{{ route('matieres.create') }}"> &nbsp; <i
+                              class="right fas fa-plus-circle"> &nbsp;</i>{{__('text.CoursEleves.add')}}</a>
+
                               <form method="get" action="{{route('elvabsences.index')}}">
                                 <label for="search">Search:</label>
                                 <input style="margin-right: -273px; margin-top:5px" value="{{$search??''}}" type="search" id="search" name="search">
                                 </form>
-
-                            </div>
+                                           </div>
               
                      
   </section>    
@@ -47,9 +47,11 @@
           <table id="example2" class="table table-bordered table-hover">
             <thead>
             <tr>
-                      <th>{{__('text.Date_Absence.lbl')}}</th>
+                      <th>{{__('text.Libelle.lbl')}}</th>
                       <th>{{__('text.Matiere.lbl')}}</th>
-                      <th>{{__('text.Justifie.lbl')}}</th>
+                      <th>{{__('text.Date_Dajout.lbl')}}</th>
+                      <th>{{__('text.Profs.lbl')}}</th>
+
 
                       <th style="width:100px;">{{__('text.Actions.lbl')}}</th>
                   </tr>
@@ -58,12 +60,10 @@
       </div>
 </div>
 
-           
-
 
 
                     
-                               
+                                    <!-- End add Modal -->
 
 
 

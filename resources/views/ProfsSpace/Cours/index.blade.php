@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 @section('title')
     
@@ -7,7 +8,11 @@
     
 @endsection
 @section('content')
-    
+
+{{ Breadcrumbs::render('profsspace.profscours') }}
+
+
+      
 @endsection
 @section('js')
     

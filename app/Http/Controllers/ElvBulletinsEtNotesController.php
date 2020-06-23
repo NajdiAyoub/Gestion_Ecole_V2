@@ -13,6 +13,7 @@ class ElvBulletinsEtNotesController extends Controller
      */
     public function index()
     {
+        return view('ElevesSpace.BulletinsEtNotes.index');
         //
     }
 

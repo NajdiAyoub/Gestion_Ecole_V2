@@ -14,10 +14,10 @@ class ParentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
         
- dd($id);
+ //dd($id);
         $search='';
         if(isset($request) && null !==$request->get('search')) {
             $search = $request->get('search');

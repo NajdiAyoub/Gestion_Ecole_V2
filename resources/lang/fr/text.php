@@ -179,6 +179,92 @@ return [
      //Admin -----> Affectations End
 
     
+     // ESPACE Eleves --------- ESPACE Eleves ///
+
+     'Acceuil.lbl' => ' Acceuil',
+     'AcceuilProfs.lbl' => ' Acceuil',
+
+
+     
+
+    'CoursEleves.list' => 'Liste Cours Eleves',
+    'CoursEleves.lbl' => 'Cours Eleves',
+    'CoursEleves.btn' => 'Cours Eleves',
+    'CoursEleves.add' => 'Ajouter Cours Eleves',
+    'CoursEleves.edit' => 'Edit Cours Eleves',
+
+    'AbsencesEleves.list' => 'Liste Absences Eleves',
+    'AbsencesEleves.lbl' => 'Absences Eleves',
+    'AbsencesEleves.btn' => 'Absences Eleves',
+    'AbsencesEleves.add' => 'Ajouter Absences Eleves',
+    'AbsencesEleves.edit' => 'Edit Absences Eleves',
+
+
+    'EmploisDuTempsEleves.list' => 'Liste EmploisDuTemps Eleves',
+    'EmploisDuTempsEleves.lbl' => 'EmploisDuTemps Eleves',
+    'EmploisDuTempsEleves.btn' => 'EmploisDuTemps Eleves',
+    'EmploisDuTempsEleves.add' => 'Ajouter EmploisDuTemps Eleves',
+    'EmploisDuTempsEleves.edit' => 'Edit EmploisDuTemps Eleves',
+
+    'BulletinsEtNotes.list' => 'Liste BulletinsEtNotes ',
+    'BulletinsEtNotes.lbl' => 'BulletinsEtNotes',
+    'BulletinsEtNotes.btn' => 'BulletinsEtNotes',
+    'BulletinsEtNotes.add' => 'Ajouter BulletinsEtNotes',
+    'BulletinsEtNotes.edit' => 'Edit BulletinsEtNotes',
+
+    'PaiementsEleves.list' => 'Liste Paiements Eleves ',
+    'PaiementsEleves.lbl' => 'Paiements Eleves',
+    'PaiementsEleves.btn' => 'Paiements Eleves',
+    'PaiementsEleves.add' => 'Ajouter Paiements Eleves ',
+    'PaiementsEleves.edit' => 'Edit Paiements Eleves',
+
+    'EvenementsEtActualites.list' => 'Liste EvenementsEtActualites ',
+    'EvenementsEtActualites.lbl' => 'EvenementsEtActualites',
+    'EvenementsEtActualites.btn' => 'EvenementsEtActualites',
+    'EvenementsEtActualites.add' => 'Ajouter EvenementsEtActualites',
+    'EvenementsEtActualites.edit' => 'Edit EvenementsEtActualites',
+
+
+     //// ESPACE ELEVES ---END ----- ESPACE ELVES ////
+
+    //// ESPACE PROFS -------- ESPACE PROFS ////
+
+    
+    'ClassesProfs.list' => 'Liste ClassesProfs ',
+    'ClassesProfs.lbl' => 'ClassesProfs',
+    'ClassesProfs.btn' => 'ClassesProfs',
+    'ClassesProfs.add' => 'Ajouter ClassesProfs',
+    'ClassesProfs.edit' => 'Edit ClassesProfs',
+
+    'AbsencesProfs.list' => 'Liste Absences Profs',
+    'AbsencesProfs.lbl' => 'Absences Profs',
+    'AbsencesProfs.btn' => 'Absences Profs',
+    'AbsencesProfs.add' => 'Ajouter Absences Profs',
+    'AbsencesProfs.edit' => 'Edit Absences Profs',
+
+    'EmploisDuTempsProfs.list' => 'Liste EmploisDuTemps Profs',
+    'EmploisDuTempsProfs.lbl' => 'EmploisDuTemps Profs',
+    'EmploisDuTempsProfs.btn' => 'EmploisDuTemps Profs',
+    'EmploisDuTempsProfs.add' => 'Ajouter EmploisDuTemps Profs',
+    'EmploisDuTempsProfs.edit' => 'Edit EmploisDuTemps Profs',
+
+    'PaiementsProfs.list' => 'Liste PaiementsProfs',
+    'PaiementsProfs.lbl' => 'PaiementsProfs ',
+    'PaiementsProfs.btn' => 'PaiementsProfs',
+    'PaiementsProfs.add' => 'Ajouter PaiementsProfs',
+    'PaiementsProfs.edit' => 'Edit PaiementsProfs',
+
+    'CoursProfs.list' => 'Liste CoursProfs',
+    'CoursProfs.lbl' => 'CoursProfs ',
+    'CoursProfs.btn' => 'CoursProfs',
+    'CoursProfs.add' => 'Ajouter CoursProfs',
+    'CoursProfs.edit' => 'Edit CoursProfs',
+
+
+
+
+   
+    
     // Text Here : 
      'Dashboard.txt' => 'Tableau de Bord',
      'Acceuil.txt' => 'Acceuil',
@@ -238,6 +324,14 @@ return [
     'Date_Attach.lbl' => 'Date Attachement',
     'Date_Evenements.lbl' => 'Date Evenements',
     'Details.lbl' => 'Details',
+    'CoursEleves.lbl' => 'Cours Eleves',
+    'Absences.lbl' => 'Absences Eleves',
+    'Date_Dajout.lbl' => 'Date Dajout',
+
+
+
+
+
     'Paiements.add' => 'Ajoutée Paiements',
 
 

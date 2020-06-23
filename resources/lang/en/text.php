@@ -141,6 +141,90 @@ return [
     'ClassesControlesMatieres.add' => 'Add ClassesTestsSubjects',
     'ClassesControlesMatieres.edit' => 'Edit ClassesTestsSubjects',
 
+    // Admin ----> Affectations End
+    
+    
+
+     // ESPACE Eleves --------- ESPACE Eleves ///
+
+     'Acceuil.lbl' => ' Dashboard',
+     'AcceuilProfs.lbl' => ' Dashboard',
+
+
+
+     'CoursEleves.list' => 'Students Courses List',
+     'CoursEleves.lbl' => 'Students Courses',
+     'CoursEleves.btn' => 'Students Courses',
+     'CoursEleves.add' => 'Add Students Courses',
+     'CoursEleves.edit' => 'Edit Students Courses',
+ 
+     'AbsencesEleves.list' => 'Students Absences Lists',
+     'AbsencesEleves.lbl' => 'Students Absences',
+     'AbsencesEleves.btn' => 'Students Absences',
+     'AbsencesEleves.add' => 'Add Students Absences',
+     'AbsencesEleves.edit' => 'Edit Students Absences',
+ 
+ 
+     'EmploisDuTempsEleves.list' => 'Students Schedules Lists ',
+     'EmploisDuTempsEleves.lbl' => 'Students Schedules',
+     'EmploisDuTempsEleves.btn' => 'Students Schedules',
+     'EmploisDuTempsEleves.add' => 'Add Students Schedules',
+     'EmploisDuTempsEleves.edit' => 'Edit Students Schedules',
+ 
+     'BulletinsEtNotes.list' => 'Reports Lists ',
+     'BulletinsEtNotes.lbl' => 'Reports',
+     'BulletinsEtNotes.btn' => 'Reports',
+     'BulletinsEtNotes.add' => 'Add Reports',
+     'BulletinsEtNotes.edit' => 'Edit Reports',
+ 
+     'PaiementsEleves.list' => 'Students Payements Lists',
+     'PaiementsEleves.lbl' => 'Students Payements',
+     'PaiementsEleves.btn' => 'Students Payements',
+     'PaiementsEleves.add' => 'Add Students Payements',
+     'PaiementsEleves.edit' => 'Edit Students Payements',
+ 
+     'EvenementsEtActualites.list' => 'EventsAndNews Lists ',
+     'EvenementsEtActualites.lbl' => 'EventsAndNews',
+     'EvenementsEtActualites.btn' => 'EventsAndNews',
+     'EvenementsEtActualites.add' => 'Ajouter EventsAndNews',
+     'EvenementsEtActualites.edit' => 'Edit EventsAndNews',
+
+     /// Eleves Spaces ---End--- Eleves  Space 
+
+     /// Profs Spaces ---- Profs Spaces
+        
+    'ClassesProfs.list' => 'ProfsClasses Lists ',
+    'ClassesProfs.lbl' => 'ProfsClasses',
+    'ClassesProfs.btn' => 'ProfsClasses',
+    'ClassesProfs.add' => 'Add ProfsClasses',
+    'ClassesProfs.edit' => 'Edit ProfsClasses',
+
+    'AbsencesProfs.list' => 'ProfsClasses Lists',
+    'AbsencesProfs.lbl' => 'ProfsClasses',
+    'AbsencesProfs.btn' => 'ProfsClasses',
+    'AbsencesProfs.add' => 'Add ProfsClasses',
+    'AbsencesProfs.edit' => 'Edit ProfsClasses',
+
+    'EmploisDuTempsProfs.list' => 'ProfsSchedules Lists ',
+    'EmploisDuTempsProfs.lbl' => 'ProfsSchedules ',
+    'EmploisDuTempsProfs.btn' => 'ProfsSchedules',
+    'EmploisDuTempsProfs.add' => 'Add ProfsSchedules',
+    'EmploisDuTempsProfs.edit' => 'Edit ProfsSchedules',
+
+    'PaiementsProfs.list' => 'ProfsPayements Lists',
+    'PaiementsProfs.lbl' => 'ProfsPayements ',
+    'PaiementsProfs.btn' => 'ProfsPayements',
+    'PaiementsProfs.add' => 'Add ProfsPayements',
+    'PaiementsProfs.edit' => 'Edit ProfsPayements',
+
+    'CoursProfs.list' => 'ProfsCourses',
+    'CoursProfs.lbl' => 'ProfsCourses ',
+    'CoursProfs.btn' => 'ProfsCourses',
+    'CoursProfs.add' => 'Add ProfsCourses',
+    'CoursProfs.edit' => 'Edit ProfsCourses',
+
+    ///---- Profs SPACE --END-- ------///
+
 
 
     'Dashboard.txt' => 'Dashboard',
@@ -206,6 +290,7 @@ return [
     'Date_Attach.lbl' => 'Attachement Date',
     'Date_Evenements.lbl' => 'Event Date',
     'Details.lbl' => 'Details',
+    'Date_Dajout.lbl' => 'Adding Date',
     'Paiements.add' => 'Add Payements',
 
 

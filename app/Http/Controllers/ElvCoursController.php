@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class ElvPaiementsController extends Controller
+class ElvCoursController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,23 +13,7 @@ class ElvPaiementsController extends Controller
      */
     public function index()
     {
-        $search='';
-        if(isset($request) && null !==$request->get('search')) {
-            $search = $request->get('search');
-            //dd($search);
-            $datas = DB::table('v_paiementseleves')->where('eleve', 'like', '%'. $search . '%')
-            ->orWhere('parents' , 'like', '%'. $search . '%')
-            ->orWhere('date_paiements' , 'like', '%'. $search . '%')
-            ->orWhere('type_paiements' , 'like', '%'. $search . '%')
-            ->orWhere('somme_paiements' , 'like', '%'. $search . '%')->paginate(10);
-            //dd($datas->toSql(),$datas->getBindings());
-        } 
-        else {
-            $datas = DB::table('v_paiementseleves')->paginate(10);
-
-        }   
-        return view('ElevesSpace.ElvPaiements.index')->with('datas', $datas )->with('search', $search );        //
-    
+        return view('ElevesSpace.ElvCours.index');
         //
     }
 
@@ -41,6 +24,8 @@ class ElvPaiementsController extends Controller
      */
     public function create()
     {
+        return view('ElevesSpace.ElvCours.create');
+
         //
     }
 
@@ -63,6 +48,8 @@ class ElvPaiementsController extends Controller
      */
     public function show($id)
     {
+        return view('ElevesSpace.ElvCours.index');
+
         //
     }
 
@@ -74,6 +61,8 @@ class ElvPaiementsController extends Controller
      */
     public function edit($id)
     {
+        return view('ElevesSpace.ElvCours.edit');
+
         //
     }
 

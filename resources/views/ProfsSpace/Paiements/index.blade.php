@@ -9,12 +9,10 @@
     
 @endsection
 @section('content')
+{{ Breadcrumbs::render('profsspace.profspaiements') }}
 
-{{ Breadcrumbs::render('elevesspace.bulletinsetnotes') }}
+   
 
-
-    <!-- Main content -->
-    
 @endsection
 @section('js')
     

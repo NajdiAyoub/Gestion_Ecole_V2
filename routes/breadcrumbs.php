@@ -353,3 +353,162 @@ Breadcrumbs::for('admin.affectations.classescontrolesmatieres.edit', function ($
     $trail->parent('admin.affectations.classescontrolesmatieres');
     $trail->push(__('text.ClassesControlesMatieres.edit'), route('classescontrolesmatieres.edit', $id));
 });
+
+/// Espace Eleves ----------(Eleves) ////////
+
+Breadcrumbs::for('elevesspace.acceuil', function ($trail) {
+    $trail->push(__('text.Acceuil.lbl'), route('acceuil.index'));
+});
+Breadcrumbs::for('elevesspace.acceuil.add', function ($trail) {
+    $trail->parent('elevesspace.acceuil');
+    $trail->push(__('text.Acceuil.add'), route('acceuil.create'));
+});
+Breadcrumbs::for('elevesspace.acceuil.edit', function ($trail, $id) {
+    $trail->parent('elevesspace.acceuil');
+    $trail->push(__('text.Acceuil.edit'), route('acceuil.edit', $id));
+});
+
+Breadcrumbs::for('elevesspace.elvabsences', function ($trail) {
+    $trail->push(__('text.Absences.lbl'), route('elvabsences.index'));
+});
+Breadcrumbs::for('elevesspace.elvabsences.add', function ($trail) {
+    $trail->parent('elevesspace.elvabsences');
+    $trail->push(__('text.AbsencesEleves.add'), route('elevesabsences.create'));
+});
+Breadcrumbs::for('elevesspace.elvabsences.edit', function ($trail, $id) {
+    $trail->parent('elevesspace.elvabsences');
+    $trail->push(__('text.AbsencesEleves.edit'), route('elevesabsences.edit', $id));
+});
+
+Breadcrumbs::for('elevesspace.elvcours', function ($trail) {
+    $trail->push(__('text.CoursEleves.lbl'), route('elevescours.index'));
+});
+Breadcrumbs::for('elevesspace.elvcours.add', function ($trail) {
+    $trail->parent('elevesspace.elvcours');
+    $trail->push(__('text.CoursEleves.add'), route('elevescours.create'));
+});
+Breadcrumbs::for('elevesspace.elvcours.edit', function ($trail, $id) {
+    $trail->parent('elevesspace.elvcours');
+    $trail->push(__('text.CoursEleves.edit'), route('elevescours.edit', $id));
+});
+
+Breadcrumbs::for('elevesspace.emploisdutempseleves', function ($trail) {
+    $trail->push(__('text.EmploisDuTemps.lbl'), route('elvemploisdutemps.index'));
+});
+Breadcrumbs::for('elevesspace.emploisdutempseleves.add', function ($trail) {
+    $trail->parent('elevesspace.emploisdutempseleves');
+    $trail->push(__('text.EmploisDuTemps.add'), route('elvemploisdutemps.create'));
+});
+Breadcrumbs::for('elevesspace.emploisdutempseleves.edit', function ($trail, $id) {
+    $trail->parent('elevesspace.emploisdutempseleves');
+    $trail->push(__('text.EmploisDuTemps.edit'), route('elvemploisdutemps.edit', $id));
+});
+
+Breadcrumbs::for('elevesspace.elvpaiements', function ($trail) {
+    $trail->push(__('text.PaiementsEleves.lbl'), route('elvpaiements.index'));
+});
+Breadcrumbs::for('elevesspace.elvpaiements.add', function ($trail) {
+    $trail->parent('elevesspace.elvpaiements');
+    $trail->push(__('text.PaiementsEleves.add'), route('elvpaiements.create'));
+});
+Breadcrumbs::for('elevesspace.elvpaiements.edit', function ($trail, $id) {
+    $trail->parent('elevesspace.elvpaiements');
+    $trail->push(__('text.PaiementsEleves.edit'), route('elvpaiements.edit', $id));
+});
+
+
+Breadcrumbs::for('elevesspace.bulletinsetnotes', function ($trail) {
+    $trail->push(__('text.BulletinsEtNotes.lbl'), route('elvbulletinsetnotes.index'));
+});
+Breadcrumbs::for('elevesspace.bulletinsetnotes.add', function ($trail) {
+    $trail->parent('elevesspace.bulletinsetnotes');
+    $trail->push(__('text.BulletinsEtNotes.add'), route('elvbulletinsetnotes.create'));
+});
+Breadcrumbs::for('elevesspace.bulletinsetnotes.edit', function ($trail, $id) {
+    $trail->parent('elevesspace.bulletinsetnotes');
+    $trail->push(__('text.BulletinsEtNotes.edit'), route('elvbulletinsetnotes.edit', $id));
+});
+
+/// Eleves Space --End-- Eleves Spaces ///
+
+/// Profs Space ----------Profs Space ///
+
+Breadcrumbs::for('profsspace.profsacceuil', function ($trail) {
+    $trail->push(__('text.AcceuilProfs.lbl'), route('profsacceuil.index'));
+});
+
+Breadcrumbs::for('profsspace.profsacceuil.add', function ($trail) {
+    $trail->parent('profsspace.profsacceuil');
+    $trail->push(__('text.AcceuilProfs.add'), route('profsacceuil.create'));
+});
+Breadcrumbs::for('profsspace.profsacceuil.edit', function ($trail, $id) {
+    $trail->parent('profsspace.profsacceuil');
+    $trail->push(__('text.AcceuilProfs.edit'), route('profsacceuil.edit', $id));
+});
+
+Breadcrumbs::for('profsspace.profsabsences', function ($trail) {
+    $trail->push(__('text.AbsencesProfs.lbl'), route('profsabsences.index'));
+});
+Breadcrumbs::for('profsspace.profsabsences.add', function ($trail) {
+    $trail->parent('profsspace.profsabsences');
+    $trail->push(__('text.AbsencesProfs.add'), route('profsacceuil.create'));
+});
+Breadcrumbs::for('profsspace.profsabsences.edit', function ($trail, $id) {
+    $trail->parent('profsspace.profsabsences');
+    $trail->push(__('text.AbsencesProfs.edit'), route('profsabsences.edit', $id));
+});
+
+Breadcrumbs::for('profsspace.profsclasses', function ($trail) {
+    $trail->push(__('text.ClassesProfs.lbl'), route('profsclasses.index'));
+});
+Breadcrumbs::for('profsspace.profsclasses.add', function ($trail) {
+    $trail->parent('profsspace.profsclasses');
+    $trail->push(__('text.ClassesProfs.add'), route('profsclasses.create'));
+});
+Breadcrumbs::for('profsspace.profsclasses.edit', function ($trail, $id) {
+    $trail->parent('profsspace.profsclasses');
+    $trail->push(__('text.ClassesProfs.edit'), route('profsclasses.edit', $id));
+});
+
+Breadcrumbs::for('profsspace.profsemploisdutemps', function ($trail) {
+    $trail->push(__('text.EmploisDuTempsProfs.lbl'), route('profsemploisdutemps.index'));
+});
+Breadcrumbs::for('profsspace.profsemploisdutemps.add', function ($trail) {
+    $trail->parent('profsspace.profsemploisdutemps');
+    $trail->push(__('text.ProfsEmploisDuTemps.add'), route('profsemploisdutemps.create'));
+});
+Breadcrumbs::for('profsspace.profsemploisdutemps.edit', function ($trail, $id) {
+    $trail->parent('profsspace.profsemploisdutemps');
+    $trail->push(__('text.ProfsEmploisDuTemps.edit'), route('profsemploisdutemps.edit', $id));
+});
+
+Breadcrumbs::for('profsspace.profspaiements', function ($trail) {
+    $trail->push(__('text.PaiementsProfs.lbl'), route('profspaiements.index'));
+});
+Breadcrumbs::for('profsspace.profspaiements.add', function ($trail) {
+    $trail->parent('profsspace.profspaiements');
+    $trail->push(__('text.PaiementsProfs.add'), route('profspaiements.create'));
+});
+Breadcrumbs::for('profsspace.profspaiements.edit', function ($trail, $id) {
+    $trail->parent('profsspace.profspaiements');
+    $trail->push(__('text.PaiementsProfs.edit'), route('profspaiements.edit', $id));
+});
+
+
+Breadcrumbs::for('profsspace.profscours', function ($trail) {
+    $trail->push(__('text.CoursProfs.lbl'), route('profscours.index'));
+});
+Breadcrumbs::for('profsspace.profscours.add', function ($trail) {
+    $trail->parent('profsspace.profscours');
+    $trail->push(__('text.CoursProfs.add'), route('profscours.create'));
+});
+Breadcrumbs::for('profsspace.profscours.edit', function ($trail, $id) {
+    $trail->parent('profsspace.profscours');
+    $trail->push(__('text.CoursProfs.edit'), route('profscours.edit', $id));
+});
+
+
+
+
+
+

@@ -1,5 +1,4 @@
 
-
 @extends('layouts.master')
 @section('title')
     
@@ -10,11 +9,10 @@
 @endsection
 @section('content')
 
-{{ Breadcrumbs::render('elevesspace.bulletinsetnotes') }}
+{{ Breadcrumbs::render('profsspace.profsabsences') }}
 
 
-    <!-- Main content -->
-    
+      
 @endsection
 @section('js')
     

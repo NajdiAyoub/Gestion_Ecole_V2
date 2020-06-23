@@ -13,6 +13,7 @@ class ElvEmploisDuTempsController extends Controller
      */
     public function index()
     {
+        return view('ElevesSpace.ElvEmploisDuTemps.index');
         //
     }
 

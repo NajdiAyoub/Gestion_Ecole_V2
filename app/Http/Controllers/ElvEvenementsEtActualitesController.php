@@ -13,6 +13,7 @@ class ElvEvenementsEtActualitesController extends Controller
      */
     public function index()
     {
+        return view('ElevesSpace.ElvEvenements.index');
         //
     }
 

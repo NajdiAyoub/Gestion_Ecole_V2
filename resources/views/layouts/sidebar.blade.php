@@ -301,7 +301,7 @@
                                                 <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
                                                 <li class="nav-item has-treeview menu">
-                                                    <a href="#" class="nav-link ">
+                                                    <a href="{{ route('acceuil.index')}}" class="nav-link  {{isActive('elevesspace.acceuil',request())}}">
                                                         <i class="nav-icon fas fa-tachometer-alt"></i>
                                                         <p> {{__('text.Acceuil.txt') }} </p>
                                                     </a>
@@ -313,8 +313,7 @@
                                                             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                                                             <li class="nav-item has-treeview menu-open">
-                                                                <a href="{{ route('cours.index')}}"
-                                                                    class="nav-link {{request()->is('Cours/Cours') ? 'active' : ''}}">
+                                                                <a href="{{ route('elevescours.index')}}" class="nav-link {{isActive('elevesspace.cours',request())}}">
                                                                     <i class="nav-icon fas fa-folder"></i>
 
 
@@ -329,8 +328,8 @@
                                                                         <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                                                                         <li class="nav-item has-treeview menu-open">
-                                                                            <a href="{{ route('absences.index')}}"
-                                                                                class="nav-link  {{request()->is('Absences/Absences') ? 'active' : ''}}">
+                                                                            <a href="{{ route('elvabsences.index')}}"
+                                                                                class="nav-link {{isActive('elevesspace.elvabsences',request())}}">
                                                                                 <i class="nav-icon fas fa-list-alt"></i>
 
                                                                                 <p>
@@ -346,7 +345,7 @@
                                                                                     <li
                                                                                         class="nav-item has-treeview menu-open">
                                                                                         <a href="{{ route('elvemploisdutemps.index')}}"
-                                                                                            class="nav-link {{request()->is('EmploisDuTemps/emplois') ? 'active' : ''}} ">
+                                                                                            class="nav-link {{isActive('elevesspace.elvemploisdutemps',request())}}">
                                                                                             <i
                                                                                                 class="nav-icon fas fa-calendar-alt"></i>
 
@@ -364,8 +363,8 @@
                              with font-awesome or any other icon font library -->
                                                                                                 <li
                                                                                                     class="nav-item has-treeview menu-open">
-                                                                                                    <a href="{{ route('bulletins.index')}}"
-                                                                                                        class="nav-link {{request()->is('BulletinsEtNotes/bulletins') ? 'active' : ''}}">
+                                                                                                    <a href="{{ route('elvbulletinsetnotes.index')}}"
+                                                                                                        class="nav-link {{isActive('elevesspace.elvbulletinsetnotes',request())}}">
                                                                                                         <i
                                                                                                             class="nav-icon fas fa-sticky-note"></i>
 
@@ -382,8 +381,8 @@
                                    with font-awesome or any other icon font library -->
                                                                                                             <li
                                                                                                                 class="nav-item has-treeview menu-open">
-                                                                                                                <a href="{{ route('paiements.index')}}"
-                                                                                                                    class="nav-link {{request()->is('Paiements/Paiements') ? 'active' : ''}}">
+                                                                                                                <a href="{{ route('elvpaiements.index')}}"
+                                                                                                                    class="nav-link {{isActive('elevesspace.elvpaiements',request())}}">
                                                                                                                     <i
                                                                                                                         class="nav-icon fas fa-money-bill-alt"></i>
 
@@ -402,8 +401,8 @@
                                          with font-awesome or any other icon font library -->
                                                                                                                         <li
                                                                                                                             class="nav-item has-treeview menu-open">
-                                                                                                                            <a href="{{ route('Evenements.index')}}"
-                                                                                                                                class="nav-link {{request()->is('Evenements/Evenements') ? 'active' : ''}}">
+                                                                                                                            <a href="{{ route('elvevenementsetactualites.index')}}"
+                                                                                                                                class="nav-link {{isActive('elevesspace.elvevenementsetactualites',request())}}">
                                                                                                                                 <i
                                                                                                                                     class="nav-icon fas fa-calendar-check"></i>
 
@@ -434,12 +433,12 @@
                              with font-awesome or any other icon font library -->
                                                                                                                                     <li
                                                                                                                                         class="nav-item has-treeview menu-open">
-                                                                                                                                        <a href="#"
-                                                                                                                                            class="nav-link active">
+                                                                                                                                        <a href="{{ route('profsacceuil.index')}}"
+                                                                                                                                            class="nav-link {{isActive('profsspace.profsacceuil',request())}}">
                                                                                                                                             <i
                                                                                                                                                 class="nav-icon fas fa-tachometer-alt"></i>
                                                                                                                                             <p>
-                                                                                                                                                {{__('text.Dashboard.txt') }}
+                                                                                                                                                {{__('text.Acceuil.lbl') }}
                                                                                                                                                 <i
                                                                                                                                                     class="right fas fa-angle-left"></i>
                                                                                                                                             </p>
@@ -455,8 +454,8 @@
                                    with font-awesome or any other icon font library -->
                                                                                                                                                 <li
                                                                                                                                                     class="nav-item has-treeview menu-open">
-                                                                                                                                                    <a href="#"
-                                                                                                                                                        class="nav-link active">
+                                                                                                                                                    <a href="{{ route('profsclasses.index')}}"
+                                                                                                                                                        class="nav-link {{isActive('profsspace.profsclasses',request())}}">
                                                                                                                                                         <p>
                                                                                                                                                             {{__('text.Classes.btn') }}
                                                                                                                                                         </p>
@@ -471,8 +470,8 @@
                                          with font-awesome or any other icon font library -->
                                                                                                                                                             <li
                                                                                                                                                                 class="nav-item has-treeview menu-open">
-                                                                                                                                                                <a href="#"
-                                                                                                                                                                    class="nav-link active">
+                                                                                                                                                                <a href="{{ route('profsabsences.index')}}"
+                                                                                                                                                                    class="nav-link {{isActive('profsspace.profsabsences',request())}}">
                                                                                                                                                                     <p>
                                                                                                                                                                         {{__('text.Absences.btn') }}
                                                                                                                                                                     </p>
@@ -487,8 +486,8 @@
                                                with font-awesome or any other icon font library -->
                                                                                                                                                                         <li
                                                                                                                                                                             class="nav-item has-treeview menu-open">
-                                                                                                                                                                            <a href="#"
-                                                                                                                                                                                class="nav-link active">
+                                                                                                                                                                            <a href="{{ route('profsemploisdutemps.index')}}"
+                                                                                                                                                                                class="nav-link {{isActive('profsspace.emploisdutempsprofs',request())}}">
                                                                                                                                                                                 <p>
                                                                                                                                                                                     {{__('text.EmploisDuTemps.btn') }}
                                                                                                                                                                                 </p>
@@ -503,8 +502,8 @@
                                                      with font-awesome or any other icon font library -->
                                                                                                                                                                                     <li
                                                                                                                                                                                         class="nav-item has-treeview menu-open">
-                                                                                                                                                                                        <a href="#"
-                                                                                                                                                                                            class="nav-link active">
+                                                                                                                                                                                        <a href="{{ route('profspaiements.index')}}"
+                                                                                                                                                                                            class="nav-link {{isActive('profsspace.profspaiements',request())}}">
                                                                                                                                                                                             <p>
                                                                                                                                                                                                 {{__('text.Paiements.btn') }}
                                                                                                                                                                                             </p>
@@ -519,8 +518,8 @@
                                                            with font-awesome or any other icon font library -->
                                                                                                                                                                                                 <li
                                                                                                                                                                                                     class="nav-item has-treeview menu-open">
-                                                                                                                                                                                                    <a href="#"
-                                                                                                                                                                                                        class="nav-link active">
+                                                                                                                                                                                                    <a href="{{ route('profscours.index')}}"
+                                                                                                                                                                                                        class="nav-link {{isActive('profsspace.profscours',request())}}">
                                                                                                                                                                                                         <p>
                                                                                                                                                                                                             {{__('text.Cours.btn') }}
                                                                                                                                                                                                         </p>

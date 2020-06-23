@@ -143,8 +143,114 @@ function isActive($param, $request)
                 return 'active';
             }
             break;
+
+//// Eleves Space ----------------- Eleves Space ////           
+            
+case 'elevesspace.acceuil':
+                if ($request->routeIs('acceuil.*')) {
+                    return 'active';
+                }
+                break;
+
+            case 'elevesspace.cours':
+                if ($request->routeIs('elevescours.*')) {
+                    return 'active';
+                }
+                break;
+
+                case 'elevesspace.elvabsences':
+                    if ($request->routeIs('elvabsences.*')) {
+                        return 'active';
+                    }
+                    break;
+
+                    case 'elevesspace.elvemploisdutemps':
+                        if ($request->routeIs('elvemploisdutemps.*')) {
+                            return 'active';
+                        }
+                        break;
+
+                        case 'elevesspace.elvbulletinsetnotes':
+                            if ($request->routeIs('elvbulletinsetnotes.*')) {
+                                return 'active';
+                            }
+                            break;
+                            case 'elevesspace.elvbulletinsetnotes':
+                                if ($request->routeIs('elvbulletinsetnotes.*')) {
+                                    return 'active';
+                                }
+                                break;
+
+                                case 'elevesspace.elvpaiements':
+                                    if ($request->routeIs('elvpaiements.*')) {
+                                        return 'active';
+                                    }
+                                    break;
+                
+                                case 'elevesspace.elvevenementsetactualites':
+                                    if ($request->routeIs('elvevenementsetactualites.*')) {
+                                        return 'active';
+                                    }
+                                    break;   
+
+       ////End Eleves Space -----------------  End Eleves Space ////  
+       
+              ////End Profs Space -----------------  End Profs Space ////      
+
+              
+              case 'profsspace.profsacceuil':
+                if ($request->routeIs('profsacceuil.*')) {
+                    return 'active';
+                }
+                break;  
+                
+                  
+              case 'profsspace.profsclasses':
+                if ($request->routeIs('profsclasses.*')) {
+                    return 'active';
+                }
+                break;  
+                  
+              case 'profsspace.profsabsences':
+                if ($request->routeIs('profsabsences.*')) {
+                    return 'active';
+                }
+                break;  
+
+                  
+              case 'profsspace.emploisdutempsprofs':
+                if ($request->routeIs('profsemploisdutemps.*')) {
+                    return 'active';
+                }
+                break;
+
+                case 'profsspace.profspaiements':
+                    if ($request->routeIs('profspaiements.*')) {
+                        return 'active';
+                    }
+                    break;
+
+                    case 'profsspace.profscours':
+                        if ($request->routeIs('profscours.*')) {
+                            return 'active';
+                        }
+                        break;
+                
+                
+
+
+
+
+                                    
+        
+    
+
+                            
     }
 }
+
+
+
 
 function isOpen($param, $request)
 {
@@ -169,6 +275,19 @@ function isOpen($param, $request)
                 return 'open';
             }
             break;
+          
+            case 'elevesspace':
+                if ($request->routeIs('acceuil.*') || $request->routeIs('cours.*') || $request->routeIs('elvabsences.*') || $request->routeIs('elvemploisdutemps.*')||  $request->routeIs('elvbulletinsetnotes.*')|| $request->routeIs('elvpaiements.*')|| $request->routeIs('elvevenementsetactulaites.*')) {
+                    return 'open';
+                }
+                break;
+
+                case 'profsspace':
+                    if ($request->routeIs('profsacceuil.*') || $request->routeIs('profscours.*') || $request->routeIs('profsabsences.*') || $request->routeIs('emploisdutempsprofs.*')||  $request->routeIs('profsclasses.*')|| $request->routeIs('profspaiements.*')) {
+                        return 'open';
+                    }
+                    break;
+    
 
         default:
             # code...
